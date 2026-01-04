@@ -164,7 +164,6 @@ body.modal-open {
 
 .top-actions {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 12px;
 }
@@ -174,7 +173,6 @@ body.modal-open {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-right: 12px;
 }
 
 .current-hour-label {

@@ -5987,13 +5987,13 @@ function renderApp() {
   if (topBar) {
     topBar.innerHTML = `
       <div class="top-actions">
+        <button class="menu-button" type="button" id="menuButton" aria-label="Menu">☰</button>
         <div class="header-content">
           <div class="current-hour-label">${hour.title}</div>
           <div class="progress-container" id="progressContainer">
             <div class="progress-bar" style="width: ${progressPercent}%"></div>
           </div>
         </div>
-        <button class="menu-button" type="button" id="menuButton" aria-label="Menu">☰</button>
       </div>
     `;
   }

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="#8b2b06"/>
+  
+  <!-- Coptic cross - eight-pointed style -->
+  <g fill="#f4c26b" stroke="#d7c2a0" stroke-width="0.5">
+    <!-- Main cross arms -->
+    <rect x="45" y="15" width="10" height="70" rx="2"/>
+    <rect x="15" y="45" width="70" height="10" rx="2"/>
+    
+    <!-- Diagonal cross elements for eight-pointed cross -->
+    <rect x="48" y="48" width="4" height="20" rx="1" transform="rotate(45 50 50)"/>
+    <rect x="48" y="48" width="4" height="20" rx="1" transform="rotate(-45 50 50)"/>
+    <rect x="48" y="32" width="4" height="20" rx="1" transform="rotate(45 50 50)"/>
+    <rect x="48" y="32" width="4" height="20" rx="1" transform="rotate(-45 50 50)"/>
+    
+    <!-- Center circle -->
+    <circle cx="50" cy="50" r="6" fill="#d7c2a0"/>
+  </g>
+</svg>
+
