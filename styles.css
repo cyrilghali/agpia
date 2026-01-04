@@ -312,11 +312,13 @@ body.modal-open {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: auto 0;
+  margin: 12px 0;
   opacity: 1;
   background: var(--card-strong);
   box-shadow: 0 15px 45px var(--shadow);
   animation: blockActivate 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  flex-shrink: 0;
 }
 
 @keyframes blockActivate {
@@ -383,7 +385,7 @@ body.modal-open {
 /* block-expand-hint supprimé - plus utilisé */
 
 .block-content {
-  padding: 0 24px 28px;
+  padding: 20px 24px 28px;
   margin: 0;
   background: transparent;
   border-radius: 0;
@@ -394,7 +396,7 @@ body.modal-open {
 }
 
 .block-content.active {
-  padding: 0 24px 60px;
+  padding: 20px 24px 60px;
   margin: 0;
   animation: contentExpand 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: visible;
@@ -795,7 +797,7 @@ body.modal-open {
   }
 
   .block-content.active {
-    padding-bottom: 80px;
+    padding: 20px 24px 80px;
   }
 
   /* Les blocs non actifs sont cachés */
