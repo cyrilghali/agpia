@@ -157,6 +157,9 @@ const HOURS = {
             "relève les murs de Jérusalem.",
             "Alors Tu accepteras de justes sacrifices, obligations et holocaustes ;",
             "alors on offrira des taureaux sur Ton autel."
+          ],
+          [
+            "Alléluia !"
           ]
         ]
       },
@@ -1438,6 +1441,9 @@ const HOURS = {
             "relève les murs de Jérusalem.",
             "Alors Tu accepteras de justes sacrifices, obligations et holocaustes ;",
             "alors on offrira des taureaux sur Ton autel."
+          ],
+          [
+            "Alléluia !"
           ]
         ]
       },
@@ -2430,6 +2436,9 @@ const HOURS = {
             "relève les murs de Jérusalem.",
             "Alors Tu accepteras de justes sacrifices, obligations et holocaustes ;",
             "alors on offrira des taureaux sur Ton autel."
+          ],
+          [
+            "Alléluia !"
           ]
         ]
       },
@@ -3405,6 +3414,9 @@ const HOURS = {
             "relève les murs de Jérusalem.",
             "Alors Tu accepteras de justes sacrifices, obligations et holocaustes ;",
             "alors on offrira des taureaux sur Ton autel."
+          ],
+          [
+            "Alléluia !"
           ]
         ]
       },
@@ -4335,6 +4347,9 @@ const HOURS = {
             "relève les murs de Jérusalem.",
             "Alors Tu accepteras de justes sacrifices, obligations et holocaustes ;",
             "alors on offrira des taureaux sur Ton autel."
+          ],
+          [
+            "Alléluia !"
           ]
         ]
       },
@@ -5131,6 +5146,9 @@ const HOURS = {
             "relève les murs de Jérusalem.",
             "Alors Tu accepteras de justes sacrifices, obligations et holocaustes ;",
             "alors on offrira des taureaux sur Ton autel."
+          ],
+          [
+            "Alléluia !"
           ]
         ]
       },
