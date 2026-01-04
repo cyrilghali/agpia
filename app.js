@@ -1298,7 +1298,7 @@ const HOURS = {
   },
   "3": {
     id: "hour-3",
-    title: "Troisième Heure (Terce)",
+    title: "Troisième Heure",
     blocks: [
       {
         id: "h3-notre-pere",
@@ -2293,7 +2293,7 @@ const HOURS = {
   },
   "6": {
     id: "hour-6",
-    title: "Sixième Heure (Sext)",
+    title: "Sixième Heure",
     blocks: [
       {
         id: "h6-notre-pere",
@@ -3271,7 +3271,7 @@ const HOURS = {
   },
   "9": {
     id: "hour-9",
-    title: "Neuvième Heure (None)",
+    title: "Neuvième Heure",
     blocks: [
       {
         id: "h9-notre-pere",
@@ -4204,7 +4204,7 @@ const HOURS = {
   },
   "11": {
     id: "hour-11",
-    title: "Onzième Heure (Vespers)",
+    title: "Onzième Heure",
     blocks: [
       {
         id: "h11-notre-pere",
@@ -5003,7 +5003,7 @@ const HOURS = {
   },
   "12": {
     id: "hour-12",
-    title: "Douzième Heure (Compline)",
+    title: "Douzième Heure",
     blocks: [
       {
         id: "h12-notre-pere",
