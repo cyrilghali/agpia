@@ -242,6 +242,7 @@ body.modal-open {
   overflow-y: auto;
   flex: 1;
   min-height: 0;
+  padding-bottom: 40px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
@@ -393,7 +394,7 @@ body.modal-open {
 }
 
 .block-content.active {
-  padding: 0 24px 28px;
+  padding: 0 24px 60px;
   margin: 0;
   animation: contentExpand 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: visible;
@@ -789,6 +790,13 @@ body.modal-open {
     margin-top: 4px;
   }
 
+  .block-list {
+    padding-bottom: 60px;
+  }
+
+  .block-content.active {
+    padding-bottom: 80px;
+  }
 
   /* Les blocs non actifs sont cachés */
 
