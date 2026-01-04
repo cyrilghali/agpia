@@ -9,6 +9,17 @@
 <body>
   <div id="app" class="app"></div>
 
+  <!-- Bottom Sheet (mobile-first) -->
+  <div class="bottom-sheet" id="bottomSheet">
+    <div class="bottom-sheet-handle"></div>
+    <div class="bottom-sheet-content">
+      <h2 class="bottom-sheet-title">Tous les blocs</h2>
+      <div class="jump-list" id="jumpList"></div>
+    </div>
+  </div>
+  <div class="bottom-sheet-overlay" id="bottomSheetOverlay"></div>
+
+  <!-- Modal (fallback pour desktop) -->
   <div id="jumpModal" class="jump-modal hidden" aria-hidden="true">
     <div class="jump-backdrop" data-close="modal"></div>
     <div class="jump-panel" role="dialog" aria-modal="true" aria-labelledby="jumpTitle">
@@ -16,7 +27,7 @@
         <h2 id="jumpTitle">Jump to block</h2>
         <button class="jump-close" type="button" data-close="modal">Close</button>
       </div>
-      <div id="jumpList" class="jump-list" role="listbox"></div>
+      <div id="jumpListModal" class="jump-list" role="listbox"></div>
     </div>
   </div>
 

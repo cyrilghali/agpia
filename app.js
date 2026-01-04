@@ -166,7 +166,7 @@ const HOURS = {
         title: "Psaume 1",
         content: [
           [
-            "Heureux est l homme",
+            "Heureux est l'homme",
             "qui n'entre pas au conseil des méchants,",
             "qui ne suit pas le chemin des pécheurs,",
             "ne siège pas avec ceux qui ricanent,",
@@ -179,7 +179,7 @@ const HOURS = {
             "qui donne du fruit en son temps,",
             "et jamais son feuillage ne meurt ;",
             "tout ce qu'il entreprend réussira,",
-            "tel n est pas le sort des méchants."
+            "tel n'est pas le sort des méchants."
           ],
           [
             "Mais ils sont comme la paille",
@@ -208,7 +208,7 @@ const HOURS = {
           [
             "Faisons sauter nos chaînes,",
             "rejetons ces entraves !",
-            "Celui qui règne dans les cieux s en amuse,",
+            "Celui qui règne dans les cieux s'en amuse,",
             "le Seigneur les tourne en dérision ;",
             "puis il leur parle avec fureur",
             "et sa colère les épouvante :"
@@ -233,7 +233,7 @@ const HOURS = {
           [
             "Servez le Seigneur avec crainte,",
             "rendez-lui votre hommage en tremblant.",
-            "Qu il s irrite et vous êtes perdus :"
+            "Qu'il s'irrite et vous êtes perdus :"
           ],
           [
             "soudain sa colère éclatera.",
@@ -247,7 +247,7 @@ const HOURS = {
         title: "Psaume 3",
         content: [
           [
-            "Seigneur, qu ils sont nombreux mes adversaires,",
+            "Seigneur, qu'ils sont nombreux mes adversaires,",
             "nombreux à se lever contre moi,",
             "nombreux à déclarer à mon sujet :"
           ],
@@ -260,11 +260,11 @@ const HOURS = {
             "A pleine voix je crie vers le Seigneur ;",
             "il me répond de sa montagne sainte.",
             "Et moi, je me couche et je dors ;",
-            "je m éveille : le Seigneur est mon soutien."
+            "je m'éveille : le Seigneur est mon soutien."
           ],
           [
             "Je ne crains pas ce peuple nombreux",
-            "qui me cerne et s avance contre moi.",
+            "qui me cerne et s'avance contre moi.",
             "Lève-Toi, Seigneur !"
           ],
           [
@@ -289,8 +289,8 @@ const HOURS = {
           ],
           [
             "Fils des hommes,",
-            "jusqu où irez-vous dans l insulte à ma gloire,",
-            "l amour du néant et la course au mensonge ?",
+            "jusqu'où irez-vous dans l'insulte à ma gloire,",
+            "l'amour du néant et la course au mensonge ?",
             "Sachez que le Seigneur a mis à part son fidèle,",
             "le Seigneur entend quand je crie vers lui."
           ],
@@ -303,13 +303,13 @@ const HOURS = {
           [
             "Beaucoup demandent :",
             "Qui nous fera voir le bonheur ?",
-            "Sur nous, Seigneur, que s illumine Ton visage !"
+            "Sur nous, Seigneur, que s'illumine Ton visage !"
           ],
           [
             "Tu mets dans mon cœur plus de joie",
             "que toutes leurs vendanges et leur moissons.",
             "Dans la paix moi aussi, je me couche et je dors,",
-            "car tu me donnes d habiter,",
+            "car tu me donnes d'habiter,",
             "Seigneur, seul dans la confiance. Alléluia !"
           ]
         ]
@@ -322,7 +322,7 @@ const HOURS = {
           [
             "Écoute mes paroles, Seigneur,",
             "comprends ma plainte ;",
-            "entends ma voix qui T appelle,",
+            "entends ma voix qui T'appelle,",
             "ô mon Roi et mon Dieu !"
           ],
           [
@@ -332,20 +332,20 @@ const HOURS = {
             "et je reste en éveil."
           ],
           [
-            "Tu n es pas un Dieu ami du mal,",
-            "chez Toi, le méchant n est pas reçu,",
-            "Non l insensé ne tient pas",
+            "Tu n'es pas un Dieu ami du mal,",
+            "chez Toi, le méchant n'est pas reçu,",
+            "Non l'insensé ne tient pas",
             "devant Ton regard."
           ],
           [
             "Tu détestes tous les malfaisants,",
             "tu extermines les menteurs ;",
-            "l homme de ruse et de sang,",
+            "l'homme de ruse et de sang,",
             "le Seigneur le hait."
           ],
           [
             "Pour moi, grâce à Ton amour,",
-            "j accède à Ta maison ;",
+            "j'accède à Ta maison ;",
             "vers Ton temple saint, je me prosterne,",
             "saisi de crainte."
           ],
@@ -355,19 +355,19 @@ const HOURS = {
             "aplanis devant moi Ton chemin."
           ],
           [
-            "Rien n est vrai dans leur bouche,",
+            "Rien n'est vrai dans leur bouche,",
             "ils sont remplis de malveillance ;",
             "leur gosier est un sépulcre béant,",
             "et leur langue un piège."
           ],
           [
             "Dieu, traite-les en coupable :",
-            "qu ils échouent dans leurs projets !",
+            "qu'ils échouent dans leurs projets !",
             "Pour tant de méfaits, disperse-les,",
-            "puisqu ils Te résistent."
+            "puisqu'ils Te résistent."
           ],
           [
-            "Allégresse pour qui s abrite en Toi,",
+            "Allégresse pour qui s'abrite en Toi,",
             "joie éternelle !",
             "Tu les protèges, pour Toi ils exultent,",
             "ceux qui aiment Ton nom."
@@ -399,15 +399,15 @@ const HOURS = {
             "sauve-moi en raison de Ton amour !"
           ],
           [
-            "Personne, dans la mort, n invoque Ton nom ;",
+            "Personne, dans la mort, n'invoque Ton nom ;",
             "au séjour des morts, qui Te rends grâce ?",
-            "Je m épuise à force de gémir ;",
+            "Je m'épuise à force de gémir ;",
             "chaque nuit, je pleure sur mon lit :"
           ],
           [
             "ma couche est trempée de mes larmes.",
             "Mes yeux sont rongés de chagrin ;",
-            "j ai vieilli parmi tant d adversaires !"
+            "j'ai vieilli parmi tant d'adversaires !"
           ],
           [
             "Loin de moi, vous tous, malfaisants,",
@@ -416,9 +416,9 @@ const HOURS = {
             "le Seigneur entend ma prière."
           ],
           [
-            "Qu ils aient honte et qu ils tremblent,",
+            "Qu'ils aient honte et qu'ils tremblent,",
             "tous mes ennemis,",
-            "qu ils reculent, soudain, couverts de honte !"
+            "qu'ils reculent, soudain, couverts de honte !"
           ],
           [
             "Alléluia !"
@@ -432,23 +432,23 @@ const HOURS = {
         content: [
           [
             "Ô Seigneur, notre Dieu,",
-            "qu il est grand Ton nom",
+            "qu'il est grand Ton nom",
             "par toute la terre !"
           ],
           [
             "Jusqu aux cieux, Ta splendeur est chantée",
             "par la bouche des enfants, des tout-petits :",
-            "rempart que Tu opposes à l adversaire,",
-            "où l ennemi se brise en sa révolte."
+            "rempart que Tu opposes à l'adversaire,",
+            "où l'ennemi se brise en sa révolte."
           ],
           [
             "A voir Ton ciel, ouvrage de Tes doigts,",
             "la lune et les étoiles Tu fixas,",
-            "qu est-ce que l homme pour que Tu penses à lui,",
-            "le fils d un homme, que Tu en prennes souci ?",
-            "Tu l as voulu un peu moindre qu un ange,",
-            "le couronnant de gloire et d honneur ;",
-            "Tu l établis sur les œuvres de Tes mains,",
+            "qu'est-ce que l'homme pour que Tu penses à lui,",
+            "le fils d'un homme, que Tu en prennes souci ?",
+            "Tu l'as voulu un peu moindre qu'un ange,",
+            "le couronnant de gloire et d'honneur ;",
+            "Tu l'établis sur les œuvres de Tes mains,",
             "Tu mets toute chose à ses pieds :"
           ],
           [
@@ -459,7 +459,7 @@ const HOURS = {
           ],
           [
             "Ô Seigneur, notre Dieu,",
-            "qu il est grand Ton nom",
+            "qu'il est grand Ton nom",
             "par toute la terre ! Alléluia !"
           ]
         ]
@@ -483,9 +483,9 @@ const HOURS = {
           [
             "A nous la parole ! Qui sera notre maître ?",
             "Pour le pauvre qui gémit,",
-            "le malheureux que l on dépouille,",
+            "le malheureux que l'on dépouille,",
             "maintenant Je me lève, dit le Seigneur ;",
-            "à celui qu on méprise, Je porte secours."
+            "à celui qu'on méprise, Je porte secours."
           ],
           [
             "Les paroles du Seigneur sont des paroles pures,",
@@ -494,7 +494,7 @@ const HOURS = {
             "Tu nous gardes pour toujours de cette engeance."
           ],
           [
-            "De tous côtés, s agitent les impies :",
+            "De tous côtés, s'agitent les impies :",
             "la corruption gagne chez les hommes. Alléluia !"
           ]
         ]
@@ -505,9 +505,9 @@ const HOURS = {
         title: "Psaume 12",
         content: [
           [
-            "Combien de temps, Seigneur, vas-Tu m oublier,",
+            "Combien de temps, Seigneur, vas-Tu m'oublier,",
             "combien de temps, me cacher Ton visage ?",
-            "Combien de temps aurai-je l âme en peine",
+            "Combien de temps aurai-je l'âme en peine",
             "et le cœur attristé chaque jour ?",
             "Combien de temps mon ennemi sera-t-il plus fort ?",
             "Regarde, réponds-moi, Seigneur mon Dieu !"
@@ -515,15 +515,15 @@ const HOURS = {
           [
             "Donne la lumière à mes yeux,",
             "garde-moi du sommeil de la mort ;",
-            "que l adversaire ne crie pas : Victoire !"
+            "que l'adversaire ne crie pas : Victoire !"
           ],
           [
-            "que l ennemi n ait pas la joie de ma défaite !",
+            "que l'ennemi n'ait pas la joie de ma défaite !",
             "Moi, je prends appui sur Ton amour ;",
             "que mon cœur ait la joie de Ton salut !"
           ],
           [
-            "Je chanterai le Seigneur pour le bien qu il m a fait.",
+            "Je chanterai le Seigneur pour le bien qu'il m'a fait.",
             "Alléluia !"
           ]
         ]
@@ -543,17 +543,17 @@ const HOURS = {
           [
             "Il met un frein à sa langue;",
             "ne fait pas de tort à son frère",
-            "et n outrage pas son prochain."
+            "et n'outrage pas son prochain."
           ],
           [
             "A ses yeux, le réprouvé est misérable",
             "mais il honore les fidèles du Seigneur.",
-            "S il a juré à ses dépens,",
+            "S'il a juré à ses dépens,",
             "il ne reprend pas sa parole."
           ],
           [
             "Il prête son argent sans intérêt,",
-            "n accepte rien qui nuise à l innocent.",
+            "n accepte rien qui nuise à l'innocent.",
             "Qui fait ainsi demeure inébranlable. Alléluia !"
           ]
         ]
@@ -565,40 +565,40 @@ const HOURS = {
         content: [
           [
             "Garde-moi, mon Dieu :",
-            "j ai fait de Toi mon refuge.",
-            "J ai dit au Seigneur : Tu es mon Dieu !"
+            "j'ai fait de Toi mon refuge.",
+            "J'ai dit au Seigneur : Tu es mon Dieu !"
           ],
           [
-            "Je n ai pas d autre bonheur que Toi.",
+            "Je n'ai pas d'autre bonheur que Toi.",
             "Toutes les idoles du pays,",
-            "ces dieux que j aimais,",
-            "ne cessent d étendre leurs ravages,",
-            "et l on se rue à leur suite."
+            "ces dieux que j'aimais,",
+            "ne cessent d'étendre leurs ravages,",
+            "et l'on se rue à leur suite."
           ],
           [
-            "Je n irai pas leur offrir le sang des sacrifices ;",
+            "Je n'irai pas leur offrir le sang des sacrifices ;",
             "leur nom ne viendra pas sur mes lèvres !",
             "Seigneur, mon partage et ma coupe :"
           ],
           [
             "de Toi dépend mon sort.",
             "La part qui me revient fait mes délices ;",
-            "j ai même le plus bel héritage !"
+            "j'ai même le plus bel héritage !"
           ],
           [
             "Je bénis le Seigneur qui me conseille :",
-            "même la nuit mon cœur m avertit.",
+            "même la nuit mon cœur m'avertit.",
             "Je garde le Seigneur devant moi sans relâche ;",
             "il est à ma droite : je suis inébranlable."
           ],
           [
             "Mon cœur exulte, mon âme est en fête,",
             "ma chair elle-même repose en confiance :",
-            "Tu ne peux m abandonner à la mort",
+            "Tu ne peux m'abandonner à la mort",
             "ni laisser Ton ami voir la corruption."
           ],
           [
-            "Tu m apprends le chemin de la vie :",
+            "Tu m'apprends le chemin de la vie :",
             "devant Ta face, débordement de joie !",
             "A Ta droite, éternité de délices ! Alléluia !"
           ]
@@ -611,7 +611,7 @@ const HOURS = {
         content: [
           [
             "Les cieux proclament la gloire de Dieu,",
-            "le firmament raconte l ouvrage de Ses mains.",
+            "le firmament raconte l'ouvrage de Ses mains.",
             "Le jour au jour en livre le récit",
             "et la nuit à la nuit en donne connaissance."
           ],
@@ -624,14 +624,14 @@ const HOURS = {
           [
             "Là, se trouve la demeure du soleil :",
             "tel un époux, il paraît hors de sa tente,",
-            "il s élance en conquérant joyeux."
+            "il s'élance en conquérant joyeux."
           ],
           [
             "Il paraît où commence le ciel,",
-            "il s en va jusqu où le ciel s achève :"
+            "il s'en va jusqu'où le ciel s'achève :"
           ],
           [
-            "rien n échappe à son ardeur.",
+            "rien n'échappe à son ardeur.",
             "La loi du Seigneur est parfaite,",
             "qui redonne vie ;",
             "la charte du Seigneur est sûre,",
@@ -644,14 +644,14 @@ const HOURS = {
             "il clarifie le regard."
           ],
           [
-            "La crainte qu il inspire est pure,",
+            "La crainte qu'il inspire est pure,",
             "elle est là pour toujours ;",
             "les décisions du Seigneur sont justes",
             "et vraiment équitables :"
           ],
           [
-            "plus désirables que l or,",
-            "qu une masse d or fin,",
+            "plus désirables que l'or,",
+            "qu'une masse d'or fin,",
             "plus savoureuses que le miel",
             "qui coule des rayons."
           ],
@@ -659,18 +659,18 @@ const HOURS = {
             "Aussi Ton serviteur en est illuminé ;",
             "à les garder, il trouve son profit.",
             "Qui peut discerner ses erreurs ?",
-            "Purifie-moi de celles qui m échappent."
+            "Purifie-moi de celles qui m'échappent."
           ],
           [
-            "Préserve aussi Ton serviteur de l orgueil :",
-            "qu il n ait sur moi aucune emprise.",
+            "Préserve aussi Ton serviteur de l'orgueil :",
+            "qu'il n'ait sur moi aucune emprise.",
             "Alors je serai sans reproche,",
-            "pur d un grand péché."
+            "pur d'un grand péché."
           ],
           [
             "Accueille les paroles de ma bouche,",
             "le murmure de mon cœur ;",
-            "qu ils parviennent devant Toi,",
+            "qu'ils parviennent devant Toi,",
             "Seigneur, mon rocher, mon défenseur !"
           ],
           [
@@ -705,7 +705,7 @@ const HOURS = {
             "Rappelle-Toi, Seigneur, Ta tendresse,",
             "Ton amour qui est de toujours.",
             "Oublie les révoltes, les péchés de ma jeunesse ;",
-            "dans Ton amour, ne m oublie pas."
+            "dans Ton amour, ne m'oublie pas."
           ],
           [
             "Il est droit, il est bon, le Seigneur,",
@@ -721,7 +721,7 @@ const HOURS = {
           ],
           [
             "Est-il un homme qui craigne le Seigneur ?",
-            "Dieu lui montre le chemin qu il doit prendre.",
+            "Dieu lui montre le chemin qu'il doit prendre.",
             "Son âme habitera le bonheur,",
             "ses descendants posséderont la terre."
           ],
@@ -731,26 +731,26 @@ const HOURS = {
             "à ceux-là, il fait connaître son alliance."
           ],
           [
-            "J ai les yeux tournés vers le Seigneur :",
+            "J'ai les yeux tournés vers le Seigneur :",
             "Il tirera mes pieds du filet.",
             "Regarde, et prends pitié de moi,",
             "de moi qui suis seul et misérable."
           ],
           [
-            "L angoisse grandit dans mon cœur :",
+            "L'angoisse grandit dans mon cœur :",
             "tire-moi de ma détresse.",
             "Vois ma misère et ma peine,",
             "enlève tous mes péchés."
           ],
           [
             "Vois mes ennemis sont nombreux,",
-            "la haine violente qu ils me portent.",
+            "la haine violente qu'ils me portent.",
             "Garde mon âme, délivre-moi ;",
-            "je m abrite en Toi : épargne-moi la honte."
+            "je m'abrite en Toi : épargne-moi la honte."
           ],
           [
             "Droiture et perfection veillent sur moi,",
-            "sur moi qui t espère !",
+            "sur moi qui t'espère !",
             "Libère Israël, ô mon Dieu,",
             "de toutes ses angoisses. Alléluia !"
           ]
@@ -766,48 +766,48 @@ const HOURS = {
             "de qui aurais-je crainte ?",
             "Le Seigneur est le rempart de ma vie ;",
             "devant qui tremblerais-je ?",
-            "Si des méchants s avancent contre moi",
+            "Si des méchants s'avancent contre moi",
             "pour me déchirer,",
             "ce sont eux, mes ennemis, mes adversaires,",
             "qui perdent pied et succombent."
           ],
           [
-            "Qu une armée se déploie devant moi",
+            "Qu'une armée se déploie devant moi",
             "pour me déchirer,",
             "ce sont eux, mes ennemis, mes adversaires,",
             "qui perdent pied et succombent."
           ],
           [
-            "Qu une armée se déploie devant moi,",
+            "Qu'une armée se déploie devant moi,",
             "mon cœur est sans crainte ;",
-            "que la bataille s engage contre moi,",
+            "que la bataille s'engage contre moi,",
             "je garde confiance."
           ],
           [
-            "J ai demandé une chose au Seigneur,",
+            "J'ai demandé une chose au Seigneur,",
             "la seule que je cherche :",
             "habiter la maison du Seigneur",
             "tous les jours de ma vie,",
             "pour admirer le Seigneur dans sa beauté",
-            "et m attacher à son temple."
+            "et m'attacher à son temple."
           ],
           [
             "Oui, il me réserve un lieu sûr",
             "au jour du malheur ;",
             "il me cache au plus secret de sa tente,",
-            "il m élève sur le roc."
+            "il m'élève sur le roc."
           ],
           [
             "Maintenant je relève la tête",
             "devant mes ennemis.",
-            "J irai célébrer dans sa tente",
-            "le sacrifice d ovation ;",
+            "J'irai célébrer dans sa tente",
+            "le sacrifice d'ovation ;",
             "je chanterai, je fêterai le Seigneur."
           ],
           [
-            "Écoute, Seigneur, je T appelle !",
+            "Écoute, Seigneur, je T'appelle !",
             "Pitié ! Réponds moi !",
-            "Mon cœur m a redit Ta parole :"
+            "Mon cœur m'a redit Ta parole :"
           ],
           [
             "Cherchez ma face.",
@@ -821,17 +821,17 @@ const HOURS = {
             "Dieu, mon salut !"
           ],
           [
-            "Mon père et ma mère m abandonnent ;",
+            "Mon père et ma mère m'abandonnent ;",
             "le Seigneur me reçoit.",
             "Enseigne-moi ton chemin, Seigneur,",
             "conduis-moi par des routes sûres,",
             "malgré ceux qui me guettent",
-            "Ne me livre pas à la merci de l adversaire :"
+            "Ne me livre pas à la merci de l'adversaire :"
           ],
           [
             "contre moi se sont levés de faux témoins",
             "qui soufflent la violence.",
-            "Mais j en suis sûr, je verrai les bontés du Seigneur",
+            "Mais j'en suis sûr, je verrai les bontés du Seigneur",
             "sur la terre des vivants."
           ],
           [
@@ -846,14 +846,14 @@ const HOURS = {
         title: "Psaume 62",
         content: [
           [
-            "Dieu, Tu es mon Dieu, je Te cherche dès l aube ;",
+            "Dieu, Tu es mon Dieu, je Te cherche dès l'aube ;",
             "mon âme a soif de Toi ;",
             "auprès de Toi languit ma chair",
             "terre aride, altérée, sans eau."
           ],
           [
-            "Je T ai contemplé au sanctuaire,",
-            "j ai vu Ta force et Ta gloire.",
+            "Je T'ai contemplé au sanctuaire,",
+            "j'ai vu Ta force et Ta gloire.",
             "Ton amour vaut mieux que la vie :"
           ],
           [
@@ -869,20 +869,20 @@ const HOURS = {
           ],
           [
             "Oui, Tu es venu à mon secours ;",
-            "je crie de joie à l ombre de Tes ailes.",
-            "Mon âme s attache à Toi,",
+            "je crie de joie à l'ombre de Tes ailes.",
+            "Mon âme s'attache à Toi,",
             "Ta main droite me soutient."
           ],
           [
             "Mais ceux qui pourchassent mon âme,",
-            "qu ils descendent aux profondeurs de la terre,",
-            "qu on les passe au fil de l épée,",
-            "qu ils deviennent la pâture des loups !"
+            "qu'ils descendent aux profondeurs de la terre,",
+            "qu'on les passe au fil de l'épée,",
+            "qu'ils deviennent la pâture des loups !"
           ],
           [
             "Et le roi se réjouira de son Dieu.",
             "Qui jure par Lui en sera glorifié,",
-            "tandis que l homme de mensonge",
+            "tandis que l'homme de mensonge",
             "aura la bouche close ! Alléluia !"
           ]
         ]
@@ -894,13 +894,13 @@ const HOURS = {
         content: [
           [
             "Que Dieu nous prenne en grâce et nous bénisse,",
-            "Que Son visage s illumine pour nous ;",
+            "Que Son visage s'illumine pour nous ;",
             "et ton chemin sera connu sur toute la terre,",
             "ton salut, parmi toutes les nations."
           ],
           [
             "Que les peuples, Dieu, Te rendent grâce ;",
-            "qu ils te rendent grâce tous ensemble !",
+            "qu'ils te rendent grâce tous ensemble !",
             "Que les nations chantent leur joie,",
             "car Tu gouvernes le monde avec justice ;",
             "Tu gouvernes les peuples avec droiture,",
@@ -908,13 +908,13 @@ const HOURS = {
           ],
           [
             "Que les peuples, Dieu, Te rendent grâce ;",
-            "qu ils te rendent grâce tous ensemble !",
+            "qu'ils te rendent grâce tous ensemble !",
             "La terre a donné son fruit ;",
             "Dieu, notre Dieu, nous bénit."
           ],
           [
             "Que Dieu nous bénisse,",
-            "et que la terre tout entière L adore ! Alléluia !"
+            "et que la terre tout entière L'adore ! Alléluia !"
           ]
         ]
       },
@@ -926,17 +926,17 @@ const HOURS = {
           [
             "Mon Dieu viens me délivrer ;",
             "Seigneur, viens vite à mon secours !",
-            "Qu ils soient humiliés, déshonorés,",
-            "ceux qui s en prennent à ma vie !"
+            "Qu'ils soient humiliés, déshonorés,",
+            "ceux qui s'en prennent à ma vie !"
           ],
           [
-            "Qu ils reculent, couverts de honte,",
+            "Qu'ils reculent, couverts de honte,",
             "ceux qui cherchent mon malheur ;",
             "que l humiliation les écrase,",
-            "ceux qui me disent : C est bien fait !"
+            "ceux qui me disent : C'est bien fait !"
           ],
           [
-            "Mais tu seras l allégresse et la joie",
+            "Mais tu seras l'allégresse et la joie",
             "de tous ceux qui te cherchent ;",
             "toujours ils rediront : Dieu est Grand !"
           ],
@@ -977,7 +977,7 @@ const HOURS = {
           [
             "De la poussière Il relève le faible,",
             "Il retire le pauvre de la cendre",
-            "pour qu il siège parmi les princes,",
+            "pour qu'il siège parmi les princes,",
             "parmi les princes de son peuple."
           ],
           [
@@ -997,19 +997,19 @@ const HOURS = {
             "dans Ta fidélité réponds-moi."
           ],
           [
-            "N entre pas en jugement avec Ton serviteur :",
-            "aucun vivant n est juste devant Toi.",
-            "L ennemi cherche ma perte,",
+            "N'entre pas en jugement avec Ton serviteur :",
+            "aucun vivant n'est juste devant Toi.",
+            "L'ennemi cherche ma perte,",
             "il foule au sol ma vie ;",
             "il me fait habiter les ténèbres",
             "avec les morts de jadis."
           ],
           [
-            "Le souffle en moi s épuise,",
-            "mon cœur au fond de moi s épouvante.",
-            "Je me souviens des jours d autrefois,",
+            "Le souffle en moi s'épuise,",
+            "mon cœur au fond de moi s'épouvante.",
+            "Je me souviens des jours d'autrefois,",
             "je me redis toutes Tes actions,",
-            "sur l œuvre de Tes mains je médite."
+            "sur l'œuvre de Tes mains je médite."
           ],
           [
             "Je tends les mains vers Toi,",
@@ -1022,14 +1022,14 @@ const HOURS = {
             "je serais de ceux qui tombent dans la fosse."
           ],
           [
-            "Fais que j entende au matin Ton amour,",
+            "Fais que j'entende au matin Ton amour,",
             "car je compte sur Toi.",
             "Montre-moi le chemin que je dois prendre :"
           ],
           [
-            "vers Toi, j élève mon âme !",
+            "vers Toi, j'élève mon âme !",
             "Délivre-moi de mes ennemis, Seigneur :",
-            "j ai un abri auprès de Toi."
+            "j'ai un abri auprès de Toi."
           ],
           [
             "Apprends-moi à faire ta volonté,",
@@ -1037,7 +1037,7 @@ const HOURS = {
             "Ton souffle est bienfaisant :"
           ],
           [
-            "qu il me guide en un pays de plaines.",
+            "qu'il me guide en un pays de plaines.",
             "Pour l honneur de Ton nom, Seigneur, fais-moi",
             "vivre ;",
             "à cause de Ta justice, tire-moi de la détresse."
@@ -1435,12 +1435,6 @@ const HOURS = {
         ]
       },
       {
-        id: "h3-litany",
-        type: "litany",
-        title: "Litany of the Spirit",
-        content: "Placeholder text asking for renewal and clarity."
-      },
-      {
         id: "h3-psalm-19",
         type: "psalm",
         title: "Psaume 19",
@@ -1448,12 +1442,12 @@ const HOURS = {
           [
             "Que le Seigneur te réponde au jour de détresse",
             "que le nom du Dieu de Jacob te défende.",
-            "Du sanctuaire, qu Il t envoie le secours,",
+            "Du sanctuaire, qu'Il t'envoie le secours,",
             "qu Il te soutienne des hauteurs de Sion."
           ],
           [
             "Qu Il se rappelle toutes tes offrandes ;",
-            "ton holocauste, qu Il le trouve savoureux.",
+            "ton holocauste, qu'Il le trouve savoureux.",
             "Qu Il te donne à la mesure de ton cœur,",
             "qu Il accomplisse tous tes projets."
           ],
@@ -1472,7 +1466,7 @@ const HOURS = {
           [
             "Aux uns, les chars ; aux autres, les chevaux ;",
             "à nous, le nom de notre Dieu : le Seigneur.",
-            "Eux ils plient et s effondrent ;",
+            "Eux ils plient et s'effondrent ;",
             "nous, debout, nous résistons."
           ],
           [
@@ -1489,7 +1483,7 @@ const HOURS = {
           [
             "Le Seigneur est mon berger :",
             "je ne manque de rien",
-            "Sur des prés d herbe fraîche,",
+            "Sur des prés d'herbe fraîche,",
             "Il me fait reposer."
           ],
           [
@@ -1511,9 +1505,9 @@ const HOURS = {
             "ma coupe est débordante."
           ],
           [
-            "Grâce et bonheur m accompagnent",
+            "Grâce et bonheur m'accompagnent",
             "tous les jours de la vie ;",
-            "j habiterai la maison du Seigneur",
+            "j'habiterai la maison du Seigneur",
             "pour la durée de mes jours. Alléluia !"
           ]
         ]
@@ -1526,13 +1520,13 @@ const HOURS = {
           [
             "Au Seigneur, le monde et sa richesse,",
             "la terre et tous les habitants :",
-            "C est lui qui l a fondée sur les mers",
+            "C'est lui qui l'a fondée sur les mers",
             "et la garde inébranlable sur les flots."
           ],
           [
             "Qui peut gravir la montagne du Seigneur",
             "et se tenir dans le lieu saint ?",
-            "L homme au cœur pur, aux mains innocentes,",
+            "L'homme au cœur pur, aux mains innocentes,",
             "qui ne livre pas son âme aux idoles",
             "et ne dit pas de faux serments."
           ],
@@ -1547,20 +1541,20 @@ const HOURS = {
             "élevez-vous portes éternelles :"
           ],
           [
-            "qu il entre, le roi de gloire !",
+            "qu'il entre, le roi de gloire !",
             "Qui est ce roi de gloire ?",
-            "C est le Seigneur, le fort, le vaillant,",
+            "C'est le Seigneur, le fort, le vaillant,",
             "le Seigneur, le vaillant des combats."
           ],
           [
             "Portes, levez vos frontons,",
             "élevez-vous portes éternelles :",
-            "qu il entre, le roi de gloire !"
+            "qu'il entre, le roi de gloire !"
           ],
           [
             "Qui donc est ce roi de gloire ?",
-            "C est le Seigneur, Dieu de l univers ;",
-            "c est Lui, le roi de gloire. Alléluia !"
+            "C'est le Seigneur, Dieu de l'univers ;",
+            "c'est Lui, le roi de gloire. Alléluia !"
           ]
         ]
       },
@@ -1571,41 +1565,41 @@ const HOURS = {
         content: [
           [
             "Seigneur, rends-moi justice :",
-            "j ai marché sans faillir.",
-            "Je m appuie sur le Seigneur",
+            "j'ai marché sans faillir.",
+            "Je m'appuie sur le Seigneur",
             "et ne faiblirai pas",
             "Éprouve-moi, Seigneur, scrute-moi,",
             "passe au feu mes reins et mon cœur."
           ],
           [
-            "J ai devant les yeux ton amour,",
+            "J'ai devant les yeux ton amour,",
             "je marche selon ta vérité.",
-            "Je ne m assieds pas chez l imposteur,",
-            "je n entre pas chez l hypocrite."
+            "Je ne m'assieds pas chez l'imposteur,",
+            "je n'entre pas chez l hypocrite."
           ],
           [
-            "L assemblée des méchants, je la hais,",
-            "je ne m assieds pas chez les impies.",
-            "Je lave mes mains en signe d innocence",
+            "L'assemblée des méchants, je la hais,",
+            "je ne m'assieds pas chez les impies.",
+            "Je lave mes mains en signe d'innocence",
             "pour approcher de ton autel, Seigneur,",
-            "pour dire à pleine voix l action de grâce",
+            "pour dire à pleine voix l'action de grâce",
             "et rappeler toutes les merveilles."
           ],
           [
-            "Seigneur, j aime la maison que tu habites,",
+            "Seigneur, j'aime la maison que tu habites,",
             "le lieu où demeure ta gloire.",
-            "Ne m inflige pas le sort des pécheurs,",
+            "Ne m'inflige pas le sort des pécheurs,",
             "le destin de ceux qui versent le sang :"
           ],
           [
             "Ils ont dans les mains la corruption ;",
             "leur droite est pleine de profits.",
-            "Oui j ai marché sans défaillir :"
+            "Oui j'ai marché sans défaillir :"
           ],
           [
             "libère-moi ! Prends pitié de moi !",
             "Sous mes pieds le terrain est sûr ;",
-            "dans l assemblée je bénirai le Seigneur. Alléluia !"
+            "dans l'assemblée je bénirai le Seigneur. Alléluia !"
           ]
         ]
       },
@@ -1644,7 +1638,7 @@ const HOURS = {
           [
             "Voix du Seigneur qui fait enfanter les biches,",
             "qui ravage les forêts.",
-            "Et tous dans son temple s écrient : Gloire !"
+            "Et tous dans son temple s'écrient : Gloire !"
           ],
           [
             "Au déluge le Seigneur a siégé ;",
@@ -1663,32 +1657,32 @@ const HOURS = {
         title: "Psaume 29",
         content: [
           [
-            "Je t exalte, Seigneur : tu m as relevé,",
-            "tu m épargnes les rires de l ennemi.",
-            "Quand j ai crié vers Toi, Seigneur,",
-            "mon Dieu, Tu m as guéri ;",
-            "Seigneur, Tu m as fait remonter de l abîme",
+            "Je t'exalte, Seigneur : tu m'as relevé,",
+            "tu m'épargnes les rires de l'ennemi.",
+            "Quand j'ai crié vers Toi, Seigneur,",
+            "mon Dieu, Tu m'as guéri ;",
+            "Seigneur, Tu m'as fait remonter de l'abîme",
             "et revivre quand je descendais à la fosse."
           ],
           [
             "Fêtez le Seigneur, vous, ses fidèles,",
             "rendez grâce en rappelant son nom très haut.",
-            "Sa colère ne dure qu un instant,",
+            "Sa colère ne dure qu'un instant,",
             "sa bonté, toute la vie ;",
             "avec le soir, viennent les larmes,",
             "mais au matin, les cris de joie."
           ],
           [
             "Dans mon bonheur, je disais :",
-            "Rien, jamais, ne m ébranlera !",
-            "Dans ta bonté, Seigneur, Tu m avais fortifié",
+            "Rien, jamais, ne m'ébranlera !",
+            "Dans ta bonté, Seigneur, Tu m'avais fortifié",
             "sur ma puissante montagne ;",
-            "pourtant, Tu m as caché Ta face",
+            "pourtant, Tu m'as caché Ta face",
             "et je fus épouvanté."
           ],
           [
-            "Et j ai crié vers Toi, Seigneur,",
-            "j ai supplié mon Dieu :",
+            "Et j'ai crié vers Toi, Seigneur,",
+            "j'ai supplié mon Dieu :",
             "A quoi Te servirait mon Sang",
             "si je descendais dans la tombe ?",
             "La poussière peut-elle Te rendre grâce",
@@ -1702,7 +1696,7 @@ const HOURS = {
           ],
           [
             "Que mon cœur ne se taise pas,",
-            "qu il soit en fête pour Toi,",
+            "qu'il soit en fête pour Toi,",
             "et que sans fin, Seigneur, mon Dieu,",
             "je Te rende grâce ! Alléluia !"
           ]
@@ -1719,7 +1713,7 @@ const HOURS = {
             "Je me glorifierai dans le Seigneur :"
           ],
           [
-            "que les pauvres m entendent et soient en fête !",
+            "que les pauvres m'entendent et soient en fête !",
             "Magnifiez avec moi le Seigneur,",
             "exaltons tous ensemble son nom."
           ],
@@ -1732,7 +1726,7 @@ const HOURS = {
           [
             "Un pauvre crie ; le Seigneur entend :",
             "il le sauve de toutes ses angoisses.",
-            "L ange du Seigneur campe à l entour",
+            "L'ange du Seigneur campe à l'entour",
             "pour libérer ceux qui le craignent."
           ],
           [
@@ -1743,7 +1737,7 @@ const HOURS = {
           [
             "rien ne manque à ceux qui le craignent.",
             "Des riches ont tout perdu, ils ont faim ;",
-            "qui cherche le Seigneur ne manquera d aucun bien."
+            "qui cherche le Seigneur ne manquera d'aucun bien."
           ],
           [
             "Venez, mes fils, écoutez-moi,",
@@ -1762,12 +1756,12 @@ const HOURS = {
           [
             "Le Seigneur affronte les méchants",
             "pour effacer de la terre leur mémoire.",
-            "Le Seigneur entend ceux qui l appellent :"
+            "Le Seigneur entend ceux qui l'appellent :"
           ],
           [
             "de toutes leurs angoisses, il les délivre.",
             "Il est proche du cœur brisé,",
-            "il sauve l esprit abattu."
+            "il sauve l'esprit abattu."
           ],
           [
             "Malheur sur malheur pour le juste,",
@@ -1777,7 +1771,7 @@ const HOURS = {
           [
             "pas un ne sera brisé.",
             "Le mal tuera les méchants ;",
-            "ils seront châtiés d avoir haï le juste."
+            "ils seront châtiés d'avoir haï le juste."
           ],
           [
             "Le Seigneur rachètera ses serviteurs :",
@@ -1797,13 +1791,13 @@ const HOURS = {
             "Il le protège et le garde en vie, heureux sur la terre."
           ],
           [
-            "Seigneur, ne le livre pas à la merci de l ennemi !",
+            "Seigneur, ne le livre pas à la merci de l'ennemi !",
             "Le Seigneur le soutient sur son lit de souffrance :",
-            "si malade qu il soit, tu le relèves."
+            "si malade qu'il soit, tu le relèves."
           ],
           [
-            "J avais dit : Pitié pour moi, Seigneur,",
-            "guéris-moi, car j ai péché contre toi !",
+            "J'avais dit : Pitié pour moi, Seigneur,",
+            "guéris-moi, car j'ai péché contre toi !",
             "Mes ennemis me condamnent déjà :"
           ],
           [
@@ -1815,24 +1809,24 @@ const HOURS = {
           [
             "Unis contre moi, mes ennemis murmurent,",
             "à mon sujet, ils présagent le pire :",
-            "C est un mal pernicieux qui le ronge ;",
+            "C'est un mal pernicieux qui le ronge ;",
             "le voilà couché, il ne pourra plus se lever."
           ],
           [
-            "Même l ami, qui avait ma confiance",
-            "et partageait mon pain, m a frappé du talon.",
+            "Même l'ami, qui avait ma confiance",
+            "et partageait mon pain, m'a frappé du talon.",
             "Mais Toi, Seigneur, prends pitié de moi ;",
-            "relève-moi, je leur rendrai ce qu ils méritent."
+            "relève-moi, je leur rendrai ce qu'ils méritent."
           ],
           [
-            "Oui, je saurai que tu m aimes",
+            "Oui, je saurai que tu m'aimes",
             "si mes ennemis ne chantent pas victoire.",
-            "Dans mon innocence tu m as soutenu",
+            "Dans mon innocence tu m'as soutenu",
             "et rétabli pour toujours devant Ta Face."
           ],
           [
             "Béni soit le Seigneur,",
-            "Dieu d Israël,",
+            "Dieu d'Israël,",
             "depuis toujours et pour toujours !"
           ],
           [
@@ -1848,23 +1842,23 @@ const HOURS = {
           [
             "Rends-moi justice, ô mon Dieu, défends ma cause",
             "contre un peuple sans foi ;",
-            "de l homme qui ruse et trahit,",
+            "de l'homme qui ruse et trahit,",
             "libère-moi."
           ],
           [
-            "C est Toi, Dieu, ma forteresse :",
+            "C'est Toi, Dieu, ma forteresse :",
             "pourquoi me rejeter ?",
             "Pourquoi vais-je assombri,",
-            "pressé par l ennemi ?",
+            "pressé par l'ennemi ?",
             "Envoie ta lumière et ta vérité :"
           ],
           [
-            "qu elles guident mes pas",
+            "qu'elles guident mes pas",
             "et me conduisent à ta montagne sainte,",
             "jusqu en ta demeure."
           ],
           [
-            "J avancerai jusqu à l autel de Dieu,",
+            "J'avancerai jusqu'à l'autel de Dieu,",
             "vers Dieu qui est toute ma joie ;",
             "je te rendrai grâce avec ma harpe,",
             "Dieu, mon Dieu !"
@@ -1884,23 +1878,23 @@ const HOURS = {
           [
             "D heureuses paroles jaillissent de mon cœur",
             "quand je dis mes poèmes pour le roi",
-            "d une langue aussi vive que la plume du scribe !"
+            "d'une langue aussi vive que la plume du scribe !"
           ],
           [
-            "Tu es beau, comme aucun des enfants de l homme,",
+            "Tu es beau, comme aucun des enfants de l'homme,",
             "la grâce est répandue sur tes lèvres :",
             "oui, Dieu te bénit pour toujours."
           ],
           [
-            "Guerrier valeureux, porte l épée de noblesse",
-            "et d honneur !",
-            "Ton honneur, c est de courir au combat",
+            "Guerrier valeureux, porte l'épée de noblesse",
+            "et d'honneur !",
+            "Ton honneur, c'est de courir au combat",
             "pour la justice, la clémence et la vérité."
           ],
           [
             "Ta main jettera la stupeur,",
             "les flèches qui déchirent ;",
-            "sous tes coups, les peuples s abattront,",
+            "sous tes coups, les peuples s'abattront,",
             "les ennemis du roi, frappés en plein cœur."
           ],
           [
@@ -1909,18 +1903,18 @@ const HOURS = {
             "tu aimes la justice, tu réprouves le mal."
           ],
           [
-            "Oui, Dieu, ton Dieu t a consacré",
-            "d une onction de joie,",
+            "Oui, Dieu, ton Dieu t'a consacré",
+            "d'une onction de joie,",
             "comme aucun de tes semblables ;",
-            "la myrrhe et l aloès parfument ton vêtement."
+            "la myrrhe et l'aloès parfument ton vêtement."
           ],
           [
-            "Des palais d ivoire, la musique t enchante.",
+            "Des palais d'ivoire, la musique t'enchante.",
             "Parmi tes bien-aimées sont des filles de roi ;",
-            "à ta droite, la préférée, sous les ors d Ophir."
+            "à ta droite, la préférée, sous les ors d'Ophir."
           ],
           [
-            "Écoute, ma fille, regarde et tends l oreille ;",
+            "Écoute, ma fille, regarde et tends l'oreille ;",
             "oublie ton peuple et la maison de ton père :",
             "le roi sera séduit par ta beauté."
           ],
@@ -1931,7 +1925,7 @@ const HOURS = {
           ],
           [
             "Fille de roi, elle est là, dans sa gloire,",
-            "vêtue d étoffes d or ;",
+            "vêtue d'étoffes d'or ;",
             "on la conduit, toute parée, vers le roi."
           ],
           [
@@ -1941,7 +1935,7 @@ const HOURS = {
           ],
           [
             "A la place de tes pères se lèveront tes fils ;",
-            "sur toute la terre tu feras d eux des princes.",
+            "sur toute la terre tu feras d'eux des princes.",
             "Je ferai vivre ton nom pour les âges des âges :"
           ],
           [
@@ -1959,8 +1953,8 @@ const HOURS = {
             "Dieu est pour nous refuge et force",
             "secours dans la détresse, toujours offert.",
             "Nous serons sans crainte si la terre est secouée,",
-            "si les montagnes s effondrent au creux de la mer ;",
-            "ses flots peuvent mugir et s enfler,",
+            "si les montagnes s'effondrent au creux de la mer ;",
+            "ses flots peuvent mugir et s'enfler,",
             "les montagnes, trembler dans la tempête :"
           ],
           [
@@ -1970,17 +1964,17 @@ const HOURS = {
             "quand renaît le matin, Dieu la secourt."
           ],
           [
-            "Des peuples mugissent, des règnes s effondrent ;",
+            "Des peuples mugissent, des règnes s'effondrent ;",
             "quand sa voix retentit, la terre se défait.",
             "Il est avec nous,",
-            "le Seigneur de l univers",
+            "le Seigneur de l'univers",
             "citadelle pour nous",
             "le Dieu de Jacob !"
           ],
           [
             "Venez et voyez les actes du Seigneur,",
             "comme il couvre de ruines la terre.",
-            "Il détruit la guerre jusqu au bout du monde,",
+            "Il détruit la guerre jusqu'au bout du monde,",
             "il casse les arcs, brise les lances, incendie les",
             "chars :"
           ],
@@ -1988,7 +1982,7 @@ const HOURS = {
             "Arrêtez ! Sachez que je suis Dieu.",
             "Je domine les nations, je domine la terre.",
             "Il est avec nous,",
-            "le Seigneur de l univers",
+            "le Seigneur de l'univers",
             "citadelle pour nous",
             "le Dieu de Jacob ! Alléluia !"
           ]
@@ -2017,15 +2011,15 @@ const HOURS = {
           ],
           [
             "Car Dieu est le roi de la terre :",
-            "que vos musiques l annoncent !",
+            "que vos musiques l'annoncent !",
             "Il règne, Dieu, sur les païens,",
             "Dieu est assis sur son trône sacré."
           ],
           [
             "Les chefs des peuples se sont rassemblés :",
-            "c est le peuple d Abraham.",
+            "c'est le peuple d'Abraham.",
             "Les princes de la terre sont à Dieu",
-            "qui s élève au-dessus de tous. Alléluia !"
+            "qui s'élève au-dessus de tous. Alléluia !"
           ]
         ]
       },
@@ -2414,12 +2408,6 @@ const HOURS = {
         ]
       },
       {
-        id: "h6-litany",
-        type: "litany",
-        title: "Litany of the Cross",
-        content: "Placeholder plea to be united with the Crucified One."
-      },
-      {
         id: "h6-psalm-53",
         type: "psalm",
         title: "Psaume 53",
@@ -2433,7 +2421,7 @@ const HOURS = {
           [
             "Des étrangers se sont levés contre moi,",
             "des puissants cherchent ma perte :",
-            "ils n ont pas souci de Dieu."
+            "ils n'ont pas souci de Dieu."
           ],
           [
             "Mais voici que Dieu vient à mon aide,",
@@ -2442,12 +2430,12 @@ const HOURS = {
             "par ta vérité, Seigneur, détruis-les."
           ],
           [
-            "De grand cœur, je t offrirai le sacrifice,",
+            "De grand cœur, je t'offrirai le sacrifice,",
             "je rendrai grâce à ton nom, car il est bon !",
-            "Oui, il m a délivré de toute angoisse :"
+            "Oui, il m'a délivré de toute angoisse :"
           ],
           [
-            "j ai vu mes ennemis défaits. Alléluia !"
+            "j'ai vu mes ennemis défaits. Alléluia !"
           ]
         ]
       },
@@ -2465,7 +2453,7 @@ const HOURS = {
           [
             "Je crie vers Dieu, le Très-Haut,",
             "vers Dieu qui fera tout pour moi.",
-            "Du ciel il m envoie le salut :"
+            "Du ciel il m'envoie le salut :"
           ],
           [
             "mon adversaire a blasphémé !",
@@ -2481,7 +2469,7 @@ const HOURS = {
             "Ils ont tendu un filet sous mes pas :"
           ],
           [
-            "j allais succomber.",
+            "j'allais succomber.",
             "Ils ont creusé un trou devant moi,",
             "ils y sont tombés."
           ],
@@ -2493,7 +2481,7 @@ const HOURS = {
           [
             "Éveille-toi, ma gloire !",
             "Éveillez-vous, harpe, cithare,",
-            "que j éveille l aurore !"
+            "que j'éveille l'aurore !"
           ],
           [
             "Je te rendrai grâce parmi les peuples, Seigneur,",
@@ -2515,30 +2503,30 @@ const HOURS = {
           [
             "Dieu, entends ma plainte,",
             "exauce ma prière ;",
-            "des terres lointaines je t appelle",
+            "des terres lointaines je t'appelle",
             "quand le cœur me manque."
           ],
           [
-            "Jusqu au rocher trop loin de moi",
+            "Jusqu'au rocher trop loin de moi",
             "tu me conduiras,",
             "car tu es pour moi un refuge,",
-            "un bastion, face à l ennemi."
+            "un bastion, face à l'ennemi."
           ],
           [
             "Je veux être chez toi pour toujours,",
-            "me réfugier à l abri de tes ailes.",
+            "me réfugier à l'abri de tes ailes.",
             "Oui, mon Dieu, tu exauces mon vœu,",
             "tu fais largesse à ceux qui craignent ton nom."
           ],
           [
             "Accorde au roi des jours et des jours :",
             "que ses années deviennent des siècles !",
-            "Qu il trône à jamais devant la face de Dieu !"
+            "Qu'il trône à jamais devant la face de Dieu !"
           ],
           [
             "Assigne à sa garde Amour et Vérité.",
             "Alors, je chanterai sans cesse ton nom,",
-            "j accomplirai mon vœu jour après jour. Alléluia !"
+            "j'accomplirai mon vœu jour après jour. Alléluia !"
           ]
         ]
       },
@@ -2548,14 +2536,14 @@ const HOURS = {
         title: "Psaume 62",
         content: [
           [
-            "Dieu, Tu es mon Dieu, je Te cherche dès l aube ;",
+            "Dieu, Tu es mon Dieu, je Te cherche dès l'aube ;",
             "mon âme a soif de Toi ;",
             "auprès de Toi languit ma chair",
             "terre aride, altérée, sans eau."
           ],
           [
-            "Je T ai contemplé au sanctuaire,",
-            "j ai vu Ta force et Ta gloire.",
+            "Je T'ai contemplé au sanctuaire,",
+            "j'ai vu Ta force et Ta gloire.",
             "Ton amour vaut mieux que la vie :"
           ],
           [
@@ -2571,20 +2559,20 @@ const HOURS = {
           ],
           [
             "Oui, Tu es venu à mon secours ;",
-            "je crie de joie à l ombre de Tes ailes.",
-            "Mon âme s attache à Toi,",
+            "je crie de joie à l'ombre de Tes ailes.",
+            "Mon âme s'attache à Toi,",
             "Ta main droite me soutient."
           ],
           [
             "Mais ceux qui pourchassent mon âme,",
-            "qu ils descendent aux profondeurs de la terre,",
-            "qu on les passe au fil de l épée,",
-            "qu ils deviennent la pâture des loups !"
+            "qu'ils descendent aux profondeurs de la terre,",
+            "qu'on les passe au fil de l'épée,",
+            "qu'ils deviennent la pâture des loups !"
           ],
           [
             "Et le roi se réjouira de son Dieu.",
             "Qui jure par Lui en sera glorifié,",
-            "tandis que l homme de mensonge",
+            "tandis que l'homme de mensonge",
             "aura la bouche close ! Alléluia !"
           ]
         ]
@@ -2596,13 +2584,13 @@ const HOURS = {
         content: [
           [
             "Que Dieu nous prenne en grâce et nous bénisse,",
-            "Que Son visage s illumine pour nous ;",
+            "Que Son visage s'illumine pour nous ;",
             "et ton chemin sera connu sur toute la terre,",
             "ton salut, parmi toutes les nations."
           ],
           [
             "Que les peuples, Dieu, Te rendent grâce ;",
-            "qu ils te rendent grâce tous ensemble !",
+            "qu'ils te rendent grâce tous ensemble !",
             "Que les nations chantent leur joie,",
             "car Tu gouvernes le monde avec justice ;",
             "Tu gouvernes les peuples avec droiture,",
@@ -2610,13 +2598,13 @@ const HOURS = {
           ],
           [
             "Que les peuples, Dieu, Te rendent grâce ;",
-            "qu ils te rendent grâce tous ensemble !",
+            "qu'ils te rendent grâce tous ensemble !",
             "La terre a donné son fruit ;",
             "Dieu, notre Dieu, nous bénit."
           ],
           [
             "Que Dieu nous bénisse,",
-            "et que la terre tout entière L adore ! Alléluia !"
+            "et que la terre tout entière L'adore ! Alléluia !"
           ]
         ]
       },
@@ -2628,17 +2616,17 @@ const HOURS = {
           [
             "Mon Dieu viens me délivrer ;",
             "Seigneur, viens vite à mon secours !",
-            "Qu ils soient humiliés, déshonorés,",
-            "ceux qui s en prennent à ma vie !"
+            "Qu'ils soient humiliés, déshonorés,",
+            "ceux qui s'en prennent à ma vie !"
           ],
           [
-            "Qu ils reculent, couverts de honte,",
+            "Qu'ils reculent, couverts de honte,",
             "ceux qui cherchent mon malheur ;",
             "que l humiliation les écrase,",
-            "ceux qui me disent : C est bien fait !"
+            "ceux qui me disent : C'est bien fait !"
           ],
           [
-            "Mais tu seras l allégresse et la joie",
+            "Mais tu seras l'allégresse et la joie",
             "de tous ceux qui te cherchent ;",
             "toujours ils rediront : Dieu est Grand !"
           ],
@@ -2667,9 +2655,9 @@ const HOURS = {
             "vers le Dieu vivant !"
           ],
           [
-            "L oiseau lui-même s est trouvé une maison",
+            "L'oiseau lui-même s'est trouvé une maison",
             "et l hirondelle, un nid pour abriter sa couvée :",
-            "tes autels, Seigneur de l univers,",
+            "tes autels, Seigneur de l'univers,",
             "mon Roi et mon Dieu !"
           ],
           [
@@ -2678,7 +2666,7 @@ const HOURS = {
             "Heureux les hommes dont tu es la force :"
           ],
           [
-            "des chemins s ouvrent dans leur cœur !",
+            "des chemins s'ouvrent dans leur cœur !",
             "Quand ils traversent la vallée de la soif,",
             "ils la changent en source ;",
             "de quelles bénédictions la revêtent",
@@ -2687,7 +2675,7 @@ const HOURS = {
           [
             "Ils vont de hauteur en hauteur,",
             "ils se présentent devant Dieu à Sion.",
-            "Seigneur, Dieu de l univers, entends ma prière ;",
+            "Seigneur, Dieu de l'univers, entends ma prière ;",
             "écoute, Dieu de Jacob."
           ],
           [
@@ -2697,9 +2685,9 @@ const HOURS = {
             "en vaut plus que mille."
           ],
           [
-            "J ai choisi de me tenir sur le seuil,",
+            "J'ai choisi de me tenir sur le seuil,",
             "dans la maison de Dieu,",
-            "plutôt que d habiter",
+            "plutôt que d'habiter",
             "parmi les infidèles."
           ],
           [
@@ -2711,7 +2699,7 @@ const HOURS = {
           [
             "Jamais il ne refuse le bonheur",
             "à ceux qui vont sans reproche.",
-            "Seigneur, Dieu de l univers,",
+            "Seigneur, Dieu de l'univers,",
             "heureux qui espère en toi ! Alléluia !"
           ]
         ]
@@ -2733,23 +2721,23 @@ const HOURS = {
             "Fais-nous revenir, Dieu, notre salut,",
             "oublie ton ressentiment contre nous.",
             "Seras-tu toujours irrité contre nous,",
-            "maintiendras-tu ta colère d âge en âge ?",
-            "N est-ce pas toi qui reviendras nous faire vivre",
+            "maintiendras-tu ta colère d'âge en âge ?",
+            "N'est-ce pas toi qui reviendras nous faire vivre",
             "et qui seras la joie de ton peuple ?",
             "Fais-nous voir, Seigneur, ton amour,",
             "et donne-nous ton salut."
           ],
           [
-            "J écoute : que dira le Seigneur Dieu ?",
-            "Ce qu il dit, c est la paix pour son peuple",
+            "J'écoute : que dira le Seigneur Dieu ?",
+            "Ce qu'il dit, c'est la paix pour son peuple",
             "et ses fidèles ;",
-            "qu ils ne reviennent jamais à leur folie !"
+            "qu'ils ne reviennent jamais à leur folie !"
           ],
           [
             "Son salut est proche de ceux qui le craignent,",
             "et la gloire habitera notre terre.",
             "Amour et vérité se rencontrent,",
-            "justice et paix s embrassent ;",
+            "justice et paix s'embrassent ;",
             "la vérité germera de la terre",
             "et du ciel se penchera la justice."
           ],
@@ -2770,24 +2758,24 @@ const HOURS = {
             "Écoute, Seigneur, réponds-moi,",
             "car je suis pauvre et malheureux.",
             "Veille sur moi qui suis fidèle, ô Dieu,",
-            "sauve ton serviteur qui s appuie sur toi."
+            "sauve ton serviteur qui s'appuie sur toi."
           ],
           [
             "Prends pitié de moi, Seigneur,",
-            "toi que j appelle chaque jour.",
+            "toi que j'appelle chaque jour.",
             "Seigneur, réjouis ton serviteur :"
           ],
           [
-            "vers toi, j élève mon âme !",
+            "vers toi, j'élève mon âme !",
             "Toi qui es bon et qui pardonnes,",
-            "plein d amour pour tous ceux qui t appellent,",
+            "plein d'amour pour tous ceux qui t'appellent,",
             "écoute ma prière, Seigneur,",
             "entends ma voix qui te supplie."
           ],
           [
-            "Je t appelle au jour de ma détresse,",
+            "Je t'appelle au jour de ma détresse,",
             "et toi, Seigneur, tu me réponds.",
-            "Aucun parmi les dieux n est comme toi,",
+            "Aucun parmi les dieux n'est comme toi,",
             "et rien n égale tes œuvres."
           ],
           [
@@ -2800,7 +2788,7 @@ const HOURS = {
           [
             "Montre-moi ton chemin, Seigneur,",
             "que je marche suivant ta vérité ;",
-            "unifie mon cœur pour qu il craigne ton nom."
+            "unifie mon cœur pour qu'il craigne ton nom."
           ],
           [
             "Je te rends grâce de tout mon cœur,",
@@ -2809,16 +2797,16 @@ const HOURS = {
             "il est grand, ton amour pour moi :"
           ],
           [
-            "tu m as tiré de l abîme des morts.",
+            "tu m'as tiré de l'abîme des morts.",
             "Mon Dieu, des orgueilleux se lèvent contre moi,",
             "des puissants se sont ligués pour me perdre :"
           ],
           [
-            "ils n ont pas souci de toi.",
+            "ils n'ont pas souci de toi.",
             "Toi, Seigneur,",
             "Dieu de tendresse et de pitié,",
             "lent à la colère,",
-            "plein d amour et de vérité !"
+            "plein d'amour et de vérité !"
           ],
           [
             "Regarde vers moi,",
@@ -2830,7 +2818,7 @@ const HOURS = {
             "Accomplis un signe en ma faveur ;",
             "alors mes ennemis, humiliés,",
             "verront que toi, Seigneur,",
-            "tu m aides et me consoles. Alléluia !"
+            "tu m'aides et me consoles. Alléluia !"
           ]
         ]
       },
@@ -2872,13 +2860,13 @@ const HOURS = {
         title: "Psaume 90",
         content: [
           [
-            "Quand je me tiens sous l abri du Très-haut",
-            "et repose à l ombre du Puissant,",
+            "Quand je me tiens sous l'abri du Très-haut",
+            "et repose à l'ombre du Puissant,",
             "je dis au Seigneur : Mon refuge,",
             "mon rempart, mon Dieu, dont je suis sûr !"
           ],
           [
-            "C est lui qui te sauve des filets du chasseur",
+            "C'est lui qui te sauve des filets du chasseur",
             "et de la peste maléfique ;",
             "il te couvre et te protège."
           ],
@@ -2891,9 +2879,9 @@ const HOURS = {
             "ni le fléau qui frappe à midi."
           ],
           [
-            "Qu il en tombe mille à tes côtés,",
+            "Qu'il en tombe mille à tes côtés,",
             "qu'il en tombe dix mille à ta droite,",
-            "toi, tu restes hors d atteinte."
+            "toi, tu restes hors d'atteinte."
           ],
           [
             "Il suffit que tu ouvres les yeux,",
@@ -2914,15 +2902,15 @@ const HOURS = {
             "tu écraseras le lion et le dragon."
           ],
           [
-            "Puisqu il s attache à moi, je le délivre ;",
+            "Puisqu'il s'attache à moi, je le délivre ;",
             "je le défends, car il connaît mon nom."
           ],
           [
-            "Il m appelle, et moi, je lui réponds ;",
+            "Il m'appelle, et moi, je lui réponds ;",
             "je suis avec lui dans son épreuve.",
             "Je veux le libérer, le glorifier ;",
             "de longs jours, je veux le rassasier,",
-            "et je ferais qu il voie mon salut. Alléluia !"
+            "et je ferais qu'il voie mon salut. Alléluia !"
           ]
         ]
       },
@@ -2938,11 +2926,11 @@ const HOURS = {
           ],
           [
             "Et la terre tient bon, inébranlable ;",
-            "dès l origine ton trône tient bon,",
+            "dès l'origine ton trône tient bon,",
             "depuis toujours, Tu es."
           ],
           [
-            "Les flots s élèvent, Seigneur,",
+            "Les flots s'élèvent, Seigneur,",
             "les flots élèvent leur voix,",
             "les flots élèvent leur fracas."
           ],
@@ -3376,12 +3364,6 @@ const HOURS = {
         ]
       },
       {
-        id: "h9-litany",
-        type: "litany",
-        title: "Litany of Offering",
-        content: "Placeholder asking for strength to finish the day."
-      },
-      {
         id: "h9-psalm-95",
         type: "psalm",
         title: "Psaume 95",
@@ -3799,7 +3781,7 @@ const HOURS = {
           [
             "De la poussière Il relève le faible,",
             "Il retire le pauvre de la cendre",
-            "pour qu il siège parmi les princes,",
+            "pour qu'il siège parmi les princes,",
             "parmi les princes de son peuple."
           ],
           [
@@ -4292,12 +4274,7 @@ const HOURS = {
           ]
         ]
       },
-      {
-        id: "h11-litany",
-        type: "litany",
-        title: "Litany for Rest",
-        content: "Placeholder litany asking for a gentle night."
-      },
+
       {
         id: "h11-psalm-116",
         type: "psalm",
@@ -5090,12 +5067,6 @@ const HOURS = {
             "alors on offrira des taureaux sur Ton autel."
           ]
         ]
-      },
-      {
-        id: "h12-litany",
-        type: "litany",
-        title: "Night Litany",
-        content: "Placeholder litany asking for protection through the night."
       },
       {
         id: "h12-psalm-129",
@@ -5899,6 +5870,10 @@ const state = {
 };
 
 const STORAGE_KEY = "agpeya:selectedHour";
+const SWIPE_THRESHOLD = 50; // pixels minimum pour détecter un swipe
+const VISIBLE_BLOCKS_BEFORE = 1; // Nombre de blocs précédents visibles
+const VISIBLE_BLOCKS_AFTER = 2; // Nombre de blocs suivants visibles
+
 let shouldScrollToActive = false;
 let appRoot;
 let jumpModal;
@@ -5907,12 +5882,22 @@ let jumpList;
 window.addEventListener("DOMContentLoaded", () => {
   appRoot = document.getElementById("app");
   jumpModal = document.getElementById("jumpModal");
-  jumpList = document.getElementById("jumpList");
+  // jumpList peut être dans bottom sheet ou modal
+  jumpList = document.getElementById("jumpList") || document.getElementById("jumpListModal");
 
   hydrateStateFromStorage();
   setupModalDismissHandlers();
   renderApp();
 });
+
+// Support pour bottom sheet (si jumpModal n'existe pas, on utilise bottom sheet)
+function getBottomSheet() {
+  return document.getElementById("bottomSheet");
+}
+
+function getBottomSheetOverlay() {
+  return document.getElementById("bottomSheetOverlay");
+}
 
 function hydrateStateFromStorage() {
   const storedHour = window.localStorage.getItem(STORAGE_KEY);
@@ -5923,15 +5908,31 @@ function hydrateStateFromStorage() {
 }
 
 function setupModalDismissHandlers() {
+  if (jumpModal) {
   jumpModal.addEventListener("click", (event) => {
     if (event.target.dataset.close === "modal") {
       closeJumpModal();
     }
   });
+  }
+
+  // Handler pour bottom sheet overlay
+  const overlay = getBottomSheetOverlay();
+  if (overlay) {
+    overlay.addEventListener("click", () => {
+      closeBottomSheet();
+    });
+  }
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !jumpModal.classList.contains("hidden")) {
+    if (event.key === "Escape") {
+      if (jumpModal && !jumpModal.classList.contains("hidden")) {
       closeJumpModal();
+      }
+      const bottomSheet = getBottomSheet();
+      if (bottomSheet && bottomSheet.classList.contains("open")) {
+        closeBottomSheet();
+      }
     }
   });
 }
@@ -5939,25 +5940,42 @@ function setupModalDismissHandlers() {
 function renderApp() {
   const hour = getCurrentHour();
   const orientationText = getOrientationText(hour);
+  const progressPercent = ((state.activeBlockIndex + 1) / hour.blocks.length) * 100;
 
   appRoot.innerHTML = `
-    <header class="top-bar">
+    <header class="top-bar sticky-header">
       <div class="top-actions">
         <div class="hour-selector" role="group" aria-label="Select prayer hour">
           ${renderHourButtons()}
         </div>
-        <button class="jump-button" type="button" id="jumpButton">Jump</button>
+        <button class="menu-button" type="button" id="menuButton" aria-label="Menu">☰</button>
+      </div>
+      <div class="progress-container" id="progressContainer">
+        <div class="progress-bar" style="width: ${progressPercent}%"></div>
       </div>
       <div class="orientation-line">${orientationText}</div>
     </header>
-    <section class="block-list">
-      ${renderBlocks(hour)}
+    <section class="block-list continuous-view" id="blockList">
+      ${renderBlocksContinuous(hour)}
     </section>
+    <nav class="floating-nav sticky-bottom">
+      <button class="nav-button-large" type="button" data-direction="back" id="navBack" ${state.activeBlockIndex === 0 ? "disabled" : ""}>
+        <span class="nav-icon">◀</span>
+        <span class="nav-label">Précédent</span>
+      </button>
+      <button class="nav-button-large" type="button" data-direction="next" id="navNext" ${state.activeBlockIndex === hour.blocks.length - 1 ? "disabled" : ""}>
+        <span class="nav-label">Suivant</span>
+        <span class="nav-icon">▶</span>
+      </button>
+    </nav>
   `;
 
   bindHourButtonEvents();
   bindBlockEvents();
-  bindJumpButton();
+  bindFloatingNav();
+  bindProgressBar();
+  bindMenuButton();
+  bindSwipeGestures();
   renderJumpList(hour);
   maybeScrollActiveBlock();
 }
@@ -5985,6 +6003,69 @@ function renderBlocks(hour) {
     .join("");
 }
 
+function renderBlocksContinuous(hour) {
+  return hour.blocks
+    .map((block, index) => {
+      const isActive = index === state.activeBlockIndex;
+      const distance = Math.abs(index - state.activeBlockIndex);
+      
+      // Déterminer le style selon la position
+      let blockClass = "block";
+      if (isActive) {
+        blockClass += " active";
+      } else if (index < state.activeBlockIndex) {
+        if (distance <= VISIBLE_BLOCKS_BEFORE) {
+          blockClass += " before-visible";
+        } else {
+          blockClass += " before-collapsed";
+        }
+      } else {
+        if (distance <= VISIBLE_BLOCKS_AFTER) {
+          blockClass += " after-visible";
+        } else {
+          blockClass += " after-collapsed";
+        }
+      }
+
+      const content = isActive 
+        ? renderActiveBlockContent(block, index, hour.blocks.length)
+        : renderCollapsedBlockContent(block, index);
+
+      return `
+        <article class="${blockClass}" data-index="${index}" id="${block.id}">
+          <div class="block-header-tap" data-index="${index}">
+            <h3 class="block-title">${block.title}</h3>
+            ${!isActive ? '<span class="block-expand-hint">Tap pour ouvrir</span>' : ''}
+          </div>
+          ${content}
+        </article>
+      `;
+    })
+    .join("");
+}
+
+function renderCollapsedBlockContent(block, index) {
+  const paragraphs = Array.isArray(block.content) ? block.content : [block.content];
+  const firstPara = paragraphs[0];
+  let preview = "";
+  
+  if (Array.isArray(firstPara)) {
+    preview = firstPara.slice(0, 2).join(" ");
+  } else if (typeof firstPara === "string") {
+    preview = firstPara.substring(0, 100);
+  }
+  
+  if (preview.length > 0 && preview.length < (Array.isArray(firstPara) ? firstPara.join(" ").length : firstPara.length)) {
+    preview += "...";
+  }
+  
+  return `
+    <div class="block-content collapsed">
+      <p class="block-preview">${preview}</p>
+    </div>
+  `;
+}
+
 function renderActiveBlockContent(block, index, total) {
   const paragraphs = Array.isArray(block.content) ? block.content : [block.content];
   const content = paragraphs.map((para) => {
@@ -5997,12 +6078,8 @@ function renderActiveBlockContent(block, index, total) {
     }
   }).join("");
   return `
-    <div class="block-content">
+    <div class="block-content active">
       ${content}
-      <div class="block-nav">
-        <button class="nav-button" type="button" data-direction="back" ${index === 0 ? "disabled" : ""}>Back</button>
-        <button class="nav-button" type="button" data-direction="next" ${index === total - 1 ? "disabled" : ""}>Next</button>
-      </div>
     </div>
   `;
 }
@@ -6015,6 +6092,7 @@ function bindHourButtonEvents() {
 }
 
 function bindBlockEvents() {
+  // Support pour l'ancien format (block-header)
   const headers = appRoot.querySelectorAll(".block-header");
   headers.forEach((header) => {
     header.addEventListener("click", () => {
@@ -6024,6 +6102,17 @@ function bindBlockEvents() {
     });
   });
 
+  // Support pour le nouveau format (block-header-tap)
+  const headerTaps = appRoot.querySelectorAll(".block-header-tap");
+  headerTaps.forEach((header) => {
+    header.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const index = Number(header.dataset.index);
+      setActiveBlock(index);
+    });
+  });
+
+  // Support pour les anciens nav-buttons (si présents)
   const navButtons = appRoot.querySelectorAll(".nav-button");
   navButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -6037,30 +6126,153 @@ function bindBlockEvents() {
   });
 }
 
+function bindFloatingNav() {
+  const navBack = document.getElementById("navBack");
+  const navNext = document.getElementById("navNext");
+  
+  if (navBack) {
+    navBack.addEventListener("click", () => {
+      if (state.activeBlockIndex > 0) {
+        setActiveBlock(state.activeBlockIndex - 1);
+      }
+    });
+  }
+  
+  if (navNext) {
+    navNext.addEventListener("click", () => {
+      const hour = getCurrentHour();
+      if (state.activeBlockIndex < hour.blocks.length - 1) {
+        setActiveBlock(state.activeBlockIndex + 1);
+      }
+    });
+  }
+}
+
+function bindProgressBar() {
+  const progressContainer = document.getElementById("progressContainer");
+  if (progressContainer) {
+    progressContainer.addEventListener("click", () => {
+      openBottomSheet();
+    });
+  }
+}
+
+function bindMenuButton() {
+  const menuButton = document.getElementById("menuButton");
+  if (menuButton) {
+    menuButton.addEventListener("click", () => {
+      openBottomSheet();
+    });
+  }
+}
+
+function bindSwipeGestures() {
+  const blockList = document.getElementById("blockList");
+  if (!blockList) return;
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+  let isScrolling = false;
+  let touchStartTime = 0;
+
+  blockList.addEventListener("touchstart", (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    touchStartTime = Date.now();
+    isScrolling = false;
+  }, { passive: true });
+
+  blockList.addEventListener("touchmove", (e) => {
+    const deltaX = Math.abs(e.touches[0].clientX - touchStartX);
+    const deltaY = Math.abs(e.touches[0].clientY - touchStartY);
+    
+    // Si le scroll vertical est plus important, on ne traite pas comme un swipe
+    if (deltaY > deltaX * 1.5) {
+      isScrolling = true;
+    }
+  }, { passive: true });
+
+  blockList.addEventListener("touchend", (e) => {
+    if (isScrolling) return;
+    
+    touchEndX = e.changedTouches[0].clientX;
+    touchEndY = e.changedTouches[0].clientY;
+    const touchDuration = Date.now() - touchStartTime;
+    
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+    
+    // Ignorer les swipes trop lents (probablement un scroll)
+    if (touchDuration > 300) return;
+    
+    // Swipe horizontal (priorité)
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > SWIPE_THRESHOLD) {
+      e.preventDefault();
+      const hour = getCurrentHour();
+      
+      if (deltaX > 0) {
+        // Swipe droite → bloc précédent
+        if (state.activeBlockIndex > 0) {
+          setActiveBlock(state.activeBlockIndex - 1);
+        }
+      } else {
+        // Swipe gauche → bloc suivant
+        if (state.activeBlockIndex < hour.blocks.length - 1) {
+          setActiveBlock(state.activeBlockIndex + 1);
+        }
+      }
+    }
+    // Swipe vertical pour changer d'heure (désactivé car peu intuitif avec scroll vertical)
+    // Le swipe vertical est désactivé pour éviter les conflits avec le scroll naturel
+    // Les utilisateurs peuvent changer d'heure via les boutons en haut
+  }, { passive: false });
+}
+
 function bindJumpButton() {
   const jumpButton = document.getElementById("jumpButton");
   if (jumpButton) {
     jumpButton.addEventListener("click", () => {
       renderJumpList(getCurrentHour());
+      // Essayer bottom sheet d'abord, sinon modal
+      if (getBottomSheet()) {
+        openBottomSheet();
+      } else {
       openJumpModal();
+      }
     });
   }
 }
 
 function renderJumpList(hour) {
-  if (!jumpList) return;
-  jumpList.innerHTML = hour.blocks
+  // Essayer bottom sheet d'abord (mobile-first)
+  const bottomSheetList = document.getElementById("jumpList");
+  const modalList = document.getElementById("jumpListModal");
+  
+  // Rendre dans les deux si disponibles
+  const lists = [bottomSheetList, modalList].filter(Boolean);
+  
+  lists.forEach((targetList) => {
+    if (!targetList) return;
+    
+    targetList.innerHTML = hour.blocks
     .map((block, index) => {
       const isActive = index === state.activeBlockIndex ? "active" : "";
       return `<button class="jump-item ${isActive}" type="button" data-index="${index}">${block.title}</button>`;
     })
     .join("");
 
-  jumpList.querySelectorAll(".jump-item").forEach((button) => {
+    targetList.querySelectorAll(".jump-item").forEach((button) => {
     button.addEventListener("click", () => {
       const index = Number(button.dataset.index);
+        if (targetList === bottomSheetList) {
+          closeBottomSheet();
+        } else {
       closeJumpModal();
+        }
       setActiveBlock(index);
+      });
     });
   });
 }
@@ -6082,9 +6294,22 @@ function selectHour(hourKey) {
 function setActiveBlock(index) {
   const hour = getCurrentHour();
   const safeIndex = clamp(index, 0, hour.blocks.length - 1);
+  
+  // Animation de transition entre blocs
+  const previousIndex = state.activeBlockIndex;
   state.activeBlockIndex = safeIndex;
   state.lastPositions[state.selectedHourKey] = safeIndex;
   shouldScrollToActive = true;
+  
+  // Ajouter une classe pour l'animation de direction
+  if (appRoot) {
+    const direction = safeIndex > previousIndex ? 'next' : 'prev';
+    appRoot.classList.add(`transition-${direction}`);
+    setTimeout(() => {
+      appRoot.classList.remove(`transition-${direction}`);
+    }, 400);
+  }
+  
   renderApp();
 }
 
@@ -6105,25 +6330,66 @@ function maybeScrollActiveBlock() {
   window.requestAnimationFrame(() => {
     const activeBlock = document.querySelector(".block.active");
     if (activeBlock) {
-      activeBlock.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Scroll avec offset pour le header sticky
+      const headerHeight = document.querySelector(".sticky-header")?.offsetHeight || 0;
+      const blockPosition = activeBlock.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = blockPosition - headerHeight - 20;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   });
 }
 
 function openJumpModal() {
+  if (!jumpModal) return;
   jumpModal.classList.remove("hidden");
   jumpModal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
-  const firstItem = jumpList.querySelector(".jump-item");
+  const firstItem = jumpList?.querySelector(".jump-item");
   if (firstItem) {
     firstItem.focus();
   }
 }
 
 function closeJumpModal() {
+  if (!jumpModal) return;
   jumpModal.classList.add("hidden");
   jumpModal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
+}
+
+function openBottomSheet() {
+  const bottomSheet = getBottomSheet();
+  const overlay = getBottomSheetOverlay();
+  if (bottomSheet && overlay) {
+    bottomSheet.classList.add("open");
+    overlay.classList.add("open");
+    document.body.style.overflow = "hidden";
+    
+    // Scroll vers le bloc actif dans la liste
+    setTimeout(() => {
+      const activeItem = document.querySelector(".jump-item.active");
+      if (activeItem) {
+        activeItem.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 100);
+  } else {
+    // Fallback vers modal si bottom sheet n'existe pas
+    openJumpModal();
+  }
+}
+
+function closeBottomSheet() {
+  const bottomSheet = getBottomSheet();
+  const overlay = getBottomSheetOverlay();
+  if (bottomSheet && overlay) {
+    bottomSheet.classList.remove("open");
+    overlay.classList.remove("open");
+    document.body.style.overflow = "";
+  }
 }
 
 function clamp(value, min, max) {
