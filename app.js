@@ -5692,6 +5692,7 @@ const HOURS = {
             "Cependant, comme le publicain, je me frappe la",
             "poitrine et je dis : \"ô Dieu pardonne moi car je suis",
             "pécheur\".",
+            "",
             "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
             "Maintenant et toujours et pour les siècles des",
             "siècles. Amen !"
@@ -5712,6 +5713,8 @@ const HOURS = {
             "jour. Tu es béni et exalté Seigneur, Dieu de nos",
             "pères. Ton saint Nom est rempli de gloire",
             "éternellement. Amen !",
+            "\n",
+            "\n",
             "Que Ta miséricorde, Seigneur, soit sur nous autant",
             "que notre espérance est en Toi. Car les yeux de tous",
             "T'espèrent car c'est Toi qui leur donne leur nourriture",
@@ -5719,11 +5722,8 @@ const HOURS = {
             "Sauveur, Espérance de tous les peuples de la terre.",
             "Toi, Seigneur, Tu nous gardes, nous sauves et nous",
             "délivres de cette génération et à jamais. Amen !",
-            "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
-            "Maintenant et toujours et pour les siècles des",
-            "siècles. Amen !"
-          ],
-          [
+            "\n",
+            "\n",
             "Tu es béni, Seigneur, enseigne-moi Ta justice. Tu es",
             "béni, Seigneur, fais-moi comprendre Tes droits. Tu",
             "es béni, Seigneur, éclaire-moi de Ta justice.",
@@ -5738,10 +5738,8 @@ const HOURS = {
             "voyons la lumière. Que Ta miséricorde parvienne à",
             "ceux qui Te connaissent et Ta justice aux cœurs",
             "droits.",
-            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ",
-            "Gloire au Père, au Fils et au Saint Esprit."
-          ],
-          [
+            "\n",
+            "\n",
             "A Toi est due la bénédiction. A Toi est due la",
             "louange. A Toi est due la gloire : Père, Fils et Saint-",
             "Esprit qui es dès le commencement, maintenant et",
@@ -6126,79 +6124,6 @@ function italicizeAmenAndAlleluia(text) {
     .replace(/(?<![a-zA-ZÀ-ÿ])alleluia(?![a-zA-ZÀ-ÿ])/gi, "<em>alleluia</em>");
 }
 
-// Mappage des phrases de conclusion françaises vers le texte copte
-const COPTIC_CONCLUSIONS = {
-  "Gloire au Père, au Fils et au Saint Esprit.": "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
-  "Maintenant et toujours et pour les siècles des siècles. Amen !": "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
-  "Maintenant et toujours et dans les siècles des siècles. Amen !": "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ."
-};
-
-// Fonction pour formater les phrases de conclusion avec la font copte
-function formatConclusionPhrases(text) {
-  if (typeof text !== "string") return text;
-  
-  let formattedText = text;
-  
-  // Phrases de conclusion à formater avec le texte copte
-  // "Gloire au Père, au Fils et au Saint Esprit."
-  const gloirePattern = /Gloire au Père, au Fils et au Saint Esprit\./gi;
-  if (gloirePattern.test(formattedText)) {
-    formattedText = formattedText.replace(
-      gloirePattern,
-      (match) => {
-        const coptic = COPTIC_CONCLUSIONS["Gloire au Père, au Fils et au Saint Esprit."];
-        return `<br><br>${coptic}<br>${match}`;
-      }
-    );
-  }
-  
-  // "Maintenant et toujours et pour les siècles des siècles. Amen !"
-  // Gérer le cas où c'est sur une seule ligne ou plusieurs lignes
-  const maintenantPattern1 = /Maintenant et toujours et pour les siècles\s+des siècles\.\s*Amen\s*!/gi;
-  if (maintenantPattern1.test(formattedText)) {
-    formattedText = formattedText.replace(
-      maintenantPattern1,
-      (match) => {
-        const coptic = COPTIC_CONCLUSIONS["Maintenant et toujours et pour les siècles des siècles. Amen !"];
-        return `<br><br>${coptic}<br>${match}`;
-      }
-    );
-  }
-  
-  // "Maintenant et toujours et dans les siècles des siècles. Amen !"
-  const maintenantPattern2 = /Maintenant et toujours et dans les siècles\s+des siècles\.\s*Amen\s*!/gi;
-  if (maintenantPattern2.test(formattedText)) {
-    formattedText = formattedText.replace(
-      maintenantPattern2,
-      (match) => {
-        const coptic = COPTIC_CONCLUSIONS["Maintenant et toujours et dans les siècles des siècles. Amen !"];
-        return `<br><br>${coptic}<br>${match}`;
-      }
-    );
-  }
-  
-  // Gérer aussi les cas où "Maintenant et toujours" et "des siècles. Amen !" sont séparés
-  // D'abord détecter si on a "Maintenant et toujours" suivi plus tard de "des siècles. Amen !"
-  const maintenantStart = /Maintenant et toujours et pour les siècles/gi;
-  const maintenantEnd = /des siècles\.\s*Amen\s*!/gi;
-  
-  if (maintenantStart.test(formattedText) && maintenantEnd.test(formattedText) && !formattedText.includes('ⲕⲉ')) {
-    // Texte copte complet pour "Maintenant et toujours et pour les siècles des siècles. Amen !"
-    const copticFull = COPTIC_CONCLUSIONS["Maintenant et toujours et pour les siècles des siècles. Amen !"];
-    // Remplacer le début
-    formattedText = formattedText.replace(
-      /(Maintenant et toujours et pour les siècles)/gi,
-      `<br><br>${copticFull}<br>$1`
-    );
-    // Remplacer la fin
-    formattedText = formattedText.replace(
-      /(des siècles\.\s*Amen\s*!)/gi,
-      `$1`
-    );
-  }
-  
-  return formattedText;
-}
 
 function renderCollapsedBlockContent(block, index) {
   const paragraphs = Array.isArray(block.content) ? block.content : [block.content];
@@ -6226,36 +6151,45 @@ function renderCollapsedBlockContent(block, index) {
 
 function renderActiveBlockContent(block, index, total) {
   const paragraphs = Array.isArray(block.content) ? block.content : [block.content];
-  
-  // Traiter les paragraphes pour détecter les phrases de conclusion
-  const processedParagraphs = paragraphs.map((para) => {
+  const content = paragraphs.map((para) => {
     if (Array.isArray(para)) {
-      // Vérifier si le paragraphe contient une phrase de conclusion
-      const fullText = para.join(" ");
-      const hasConclusion = /Gloire au Père|Maintenant et toujours/.test(fullText);
+      // Si c'est un tableau, joindre les phrases avec des espaces pour former un paragraphe
+      // Gérer les "\n" comme des sauts de ligne
+      const parts = [];
+      let currentPart = [];
       
-      if (hasConclusion) {
-        // Si le paragraphe contient une conclusion, formater chaque ligne séparément
-        // puis joindre avec des espaces
-        const formattedLines = para.map(line => {
-          const italicized = italicizeAmenAndAlleluia(line);
-          return formatConclusionPhrases(italicized);
-        });
-        return formattedLines.join(" ");
-      } else {
-        // Sinon, traitement normal
-        const text = para.join(" ");
-        const italicized = italicizeAmenAndAlleluia(text);
-        return italicized;
+      para.forEach((item) => {
+        if (item === "\n") {
+          if (currentPart.length > 0) {
+            parts.push(currentPart.join(" "));
+            currentPart = [];
+          }
+          parts.push("\n");
+        } else {
+          currentPart.push(item);
+        }
+      });
+      
+      if (currentPart.length > 0) {
+        parts.push(currentPart.join(" "));
       }
+      
+      // Construire le HTML avec des <br> pour les "\n"
+      const htmlParts = parts.map((part) => {
+        if (part === "\n") {
+          return "<br>";
+        }
+        const italicized = italicizeAmenAndAlleluia(part);
+        return italicized;
+      });
+      
+      return `<p>${htmlParts.join("")}</p>`;
     } else {
-      // Si c'est une chaîne, traitement normal
+      // Si c'est une chaîne, créer un paragraphe directement
       const italicized = italicizeAmenAndAlleluia(para);
-      return formatConclusionPhrases(italicized);
+      return `<p>${italicized}</p>`;
     }
-  });
-  
-  const content = processedParagraphs.map(text => `<p>${text}</p>`).join("");
+  }).join("");
   
   return `
     <div class="block-content active">
