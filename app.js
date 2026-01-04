@@ -6004,24 +6004,8 @@ function renderApp() {
     </section>
   `;
 
-  // Rendre le footer en dehors de .app
-  const floatingNav = document.getElementById("floatingNav");
-  if (floatingNav) {
-    floatingNav.innerHTML = `
-      <button class="nav-button-large" type="button" data-direction="back" id="navBack" ${state.activeBlockIndex === 0 ? "disabled" : ""}>
-        <span class="nav-icon">◀</span>
-        <span class="nav-label">Précédent</span>
-      </button>
-      <button class="nav-button-large" type="button" data-direction="next" id="navNext" ${state.activeBlockIndex === hour.blocks.length - 1 ? "disabled" : ""}>
-        <span class="nav-label">Suivant</span>
-        <span class="nav-icon">▶</span>
-      </button>
-    `;
-  }
-
   bindHourButtonEvents();
   bindBlockEvents();
-  bindFloatingNav();
   bindProgressBar();
   bindMenuButton();
   bindSwipeGestures();
@@ -6165,27 +6149,6 @@ function bindBlockEvents() {
   });
 }
 
-function bindFloatingNav() {
-  const navBack = document.getElementById("navBack");
-  const navNext = document.getElementById("navNext");
-  
-  if (navBack) {
-    navBack.addEventListener("click", () => {
-      if (state.activeBlockIndex > 0) {
-        setActiveBlock(state.activeBlockIndex - 1);
-      }
-    });
-  }
-  
-  if (navNext) {
-    navNext.addEventListener("click", () => {
-      const hour = getCurrentHour();
-      if (state.activeBlockIndex < hour.blocks.length - 1) {
-        setActiveBlock(state.activeBlockIndex + 1);
-      }
-    });
-  }
-}
 
 function bindProgressBar() {
   const progressContainer = document.getElementById("progressContainer");
