@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frictionless Agpeya</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app"></div>
+
+  <div id="jumpModal" class="jump-modal hidden" aria-hidden="true">
+    <div class="jump-backdrop" data-close="modal"></div>
+    <div class="jump-panel" role="dialog" aria-modal="true" aria-labelledby="jumpTitle">
+      <div class="jump-header">
+        <h2 id="jumpTitle">Jump to block</h2>
+        <button class="jump-close" type="button" data-close="modal">Close</button>
+      </div>
+      <div id="jumpList" class="jump-list" role="listbox"></div>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
