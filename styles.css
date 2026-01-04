@@ -522,6 +522,32 @@ body.modal-open {
   background: var(--accent-soft);
 }
 
+.jump-section {
+  margin-bottom: 24px;
+}
+
+.jump-section:last-child {
+  margin-bottom: 0;
+}
+
+.jump-section-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0 8px;
+}
+
+.jump-section .jump-item {
+  margin-bottom: 8px;
+}
+
+.jump-section .jump-item:last-child {
+  margin-bottom: 0;
+}
+
 /* Ancien footer supprimé - le header est maintenant en bas */
 
 /* Swipe Indicator - Indicateur visuel pour ouvrir le menu */

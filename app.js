@@ -5977,10 +5977,48 @@ function setupModalDismissHandlers() {
   });
 }
 
+// Fonction pour découper les blocs d'oraisons en plusieurs blocs individuels
+function expandOraisonsBlocks(blocks) {
+  const expandedBlocks = [];
+  
+  blocks.forEach((block, originalIndex) => {
+    if (block.type === "oraisons" && Array.isArray(block.content)) {
+      // Découper chaque oraison en un bloc séparé
+      block.content.forEach((oraisonContent, oraisonIndex) => {
+        // Extraire le début de l'oraison pour le titre (première phrase ou premiers mots)
+        let title = "Oraison";
+        if (Array.isArray(oraisonContent) && oraisonContent.length > 0) {
+          const firstLine = oraisonContent[0];
+          // Prendre les premiers mots comme titre (max 50 caractères)
+          title = firstLine.length > 50 ? firstLine.substring(0, 47) + "..." : firstLine;
+        }
+        
+        expandedBlocks.push({
+          id: `${block.id}-${oraisonIndex + 1}`,
+          type: "oraison",
+          title: title,
+          content: [oraisonContent],
+          originalBlockIndex: originalIndex,
+          oraisonIndex: oraisonIndex
+        });
+      });
+    } else {
+      // Garder le bloc tel quel
+      expandedBlocks.push(block);
+    }
+  });
+  
+  return expandedBlocks;
+}
+
 function renderApp() {
   const hour = getCurrentHour();
-  const orientationText = getOrientationText(hour);
-  const progressPercent = ((state.activeBlockIndex + 1) / hour.blocks.length) * 100;
+  // Découper les oraisons en blocs individuels
+  const expandedBlocks = expandOraisonsBlocks(hour.blocks);
+  const hourWithExpandedBlocks = { ...hour, blocks: expandedBlocks };
+  
+  const orientationText = getOrientationText(hourWithExpandedBlocks);
+  const progressPercent = ((state.activeBlockIndex + 1) / expandedBlocks.length) * 100;
 
   // Rendre le header en dehors de .app
   const topBar = document.getElementById("topBar");
@@ -5999,7 +6037,7 @@ function renderApp() {
 
   appRoot.innerHTML = `
     <section class="block-list continuous-view" id="blockList">
-      ${renderBlocksContinuous(hour)}
+      ${renderBlocksContinuous(hourWithExpandedBlocks)}
     </section>
   `;
 
@@ -6010,7 +6048,7 @@ function renderApp() {
   bindKeyboardNavigation();
   bindClickNavigation(); // Doit être appelé après innerHTML pour recréer les zones
   bindSwipeToOpenMenu();
-  renderJumpList(hour);
+  renderJumpList(hourWithExpandedBlocks);
   maybeScrollActiveBlock();
 }
 
@@ -6039,10 +6077,12 @@ function renderBlocks(hour) {
 
 function renderBlocksContinuous(hour) {
   // Ne rendre que le bloc actif, qui occupe tout l'espace
-  const activeBlock = hour.blocks[state.activeBlockIndex];
+  // Utiliser les blocs étendus si hour n'a pas déjà été étendu
+  const blocks = hour.blocks || expandOraisonsBlocks(getCurrentHour().blocks);
+  const activeBlock = blocks[state.activeBlockIndex];
   if (!activeBlock) return "";
   
-  const content = renderActiveBlockContent(activeBlock, state.activeBlockIndex, hour.blocks.length);
+  const content = renderActiveBlockContent(activeBlock, state.activeBlockIndex, blocks.length);
   
   return `
     <article class="block active" data-index="${state.activeBlockIndex}" id="${activeBlock.id}">
@@ -6194,7 +6234,8 @@ function bindKeyboardNavigation() {
         }
       } else {
         // Flèche droite → bloc suivant
-        if (state.activeBlockIndex < hour.blocks.length - 1) {
+        const hourWithExpanded = getCurrentHourWithExpandedBlocks();
+        if (state.activeBlockIndex < hourWithExpanded.blocks.length - 1) {
           setActiveBlock(state.activeBlockIndex + 1);
         }
       }
@@ -6229,8 +6270,8 @@ function bindClickNavigation() {
   rightZone.setAttribute("aria-label", "Bloc suivant");
   rightZone.addEventListener("click", (e) => {
     e.stopPropagation();
-    const hour = getCurrentHour();
-    if (state.activeBlockIndex < hour.blocks.length - 1) {
+    const hourWithExpanded = getCurrentHourWithExpandedBlocks();
+    if (state.activeBlockIndex < hourWithExpanded.blocks.length - 1) {
       setActiveBlock(state.activeBlockIndex + 1);
     }
   });
@@ -6279,7 +6320,7 @@ function bindJumpButton() {
   const jumpButton = document.getElementById("jumpButton");
   if (jumpButton) {
     jumpButton.addEventListener("click", () => {
-      renderJumpList(getCurrentHour());
+      renderJumpList(getCurrentHourWithExpandedBlocks());
       // Essayer bottom sheet d'abord, sinon modal
       if (getBottomSheet()) {
         openBottomSheet();
@@ -6319,25 +6360,85 @@ function renderJumpList(hour) {
   // Rendre dans les deux si disponibles
   const lists = [bottomSheetList, modalList].filter(Boolean);
   
+  // Fonction pour déterminer la section d'un bloc
+  function getBlockSection(block) {
+    // Introduction : Premier Notre Père (sans "again"), Action de grâce, Psaume 50
+    if (block.type === "intro" || 
+        (block.type === "prayer" && 
+         !block.id.includes("again") && 
+         (block.id.includes("notre-pere") || block.id.includes("action-grace")))) {
+      return "intro";
+    }
+    // Psaumes
+    if (block.type === "psalm") {
+      return "psaumes";
+    }
+    // Conclusion
+    if (block.type === "conclusion") {
+      return "conclusion";
+    }
+    // Tout le reste (oraisons individuelles, gospel, absolution, notre-pere-again, autres prières) → prière
+    return "priere";
+  }
+  
+  // Grouper les blocs par section en préservant l'ordre
+  const sections = [];
+  let currentSection = null;
+  
+  hour.blocks.forEach((block, index) => {
+    const sectionType = getBlockSection(block);
+    
+    if (!currentSection || currentSection.type !== sectionType) {
+      // Nouvelle section
+      currentSection = {
+        type: sectionType,
+        blocks: []
+      };
+      sections.push(currentSection);
+    }
+    
+    currentSection.blocks.push({ ...block, originalIndex: index });
+  });
+  
+  // Noms des sections
+  const sectionTitles = {
+    intro: "Introduction",
+    psaumes: "Psaumes",
+    priere: "Prière",
+    conclusion: "Conclusion"
+  };
+  
   lists.forEach((targetList) => {
     if (!targetList) return;
     
-    targetList.innerHTML = hour.blocks
-    .map((block, index) => {
-      const isActive = index === state.activeBlockIndex ? "active" : "";
-      return `<button class="jump-item ${isActive}" type="button" data-index="${index}">${block.title}</button>`;
-    })
-    .join("");
+    let html = "";
+    
+    // Générer le HTML pour chaque section dans l'ordre
+    sections.forEach((section) => {
+      if (section.blocks.length > 0) {
+        html += `<div class="jump-section">
+          <h3 class="jump-section-title">${sectionTitles[section.type]}</h3>`;
+        
+        section.blocks.forEach((block) => {
+          const isActive = block.originalIndex === state.activeBlockIndex ? "active" : "";
+          html += `<button class="jump-item ${isActive}" type="button" data-index="${block.originalIndex}">${block.title}</button>`;
+        });
+        
+        html += `</div>`;
+      }
+    });
+    
+    targetList.innerHTML = html;
 
     targetList.querySelectorAll(".jump-item").forEach((button) => {
-    button.addEventListener("click", () => {
-      const index = Number(button.dataset.index);
+      button.addEventListener("click", () => {
+        const index = Number(button.dataset.index);
         if (targetList === bottomSheetList) {
           closeBottomSheet();
         } else {
-      closeJumpModal();
+          closeJumpModal();
         }
-      setActiveBlock(index);
+        setActiveBlock(index);
       });
     });
   });
@@ -6359,8 +6460,8 @@ function selectHour(hourKey) {
 }
 
 function setActiveBlock(index) {
-  const hour = getCurrentHour();
-  const safeIndex = clamp(index, 0, hour.blocks.length - 1);
+  const hourWithExpanded = getCurrentHourWithExpandedBlocks();
+  const safeIndex = clamp(index, 0, hourWithExpanded.blocks.length - 1);
   
   // Remettre le scroll du bloc actuel en haut avant de changer
   const currentActiveContent = document.querySelector(".block-content.active");
@@ -6396,6 +6497,13 @@ function setActiveBlock(index) {
 
 function getCurrentHour() {
   return HOURS[state.selectedHourKey];
+}
+
+// Fonction helper pour obtenir les blocs étendus (avec oraisons découpées)
+function getCurrentHourWithExpandedBlocks() {
+  const hour = getCurrentHour();
+  const expandedBlocks = expandOraisonsBlocks(hour.blocks);
+  return { ...hour, blocks: expandedBlocks };
 }
 
 function getOrientationText(hour) {
