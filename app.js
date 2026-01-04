@@ -1113,6 +1113,7 @@ const HOURS = {
             "des douleurs de la mort. Tu nous as donné l'esprit",
             "filial. Nous Te louons et nous Te bénissons en",
             "disant :",
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
@@ -1124,6 +1125,7 @@ const HOURS = {
             "fin de la nuit pour méditer sur Ta promesse. Dans",
             "Ta grande miséricorde écoute nos voix. Sauve-nous",
             "ô Seigneur notre Dieu par Ta tendresse.",
+            "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
             "Maintenant et toujours et pour les siècles",
             "des siècles. Amen !"
           ],
@@ -1136,8 +1138,7 @@ const HOURS = {
             "Fils a daigné s'incarner de toi. Demande-lui",
             "d'accorder le Salut au monde qu'Il a créé et de le",
             "délivrer des tentations. Louons-le par un chant",
-            "nouveau et bénissons-le maintenant et toujours et",
-            "pour les siècles des siècles. Amen !"
+            "nouveau et bénissons-le."
           ]
         ]
       },
@@ -2078,6 +2079,7 @@ const HOURS = {
             "pur ; renouvelle en moi un esprit droit. Ne me rejette",
             "pas loin de Ta Face et ne me retire pas Ton Esprit-",
             "Saint.",
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
@@ -2090,6 +2092,7 @@ const HOURS = {
             "sainteté, de justice et de force. Ô Toi qui peux tout",
             "car Tu es la lumière de nos âmes. Ô Toi qui éclaires",
             "tout être venant au monde, aie pitié de nous.",
+            "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
             "Maintenant et toujours et pour les siècles des",
             "siècles. Amen !"
           ],
@@ -2100,8 +2103,8 @@ const HOURS = {
             "Béni soit le Seigneur notre Dieu. Béni soit le",
             "Seigneur jour après jour. Il prépare notre chemin car",
             "il est le Dieu de notre Salut.",
-            "Maintenant et toujours et pour les siècles des",
-            "siècles. Amen !"
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
+            "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
             "Ô Roi céleste, Consolateur, Esprit de vérité, qui",
@@ -2109,15 +2112,17 @@ const HOURS = {
             "bonté et Donateur de vie, daigne venir en nous.",
             "Purifie-nous de toute souillure ô très Bon et sauve",
             "nos âmes.",
-            "Gloire au Père, au Fils et au Saint Esprit."
+            "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
+            "Maintenant et toujours et pour les siècles des",
+            "siècles. Amen !"
           ],
           [
             "Comme Tu étais avec tes disciples, ô Sauveur, en",
             "leur accordant la paix ; viens, sois avec nous,",
             "accorde-nous Ta paix, sauve-nous et délivre nos",
             "âmes.",
-            "Maintenant et toujours et pour les siècles des",
-            "siècles. Amen !"
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
+            "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
             "Lorsque nous nous tenons debout dans Ton",
@@ -3017,6 +3022,7 @@ const HOURS = {
             "Tourne-toi vers moi et écoute-moi le soir, le matin ou",
             "à midi. Quand je parle, qu'Il entende ma voix, qu'Il",
             "sauve mon âme et la garde en paix.",
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
@@ -3029,6 +3035,7 @@ const HOURS = {
             "Délivre-nous des passions terrestres et mène-nous",
             "vers le souvenir de Tes commandements par Ta",
             "miséricorde.",
+            "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
             "Maintenant et toujours et pour les siècles des",
             "siècles. Amen !"
           ],
@@ -3045,15 +3052,17 @@ const HOURS = {
             "pécheurs. Aide-nous ô Dieu notre Sauveur à cause",
             "de Ton Nom. Ô Seigneur sauve-nous, remets nos",
             "péchés à cause de Ton Saint Nom.",
-            "Maintenant et toujours et pour les siècles des",
-            "siècles. Amen !"
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
+            "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
             "Tu as accordé le Salut à toute la terre, ô Christ notre",
             "Dieu quand Tu as étendu Tes mains pures sur",
             "l'arbre de la Croix. C'est pourquoi toutes les nations",
             "s'écrient : \"Gloire à Toi Seigneur\".",
-            "Gloire au Père, au Fils et au Saint Esprit."
+            "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
+            "Maintenant et toujours et pour les siècles des",
+            "siècles. Amen !"
           ],
           [
             "Nous nous prosternons devant Ta personne",
@@ -3064,8 +3073,8 @@ const HOURS = {
             "rendons grâce car Tu as rempli nos cœurs de joie, ô",
             "Sauveur, quand Tu es venu pour aider le monde. Ô",
             "Seigneur, gloire à Toi.",
-            "Maintenant et toujours et pour les siècles des",
-            "siècles. Amen !"
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
+            "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
             "Tu es pleine de grâce, ô Mère de Dieu, toujours",
@@ -3918,6 +3927,7 @@ const HOURS = {
             "comprendre Tes paroles. Que mes implorations",
             "trouvent auprès de Toi un accueil favorable. Rends-",
             "moi la vie selon Ta parole.",
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
@@ -3930,6 +3940,7 @@ const HOURS = {
             "vivifiants. Afin qu'ayant goûté à Tes bontés, je t'offre",
             "une louange incessante, désirant Ta splendeur plus",
             "que toute chose, O Christ notre Dieu et sauve-nous.",
+            "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
             "Maintenant et toujours et pour les siècles des",
             "siècles. Amen !"
           ],
@@ -3944,8 +3955,8 @@ const HOURS = {
             "toujours. Ne répudie pas Ton alliance. Ne nous",
             "refuse pas Ta pitié pour Abraham, Ton bien-aimé,",
             "Isaac, Ton serviteur, et Jacob, Ton saint.",
-            "Maintenant et toujours et pour les siècles des",
-            "siècles. Amen !"
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ",
+            "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
             "Quand le larron a vu le maître de la vie accroché à la",
@@ -3954,7 +3965,9 @@ const HOURS = {
             "la terre n'aurait pas tremblé, mais ô Tout-puissant,",
             "qui supportes tout, souviens-Toi de moi quand Tu",
             "viendras dans ton royaume\"",
-            "Gloire au Père, au Fils et au Saint Esprit."
+            "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
+            "Maintenant et toujours et pour les siècles des",
+            "siècles. Amen !"
           ],
           [
             "O Toi qui as reçu la confession du larron sur la",
@@ -3963,8 +3976,8 @@ const HOURS = {
             "confessons nos péchés avec le larron et proclamons",
             "Ta Divinité. Nous crions avec lui : \" Souviens-Toi de",
             "moi quand Tu viendras dans ton Royaume.\"",
-            "Maintenant et toujours et pour les siècles des",
-            "siècles. Amen !"
+            "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
+            "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
             "Quand la mère a vu l'Agneau, le Pasteur, le Sauveur",
@@ -5661,6 +5674,7 @@ const HOURS = {
             "du sommeil de la paresse et implore le Sauveur en",
             "te repentant et en disant : Ô Dieu ai pitié de moi et",
             "sauve-moi.",
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
@@ -5678,6 +5692,7 @@ const HOURS = {
             "Cependant, comme le publicain, je me frappe la",
             "poitrine et je dis : \"ô Dieu pardonne moi car je suis",
             "pécheur\".",
+            "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
             "Maintenant et toujours et pour les siècles des",
             "siècles. Amen !"
           ],
@@ -5688,7 +5703,9 @@ const HOURS = {
             "veiller car elle est plongée dans un sommeil profond.",
             "Tu es une Mère puissante, miséricordieuse et",
             "secourable, Mère de la Source de la vie, mon Roi et",
-            "mon Dieu, Jésus Christ, mon espérance."
+            "mon Dieu, Jésus Christ, mon espérance.",
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
+            "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
             "Daigne, Seigneur, nous garder sans péché durant ce",
@@ -5701,7 +5718,10 @@ const HOURS = {
             "en temps opportun. Ecoute-nous, Dieu notre",
             "Sauveur, Espérance de tous les peuples de la terre.",
             "Toi, Seigneur, Tu nous gardes, nous sauves et nous",
-            "délivres de cette génération et à jamais. Amen !"
+            "délivres de cette génération et à jamais. Amen !",
+            "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
+            "Maintenant et toujours et pour les siècles des",
+            "siècles. Amen !"
           ],
           [
             "Tu es béni, Seigneur, enseigne-moi Ta justice. Tu es",
@@ -5717,7 +5737,9 @@ const HOURS = {
             "source de la vie et par Ta lumière, Seigneur, nous",
             "voyons la lumière. Que Ta miséricorde parvienne à",
             "ceux qui Te connaissent et Ta justice aux cœurs",
-            "droits."
+            "droits.",
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ",
+            "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
             "A Toi est due la bénédiction. A Toi est due la",
@@ -6097,10 +6119,85 @@ function renderBlocksContinuous(hour) {
 function italicizeAmenAndAlleluia(text) {
   if (typeof text !== "string") return text;
   // Remplacer "Amen" et "Alléluia" (insensible à la casse) par leur version en italique
+  // Utiliser des lookbehind/lookahead négatifs pour éviter de matcher "amen" dans "amener", "amenèrent", etc.
   return text
-    .replace(/\bAmen\b/gi, "<em>Amen</em>")
-    .replace(/\bAlléluia\b/gi, "<em>Alléluia</em>")
-    .replace(/\balleluia\b/gi, "<em>alleluia</em>");
+    .replace(/(?<![a-zA-ZÀ-ÿ])Amen(?![a-zA-ZÀ-ÿ])/gi, "<em>Amen</em>")
+    .replace(/(?<![a-zA-ZÀ-ÿ])Alléluia(?![a-zA-ZÀ-ÿ])/gi, "<em>Alléluia</em>")
+    .replace(/(?<![a-zA-ZÀ-ÿ])alleluia(?![a-zA-ZÀ-ÿ])/gi, "<em>alleluia</em>");
+}
+
+// Mappage des phrases de conclusion françaises vers le texte copte
+const COPTIC_CONCLUSIONS = {
+  "Gloire au Père, au Fils et au Saint Esprit.": "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
+  "Maintenant et toujours et pour les siècles des siècles. Amen !": "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
+  "Maintenant et toujours et dans les siècles des siècles. Amen !": "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ."
+};
+
+// Fonction pour formater les phrases de conclusion avec la font copte
+function formatConclusionPhrases(text) {
+  if (typeof text !== "string") return text;
+  
+  let formattedText = text;
+  
+  // Phrases de conclusion à formater avec le texte copte
+  // "Gloire au Père, au Fils et au Saint Esprit."
+  const gloirePattern = /Gloire au Père, au Fils et au Saint Esprit\./gi;
+  if (gloirePattern.test(formattedText)) {
+    formattedText = formattedText.replace(
+      gloirePattern,
+      (match) => {
+        const coptic = COPTIC_CONCLUSIONS["Gloire au Père, au Fils et au Saint Esprit."];
+        return `<br><br>${coptic}<br>${match}`;
+      }
+    );
+  }
+  
+  // "Maintenant et toujours et pour les siècles des siècles. Amen !"
+  // Gérer le cas où c'est sur une seule ligne ou plusieurs lignes
+  const maintenantPattern1 = /Maintenant et toujours et pour les siècles\s+des siècles\.\s*Amen\s*!/gi;
+  if (maintenantPattern1.test(formattedText)) {
+    formattedText = formattedText.replace(
+      maintenantPattern1,
+      (match) => {
+        const coptic = COPTIC_CONCLUSIONS["Maintenant et toujours et pour les siècles des siècles. Amen !"];
+        return `<br><br>${coptic}<br>${match}`;
+      }
+    );
+  }
+  
+  // "Maintenant et toujours et dans les siècles des siècles. Amen !"
+  const maintenantPattern2 = /Maintenant et toujours et dans les siècles\s+des siècles\.\s*Amen\s*!/gi;
+  if (maintenantPattern2.test(formattedText)) {
+    formattedText = formattedText.replace(
+      maintenantPattern2,
+      (match) => {
+        const coptic = COPTIC_CONCLUSIONS["Maintenant et toujours et dans les siècles des siècles. Amen !"];
+        return `<br><br>${coptic}<br>${match}`;
+      }
+    );
+  }
+  
+  // Gérer aussi les cas où "Maintenant et toujours" et "des siècles. Amen !" sont séparés
+  // D'abord détecter si on a "Maintenant et toujours" suivi plus tard de "des siècles. Amen !"
+  const maintenantStart = /Maintenant et toujours et pour les siècles/gi;
+  const maintenantEnd = /des siècles\.\s*Amen\s*!/gi;
+  
+  if (maintenantStart.test(formattedText) && maintenantEnd.test(formattedText) && !formattedText.includes('ⲕⲉ')) {
+    // Texte copte complet pour "Maintenant et toujours et pour les siècles des siècles. Amen !"
+    const copticFull = COPTIC_CONCLUSIONS["Maintenant et toujours et pour les siècles des siècles. Amen !"];
+    // Remplacer le début
+    formattedText = formattedText.replace(
+      /(Maintenant et toujours et pour les siècles)/gi,
+      `<br><br>${copticFull}<br>$1`
+    );
+    // Remplacer la fin
+    formattedText = formattedText.replace(
+      /(des siècles\.\s*Amen\s*!)/gi,
+      `$1`
+    );
+  }
+  
+  return formattedText;
 }
 
 function renderCollapsedBlockContent(block, index) {
@@ -6129,18 +6226,37 @@ function renderCollapsedBlockContent(block, index) {
 
 function renderActiveBlockContent(block, index, total) {
   const paragraphs = Array.isArray(block.content) ? block.content : [block.content];
-  const content = paragraphs.map((para) => {
+  
+  // Traiter les paragraphes pour détecter les phrases de conclusion
+  const processedParagraphs = paragraphs.map((para) => {
     if (Array.isArray(para)) {
-      // Si c'est un tableau, joindre les phrases avec des espaces pour former un paragraphe
-      const text = para.join(" ");
-      const italicized = italicizeAmenAndAlleluia(text);
-      return `<p>${italicized}</p>`;
+      // Vérifier si le paragraphe contient une phrase de conclusion
+      const fullText = para.join(" ");
+      const hasConclusion = /Gloire au Père|Maintenant et toujours/.test(fullText);
+      
+      if (hasConclusion) {
+        // Si le paragraphe contient une conclusion, formater chaque ligne séparément
+        // puis joindre avec des espaces
+        const formattedLines = para.map(line => {
+          const italicized = italicizeAmenAndAlleluia(line);
+          return formatConclusionPhrases(italicized);
+        });
+        return formattedLines.join(" ");
+      } else {
+        // Sinon, traitement normal
+        const text = para.join(" ");
+        const italicized = italicizeAmenAndAlleluia(text);
+        return italicized;
+      }
     } else {
-      // Si c'est une chaîne, créer un paragraphe directement
+      // Si c'est une chaîne, traitement normal
       const italicized = italicizeAmenAndAlleluia(para);
-      return `<p>${italicized}</p>`;
+      return formatConclusionPhrases(italicized);
     }
-  }).join("");
+  });
+  
+  const content = processedParagraphs.map(text => `<p>${text}</p>`).join("");
+  
   return `
     <div class="block-content active">
       ${content}

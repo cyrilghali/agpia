@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'CS Avva Shenouda';
+  src: url('CS Avva Shenouda.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   color-scheme: light;
   font-family: 'Cormorant Garamond', 'Georgia', serif;
@@ -426,6 +433,12 @@ body.modal-open {
 
 .block-content em {
   font-style: italic;
+}
+
+.coptic-text {
+  font-family: 'CS Avva Shenouda', serif;
+  font-size: 1.1em;
+  line-height: 1.6;
 }
 
 .block-nav {
