@@ -67,6 +67,8 @@ body.modal-open {
   box-shadow: 0 2px 10px var(--shadow);
   max-width: 780px;
   margin: 0 auto;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .app {
@@ -150,7 +152,7 @@ body.modal-open {
 }
 
 .menu-button {
-  border: 1px solid var(--border);
+  border: none;
   border-radius: 12px;
   background: var(--accent);
   color: #fff9f0;
@@ -175,7 +177,7 @@ body.modal-open {
 .hour-button {
   flex: 1;
   min-width: 72px;
-  border: 1px solid var(--border);
+  border: none;
   border-radius: 999px;
   padding: 8px 12px;
   font-size: 0.95rem;
@@ -183,13 +185,14 @@ body.modal-open {
   background: var(--card-strong);
   color: var(--text);
   cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hour-button.active {
   background: var(--accent);
   color: #fff9f0;
-  border-color: var(--accent);
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 .top-actions {
@@ -213,7 +216,7 @@ body.modal-open {
 }
 
 .jump-button {
-  border: 1px solid var(--border);
+  border: none;
   border-radius: 12px;
   background: var(--accent);
   color: #fff9f0;
@@ -295,13 +298,12 @@ body.modal-open {
 .block {
   display: none;
   background: var(--card);
-  border: 1px solid var(--border);
+  border: none;
   border-radius: 20px;
-  padding: 4px;
+  padding: 0;
   box-shadow: 0 10px 35px var(--shadow);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
               opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              border-color 0.3s ease,
               box-shadow 0.3s ease;
 }
 
@@ -311,8 +313,8 @@ body.modal-open {
   width: 100%;
   margin: auto 0;
   opacity: 1;
+  background: var(--card-strong);
   box-shadow: 0 15px 45px var(--shadow);
-  border-color: var(--accent);
   animation: blockActivate 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -348,16 +350,16 @@ body.modal-open {
 
 .block.active .block-header {
   background: var(--card-strong);
-  border: 1px solid var(--accent);
+  border: none;
 }
 
 .block-header-tap {
   width: 100%;
   text-align: center;
-  border: 1px solid var(--accent);
-  background: var(--card-strong);
-  padding: 10px 18px;
-  border-radius: 14px;
+  border: none;
+  background: transparent;
+  padding: 28px 24px 20px;
+  border-radius: 0;
   cursor: pointer;
   color: var(--text);
   user-select: none;
@@ -366,31 +368,33 @@ body.modal-open {
 }
 
 .block-title {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
   font-size: 0.95rem;
   font-weight: 600;
-  letter-spacing: 0.01em;
-  margin: 0;
-  color: var(--text);
+  letter-spacing: 0.08em;
+  margin: 0 0 8px;
+  color: var(--subtle);
   text-align: center;
+  text-transform: uppercase;
+  opacity: 0.85;
 }
 
 /* block-expand-hint supprimé - plus utilisé */
 
 .block-content {
-  padding: 12px 20px 20px;
-  margin: 12px 6px 12px;
-  background: var(--card-strong);
-  border-radius: 16px;
-  border: 1px solid var(--border);
+  padding: 0 24px 28px;
+  margin: 0;
+  background: transparent;
+  border-radius: 0;
+  border: none;
   transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              margin 0.4s cubic-bezier(0.4, 0, 0.2, 1),
               opacity 0.3s ease;
   overflow: hidden;
 }
 
 .block-content.active {
-  padding: 16px 20px;
-  margin: 8px 6px 8px;
+  padding: 0 24px 28px;
+  margin: 0;
   animation: contentExpand 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: visible;
 }
@@ -426,8 +430,13 @@ body.modal-open {
 }
 
 .block-content p {
-  margin: 0 0 16px;
+  margin: 0 0 20px;
   text-align: center;
+  line-height: 1.8;
+}
+
+.block-content p:last-child {
+  margin-bottom: 0;
 }
 
 .block-content em {
@@ -449,13 +458,14 @@ body.modal-open {
 
 .nav-button {
   flex: 1;
-  border: 1px solid var(--border);
+  border: none;
   background: var(--card);
   padding: 11px;
   font-size: 1rem;
   border-radius: 12px;
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
+  box-shadow: 0 2px 8px var(--shadow);
 }
 
 .nav-button:disabled {
@@ -490,7 +500,7 @@ body.modal-open {
   border-radius: 28px 28px 18px 18px;
   padding: 24px;
   box-shadow: 0 25px 60px var(--shadow);
-  border: 1px solid var(--border);
+  border: none;
   overflow: auto;
 }
 
@@ -518,7 +528,7 @@ body.modal-open {
 
 .jump-item {
   width: 100%;
-  border: 1px solid var(--border);
+  border: none;
   background: var(--card-strong);
   border-radius: 14px;
   padding: 12px;
@@ -527,11 +537,12 @@ body.modal-open {
   cursor: pointer;
   letter-spacing: 0.01em;
   color: var(--text);
+  box-shadow: 0 2px 6px var(--shadow);
 }
 
 .jump-item.active {
-  border-color: var(--highlight);
   background: var(--accent-soft);
+  box-shadow: 0 2px 8px var(--shadow);
 }
 
 .jump-section {
@@ -578,8 +589,7 @@ body.modal-open {
   background: linear-gradient(90deg, var(--card) 0%, transparent 100%);
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  border: 1px solid var(--border);
-  border-left: none;
+  border: none;
   box-shadow: 2px 0 8px var(--shadow);
   transition: transform 0.2s ease, background 0.2s ease;
   -webkit-tap-highlight-color: transparent;
@@ -626,8 +636,7 @@ body.modal-open {
   border-top-right-radius: 24px;
   border-bottom-right-radius: 24px;
   box-shadow: 12px 0 40px var(--shadow);
-  border: 1px solid var(--border);
-  border-left: none;
+  border: none;
   width: min(320px, 85vw);
   max-width: 400px;
   transform: translateX(-100%);
@@ -675,7 +684,7 @@ body.modal-open {
 
 .hour-menu-button {
   width: 100%;
-  border: 1px solid var(--border);
+  border: none;
   background: var(--card-strong);
   border-radius: 12px;
   padding: 12px 16px;
@@ -683,7 +692,8 @@ body.modal-open {
   font-size: 1rem;
   cursor: pointer;
   color: var(--text);
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hour-menu-button:hover {
@@ -693,15 +703,7 @@ body.modal-open {
 .hour-menu-button.active {
   background: var(--accent);
   color: #fff9f0;
-  border-color: var(--accent);
-}
-
-.bottom-sheet-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin: 0 0 16px;
-  color: var(--text);
-  padding: 0 8px;
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 .bottom-sheet-overlay {
@@ -728,7 +730,8 @@ body.modal-open {
 
   .top-bar {
     padding: 6px 16px;
-    border-radius: 0;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
   }
 
   .top-actions {

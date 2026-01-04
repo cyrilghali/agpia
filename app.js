@@ -1113,7 +1113,10 @@ const HOURS = {
             "des douleurs de la mort. Tu nous as donné l'esprit",
             "filial. Nous Te louons et nous Te bénissons en",
             "disant :",
-            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
+            "\n",
+            "\n",
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ",
+            "\n",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
@@ -1125,7 +1128,10 @@ const HOURS = {
             "fin de la nuit pour méditer sur Ta promesse. Dans",
             "Ta grande miséricorde écoute nos voix. Sauve-nous",
             "ô Seigneur notre Dieu par Ta tendresse.",
+            "\n",
+            "\n",
             "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
+            "\n",
             "Maintenant et toujours et pour les siècles",
             "des siècles. Amen !"
           ],
@@ -2079,7 +2085,10 @@ const HOURS = {
             "pur ; renouvelle en moi un esprit droit. Ne me rejette",
             "pas loin de Ta Face et ne me retire pas Ton Esprit-",
             "Saint.",
-            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
+            "\n",
+            "\n",
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ",
+            "\n",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
@@ -2092,7 +2101,10 @@ const HOURS = {
             "sainteté, de justice et de force. Ô Toi qui peux tout",
             "car Tu es la lumière de nos âmes. Ô Toi qui éclaires",
             "tout être venant au monde, aie pitié de nous.",
+            "\n",
+            "\n",
             "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
+            "\n",
             "Maintenant et toujours et pour les siècles des",
             "siècles. Amen !"
           ],
@@ -2103,7 +2115,10 @@ const HOURS = {
             "Béni soit le Seigneur notre Dieu. Béni soit le",
             "Seigneur jour après jour. Il prépare notre chemin car",
             "il est le Dieu de notre Salut.",
-            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
+            "\n",
+            "\n",
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ",
+            "\n",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
@@ -2112,7 +2127,10 @@ const HOURS = {
             "bonté et Donateur de vie, daigne venir en nous.",
             "Purifie-nous de toute souillure ô très Bon et sauve",
             "nos âmes.",
+            "\n",
+            "\n",
             "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
+            "\n",
             "Maintenant et toujours et pour les siècles des",
             "siècles. Amen !"
           ],
@@ -2121,7 +2139,10 @@ const HOURS = {
             "leur accordant la paix ; viens, sois avec nous,",
             "accorde-nous Ta paix, sauve-nous et délivre nos",
             "âmes.",
-            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
+            "\n",
+            "\n",
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ",
+            "\n",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
@@ -3022,7 +3043,10 @@ const HOURS = {
             "Tourne-toi vers moi et écoute-moi le soir, le matin ou",
             "à midi. Quand je parle, qu'Il entende ma voix, qu'Il",
             "sauve mon âme et la garde en paix.",
-            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
+            "\n",
+            "\n",
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ",
+            "\n",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
@@ -3035,7 +3059,10 @@ const HOURS = {
             "Délivre-nous des passions terrestres et mène-nous",
             "vers le souvenir de Tes commandements par Ta",
             "miséricorde.",
+            "\n",
+            "\n",
             "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
+            "\n",
             "Maintenant et toujours et pour les siècles des",
             "siècles. Amen !"
           ],
@@ -3052,7 +3079,10 @@ const HOURS = {
             "pécheurs. Aide-nous ô Dieu notre Sauveur à cause",
             "de Ton Nom. Ô Seigneur sauve-nous, remets nos",
             "péchés à cause de Ton Saint Nom.",
-            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
+            "\n",
+            "\n",
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ",
+            "\n",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
@@ -3060,7 +3090,10 @@ const HOURS = {
             "Dieu quand Tu as étendu Tes mains pures sur",
             "l'arbre de la Croix. C'est pourquoi toutes les nations",
             "s'écrient : \"Gloire à Toi Seigneur\".",
+            "\n",
+            "\n",
             "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
+            "\n",
             "Maintenant et toujours et pour les siècles des",
             "siècles. Amen !"
           ],
@@ -3073,7 +3106,10 @@ const HOURS = {
             "rendons grâce car Tu as rempli nos cœurs de joie, ô",
             "Sauveur, quand Tu es venu pour aider le monde. Ô",
             "Seigneur, gloire à Toi.",
-            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
+            "\n",
+            "\n",
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ",
+            "\n",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
@@ -3927,7 +3963,10 @@ const HOURS = {
             "comprendre Tes paroles. Que mes implorations",
             "trouvent auprès de Toi un accueil favorable. Rends-",
             "moi la vie selon Ta parole.",
+            "\n",
+            "\n",
             "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ",
+            "\n",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
@@ -3940,7 +3979,10 @@ const HOURS = {
             "vivifiants. Afin qu'ayant goûté à Tes bontés, je t'offre",
             "une louange incessante, désirant Ta splendeur plus",
             "que toute chose, O Christ notre Dieu et sauve-nous.",
-            "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
+            "\n",
+            "\n",
+            "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
+            "\n",
             "Maintenant et toujours et pour les siècles des",
             "siècles. Amen !"
           ],
@@ -3955,7 +3997,10 @@ const HOURS = {
             "toujours. Ne répudie pas Ton alliance. Ne nous",
             "refuse pas Ta pitié pour Abraham, Ton bien-aimé,",
             "Isaac, Ton serviteur, et Jacob, Ton saint.",
+            "\n",
+            "\n",
             "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ",
+            "\n",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
@@ -3965,7 +4010,10 @@ const HOURS = {
             "la terre n'aurait pas tremblé, mais ô Tout-puissant,",
             "qui supportes tout, souviens-Toi de moi quand Tu",
             "viendras dans ton royaume\"",
+            "\n",
+            "\n",
             "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
+            "\n",
             "Maintenant et toujours et pour les siècles des",
             "siècles. Amen !"
           ],
@@ -3976,7 +4024,10 @@ const HOURS = {
             "confessons nos péchés avec le larron et proclamons",
             "Ta Divinité. Nous crions avec lui : \" Souviens-Toi de",
             "moi quand Tu viendras dans ton Royaume.\"",
+            "\n",
+            "\n",
             "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
+            "\n",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
@@ -4772,6 +4823,7 @@ const HOURS = {
             "amour pour les hommes en clamant et en disant : \"Ô",
             "Dieu pardonne moi car je suis pécheur et aie pitié de",
             "moi !\"",
+            "\n",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
@@ -4785,6 +4837,7 @@ const HOURS = {
             "\"Père, j'ai péché contre le ciel et contre Toi. Je ne",
             "mérite plus d'être appelé Ton fils. Prends-moi",
             "comme l'un de Tes ouvriers.\"",
+            "\n",
             "Maintenant et toujours et pour les siècles des",
             "siècles. Amen !"
           ],
@@ -5674,7 +5727,10 @@ const HOURS = {
             "du sommeil de la paresse et implore le Sauveur en",
             "te repentant et en disant : Ô Dieu ai pitié de moi et",
             "sauve-moi.",
-            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
+            "\n",
+            "\n",
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ",
+            "\n",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
@@ -5693,7 +5749,10 @@ const HOURS = {
             "poitrine et je dis : \"ô Dieu pardonne moi car je suis",
             "pécheur\".",
             "",
+            "\n",
+            "\n",
             "ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.",
+            "\n",
             "Maintenant et toujours et pour les siècles des",
             "siècles. Amen !"
           ],
@@ -5705,7 +5764,10 @@ const HOURS = {
             "Tu es une Mère puissante, miséricordieuse et",
             "secourable, Mère de la Source de la vie, mon Roi et",
             "mon Dieu, Jésus Christ, mon espérance.",
-            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ:",
+            "\n",
+            "\n",
+            "Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ",
+            "\n",
             "Gloire au Père, au Fils et au Saint Esprit."
           ],
           [
