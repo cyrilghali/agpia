@@ -50,7 +50,8 @@ body.modal-open {
 .app {
   max-width: 780px;
   margin: 0 auto;
-  padding: 32px 18px 120px; /* Plus d'espace en bas pour la nav flottante */
+  padding: 32px 18px;
+  padding-bottom: calc(32px + 80px); /* Espace pour le footer fixe */
 }
 
 .top-bar {
@@ -187,11 +188,11 @@ body.modal-open {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 24px;
 }
 
 .continuous-view {
-  gap: 8px;
+  gap: 20px;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -280,7 +281,7 @@ body.modal-open {
 
 .block-header {
   width: 100%;
-  text-align: left;
+  text-align: center;
   border: none;
   background: transparent;
   font-size: 1.1rem;
@@ -299,7 +300,7 @@ body.modal-open {
 
 .block-header-tap {
   width: 100%;
-  text-align: left;
+  text-align: center;
   border: none;
   background: transparent;
   padding: 18px;
@@ -321,6 +322,7 @@ body.modal-open {
   letter-spacing: 0.01em;
   margin: 0;
   color: var(--text);
+  text-align: center;
 }
 
 .block-expand-hint {
@@ -350,7 +352,7 @@ body.modal-open {
 
 .block-content {
   padding: 12px 20px 20px;
-  margin: 0 6px 12px;
+  margin: 12px 6px 12px;
   background: var(--card-strong);
   border-radius: 16px;
   border: 1px solid var(--border);
@@ -361,7 +363,7 @@ body.modal-open {
 
 .block-content.active {
   padding: 20px;
-  margin: 0 6px 20px;
+  margin: 12px 6px 20px;
   animation: contentExpand 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -378,7 +380,7 @@ body.modal-open {
 
 .block-content.collapsed {
   padding: 8px 16px;
-  margin: 0 6px 8px;
+  margin: 12px 6px 8px;
   max-height: 60px;
   overflow: hidden;
   opacity: 0.6;
@@ -391,10 +393,16 @@ body.modal-open {
   font-style: italic;
   line-height: 1.5;
   opacity: 0.7;
+  text-align: left;
 }
 
 .block-content p {
   margin: 0 0 16px;
+  text-align: center;
+}
+
+.block-content em {
+  font-style: italic;
 }
 
 .block-nav {
@@ -622,7 +630,8 @@ body.modal-open {
 
 @media (max-width: 640px) {
   .app {
-    padding: 20px 12px 120px; /* Plus d'espace en bas pour la nav flottante */
+    padding: 20px 12px;
+    padding-bottom: calc(20px + 70px); /* Espace pour le footer fixe */
   }
 
   .top-bar {

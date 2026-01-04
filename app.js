@@ -5958,7 +5958,12 @@ function renderApp() {
     <section class="block-list continuous-view" id="blockList">
       ${renderBlocksContinuous(hour)}
     </section>
-    <nav class="floating-nav sticky-bottom">
+  `;
+
+  // Rendre le footer en dehors de .app
+  const floatingNav = document.getElementById("floatingNav");
+  if (floatingNav) {
+    floatingNav.innerHTML = `
       <button class="nav-button-large" type="button" data-direction="back" id="navBack" ${state.activeBlockIndex === 0 ? "disabled" : ""}>
         <span class="nav-icon">◀</span>
         <span class="nav-label">Précédent</span>
@@ -5967,8 +5972,8 @@ function renderApp() {
         <span class="nav-label">Suivant</span>
         <span class="nav-icon">▶</span>
       </button>
-    </nav>
-  `;
+    `;
+  }
 
   bindHourButtonEvents();
   bindBlockEvents();
@@ -6044,6 +6049,15 @@ function renderBlocksContinuous(hour) {
     .join("");
 }
 
+function italicizeAmenAndAlleluia(text) {
+  if (typeof text !== "string") return text;
+  // Remplacer "Amen" et "Alléluia" (insensible à la casse) par leur version en italique
+  return text
+    .replace(/\bAmen\b/gi, "<em>Amen</em>")
+    .replace(/\bAlléluia\b/gi, "<em>Alléluia</em>")
+    .replace(/\balleluia\b/gi, "<em>alleluia</em>");
+}
+
 function renderCollapsedBlockContent(block, index) {
   const paragraphs = Array.isArray(block.content) ? block.content : [block.content];
   const firstPara = paragraphs[0];
@@ -6059,6 +6073,8 @@ function renderCollapsedBlockContent(block, index) {
     preview += "...";
   }
   
+  preview = italicizeAmenAndAlleluia(preview);
+  
   return `
     <div class="block-content collapsed">
       <p class="block-preview">${preview}</p>
@@ -6071,10 +6087,13 @@ function renderActiveBlockContent(block, index, total) {
   const content = paragraphs.map((para) => {
     if (Array.isArray(para)) {
       // Si c'est un tableau, joindre les phrases avec des espaces pour former un paragraphe
-      return `<p>${para.join(" ")}</p>`;
+      const text = para.join(" ");
+      const italicized = italicizeAmenAndAlleluia(text);
+      return `<p>${italicized}</p>`;
     } else {
       // Si c'est une chaîne, créer un paragraphe directement
-      return `<p>${para}</p>`;
+      const italicized = italicizeAmenAndAlleluia(para);
+      return `<p>${italicized}</p>`;
     }
   }).join("");
   return `
@@ -6319,7 +6338,7 @@ function getCurrentHour() {
 
 function getOrientationText(hour) {
   const block = hour.blocks[state.activeBlockIndex];
-  return `${hour.title} — ${block.title} (Block ${state.activeBlockIndex + 1}/${hour.blocks.length})`;
+  return `${hour.title} — ${block.title}`;
 }
 
 function maybeScrollActiveBlock() {
