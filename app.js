@@ -5987,7 +5987,6 @@ function renderApp() {
   if (topBar) {
     topBar.innerHTML = `
       <div class="top-actions">
-        <button class="menu-button" type="button" id="menuButton" aria-label="Menu">☰</button>
         <div class="header-content">
           <div class="current-hour-label">${hour.title}</div>
           <div class="progress-container" id="progressContainer">
@@ -6007,8 +6006,10 @@ function renderApp() {
   bindHourButtonEvents();
   bindBlockEvents();
   bindProgressBar();
-  bindMenuButton();
-  bindSwipeGestures();
+  bindSwipeIndicator();
+  bindKeyboardNavigation();
+  bindClickNavigation(); // Doit être appelé après innerHTML pour recréer les zones
+  bindSwipeToOpenMenu();
   renderJumpList(hour);
   maybeScrollActiveBlock();
 }
@@ -6159,86 +6160,116 @@ function bindProgressBar() {
   }
 }
 
-function bindMenuButton() {
-  const menuButton = document.getElementById("menuButton");
-  if (menuButton) {
-    menuButton.addEventListener("click", () => {
+function bindSwipeIndicator() {
+  const swipeIndicator = document.getElementById("swipeIndicator");
+  if (swipeIndicator) {
+    swipeIndicator.addEventListener("click", () => {
       openBottomSheet();
     });
   }
 }
 
-function bindSwipeGestures() {
-  const blockList = document.getElementById("blockList");
-  if (!blockList) return;
+let keyboardNavigationBound = false;
 
-  let touchStartX = 0;
-  let touchStartY = 0;
-  let touchEndX = 0;
-  let touchEndY = 0;
-  let touchStartTime = 0;
-  let initialScrollTop = 0;
-
-  blockList.addEventListener("touchstart", (e) => {
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-    touchStartTime = Date.now();
-    
-    // Enregistrer la position de scroll initiale
-    const activeBlockContent = document.querySelector(".block-content.active");
-    if (activeBlockContent) {
-      initialScrollTop = activeBlockContent.scrollTop;
-    }
-  }, { passive: true });
-
-  blockList.addEventListener("touchmove", (e) => {
-    // Détecter si on est en train de scroller verticalement
-    const activeBlockContent = document.querySelector(".block-content.active");
-    if (activeBlockContent) {
-      const currentScrollTop = activeBlockContent.scrollTop;
-      const hasScrolled = Math.abs(currentScrollTop - initialScrollTop) > 5;
-      // Si on scroll verticalement, on ne veut pas déclencher un swipe horizontal
-      if (hasScrolled) {
-        touchStartX = 0; // Réinitialiser pour éviter le swipe
-      }
-    }
-  }, { passive: true });
-
-  blockList.addEventListener("touchend", (e) => {
-    touchEndX = e.changedTouches[0].clientX;
-    touchEndY = e.changedTouches[0].clientY;
-    const touchDuration = Date.now() - touchStartTime;
-    const deltaX = touchEndX - touchStartX;
-    const deltaY = touchEndY - touchStartY;
-    
-    // Ignorer les swipes trop lents (probablement un scroll)
-    if (touchDuration > 300) return;
-    
-    // Vérifier si on a scrollé verticalement dans le bloc
-    const activeBlockContent = document.querySelector(".block-content.active");
-    if (activeBlockContent) {
-      const scrollTop = activeBlockContent.scrollTop;
-      const hasScrolled = Math.abs(scrollTop - initialScrollTop) > 5;
-      
-      // Si on a scrollé verticalement, ne pas traiter comme un swipe horizontal
-      if (hasScrolled) return;
+function bindKeyboardNavigation() {
+  // Ne lier qu'une seule fois pour éviter les doublons
+  if (keyboardNavigationBound) return;
+  keyboardNavigationBound = true;
+  
+  document.addEventListener("keydown", (e) => {
+    // Ignorer si on est dans un input ou textarea
+    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") {
+      return;
     }
     
-    // Swipe horizontal : le mouvement horizontal doit être plus important que le vertical
-    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > SWIPE_THRESHOLD) {
+    const hour = getCurrentHour();
+    
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
       e.preventDefault();
-      const hour = getCurrentHour();
       
-      if (deltaX < 0) {
-        // Swipe gauche → bloc suivant
-        if (state.activeBlockIndex < hour.blocks.length - 1) {
-          setActiveBlock(state.activeBlockIndex + 1);
-        }
-      } else {
-        // Swipe droite → bloc précédent
+      if (e.key === "ArrowLeft") {
+        // Flèche gauche → bloc précédent
         if (state.activeBlockIndex > 0) {
           setActiveBlock(state.activeBlockIndex - 1);
         }
+      } else {
+        // Flèche droite → bloc suivant
+        if (state.activeBlockIndex < hour.blocks.length - 1) {
+          setActiveBlock(state.activeBlockIndex + 1);
+        }
+      }
+    }
+  });
+}
+
+function bindClickNavigation() {
+  const app = document.getElementById("app");
+  if (!app) return;
+  
+  // Supprimer les zones existantes si elles existent (elles sont supprimées par innerHTML de toute façon)
+  const existingLeft = app.querySelector(".nav-zone-left");
+  const existingRight = app.querySelector(".nav-zone-right");
+  if (existingLeft) existingLeft.remove();
+  if (existingRight) existingRight.remove();
+  
+  // Créer la zone gauche pour bloc précédent
+  const leftZone = document.createElement("div");
+  leftZone.className = "nav-zone nav-zone-left";
+  leftZone.setAttribute("aria-label", "Bloc précédent");
+  leftZone.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (state.activeBlockIndex > 0) {
+      setActiveBlock(state.activeBlockIndex - 1);
+    }
+  });
+  
+  // Créer la zone droite pour bloc suivant
+  const rightZone = document.createElement("div");
+  rightZone.className = "nav-zone nav-zone-right";
+  rightZone.setAttribute("aria-label", "Bloc suivant");
+  rightZone.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const hour = getCurrentHour();
+    if (state.activeBlockIndex < hour.blocks.length - 1) {
+      setActiveBlock(state.activeBlockIndex + 1);
+    }
+  });
+  
+  // Ajouter les zones à l'app
+  app.appendChild(leftZone);
+  app.appendChild(rightZone);
+}
+
+function bindSwipeToOpenMenu() {
+  const EDGE_THRESHOLD = 20; // pixels depuis le bord gauche
+  const SWIPE_THRESHOLD = 50; // pixels minimum pour ouvrir le menu
+  
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let isSwipingFromEdge = false;
+  
+  document.addEventListener("touchstart", (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    
+    // Vérifier si on commence depuis le bord gauche
+    isSwipingFromEdge = touchStartX <= EDGE_THRESHOLD;
+  }, { passive: true });
+  
+  document.addEventListener("touchend", (e) => {
+    if (!isSwipingFromEdge) return;
+    
+    touchEndX = e.changedTouches[0].clientX;
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = Math.abs(e.changedTouches[0].clientY - touchStartY);
+    
+    // Si le mouvement horizontal est significatif et plus important que le vertical
+    if (deltaX > SWIPE_THRESHOLD && deltaX > deltaY) {
+      const bottomSheet = getBottomSheet();
+      if (bottomSheet && !bottomSheet.classList.contains("open")) {
+        e.preventDefault();
+        openBottomSheet();
       }
     }
   }, { passive: false });

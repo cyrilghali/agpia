@@ -71,6 +71,29 @@ body.modal-open {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+/* Zones de navigation par clic */
+.nav-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 25%;
+  z-index: 5;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: auto;
+}
+
+.nav-zone-left {
+  left: 0;
+  /* Éviter le conflit avec l'indicateur de swipe */
+  padding-left: 40px;
+}
+
+.nav-zone-right {
+  right: 0;
 }
 
 /* .sticky-header - Le header est fixe en haut via .top-bar */
@@ -500,6 +523,59 @@ body.modal-open {
 }
 
 /* Ancien footer supprimé - le header est maintenant en bas */
+
+/* Swipe Indicator - Indicateur visuel pour ouvrir le menu */
+.swipe-indicator {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 90;
+  width: 32px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--card) 0%, transparent 100%);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: 1px solid var(--border);
+  border-left: none;
+  box-shadow: 2px 0 8px var(--shadow);
+  transition: transform 0.2s ease, background 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.swipe-indicator:hover {
+  transform: translateY(-50%) translateX(4px);
+  background: linear-gradient(90deg, var(--card-strong) 0%, transparent 100%);
+}
+
+.swipe-indicator:active {
+  transform: translateY(-50%) translateX(2px);
+}
+
+.swipe-handle {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+}
 
 /* Side Drawer (menu depuis la gauche) */
 .bottom-sheet {
