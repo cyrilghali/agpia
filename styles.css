@@ -236,9 +236,25 @@ body.modal-open {
   display: flex;
   flex-direction: column;
   gap: 0;
-  overflow: hidden;
+  overflow-y: auto;
   flex: 1;
   min-height: 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.block-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.block-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.block-list::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 3px;
 }
 
 .continuous-view {
@@ -292,8 +308,8 @@ body.modal-open {
 .block.active {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  min-height: 0;
+  width: 100%;
+  margin: auto 0;
   opacity: 1;
   box-shadow: 0 15px 45px var(--shadow);
   border-color: var(--accent);
@@ -376,26 +392,9 @@ body.modal-open {
   padding: 16px 20px;
   margin: 8px 6px 8px;
   animation: contentExpand 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow-y: auto;
-  flex: 1;
-  min-height: 0;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border) transparent;
+  overflow: visible;
 }
 
-.block-content.active::-webkit-scrollbar {
-  width: 6px;
-}
-
-.block-content.active::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.block-content.active::-webkit-scrollbar-thumb {
-  background-color: var(--border);
-  border-radius: 3px;
-}
 
 @keyframes contentExpand {
   0% {
@@ -730,10 +729,6 @@ body.modal-open {
   .top-bar {
     padding: 6px 16px;
     border-radius: 0;
-  }
-  
-  .block-content.active {
-    max-height: calc(100vh - 100px);
   }
 
   .top-actions {
