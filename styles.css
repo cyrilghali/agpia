@@ -38,7 +38,8 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   background: linear-gradient(135deg, var(--bg) 0%, var(--bg-secondary) 100%);
   color: var(--text);
 }
@@ -47,35 +48,38 @@ body.modal-open {
   overflow: hidden;
 }
 
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 18px;
+  box-shadow: 0 2px 10px var(--shadow);
+  max-width: 780px;
+  margin: 0 auto;
+}
+
 .app {
   max-width: 780px;
   margin: 0 auto;
-  padding: 32px 18px;
-  padding-bottom: calc(32px + 80px); /* Espace pour le footer fixe */
+  padding: 0 18px;
+  padding-top: calc(var(--header-height, 60px) + 8px);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.top-bar {
-  z-index: 10;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 18px;
-  box-shadow: 0 12px 30px var(--shadow);
-  margin-bottom: 24px;
-}
-
-.sticky-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+/* .sticky-header - Le header est maintenant fixe via .top-bar */
 
 .progress-container {
   width: 100%;
   height: 4px;
   background: var(--card-strong);
   border-radius: 2px;
-  margin: 12px 0 8px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -120,14 +124,15 @@ body.modal-open {
   border-radius: 12px;
   background: var(--accent);
   color: #fff9f0;
-  padding: 10px 16px;
+  padding: 8px 12px;
   font-size: 1.2rem;
   cursor: pointer;
   box-shadow: 0 6px 18px var(--shadow);
-  min-width: 48px;
+  min-width: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .hour-selector {
@@ -162,7 +167,21 @@ body.modal-open {
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  margin-bottom: 8px;
+}
+
+.header-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-right: 12px;
+}
+
+.current-hour-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
 }
 
 .jump-button {
@@ -185,10 +204,13 @@ body.modal-open {
 }
 
 .block-list {
-  margin-top: 20px;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 0;
+  overflow: hidden;
+  flex: 1;
+  min-height: 0;
 }
 
 .continuous-view {
@@ -227,23 +249,24 @@ body.modal-open {
 }
 
 .block {
+  display: none;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 20px;
-  padding: 6px;
+  padding: 4px;
   box-shadow: 0 10px 35px var(--shadow);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-              opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-              max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
               border-color 0.3s ease,
               box-shadow 0.3s ease;
-  will-change: transform, opacity;
 }
 
 .block.active {
-  transform: scale(1);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
   opacity: 1;
-  max-height: none;
   box-shadow: 0 15px 45px var(--shadow);
   border-color: var(--accent);
   animation: blockActivate 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -263,21 +286,7 @@ body.modal-open {
   }
 }
 
-.block.before-visible,
-.block.after-visible {
-  transform: scale(0.95);
-  opacity: 0.6;
-  max-height: 200px;
-  overflow: hidden;
-}
-
-.block.before-collapsed,
-.block.after-collapsed {
-  transform: scale(0.9);
-  opacity: 0.3;
-  max-height: 80px;
-  overflow: hidden;
-}
+/* Les blocs non actifs sont complètement cachés */
 
 .block-header {
   width: 100%;
@@ -301,23 +310,19 @@ body.modal-open {
 .block-header-tap {
   width: 100%;
   text-align: center;
-  border: none;
-  background: transparent;
-  padding: 18px;
+  border: 1px solid var(--accent);
+  background: var(--card-strong);
+  padding: 10px 18px;
   border-radius: 14px;
   cursor: pointer;
   color: var(--text);
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-}
-
-.block.active .block-header-tap {
-  background: var(--card-strong);
-  border: 1px solid var(--accent);
+  flex-shrink: 0;
 }
 
 .block-title {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   margin: 0;
@@ -325,30 +330,7 @@ body.modal-open {
   text-align: center;
 }
 
-.block-expand-hint {
-  display: block;
-  font-size: 0.85rem;
-  color: var(--subtle);
-  font-style: italic;
-  margin-top: 4px;
-  font-weight: normal;
-  opacity: 0.4;
-  transition: opacity 0.3s ease;
-}
-
-.block.active .block-expand-hint {
-  display: none;
-}
-
-.block.before-visible .block-expand-hint,
-.block.after-visible .block-expand-hint {
-  opacity: 0.3;
-}
-
-.block.before-collapsed .block-expand-hint,
-.block.after-collapsed .block-expand-hint {
-  opacity: 0.2;
-}
+/* block-expand-hint supprimé - plus utilisé */
 
 .block-content {
   padding: 12px 20px 20px;
@@ -359,12 +341,32 @@ body.modal-open {
   transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
               margin 0.4s cubic-bezier(0.4, 0, 0.2, 1),
               opacity 0.3s ease;
+  overflow: hidden;
 }
 
 .block-content.active {
-  padding: 20px;
-  margin: 12px 6px 20px;
+  padding: 16px 20px;
+  margin: 8px 6px 8px;
   animation: contentExpand 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.block-content.active::-webkit-scrollbar {
+  width: 6px;
+}
+
+.block-content.active::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.block-content.active::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 3px;
 }
 
 @keyframes contentExpand {
@@ -506,7 +508,7 @@ body.modal-open {
   left: 0;
   right: 0;
   z-index: 90;
-  display: flex;
+  display: none; /* Caché visuellement pour l'instant */
   gap: 12px;
   padding: 16px;
   background: var(--card);
@@ -605,6 +607,51 @@ body.modal-open {
   -webkit-overflow-scrolling: touch;
 }
 
+.hour-selector-section {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hour-selector-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0 8px;
+}
+
+.hour-selector-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hour-menu-button {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--card-strong);
+  border-radius: 12px;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--text);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.hour-menu-button:hover {
+  background: var(--card);
+}
+
+.hour-menu-button.active {
+  background: var(--accent);
+  color: #fff9f0;
+  border-color: var(--accent);
+}
+
 .bottom-sheet-title {
   font-size: 1.3rem;
   font-weight: 600;
@@ -630,19 +677,36 @@ body.modal-open {
 
 @media (max-width: 640px) {
   .app {
-    padding: 20px 12px;
-    padding-bottom: calc(20px + 70px); /* Espace pour le footer fixe */
+    padding: 0 12px;
+    padding-top: calc(var(--header-height, 55px) + 6px);
+    height: 100vh;
   }
 
   .top-bar {
-    margin: 0 -8px 16px;
-    border-radius: 0 0 18px 18px;
-    padding: 14px 16px 16px;
+    padding: 8px 16px;
+    border-radius: 0;
+  }
+  
+  .block-content.active {
+    max-height: calc(100vh - 100px);
   }
 
   .top-actions {
     align-items: flex-start;
     gap: 10px;
+  }
+  
+  .header-content {
+    margin-right: 8px;
+    gap: 6px;
+  }
+  
+  .current-hour-label {
+    font-size: 0.85rem;
+  }
+  
+  .progress-container {
+    margin-right: 0;
   }
 
   .hour-selector {
@@ -667,9 +731,14 @@ body.modal-open {
 
   .menu-button {
     flex: 0 0 auto;
-    padding: 9px 12px;
+    padding: 6px 10px;
     font-size: 1.1rem;
     box-shadow: 0 4px 16px var(--shadow);
+    min-width: 40px;
+  }
+  
+  .progress-container {
+    margin-right: 8px;
   }
 
   .orientation-line {
@@ -695,15 +764,7 @@ body.modal-open {
     font-size: 1.4rem;
   }
 
-  .block.before-visible,
-  .block.after-visible {
-    max-height: 150px;
-  }
-
-  .block.before-collapsed,
-  .block.after-collapsed {
-    max-height: 60px;
-  }
+  /* Les blocs non actifs sont cachés */
 
   .bottom-sheet {
     max-height: 85vh;

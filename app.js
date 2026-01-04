@@ -5899,10 +5899,50 @@ function getBottomSheetOverlay() {
   return document.getElementById("bottomSheetOverlay");
 }
 
+function calculatePrayerHour() {
+  const now = new Date();
+  const hour = now.getHours();
+  const minutes = now.getMinutes();
+  const timeInMinutes = hour * 60 + minutes;
+
+  // Heures de prière traditionnelles:
+  // Hour 1: 6:00 - 8:59
+  // Hour 3: 9:00 - 11:59
+  // Hour 6: 12:00 - 14:59
+  // Hour 9: 15:00 - 17:59
+  // Hour 11: 18:00 - 20:59
+  // Hour 12: 21:00 - 5:59 (nuit)
+  
+  if (timeInMinutes >= 6 * 60 && timeInMinutes < 9 * 60) {
+    return "1";
+  } else if (timeInMinutes >= 9 * 60 && timeInMinutes < 12 * 60) {
+    return "3";
+  } else if (timeInMinutes >= 12 * 60 && timeInMinutes < 15 * 60) {
+    return "6";
+  } else if (timeInMinutes >= 15 * 60 && timeInMinutes < 18 * 60) {
+    return "9";
+  } else if (timeInMinutes >= 18 * 60 && timeInMinutes < 21 * 60) {
+    return "11";
+  } else {
+    // Nuit: 21:00 - 5:59
+    return "12";
+  }
+}
+
 function hydrateStateFromStorage() {
   const storedHour = window.localStorage.getItem(STORAGE_KEY);
-  if (storedHour && HOURS[storedHour]) {
+  const storedDate = window.localStorage.getItem(STORAGE_KEY + ":date");
+  const today = new Date().toDateString();
+  
+  // Si la date stockée est différente d'aujourd'hui, calculer automatiquement
+  // Sinon, utiliser l'heure stockée si elle existe
+  if (storedDate === today && storedHour && HOURS[storedHour]) {
     state.selectedHourKey = storedHour;
+  } else {
+    // Calcul automatique basé sur l'heure actuelle
+    state.selectedHourKey = calculatePrayerHour();
+    window.localStorage.setItem(STORAGE_KEY, state.selectedHourKey);
+    window.localStorage.setItem(STORAGE_KEY + ":date", today);
   }
   state.lastPositions[state.selectedHourKey] = 0;
 }
@@ -5942,19 +5982,23 @@ function renderApp() {
   const orientationText = getOrientationText(hour);
   const progressPercent = ((state.activeBlockIndex + 1) / hour.blocks.length) * 100;
 
-  appRoot.innerHTML = `
-    <header class="top-bar sticky-header">
+  // Rendre le header en dehors de .app
+  const topBar = document.getElementById("topBar");
+  if (topBar) {
+    topBar.innerHTML = `
       <div class="top-actions">
-        <div class="hour-selector" role="group" aria-label="Select prayer hour">
-          ${renderHourButtons()}
+        <div class="header-content">
+          <div class="current-hour-label">${hour.title}</div>
+          <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" style="width: ${progressPercent}%"></div>
+          </div>
         </div>
         <button class="menu-button" type="button" id="menuButton" aria-label="Menu">☰</button>
       </div>
-      <div class="progress-container" id="progressContainer">
-        <div class="progress-bar" style="width: ${progressPercent}%"></div>
-      </div>
-      <div class="orientation-line">${orientationText}</div>
-    </header>
+    `;
+  }
+
+  appRoot.innerHTML = `
     <section class="block-list continuous-view" id="blockList">
       ${renderBlocksContinuous(hour)}
     </section>
@@ -6009,44 +6053,20 @@ function renderBlocks(hour) {
 }
 
 function renderBlocksContinuous(hour) {
-  return hour.blocks
-    .map((block, index) => {
-      const isActive = index === state.activeBlockIndex;
-      const distance = Math.abs(index - state.activeBlockIndex);
-      
-      // Déterminer le style selon la position
-      let blockClass = "block";
-      if (isActive) {
-        blockClass += " active";
-      } else if (index < state.activeBlockIndex) {
-        if (distance <= VISIBLE_BLOCKS_BEFORE) {
-          blockClass += " before-visible";
-        } else {
-          blockClass += " before-collapsed";
-        }
-      } else {
-        if (distance <= VISIBLE_BLOCKS_AFTER) {
-          blockClass += " after-visible";
-        } else {
-          blockClass += " after-collapsed";
-        }
-      }
-
-      const content = isActive 
-        ? renderActiveBlockContent(block, index, hour.blocks.length)
-        : renderCollapsedBlockContent(block, index);
-
-      return `
-        <article class="${blockClass}" data-index="${index}" id="${block.id}">
-          <div class="block-header-tap" data-index="${index}">
-            <h3 class="block-title">${block.title}</h3>
-            ${!isActive ? '<span class="block-expand-hint">Tap pour ouvrir</span>' : ''}
-          </div>
-          ${content}
-        </article>
-      `;
-    })
-    .join("");
+  // Ne rendre que le bloc actif, qui occupe tout l'espace
+  const activeBlock = hour.blocks[state.activeBlockIndex];
+  if (!activeBlock) return "";
+  
+  const content = renderActiveBlockContent(activeBlock, state.activeBlockIndex, hour.blocks.length);
+  
+  return `
+    <article class="block active" data-index="${state.activeBlockIndex}" id="${activeBlock.id}">
+      <div class="block-header-tap" data-index="${state.activeBlockIndex}">
+        <h3 class="block-title">${activeBlock.title}</h3>
+      </div>
+      ${content}
+    </article>
+  `;
 }
 
 function italicizeAmenAndAlleluia(text) {
@@ -6193,59 +6213,71 @@ function bindSwipeGestures() {
   let touchStartY = 0;
   let touchEndX = 0;
   let touchEndY = 0;
-  let isScrolling = false;
   let touchStartTime = 0;
+  let initialScrollTop = 0;
 
   blockList.addEventListener("touchstart", (e) => {
     touchStartX = e.touches[0].clientX;
     touchStartY = e.touches[0].clientY;
     touchStartTime = Date.now();
-    isScrolling = false;
+    
+    // Enregistrer la position de scroll initiale
+    const activeBlockContent = document.querySelector(".block-content.active");
+    if (activeBlockContent) {
+      initialScrollTop = activeBlockContent.scrollTop;
+    }
   }, { passive: true });
 
   blockList.addEventListener("touchmove", (e) => {
-    const deltaX = Math.abs(e.touches[0].clientX - touchStartX);
-    const deltaY = Math.abs(e.touches[0].clientY - touchStartY);
-    
-    // Si le scroll vertical est plus important, on ne traite pas comme un swipe
-    if (deltaY > deltaX * 1.5) {
-      isScrolling = true;
+    // Détecter si on est en train de scroller verticalement
+    const activeBlockContent = document.querySelector(".block-content.active");
+    if (activeBlockContent) {
+      const currentScrollTop = activeBlockContent.scrollTop;
+      const hasScrolled = Math.abs(currentScrollTop - initialScrollTop) > 5;
+      // Si on scroll verticalement, on ne veut pas déclencher un swipe horizontal
+      if (hasScrolled) {
+        touchStartX = 0; // Réinitialiser pour éviter le swipe
+      }
     }
   }, { passive: true });
 
   blockList.addEventListener("touchend", (e) => {
-    if (isScrolling) return;
-    
     touchEndX = e.changedTouches[0].clientX;
     touchEndY = e.changedTouches[0].clientY;
     const touchDuration = Date.now() - touchStartTime;
-    
     const deltaX = touchEndX - touchStartX;
     const deltaY = touchEndY - touchStartY;
     
     // Ignorer les swipes trop lents (probablement un scroll)
     if (touchDuration > 300) return;
     
-    // Swipe horizontal (priorité)
+    // Vérifier si on a scrollé verticalement dans le bloc
+    const activeBlockContent = document.querySelector(".block-content.active");
+    if (activeBlockContent) {
+      const scrollTop = activeBlockContent.scrollTop;
+      const hasScrolled = Math.abs(scrollTop - initialScrollTop) > 5;
+      
+      // Si on a scrollé verticalement, ne pas traiter comme un swipe horizontal
+      if (hasScrolled) return;
+    }
+    
+    // Swipe horizontal : le mouvement horizontal doit être plus important que le vertical
     if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > SWIPE_THRESHOLD) {
       e.preventDefault();
       const hour = getCurrentHour();
       
-      if (deltaX > 0) {
-        // Swipe droite → bloc précédent
-        if (state.activeBlockIndex > 0) {
-          setActiveBlock(state.activeBlockIndex - 1);
-        }
-      } else {
+      if (deltaX < 0) {
         // Swipe gauche → bloc suivant
         if (state.activeBlockIndex < hour.blocks.length - 1) {
           setActiveBlock(state.activeBlockIndex + 1);
         }
+      } else {
+        // Swipe droite → bloc précédent
+        if (state.activeBlockIndex > 0) {
+          setActiveBlock(state.activeBlockIndex - 1);
+        }
       }
     }
-    // Swipe vertical pour changer d'heure (désactivé car peu intuitif avec scroll vertical)
-    // Le swipe vertical est désactivé pour éviter les conflits avec le scroll naturel
-    // Les utilisateurs peuvent changer d'heure via les boutons en haut
   }, { passive: false });
 }
 
@@ -6265,6 +6297,27 @@ function bindJumpButton() {
 }
 
 function renderJumpList(hour) {
+  // Rendre le sélecteur d'heure dans le bottom sheet
+  const hourSelectorMenu = document.getElementById("hourSelectorMenu");
+  if (hourSelectorMenu) {
+    hourSelectorMenu.innerHTML = Object.entries(HOURS)
+      .map(([key, hourData]) => {
+        const isActive = key === state.selectedHourKey ? "active" : "";
+        return `<button class="hour-menu-button ${isActive}" type="button" data-hour="${key}">${hourData.title}</button>`;
+      })
+      .join("");
+    
+    hourSelectorMenu.querySelectorAll(".hour-menu-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const hourKey = button.dataset.hour;
+        if (hourKey !== state.selectedHourKey) {
+          selectHour(hourKey);
+          closeBottomSheet();
+        }
+      });
+    });
+  }
+  
   // Essayer bottom sheet d'abord (mobile-first)
   const bottomSheetList = document.getElementById("jumpList");
   const modalList = document.getElementById("jumpListModal");
@@ -6307,12 +6360,19 @@ function selectHour(hourKey) {
   state.activeBlockIndex = clamp(savedIndex, 0, maxIndex);
   shouldScrollToActive = true;
   window.localStorage.setItem(STORAGE_KEY, hourKey);
+  window.localStorage.setItem(STORAGE_KEY + ":date", new Date().toDateString());
   renderApp();
 }
 
 function setActiveBlock(index) {
   const hour = getCurrentHour();
   const safeIndex = clamp(index, 0, hour.blocks.length - 1);
+  
+  // Remettre le scroll du bloc actuel en haut avant de changer
+  const currentActiveContent = document.querySelector(".block-content.active");
+  if (currentActiveContent) {
+    currentActiveContent.scrollTop = 0;
+  }
   
   // Animation de transition entre blocs
   const previousIndex = state.activeBlockIndex;
@@ -6330,6 +6390,14 @@ function setActiveBlock(index) {
   }
   
   renderApp();
+  
+  // Remettre le scroll du nouveau bloc actif en haut après le rendu
+  requestAnimationFrame(() => {
+    const newActiveContent = document.querySelector(".block-content.active");
+    if (newActiveContent) {
+      newActiveContent.scrollTop = 0;
+    }
+  });
 }
 
 function getCurrentHour() {
