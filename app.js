@@ -5988,6 +5988,7 @@ window.addEventListener("DOMContentLoaded", () => {
   hydrateStateFromStorage();
   setupModalDismissHandlers();
   renderApp();
+  showNavigationHint();
 });
 
 // Support pour bottom sheet (si jumpModal n'existe pas, on utilise bottom sheet)
@@ -6077,6 +6078,51 @@ function setupModalDismissHandlers() {
   });
 }
 
+function showNavigationHint() {
+  const HINT_STORAGE_KEY = "agpia_nav_hint_shown";
+  const hintShown = window.localStorage.getItem(HINT_STORAGE_KEY);
+  
+  // Ne pas afficher si déjà montré
+  if (hintShown === "true") {
+    return;
+  }
+  
+  // Attendre un peu pour que l'app se charge
+  setTimeout(() => {
+    const hint = document.createElement("div");
+    hint.className = "nav-hint";
+    hint.textContent = "💡 Cliquez sur les côtés pour changer de page";
+    document.body.appendChild(hint);
+    
+    // Afficher avec animation
+    setTimeout(() => {
+      hint.classList.add("show");
+    }, 100);
+    
+    // Masquer après 5 secondes ou au clic
+    const hideHint = () => {
+      hint.classList.remove("show");
+      hint.classList.add("hide");
+      window.localStorage.setItem(HINT_STORAGE_KEY, "true");
+      setTimeout(() => {
+        hint.remove();
+      }, 400);
+    };
+    
+    setTimeout(hideHint, 5000);
+    
+    // Masquer au clic n'importe où
+    const clickHandler = () => {
+      hideHint();
+      document.removeEventListener("click", clickHandler);
+      document.removeEventListener("touchstart", clickHandler);
+    };
+    
+    document.addEventListener("click", clickHandler, { once: true });
+    document.addEventListener("touchstart", clickHandler, { once: true });
+  }, 1000);
+}
+
 // Fonction pour découper les blocs d'oraisons en plusieurs blocs individuels
 function expandOraisonsBlocks(blocks) {
   const expandedBlocks = [];
@@ -6147,6 +6193,7 @@ function renderApp() {
   bindSwipeIndicator();
   bindKeyboardNavigation();
   bindClickNavigation(); // Doit être appelé après innerHTML pour recréer les zones
+  bindSwipeNavigation(); // Navigation par swipe entre les blocs
   bindSwipeToOpenMenu();
   renderJumpList(hourWithExpandedBlocks);
   maybeScrollActiveBlock();
@@ -6383,12 +6430,55 @@ function bindClickNavigation() {
   if (existingLeft) existingLeft.remove();
   if (existingRight) existingRight.remove();
   
+  const SCROLL_THRESHOLD = 10; // pixels de mouvement vertical pour considérer un scroll
+  const TAP_MAX_TIME = 300; // ms maximum pour considérer un tap
+  
+  // Fonction helper pour créer une zone de navigation avec gestion scroll/tap
+  function setupNavigationZone(zone, onTap) {
+    // Variables locales pour chaque zone
+    let touchStartY = 0;
+    let touchStartTime = 0;
+    let hasScrolled = false;
+    
+    // Gestion des événements tactiles pour distinguer scroll et tap
+    zone.addEventListener("touchstart", (e) => {
+      touchStartY = e.touches[0].clientY;
+      touchStartTime = Date.now();
+      hasScrolled = false;
+    }, { passive: true });
+    
+    zone.addEventListener("touchmove", (e) => {
+      const deltaY = Math.abs(e.touches[0].clientY - touchStartY);
+      if (deltaY > SCROLL_THRESHOLD) {
+        hasScrolled = true;
+      }
+    }, { passive: true });
+    
+    zone.addEventListener("touchend", (e) => {
+      const touchDuration = Date.now() - touchStartTime;
+      // Ne déclencher la navigation que si c'était un tap (pas un scroll) et rapide
+      if (!hasScrolled && touchDuration < TAP_MAX_TIME) {
+        e.preventDefault();
+        e.stopPropagation();
+        onTap();
+      }
+    }, { passive: false });
+    
+    // Support pour clic souris (desktop)
+    zone.addEventListener("click", (e) => {
+      // Ne déclencher que si ce n'était pas un scroll
+      if (!hasScrolled) {
+        e.stopPropagation();
+        onTap();
+      }
+    });
+  }
+  
   // Créer la zone gauche pour bloc précédent
   const leftZone = document.createElement("div");
   leftZone.className = "nav-zone nav-zone-left";
   leftZone.setAttribute("aria-label", "Bloc précédent");
-  leftZone.addEventListener("click", (e) => {
-    e.stopPropagation();
+  setupNavigationZone(leftZone, () => {
     if (state.activeBlockIndex > 0) {
       setActiveBlock(state.activeBlockIndex - 1);
     }
@@ -6398,8 +6488,7 @@ function bindClickNavigation() {
   const rightZone = document.createElement("div");
   rightZone.className = "nav-zone nav-zone-right";
   rightZone.setAttribute("aria-label", "Bloc suivant");
-  rightZone.addEventListener("click", (e) => {
-    e.stopPropagation();
+  setupNavigationZone(rightZone, () => {
     const hourWithExpanded = getCurrentHourWithExpandedBlocks();
     if (state.activeBlockIndex < hourWithExpanded.blocks.length - 1) {
       setActiveBlock(state.activeBlockIndex + 1);
@@ -6409,6 +6498,167 @@ function bindClickNavigation() {
   // Ajouter les zones à l'app
   app.appendChild(leftZone);
   app.appendChild(rightZone);
+  
+  // Mettre à jour l'état visuel des zones
+  updateNavigationZones();
+  
+  // Démarrer le système de masquage automatique
+  setupNavigationAutoHide();
+}
+
+function updateNavigationZones() {
+  const leftZone = document.querySelector(".nav-zone-left");
+  const rightZone = document.querySelector(".nav-zone-right");
+  if (!leftZone || !rightZone) return;
+  
+  const hourWithExpanded = getCurrentHourWithExpandedBlocks();
+  const canGoLeft = state.activeBlockIndex > 0;
+  const canGoRight = state.activeBlockIndex < hourWithExpanded.blocks.length - 1;
+  
+  // Mettre à jour l'opacité et le curseur selon la disponibilité
+  if (canGoLeft) {
+    leftZone.style.opacity = "0.3";
+    leftZone.style.cursor = "pointer";
+    leftZone.classList.remove("disabled");
+  } else {
+    leftZone.style.opacity = "0.1";
+    leftZone.style.cursor = "default";
+    leftZone.classList.add("disabled");
+  }
+  
+  if (canGoRight) {
+    rightZone.style.opacity = "0.3";
+    rightZone.style.cursor = "pointer";
+    rightZone.classList.remove("disabled");
+  } else {
+    rightZone.style.opacity = "0.1";
+    rightZone.style.cursor = "default";
+    rightZone.classList.add("disabled");
+  }
+}
+
+let navigationHideTimeout = null;
+const NAVIGATION_HIDE_DELAY = 1000; // 1 seconde d'inactivité
+let resetNavigationHideTimer = null; // Fonction globale pour réinitialiser le timer
+
+function setupNavigationAutoHide() {
+  const app = document.getElementById("app");
+  if (!app) return;
+  
+  // Fonction pour cacher les boutons
+  const hideNavigation = () => {
+    const leftZone = document.querySelector(".nav-zone-left");
+    const rightZone = document.querySelector(".nav-zone-right");
+    if (leftZone) leftZone.classList.add("auto-hide");
+    if (rightZone) rightZone.classList.add("auto-hide");
+  };
+  
+  // Fonction pour afficher les boutons
+  const showNavigation = () => {
+    const leftZone = document.querySelector(".nav-zone-left");
+    const rightZone = document.querySelector(".nav-zone-right");
+    if (leftZone) leftZone.classList.remove("auto-hide");
+    if (rightZone) rightZone.classList.remove("auto-hide");
+  };
+  
+  // Fonction pour réinitialiser le timer (rendue globale)
+  resetNavigationHideTimer = () => {
+    showNavigation();
+    if (navigationHideTimeout) {
+      clearTimeout(navigationHideTimeout);
+    }
+    navigationHideTimeout = setTimeout(hideNavigation, NAVIGATION_HIDE_DELAY);
+  };
+  
+  // Événements qui réinitialisent le timer
+  const events = ['mousemove', 'touchstart', 'scroll', 'click', 'keydown'];
+  events.forEach(eventType => {
+    document.addEventListener(eventType, resetNavigationHideTimer, { passive: true });
+  });
+  
+  // Les boutons réapparaissent au hover
+  const leftZone = document.querySelector(".nav-zone-left");
+  const rightZone = document.querySelector(".nav-zone-right");
+  if (leftZone) {
+    leftZone.addEventListener('mouseenter', showNavigation);
+    leftZone.addEventListener('touchstart', showNavigation, { passive: true });
+  }
+  if (rightZone) {
+    rightZone.addEventListener('mouseenter', showNavigation);
+    rightZone.addEventListener('touchstart', showNavigation, { passive: true });
+  }
+  
+  // Démarrer le timer initial
+  resetNavigationHideTimer();
+}
+
+function bindSwipeNavigation() {
+  const app = document.getElementById("app");
+  if (!app) return;
+  
+  const BLOCK_SWIPE_THRESHOLD = 50; // pixels minimum pour naviguer entre blocs
+  const VERTICAL_SCROLL_THRESHOLD = 30; // pixels de mouvement vertical pour ignorer le swipe
+  
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+  let isSwiping = false;
+  
+  // Ne pas interférer avec le swipe pour ouvrir le menu depuis le bord gauche
+  const EDGE_THRESHOLD = 20;
+  
+  app.addEventListener("touchstart", (e) => {
+    // Ignorer si on commence depuis le bord gauche (pour le menu)
+    if (e.touches[0].clientX <= EDGE_THRESHOLD) {
+      return;
+    }
+    
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    isSwiping = true;
+  }, { passive: true });
+  
+  app.addEventListener("touchmove", (e) => {
+    if (!isSwiping) return;
+    
+    // Vérifier si c'est principalement un mouvement vertical (scroll)
+    const deltaY = Math.abs(e.touches[0].clientY - touchStartY);
+    if (deltaY > VERTICAL_SCROLL_THRESHOLD) {
+      isSwiping = false; // C'est un scroll, pas un swipe
+    }
+  }, { passive: true });
+  
+  app.addEventListener("touchend", (e) => {
+    if (!isSwiping) return;
+    
+    touchEndX = e.changedTouches[0].clientX;
+    touchEndY = e.changedTouches[0].clientY;
+    
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = Math.abs(touchEndY - touchStartY);
+    
+    // Vérifier que c'est un swipe horizontal significatif et pas un scroll vertical
+    if (Math.abs(deltaX) > BLOCK_SWIPE_THRESHOLD && Math.abs(deltaX) > deltaY) {
+      e.preventDefault();
+      
+      const hourWithExpanded = getCurrentHourWithExpandedBlocks();
+      
+      if (deltaX > 0) {
+        // Swipe vers la droite → bloc précédent
+        if (state.activeBlockIndex > 0) {
+          setActiveBlock(state.activeBlockIndex - 1);
+        }
+      } else {
+        // Swipe vers la gauche → bloc suivant
+        if (state.activeBlockIndex < hourWithExpanded.blocks.length - 1) {
+          setActiveBlock(state.activeBlockIndex + 1);
+        }
+      }
+    }
+    
+    isSwiping = false;
+  }, { passive: false });
 }
 
 function bindSwipeToOpenMenu() {
@@ -6615,6 +6865,14 @@ function setActiveBlock(index) {
   }
   
   renderApp();
+  
+  // Mettre à jour l'état visuel des zones de navigation
+  updateNavigationZones();
+  
+  // Réafficher les boutons de navigation après un changement de bloc
+  if (resetNavigationHideTimer) {
+    resetNavigationHideTimer();
+  }
   
   // Remettre le scroll du nouveau bloc actif en haut après le rendu
   requestAnimationFrame(() => {

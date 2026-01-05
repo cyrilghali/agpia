@@ -93,16 +93,152 @@ body.modal-open {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, background 0.3s ease;
+  opacity: 0.3;
+  touch-action: pan-y; /* Permet le scroll vertical tout en capturant les taps */
+}
+
+.nav-zone:hover {
+  opacity: 1;
 }
 
 .nav-zone-left {
   left: 0;
   /* Éviter le conflit avec l'indicateur de swipe */
   padding-left: 40px;
+  justify-content: flex-start;
+  padding-left: 60px;
 }
 
 .nav-zone-right {
   right: 0;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.nav-zone::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.nav-zone:hover::before {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.nav-zone-left::before {
+  left: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff9f0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 18l-6-6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+}
+
+.nav-zone-right::before {
+  right: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff9f0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18l6-6-6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+}
+
+.nav-zone:active::before {
+  transform: scale(0.95);
+}
+
+.nav-zone.disabled {
+  pointer-events: none;
+}
+
+.nav-zone.disabled::before {
+  opacity: 0.2;
+  background: var(--border);
+}
+
+.nav-zone.auto-hide {
+  opacity: 0 !important;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.nav-zone.auto-hide::before {
+  opacity: 0 !important;
+  transition: opacity 0.5s ease;
+}
+
+.nav-zone:hover.auto-hide {
+  opacity: 1 !important;
+  pointer-events: auto;
+}
+
+.nav-zone:hover.auto-hide::before {
+  opacity: 1 !important;
+}
+
+/* Indicateur de navigation - apparaît au chargement initial */
+.nav-hint {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--card);
+  color: var(--text);
+  padding: 12px 20px;
+  border-radius: 24px;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 24px var(--shadow);
+  z-index: 150;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  border: 2px solid var(--accent);
+  text-align: center;
+  max-width: 90%;
+  animation: navHintPulse 2s ease-in-out infinite;
+}
+
+.nav-hint.show {
+  opacity: 1;
+  pointer-events: auto;
+  animation: navHintFadeIn 0.4s ease, navHintPulse 2s ease-in-out 0.4s infinite;
+}
+
+.nav-hint.hide {
+  opacity: 0;
+  transform: translateX(-50%) translateY(20px);
+}
+
+@keyframes navHintFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes navHintPulse {
+  0%, 100% {
+    box-shadow: 0 8px 24px var(--shadow);
+  }
+  50% {
+    box-shadow: 0 8px 32px var(--accent-soft), 0 0 0 4px var(--accent-soft);
+  }
 }
 
 /* .sticky-header - Le header est fixe en haut via .top-bar */
@@ -580,7 +716,7 @@ body.modal-open {
 .swipe-indicator {
   position: fixed;
   left: 0;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
   z-index: 90;
   width: 32px;
@@ -814,6 +950,31 @@ body.modal-open {
   
   .bottom-sheet-content {
     padding: 20px;
+  }
+
+  /* Navigation zones plus visibles sur mobile */
+  .nav-zone {
+    opacity: 0.5;
+  }
+
+  .nav-zone::before {
+    width: 36px;
+    height: 36px;
+    opacity: 0.8;
+  }
+
+  .nav-zone-left::before {
+    left: 12px;
+  }
+
+  .nav-zone-right::before {
+    right: 12px;
+  }
+
+  .nav-hint {
+    font-size: 0.85rem;
+    padding: 10px 16px;
+    bottom: 30px;
   }
 }
 
