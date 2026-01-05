@@ -6035,17 +6035,26 @@ function hydrateStateFromStorage() {
   const storedDate = window.localStorage.getItem(STORAGE_KEY + ":date");
   const today = new Date().toDateString();
   
-  // Si la date stockée est différente d'aujourd'hui, calculer automatiquement
-  // Sinon, utiliser l'heure stockée si elle existe
-  if (storedDate === today && storedHour && HOURS[storedHour]) {
-    state.selectedHourKey = storedHour;
-  } else {
-    // Calcul automatique basé sur l'heure actuelle
-    state.selectedHourKey = calculatePrayerHour();
-    window.localStorage.setItem(STORAGE_KEY, state.selectedHourKey);
+  // Toujours calculer l'heure actuelle au chargement
+  const currentHourKey = calculatePrayerHour();
+  
+  // Si la date stockée est différente d'aujourd'hui, utiliser l'heure actuelle
+  // Si c'est le même jour mais l'heure a changé, utiliser la nouvelle heure actuelle
+  if (storedDate !== today || storedHour !== currentHourKey) {
+    state.selectedHourKey = currentHourKey;
+    window.localStorage.setItem(STORAGE_KEY, currentHourKey);
     window.localStorage.setItem(STORAGE_KEY + ":date", today);
+    state.lastPositions[currentHourKey] = 0;
+  } else {
+    // Même jour et même heure : garder l'heure et la position stockée
+    state.selectedHourKey = storedHour;
+    // La position sera restaurée ailleurs si nécessaire
   }
-  state.lastPositions[state.selectedHourKey] = 0;
+  
+  // Initialiser la position si elle n'existe pas
+  if (!state.lastPositions[state.selectedHourKey]) {
+    state.lastPositions[state.selectedHourKey] = 0;
+  }
 }
 
 function setupModalDismissHandlers() {
@@ -6715,10 +6724,12 @@ function renderJumpList(hour) {
   // Rendre le sélecteur d'heure dans le bottom sheet
   const hourSelectorMenu = document.getElementById("hourSelectorMenu");
   if (hourSelectorMenu) {
+    const currentHourKey = calculatePrayerHour();
     hourSelectorMenu.innerHTML = Object.entries(HOURS)
       .map(([key, hourData]) => {
         const isActive = key === state.selectedHourKey ? "active" : "";
-        return `<button class="hour-menu-button ${isActive}" type="button" data-hour="${key}">${hourData.title}</button>`;
+        const isCurrent = key === currentHourKey && key !== state.selectedHourKey ? "current" : "";
+        return `<button class="hour-menu-button ${isActive} ${isCurrent}" type="button" data-hour="${key}">${hourData.title}</button>`;
       })
       .join("");
     
