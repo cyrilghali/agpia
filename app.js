@@ -1,16 +1,6 @@
 // HOURS encodes the ordered Agpeya structure. Each block keeps its own id/type/title/content
 // so psalms remain granular and navigation can jump anywhere without ambiguity.
 
-// Helper to build generous placeholder paragraphs so psalm blocks feel substantial.
-function buildPsalmContent(psalmTitle, focusDetail, practiceDetail, invitationDetail) {
-  return [
-    `${psalmTitle} placeholder stretches wide, ${focusDetail}. It paints a sunrise across the page and invites the worshipper to linger on each breath before moving to the next block.`,
-    `This extended paragraph describes ${practiceDetail}, weaving sensory detail about incense, coffee, and the still-soft rustle of pages that keep the hour grounded even when hands are busy.`,
-    `Another generous placeholder wraps around the reader, ${invitationDetail}. The refrain repeats that the prayer book is not rushed even when tasks are waiting right outside the frame.`,
-    `A closing placeholder for ${psalmTitle} meanders through additional reflections about keeping the heart low to the ground while hope keeps watch, ensuring the block remains long for navigation tests.`
-  ];
-}
-
 const HOURS = {
   "1": {
     id: "hour-1",
@@ -5988,7 +5978,6 @@ window.addEventListener("DOMContentLoaded", () => {
   hydrateStateFromStorage();
   setupModalDismissHandlers();
   renderApp();
-  showNavigationHint();
 });
 
 // Support pour bottom sheet (si jumpModal n'existe pas, on utilise bottom sheet)
@@ -6087,50 +6076,6 @@ function setupModalDismissHandlers() {
   });
 }
 
-function showNavigationHint() {
-  const HINT_STORAGE_KEY = "agpia_nav_hint_shown";
-  const hintShown = window.localStorage.getItem(HINT_STORAGE_KEY);
-  
-  // Ne pas afficher si déjà montré
-  if (hintShown === "true") {
-    return;
-  }
-  
-  // Attendre un peu pour que l'app se charge
-  setTimeout(() => {
-    const hint = document.createElement("div");
-    hint.className = "nav-hint";
-    hint.textContent = "💡 Cliquez sur les côtés pour changer de page";
-    document.body.appendChild(hint);
-    
-    // Afficher avec animation
-    setTimeout(() => {
-      hint.classList.add("show");
-    }, 100);
-    
-    // Masquer après 5 secondes ou au clic
-    const hideHint = () => {
-      hint.classList.remove("show");
-      hint.classList.add("hide");
-      window.localStorage.setItem(HINT_STORAGE_KEY, "true");
-      setTimeout(() => {
-        hint.remove();
-      }, 400);
-    };
-    
-    setTimeout(hideHint, 5000);
-    
-    // Masquer au clic n'importe où
-    const clickHandler = () => {
-      hideHint();
-      document.removeEventListener("click", clickHandler);
-      document.removeEventListener("touchstart", clickHandler);
-    };
-    
-    document.addEventListener("click", clickHandler, { once: true });
-    document.addEventListener("touchstart", clickHandler, { once: true });
-  }, 1000);
-}
 
 // Fonction pour découper les blocs d'oraisons en plusieurs blocs individuels
 function expandOraisonsBlocks(blocks) {
@@ -6175,6 +6120,7 @@ function renderApp() {
   const orientationText = getOrientationText(hourWithExpandedBlocks);
   const progressPercent = ((state.activeBlockIndex + 1) / expandedBlocks.length) * 100;
 
+
   // Rendre le header en dehors de .app
   const topBar = document.getElementById("topBar");
   if (topBar) {
@@ -6190,9 +6136,12 @@ function renderApp() {
     `;
   }
 
+  // Toujours utiliser le mode accordéon
+  const blocksHTML = renderBlocks(hourWithExpandedBlocks);
+
   appRoot.innerHTML = `
-    <section class="block-list continuous-view" id="blockList">
-      ${renderBlocksContinuous(hourWithExpandedBlocks)}
+    <section class="block-list" id="blockList">
+      ${blocksHTML}
     </section>
   `;
 
@@ -6201,8 +6150,6 @@ function renderApp() {
   bindProgressBar();
   bindSwipeIndicator();
   bindKeyboardNavigation();
-  bindClickNavigation(); // Doit être appelé après innerHTML pour recréer les zones
-  bindSwipeNavigation(); // Navigation par swipe entre les blocs
   bindSwipeToOpenMenu();
   renderJumpList(hourWithExpandedBlocks);
   maybeScrollActiveBlock();
@@ -6224,30 +6171,11 @@ function renderBlocks(hour) {
       return `
         <article class="block ${isActive ? "active" : ""}" data-index="${index}" id="${block.id}">
           <button class="block-header" type="button">${block.title}</button>
-          ${isActive ? renderActiveBlockContent(block, index, hour.blocks.length) : ""}
+          ${isActive ? renderActiveBlockContent(block, index, hour.blocks.length) : renderCollapsedBlockContent(block, index)}
         </article>
       `;
     })
     .join("");
-}
-
-function renderBlocksContinuous(hour) {
-  // Ne rendre que le bloc actif, qui occupe tout l'espace
-  // Utiliser les blocs étendus si hour n'a pas déjà été étendu
-  const blocks = hour.blocks || expandOraisonsBlocks(getCurrentHour().blocks);
-  const activeBlock = blocks[state.activeBlockIndex];
-  if (!activeBlock) return "";
-  
-  const content = renderActiveBlockContent(activeBlock, state.activeBlockIndex, blocks.length);
-  
-  return `
-    <article class="block active" data-index="${state.activeBlockIndex}" id="${activeBlock.id}">
-      <div class="block-header-tap" data-index="${state.activeBlockIndex}">
-        <h3 class="block-title">${activeBlock.title}</h3>
-      </div>
-      ${content}
-    </article>
-  `;
 }
 
 function italicizeAmenAndAlleluia(text) {
@@ -6342,34 +6270,45 @@ function bindHourButtonEvents() {
 }
 
 function bindBlockEvents() {
-  // Support pour l'ancien format (block-header)
+  // Gérer les clics sur les headers de blocs
   const headers = appRoot.querySelectorAll(".block-header");
   headers.forEach((header) => {
-    header.addEventListener("click", () => {
+    header.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       const parent = header.closest(".block");
-      const index = Number(parent.dataset.index);
-      setActiveBlock(index);
+      if (parent) {
+        const index = Number(parent.dataset.index);
+        if (!isNaN(index)) {
+          setActiveBlock(index);
+        }
+      }
     });
   });
 
-  // Support pour le nouveau format (block-header-tap)
+  // Support pour le format block-header-tap (si présent)
   const headerTaps = appRoot.querySelectorAll(".block-header-tap");
   headerTaps.forEach((header) => {
     header.addEventListener("click", (e) => {
+      e.preventDefault();
       e.stopPropagation();
       const index = Number(header.dataset.index);
-      setActiveBlock(index);
+      if (!isNaN(index)) {
+        setActiveBlock(index);
+      }
     });
   });
 
-  // Support pour les anciens nav-buttons (si présents)
+  // Support pour les nav-buttons (si présents)
   const navButtons = appRoot.querySelectorAll(".nav-button");
   navButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       const direction = button.dataset.direction;
       if (direction === "back") {
         setActiveBlock(state.activeBlockIndex - 1);
-      } else {
+      } else if (direction === "next") {
         setActiveBlock(state.activeBlockIndex + 1);
       }
     });
@@ -6429,246 +6368,6 @@ function bindKeyboardNavigation() {
   });
 }
 
-function bindClickNavigation() {
-  const app = document.getElementById("app");
-  if (!app) return;
-  
-  // Supprimer les zones existantes si elles existent (elles sont supprimées par innerHTML de toute façon)
-  const existingLeft = app.querySelector(".nav-zone-left");
-  const existingRight = app.querySelector(".nav-zone-right");
-  if (existingLeft) existingLeft.remove();
-  if (existingRight) existingRight.remove();
-  
-  const SCROLL_THRESHOLD = 10; // pixels de mouvement vertical pour considérer un scroll
-  const TAP_MAX_TIME = 300; // ms maximum pour considérer un tap
-  
-  // Fonction helper pour créer une zone de navigation avec gestion scroll/tap
-  function setupNavigationZone(zone, onTap) {
-    // Variables locales pour chaque zone
-    let touchStartY = 0;
-    let touchStartTime = 0;
-    let hasScrolled = false;
-    
-    // Gestion des événements tactiles pour distinguer scroll et tap
-    zone.addEventListener("touchstart", (e) => {
-      touchStartY = e.touches[0].clientY;
-      touchStartTime = Date.now();
-      hasScrolled = false;
-    }, { passive: true });
-    
-    zone.addEventListener("touchmove", (e) => {
-      const deltaY = Math.abs(e.touches[0].clientY - touchStartY);
-      if (deltaY > SCROLL_THRESHOLD) {
-        hasScrolled = true;
-      }
-    }, { passive: true });
-    
-    zone.addEventListener("touchend", (e) => {
-      const touchDuration = Date.now() - touchStartTime;
-      // Ne déclencher la navigation que si c'était un tap (pas un scroll) et rapide
-      if (!hasScrolled && touchDuration < TAP_MAX_TIME) {
-        e.preventDefault();
-        e.stopPropagation();
-        onTap();
-      }
-    }, { passive: false });
-    
-    // Support pour clic souris (desktop)
-    zone.addEventListener("click", (e) => {
-      // Ne déclencher que si ce n'était pas un scroll
-      if (!hasScrolled) {
-        e.stopPropagation();
-        onTap();
-      }
-    });
-  }
-  
-  // Créer la zone gauche pour bloc précédent
-  const leftZone = document.createElement("div");
-  leftZone.className = "nav-zone nav-zone-left";
-  leftZone.setAttribute("aria-label", "Bloc précédent");
-  setupNavigationZone(leftZone, () => {
-    if (state.activeBlockIndex > 0) {
-      setActiveBlock(state.activeBlockIndex - 1);
-    }
-  });
-  
-  // Créer la zone droite pour bloc suivant
-  const rightZone = document.createElement("div");
-  rightZone.className = "nav-zone nav-zone-right";
-  rightZone.setAttribute("aria-label", "Bloc suivant");
-  setupNavigationZone(rightZone, () => {
-    const hourWithExpanded = getCurrentHourWithExpandedBlocks();
-    if (state.activeBlockIndex < hourWithExpanded.blocks.length - 1) {
-      setActiveBlock(state.activeBlockIndex + 1);
-    }
-  });
-  
-  // Ajouter les zones à l'app
-  app.appendChild(leftZone);
-  app.appendChild(rightZone);
-  
-  // Mettre à jour l'état visuel des zones
-  updateNavigationZones();
-  
-  // Démarrer le système de masquage automatique
-  setupNavigationAutoHide();
-}
-
-function updateNavigationZones() {
-  const leftZone = document.querySelector(".nav-zone-left");
-  const rightZone = document.querySelector(".nav-zone-right");
-  if (!leftZone || !rightZone) return;
-  
-  const hourWithExpanded = getCurrentHourWithExpandedBlocks();
-  const canGoLeft = state.activeBlockIndex > 0;
-  const canGoRight = state.activeBlockIndex < hourWithExpanded.blocks.length - 1;
-  
-  // Mettre à jour l'opacité et le curseur selon la disponibilité
-  if (canGoLeft) {
-    leftZone.style.opacity = "0.3";
-    leftZone.style.cursor = "pointer";
-    leftZone.classList.remove("disabled");
-  } else {
-    leftZone.style.opacity = "0.1";
-    leftZone.style.cursor = "default";
-    leftZone.classList.add("disabled");
-  }
-  
-  if (canGoRight) {
-    rightZone.style.opacity = "0.3";
-    rightZone.style.cursor = "pointer";
-    rightZone.classList.remove("disabled");
-  } else {
-    rightZone.style.opacity = "0.1";
-    rightZone.style.cursor = "default";
-    rightZone.classList.add("disabled");
-  }
-}
-
-let navigationHideTimeout = null;
-const NAVIGATION_HIDE_DELAY = 1000; // 1 seconde d'inactivité
-let resetNavigationHideTimer = null; // Fonction globale pour réinitialiser le timer
-
-function setupNavigationAutoHide() {
-  const app = document.getElementById("app");
-  if (!app) return;
-  
-  // Fonction pour cacher les boutons
-  const hideNavigation = () => {
-    const leftZone = document.querySelector(".nav-zone-left");
-    const rightZone = document.querySelector(".nav-zone-right");
-    if (leftZone) leftZone.classList.add("auto-hide");
-    if (rightZone) rightZone.classList.add("auto-hide");
-  };
-  
-  // Fonction pour afficher les boutons
-  const showNavigation = () => {
-    const leftZone = document.querySelector(".nav-zone-left");
-    const rightZone = document.querySelector(".nav-zone-right");
-    if (leftZone) leftZone.classList.remove("auto-hide");
-    if (rightZone) rightZone.classList.remove("auto-hide");
-  };
-  
-  // Fonction pour réinitialiser le timer (rendue globale)
-  resetNavigationHideTimer = () => {
-    showNavigation();
-    if (navigationHideTimeout) {
-      clearTimeout(navigationHideTimeout);
-    }
-    navigationHideTimeout = setTimeout(hideNavigation, NAVIGATION_HIDE_DELAY);
-  };
-  
-  // Événements qui réinitialisent le timer
-  const events = ['mousemove', 'touchstart', 'scroll', 'click', 'keydown'];
-  events.forEach(eventType => {
-    document.addEventListener(eventType, resetNavigationHideTimer, { passive: true });
-  });
-  
-  // Les boutons réapparaissent au hover
-  const leftZone = document.querySelector(".nav-zone-left");
-  const rightZone = document.querySelector(".nav-zone-right");
-  if (leftZone) {
-    leftZone.addEventListener('mouseenter', showNavigation);
-    leftZone.addEventListener('touchstart', showNavigation, { passive: true });
-  }
-  if (rightZone) {
-    rightZone.addEventListener('mouseenter', showNavigation);
-    rightZone.addEventListener('touchstart', showNavigation, { passive: true });
-  }
-  
-  // Démarrer le timer initial
-  resetNavigationHideTimer();
-}
-
-function bindSwipeNavigation() {
-  const app = document.getElementById("app");
-  if (!app) return;
-  
-  const BLOCK_SWIPE_THRESHOLD = 50; // pixels minimum pour naviguer entre blocs
-  const VERTICAL_SCROLL_THRESHOLD = 30; // pixels de mouvement vertical pour ignorer le swipe
-  
-  let touchStartX = 0;
-  let touchStartY = 0;
-  let touchEndX = 0;
-  let touchEndY = 0;
-  let isSwiping = false;
-  
-  // Ne pas interférer avec le swipe pour ouvrir le menu depuis le bord gauche
-  const EDGE_THRESHOLD = 20;
-  
-  app.addEventListener("touchstart", (e) => {
-    // Ignorer si on commence depuis le bord gauche (pour le menu)
-    if (e.touches[0].clientX <= EDGE_THRESHOLD) {
-      return;
-    }
-    
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-    isSwiping = true;
-  }, { passive: true });
-  
-  app.addEventListener("touchmove", (e) => {
-    if (!isSwiping) return;
-    
-    // Vérifier si c'est principalement un mouvement vertical (scroll)
-    const deltaY = Math.abs(e.touches[0].clientY - touchStartY);
-    if (deltaY > VERTICAL_SCROLL_THRESHOLD) {
-      isSwiping = false; // C'est un scroll, pas un swipe
-    }
-  }, { passive: true });
-  
-  app.addEventListener("touchend", (e) => {
-    if (!isSwiping) return;
-    
-    touchEndX = e.changedTouches[0].clientX;
-    touchEndY = e.changedTouches[0].clientY;
-    
-    const deltaX = touchEndX - touchStartX;
-    const deltaY = Math.abs(touchEndY - touchStartY);
-    
-    // Vérifier que c'est un swipe horizontal significatif et pas un scroll vertical
-    if (Math.abs(deltaX) > BLOCK_SWIPE_THRESHOLD && Math.abs(deltaX) > deltaY) {
-      e.preventDefault();
-      
-      const hourWithExpanded = getCurrentHourWithExpandedBlocks();
-      
-      if (deltaX > 0) {
-        // Swipe vers la droite → bloc précédent
-        if (state.activeBlockIndex > 0) {
-          setActiveBlock(state.activeBlockIndex - 1);
-        }
-      } else {
-        // Swipe vers la gauche → bloc suivant
-        if (state.activeBlockIndex < hourWithExpanded.blocks.length - 1) {
-          setActiveBlock(state.activeBlockIndex + 1);
-        }
-      }
-    }
-    
-    isSwiping = false;
-  }, { passive: false });
-}
 
 function bindSwipeToOpenMenu() {
   const EDGE_THRESHOLD = 20; // pixels depuis le bord gauche
@@ -6850,48 +6549,77 @@ function selectHour(hourKey) {
   renderApp();
 }
 
+function updateAccordionBlock(blockElement, block, index, isActive) {
+  // Mettre à jour la classe active
+  if (isActive) {
+    blockElement.classList.add("active");
+  } else {
+    blockElement.classList.remove("active");
+  }
+  
+  // Mettre à jour le contenu
+  const contentContainer = blockElement.querySelector(".block-content");
+  if (contentContainer) {
+    if (isActive) {
+      const hourWithExpanded = getCurrentHourWithExpandedBlocks();
+      const newContentHTML = renderActiveBlockContent(block, index, hourWithExpanded.blocks.length);
+      // Créer un élément temporaire pour extraire le contenu
+      const temp = document.createElement("div");
+      temp.innerHTML = newContentHTML;
+      const newContent = temp.firstElementChild;
+      
+      // Remplacer le contenu existant
+      contentContainer.className = newContent.className;
+      contentContainer.innerHTML = newContent.innerHTML;
+    } else {
+      const newContentHTML = renderCollapsedBlockContent(block, index);
+      const temp = document.createElement("div");
+      temp.innerHTML = newContentHTML;
+      const newContent = temp.firstElementChild;
+      
+      // Remplacer le contenu existant
+      contentContainer.className = newContent.className;
+      contentContainer.innerHTML = newContent.innerHTML;
+    }
+  } else if (isActive) {
+    // Si le contenu n'existe pas et qu'on active, l'ajouter
+    const hourWithExpanded = getCurrentHourWithExpandedBlocks();
+    const newContentHTML = renderActiveBlockContent(block, index, hourWithExpanded.blocks.length);
+    blockElement.insertAdjacentHTML("beforeend", newContentHTML);
+  }
+}
+
 function setActiveBlock(index) {
   const hourWithExpanded = getCurrentHourWithExpandedBlocks();
   const safeIndex = clamp(index, 0, hourWithExpanded.blocks.length - 1);
   
-  // Remettre le scroll du bloc actuel en haut avant de changer
-  const currentActiveContent = document.querySelector(".block-content.active");
-  if (currentActiveContent) {
-    currentActiveContent.scrollTop = 0;
-  }
-  
-  // Animation de transition entre blocs
-  const previousIndex = state.activeBlockIndex;
   state.activeBlockIndex = safeIndex;
   state.lastPositions[state.selectedHourKey] = safeIndex;
   shouldScrollToActive = true;
   
-  // Ajouter une classe pour l'animation de direction
-  if (appRoot) {
-    const direction = safeIndex > previousIndex ? 'next' : 'prev';
-    appRoot.classList.add(`transition-${direction}`);
-    setTimeout(() => {
-      appRoot.classList.remove(`transition-${direction}`);
-    }, 400);
-  }
-  
-  renderApp();
-  
-  // Mettre à jour l'état visuel des zones de navigation
-  updateNavigationZones();
-  
-  // Réafficher les boutons de navigation après un changement de bloc
-  if (resetNavigationHideTimer) {
-    resetNavigationHideTimer();
-  }
-  
-  // Remettre le scroll du nouveau bloc actif en haut après le rendu
-  requestAnimationFrame(() => {
-    const newActiveContent = document.querySelector(".block-content.active");
-    if (newActiveContent) {
-      newActiveContent.scrollTop = 0;
+  // Mettre à jour uniquement les classes CSS sans recréer le DOM
+  const allBlocks = document.querySelectorAll(".block");
+  allBlocks.forEach((blockElement) => {
+    const blockIndex = Number(blockElement.dataset.index);
+    const block = hourWithExpanded.blocks[blockIndex];
+    if (block) {
+      const isActive = blockIndex === safeIndex;
+      updateAccordionBlock(blockElement, block, blockIndex, isActive);
     }
   });
+  
+  // Mettre à jour la barre de progression
+  const progressPercent = ((safeIndex + 1) / hourWithExpanded.blocks.length) * 100;
+  const progressBar = document.querySelector(".progress-bar");
+  if (progressBar) {
+    progressBar.style.width = `${progressPercent}%`;
+  }
+  
+  // Mettre à jour la liste de saut
+  renderJumpList(hourWithExpanded);
+  
+  // Scroller vers le bloc actif
+  maybeScrollActiveBlock();
 }
 
 function getCurrentHour() {
@@ -6915,19 +6643,33 @@ function maybeScrollActiveBlock() {
     return;
   }
   shouldScrollToActive = false;
+  // Utiliser un double requestAnimationFrame pour s'assurer que le DOM est mis à jour
   window.requestAnimationFrame(() => {
-    const activeBlock = document.querySelector(".block.active");
-    if (activeBlock) {
-      // Scroll avec offset pour le header sticky
-      const headerHeight = document.querySelector(".sticky-header")?.offsetHeight || 0;
-      const blockPosition = activeBlock.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = blockPosition - headerHeight - 20;
+    window.requestAnimationFrame(() => {
+      const activeBlock = document.querySelector(".block.active");
+      const blockList = document.querySelector(".block-list");
       
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
+      if (activeBlock && blockList) {
+        // Scroller sur le conteneur .block-list, pas sur window
+        const blockHeader = activeBlock.querySelector(".block-header");
+        const targetElement = blockHeader || activeBlock;
+        
+        // Calculer la position relative au conteneur
+        const containerRect = blockList.getBoundingClientRect();
+        const elementRect = targetElement.getBoundingClientRect();
+        const scrollTop = blockList.scrollTop;
+        const relativeTop = elementRect.top - containerRect.top + scrollTop;
+        
+        // Offset pour le header sticky
+        const headerHeight = document.querySelector(".top-bar")?.offsetHeight || 0;
+        const offset = headerHeight + 20;
+        
+        blockList.scrollTo({
+          top: relativeTop - offset,
+          behavior: "smooth"
+        });
+      }
+    });
   });
 }
 
@@ -6956,6 +6698,9 @@ function openBottomSheet() {
     bottomSheet.classList.add("open");
     overlay.classList.add("open");
     document.body.style.overflow = "hidden";
+    
+    // S'assurer que le toggle est à jour
+    renderViewModeToggle();
     
     // Scroll vers le bloc actif dans la liste
     setTimeout(() => {
