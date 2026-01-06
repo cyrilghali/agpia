@@ -886,8 +886,8 @@ body.modal-open {
   box-shadow: 0 15px 45px var(--shadow);
   padding: 0;
   flex-shrink: 0;
-  height: 85vh;
-  max-height: 85vh;
+  height: calc(100vh - var(--header-height, 50px) - 140px);
+  max-height: calc(100vh - var(--header-height, 50px) - 140px);
   overflow-y: auto;
   border-radius: 20px;
   position: relative;
@@ -910,8 +910,9 @@ body.modal-open {
 }
 
 .app.focus-mode .block.active .block-content {
-  padding: 32px 28px 40px;
+  padding: 32px 28px 160px;
   overflow: visible;
+  padding-bottom: max(160px, calc(env(safe-area-inset-bottom, 0px) + 160px));
 }
 
 .app.focus-mode .top-bar {
@@ -926,7 +927,7 @@ body.modal-open {
   right: 0;
   z-index: 50;
   background: linear-gradient(to top, var(--bg) 0%, transparent 100%);
-  padding: 12px 18px 20px;
+  padding: 12px 18px max(20px, env(safe-area-inset-bottom, 0px) + 20px);
   max-width: 780px;
   margin: 0 auto;
   pointer-events: none;
@@ -1022,12 +1023,13 @@ body.modal-open {
 
 @media (max-width: 640px) {
   .app.focus-mode .block.active {
-    height: 80vh;
-    max-height: 80vh;
+    height: calc(100vh - var(--header-height, 45px) - 140px);
+    max-height: calc(100vh - var(--header-height, 45px) - 140px);
   }
 
   .app.focus-mode .block.active .block-content {
-    padding: 24px 20px 32px;
+    padding: 24px 20px 160px;
+    padding-bottom: max(160px, calc(env(safe-area-inset-bottom, 0px) + 160px));
   }
 
   .preview-cards-container {
