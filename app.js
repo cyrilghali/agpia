@@ -5956,7 +5956,8 @@ const HOURS = {
 const state = {
   selectedHourKey: "1",
   activeBlockIndex: 0,
-  lastPositions: {}
+  lastPositions: {},
+  focusMode: false
 };
 
 const STORAGE_KEY = "agpeya:selectedHour";
@@ -5964,10 +5965,24 @@ const SWIPE_THRESHOLD = 50; // pixels minimum pour détecter un swipe
 const VISIBLE_BLOCKS_BEFORE = 1; // Nombre de blocs précédents visibles
 const VISIBLE_BLOCKS_AFTER = 2; // Nombre de blocs suivants visibles
 
+// Vertical swipe navigation constants
+const VERTICAL_SWIPE_THRESHOLD = 80; // pixels minimum for vertical swipe
+const VERTICAL_SWIPE_VELOCITY_THRESHOLD = 0.5; // pixels per ms
+const SCROLL_BOUNDARY_THRESHOLD = 10; // pixels from top/bottom to consider at boundary
+
 let shouldScrollToActive = false;
 let appRoot;
 let jumpModal;
 let jumpList;
+
+// Vertical swipe tracking
+let verticalSwipeState = {
+  startY: 0,
+  startX: 0,
+  startTime: 0,
+  startScrollTop: 0,
+  isTracking: false
+};
 
 window.addEventListener("DOMContentLoaded", () => {
   appRoot = document.getElementById("app");
@@ -6117,6 +6132,10 @@ function renderApp() {
   const expandedBlocks = expandOraisonsBlocks(hour.blocks);
   const hourWithExpandedBlocks = { ...hour, blocks: expandedBlocks };
   
+  // Ensure activeBlockIndex is valid
+  const maxIndex = expandedBlocks.length - 1;
+  state.activeBlockIndex = clamp(state.activeBlockIndex, 0, maxIndex);
+  
   const orientationText = getOrientationText(hourWithExpandedBlocks);
   const progressPercent = ((state.activeBlockIndex + 1) / expandedBlocks.length) * 100;
 
@@ -6136,7 +6155,7 @@ function renderApp() {
     `;
   }
 
-  // Toujours utiliser le mode accordéon
+  // Render blocks (handles focus mode automatically)
   const blocksHTML = renderBlocks(hourWithExpandedBlocks);
 
   appRoot.innerHTML = `
@@ -6152,7 +6171,26 @@ function renderApp() {
   bindKeyboardNavigation();
   bindSwipeToOpenMenu();
   renderJumpList(hourWithExpandedBlocks);
-  maybeScrollActiveBlock();
+  
+  // Enter focus mode automatically on initial load
+  if (!state.focusMode) {
+    enterFocusMode();
+    // Re-render blocks in focus mode
+    const blocksHTML = renderBlocks(hourWithExpandedBlocks);
+    const blockList = document.querySelector(".block-list");
+    if (blockList) {
+      blockList.innerHTML = blocksHTML;
+      bindBlockEvents();
+    }
+  }
+  
+  // Render preview cards and bind swipe navigation
+  if (state.focusMode) {
+    renderPreviewCards(hourWithExpandedBlocks);
+    bindVerticalSwipeNavigation();
+  } else {
+    maybeScrollActiveBlock();
+  }
 }
 
 function renderHourButtons() {
@@ -6165,6 +6203,20 @@ function renderHourButtons() {
 }
 
 function renderBlocks(hour) {
+  // In focus mode, only render the active block
+  if (state.focusMode) {
+    const activeBlock = hour.blocks[state.activeBlockIndex];
+    if (activeBlock) {
+      return `
+        <article class="block active" data-index="${state.activeBlockIndex}" id="${activeBlock.id}">
+          <button class="block-header" type="button">${activeBlock.title}</button>
+          ${renderActiveBlockContent(activeBlock, state.activeBlockIndex, hour.blocks.length)}
+        </article>
+      `;
+    }
+  }
+  
+  // Normal mode - render all blocks
   return hour.blocks
     .map((block, index) => {
       const isActive = index === state.activeBlockIndex;
@@ -6276,6 +6328,20 @@ function bindBlockEvents() {
     header.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
+      
+      // In focus mode, double-click or long-press on header exits focus mode
+      if (state.focusMode) {
+        // Check for double-click
+        const now = Date.now();
+        const lastClick = header.dataset.lastClick ? Number(header.dataset.lastClick) : 0;
+        if (now - lastClick < 300) {
+          // Double-click detected - exit focus mode
+          exitFocusMode();
+          return;
+        }
+        header.dataset.lastClick = now.toString();
+      }
+      
       const parent = header.closest(".block");
       if (parent) {
         const index = Number(parent.dataset.index);
@@ -6541,11 +6607,19 @@ function selectHour(hourKey) {
   state.lastPositions[state.selectedHourKey] = state.activeBlockIndex;
   state.selectedHourKey = hourKey;
   const savedIndex = state.lastPositions[hourKey] ?? 0;
-  const maxIndex = HOURS[hourKey].blocks.length - 1;
+  const hour = HOURS[hourKey];
+  const expandedBlocks = expandOraisonsBlocks(hour.blocks);
+  const maxIndex = expandedBlocks.length - 1;
   state.activeBlockIndex = clamp(savedIndex, 0, maxIndex);
   shouldScrollToActive = true;
   window.localStorage.setItem(STORAGE_KEY, hourKey);
   window.localStorage.setItem(STORAGE_KEY + ":date", new Date().toDateString());
+  
+  // Exit focus mode when changing hours
+  if (state.focusMode) {
+    exitFocusMode();
+  }
+  
   renderApp();
 }
 
@@ -6593,20 +6667,41 @@ function setActiveBlock(index) {
   const hourWithExpanded = getCurrentHourWithExpandedBlocks();
   const safeIndex = clamp(index, 0, hourWithExpanded.blocks.length - 1);
   
+  // Update state first
   state.activeBlockIndex = safeIndex;
   state.lastPositions[state.selectedHourKey] = safeIndex;
   shouldScrollToActive = true;
   
-  // Mettre à jour uniquement les classes CSS sans recréer le DOM
-  const allBlocks = document.querySelectorAll(".block");
-  allBlocks.forEach((blockElement) => {
-    const blockIndex = Number(blockElement.dataset.index);
-    const block = hourWithExpanded.blocks[blockIndex];
-    if (block) {
-      const isActive = blockIndex === safeIndex;
-      updateAccordionBlock(blockElement, block, blockIndex, isActive);
+  // Enter focus mode if not already in it
+  const wasInFocusMode = state.focusMode;
+  if (!state.focusMode) {
+    enterFocusMode();
+  }
+  
+  if (state.focusMode) {
+    // In focus mode, re-render the active block
+    const blocksHTML = renderBlocks(hourWithExpanded);
+    const blockList = document.querySelector(".block-list");
+    if (blockList) {
+      blockList.innerHTML = blocksHTML;
+      bindBlockEvents();
+      bindVerticalSwipeNavigation();
     }
-  });
+    
+    // Update preview cards
+    renderPreviewCards(hourWithExpanded);
+  } else {
+    // Normal mode - update only classes
+    const allBlocks = document.querySelectorAll(".block");
+    allBlocks.forEach((blockElement) => {
+      const blockIndex = Number(blockElement.dataset.index);
+      const block = hourWithExpanded.blocks[blockIndex];
+      if (block) {
+        const isActive = blockIndex === safeIndex;
+        updateAccordionBlock(blockElement, block, blockIndex, isActive);
+      }
+    });
+  }
   
   // Mettre à jour la barre de progression
   const progressPercent = ((safeIndex + 1) / hourWithExpanded.blocks.length) * 100;
@@ -6618,8 +6713,10 @@ function setActiveBlock(index) {
   // Mettre à jour la liste de saut
   renderJumpList(hourWithExpanded);
   
-  // Scroller vers le bloc actif
-  maybeScrollActiveBlock();
+  // Scroller vers le bloc actif (only in normal mode)
+  if (!state.focusMode) {
+    maybeScrollActiveBlock();
+  }
 }
 
 function getCurrentHour() {
@@ -6727,4 +6824,223 @@ function closeBottomSheet() {
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
+}
+
+// Focus Mode Functions
+function isAtScrollBoundary(element, threshold = SCROLL_BOUNDARY_THRESHOLD) {
+  if (!element) return { atTop: false, atBottom: false };
+  
+  const scrollTop = element.scrollTop;
+  const scrollHeight = element.scrollHeight;
+  const clientHeight = element.clientHeight;
+  
+  const atTop = scrollTop <= threshold;
+  const atBottom = scrollTop + clientHeight >= scrollHeight - threshold;
+  
+  return { atTop, atBottom };
+}
+
+function shouldTriggerNavigation(deltaY, deltaX, duration, atTop, atBottom, startScrollTop, endScrollTop) {
+  // Check if horizontal swipe is dominant (ignore if so)
+  if (Math.abs(deltaX) > Math.abs(deltaY) * 0.7) {
+    return false;
+  }
+  
+  // Calculate velocity (pixels per millisecond)
+  const velocity = Math.abs(deltaY) / duration;
+  
+  // Navigation triggers if:
+  // 1. At boundary AND sufficient swipe distance
+  // 2. OR fast swipe with sufficient distance (velocity-based)
+  const sufficientDistance = Math.abs(deltaY) >= VERTICAL_SWIPE_THRESHOLD;
+  const fastSwipe = velocity >= VERTICAL_SWIPE_VELOCITY_THRESHOLD;
+  const atBoundary = (atTop && deltaY > 0) || (atBottom && deltaY < 0);
+  
+  // Also check if scroll position didn't change much (user wasn't scrolling)
+  const scrollChanged = Math.abs(endScrollTop - startScrollTop) > 20;
+  
+  if (atBoundary && sufficientDistance) {
+    return true;
+  }
+  
+  if (fastSwipe && sufficientDistance && !scrollChanged) {
+    return true;
+  }
+  
+  return false;
+}
+
+function renderPreviewCards(hour) {
+  const container = document.getElementById("previewCardsScroll");
+  if (!container) return;
+  
+  const cardsHTML = hour.blocks
+    .map((block, index) => {
+      const isActive = index === state.activeBlockIndex;
+      const paragraphs = Array.isArray(block.content) ? block.content : [block.content];
+      const firstPara = paragraphs[0];
+      let preview = "";
+      
+      if (Array.isArray(firstPara)) {
+        preview = firstPara.slice(0, 2).join(" ");
+      } else if (typeof firstPara === "string") {
+        preview = firstPara.substring(0, 80);
+      }
+      
+      if (preview.length > 80) {
+        preview = preview.substring(0, 77) + "...";
+      }
+      
+      preview = italicizeAmenAndAlleluia(preview);
+      
+      return `
+        <div class="block-preview-card ${isActive ? "active" : ""}" data-index="${index}">
+          <div class="block-preview-card-title">${block.title}</div>
+          <div class="block-preview-card-text">${preview}</div>
+        </div>
+      `;
+    })
+    .join("");
+  
+  container.innerHTML = cardsHTML;
+  
+  // Bind click events
+  container.querySelectorAll(".block-preview-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const index = Number(card.dataset.index);
+      if (!isNaN(index)) {
+        setActiveBlock(index);
+      }
+    });
+  });
+  
+  // Scroll active card into view
+  const activeCard = container.querySelector(".block-preview-card.active");
+  if (activeCard) {
+    setTimeout(() => {
+      activeCard.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    }, 100);
+  }
+}
+
+function enterFocusMode() {
+  if (state.focusMode) return;
+  
+  state.focusMode = true;
+  const app = document.getElementById("app");
+  if (app) {
+    app.classList.add("focus-mode");
+  }
+  
+  const hourWithExpanded = getCurrentHourWithExpandedBlocks();
+  renderPreviewCards(hourWithExpanded);
+  
+  // Show preview cards container immediately
+  const previewContainer = document.getElementById("previewCardsContainer");
+  if (previewContainer) {
+    previewContainer.style.opacity = "1";
+  }
+  
+  // Bind vertical swipe navigation
+  bindVerticalSwipeNavigation();
+}
+
+function exitFocusMode() {
+  if (!state.focusMode) return;
+  
+  state.focusMode = false;
+  const app = document.getElementById("app");
+  if (app) {
+    app.classList.remove("focus-mode");
+  }
+  
+  // Hide preview cards
+  const previewContainer = document.getElementById("previewCardsContainer");
+  if (previewContainer) {
+    previewContainer.style.opacity = "0";
+  }
+  
+  // Re-render blocks in normal mode
+  renderApp();
+}
+
+function bindVerticalSwipeNavigation() {
+  if (!state.focusMode) return;
+  
+  const activeBlock = document.querySelector(".block.active");
+  if (!activeBlock) return;
+  
+  // The block itself is scrollable in focus mode, not the content
+  // Remove existing listeners by cloning (this removes all event listeners)
+  const newBlock = activeBlock.cloneNode(true);
+  activeBlock.parentNode.replaceChild(newBlock, activeBlock);
+  
+  const scrollableElement = document.querySelector(".block.active");
+  if (!scrollableElement) return;
+  
+  scrollableElement.addEventListener("touchstart", (e) => {
+    if (e.touches.length !== 1) return;
+    
+    verticalSwipeState.startY = e.touches[0].clientY;
+    verticalSwipeState.startX = e.touches[0].clientX;
+    verticalSwipeState.startTime = Date.now();
+    verticalSwipeState.startScrollTop = scrollableElement.scrollTop;
+    verticalSwipeState.isTracking = true;
+  }, { passive: true });
+  
+  scrollableElement.addEventListener("touchmove", (e) => {
+    if (!verticalSwipeState.isTracking || e.touches.length !== 1) return;
+    
+    // Allow normal scrolling
+    const currentY = e.touches[0].clientY;
+    const deltaY = currentY - verticalSwipeState.startY;
+    const deltaX = Math.abs(e.touches[0].clientX - verticalSwipeState.startX);
+    
+    // If horizontal movement is significant, cancel tracking
+    if (deltaX > 30) {
+      verticalSwipeState.isTracking = false;
+      return;
+    }
+    
+    // Check if we're at boundaries
+    const boundaries = isAtScrollBoundary(scrollableElement, SCROLL_BOUNDARY_THRESHOLD);
+    
+    // If at boundary and moving in the right direction, prevent default scroll
+    if ((boundaries.atTop && deltaY > 0) || (boundaries.atBottom && deltaY < 0)) {
+      // Only prevent if it's a significant swipe, not just a small scroll
+      if (Math.abs(deltaY) > 20) {
+        e.preventDefault();
+      }
+    }
+  }, { passive: false });
+  
+  scrollableElement.addEventListener("touchend", (e) => {
+    if (!verticalSwipeState.isTracking) return;
+    
+    const endTime = Date.now();
+    const endY = e.changedTouches[0].clientY;
+    const endX = e.changedTouches[0].clientX;
+    const endScrollTop = scrollableElement.scrollTop;
+    
+    const deltaY = endY - verticalSwipeState.startY;
+    const deltaX = Math.abs(endX - verticalSwipeState.startX);
+    const duration = endTime - verticalSwipeState.startTime;
+    
+    const boundaries = isAtScrollBoundary(scrollableElement, SCROLL_BOUNDARY_THRESHOLD);
+    
+    if (shouldTriggerNavigation(deltaY, deltaX, duration, boundaries.atTop, boundaries.atBottom, 
+                                verticalSwipeState.startScrollTop, endScrollTop)) {
+      const hourWithExpanded = getCurrentHourWithExpandedBlocks();
+      
+      if (deltaY > 0 && state.activeBlockIndex > 0) {
+        // Swipe down - previous block
+        setActiveBlock(state.activeBlockIndex - 1);
+      } else if (deltaY < 0 && state.activeBlockIndex < hourWithExpanded.blocks.length - 1) {
+        // Swipe up - next block
+        setActiveBlock(state.activeBlockIndex + 1);
+      }
+    }
+    
+    verticalSwipeState.isTracking = false;
+  }, { passive: true });
 }
