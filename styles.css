@@ -1073,3 +1073,20 @@ body.modal-open {
     max-width: 220px;
   }
 }
+
+.offline-indicator {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: var(--subtle);
+  color: var(--card);
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+.offline-indicator.hidden {
+  display: none;
+}

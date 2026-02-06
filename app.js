@@ -7044,3 +7044,22 @@ function bindVerticalSwipeNavigation() {
     verticalSwipeState.isTracking = false;
   }, { passive: true });
 }
+
+// Register service worker for offline support
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js", { scope: "/" }).then(
+    (reg) => { /* App is ready for offline */ },
+    (err) => console.warn("Service worker registration failed:", err)
+  );
+}
+
+// Offline indicator
+const offlineIndicator = document.getElementById("offlineIndicator");
+if (offlineIndicator) {
+  const setOfflineVisibility = () => {
+    offlineIndicator.classList.toggle("hidden", navigator.onLine);
+  };
+  setOfflineVisibility();
+  window.addEventListener("online", setOfflineVisibility);
+  window.addEventListener("offline", setOfflineVisibility);
+}
