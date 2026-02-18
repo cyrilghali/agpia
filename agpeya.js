@@ -32,7 +32,7 @@ if ('serviceWorker' in navigator) {
     const footer = document.createElement('footer');
     footer.className = 'site-footer';
     footer.innerHTML =
-        '<div>' + t.derived + ' <a href="https://agpya.org" target="_blank" rel="noopener">agpya.org</a></div>' +
+        '<div>' + t.derived + ' <a href="https://agpeya.org" target="_blank" rel="noopener">agpya.org</a></div>' +
         '<div class="footer-links">' +
             '<a href="https://github.com/cyrilghali/agpia/issues" target="_blank" rel="noopener">' + t.contact + '</a>' +
             '<a href="https://github.com/cyrilghali/agpia" target="_blank" rel="noopener">' + t.source + '</a>' +
