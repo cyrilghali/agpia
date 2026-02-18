@@ -151,14 +151,15 @@ body {
 }
 .nav-hours {
     display: flex;
-    gap: 0.625rem;
-    padding: 2rem 0.625rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.5rem 1rem;
     border-top: 1px solid var(--border);
-    overflow-x: auto;
 }
 .nav-hour {
-    flex-shrink: 0;
-    padding: 1rem 1.5rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -178,6 +179,16 @@ body {
     color: var(--gold);
 }
 .nav-hour:hover .nav-hour-num { color: var(--bg); }
+@media (min-width: 768px) {
+    .nav-hours {
+        gap: 0.75rem;
+        padding: 2rem 1.5rem;
+    }
+    .nav-hour {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+}
 
 /* Navigation Overlay (Hamburger Menu) */
 .nav-overlay {

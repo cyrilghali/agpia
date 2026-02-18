@@ -1,514 +1,456 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sext | Agpeya</title>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;600&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../agpeya-style.css">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sext | Agpeya</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;600&amp;family=EB+Garamond:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../agpeya-style.css" rel="stylesheet"/>
 </head>
 <body>
-    <div class="sticky-subheader">
-                <div class="dropdown-wrapper">
-            <select class="hour-dropdown" id="hourDropdown">
-                <option value="index.html" data-short="Home" data-long="Home">Home</option>
-                <option value="prime.html" data-short="1st Hour" data-long="1st Hour - Prime">1st Hour - Prime</option>
-                <option value="terce.html" data-short="3rd Hour" data-long="3rd Hour - Terce">3rd Hour - Terce</option>
-                <option value="sext.html" data-short="6th Hour" data-long="6th Hour - Sext">6th Hour - Sext</option>
-                <option value="none.html" data-short="9th Hour" data-long="9th Hour - None">9th Hour - None</option>
-                <option value="vespers.html" data-short="11th Hour" data-long="11th Hour - Vespers">11th Hour - Vespers</option>
-                <option value="compline.html" data-short="12th Hour" data-long="12th Hour - Compline">12th Hour - Compline</option>
-                <option value="midnight.html" data-short="Midnight" data-long="Midnight">Midnight</option>
-                <option value="veil.html" data-short="Veil" data-long="Prayer of the Veil">Prayer of the Veil</option>
-                <option value="other.html" data-short="Other" data-long="Other Prayers">Other Prayers</option>
-                <option value="about.html" data-short="About" data-long="About">About</option>
-            </select>
-            <select class="section-dropdown" id="sectionDropdown">
-                <option value="">Top</option>
-            </select>
-        </div>
-
-        <button class="settings-btn" id="settingsBtn"><img src="../cog_wheel.png" alt="Settings"></button>
-                <div class="settings-menu" id="settingsMenu">
-            <!-- Font Size Row -->
-            <div class="settings-row">
-                <button class="settings-menu-btn settings-menu-btn-small" id="fontDownBtn">A-</button>
-                <button class="settings-menu-btn settings-menu-btn-small" id="fontResetBtn">100%</button>
-                <button class="settings-menu-btn settings-menu-btn-small" id="fontUpBtn">A+</button>
-            </div>
-            
-            <!-- Line Height Row -->
-            <div class="settings-row">
-                <button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Comfy line spacing">
-                    <span class="line-height-icon comfy-icon">
-                        <span class="line"></span>
-                        <span class="line"></span>
-                    </span>
-                </button>
-                <button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Default line spacing">
-                    <span class="line-height-icon default-icon">
-                        <span class="line"></span>
-                        <span class="line"></span>
-                    </span>
-                </button>
-                <button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Condensed line spacing">
-                    <span class="line-height-icon condensed-icon">
-                        <span class="line"></span>
-                        <span class="line"></span>
-                    </span>
-                </button>
-            </div>
-            
-            <!-- Theme Row -->
-            <div class="settings-row">
-                <button class="settings-menu-btn settings-toggle" id="lightModeBtn">Light</button>
-                <button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Dark</button>
-            </div>
-            
-            <!-- Language Selector -->
-            <div class="settings-row lang-selector">
-                <a href="../en/sext.html" class="settings-menu-btn settings-toggle" data-lang="en">EN</a>
-                <a href="../ar/sext.html" class="settings-menu-btn settings-toggle" data-lang="ar">عربي</a>
-                <a href="../fr/sext.html" class="settings-menu-btn settings-toggle active" data-lang="fr">FR</a>
-                <a href="../fr-old/sext.html" class="settings-menu-btn settings-toggle" data-lang="fr-old">FR cl.</a>
-            </div>
-        </div>
-
-
-        </div>
-
-    <main class="container">
-        <div class="hour-header">
-            <div class="header-crosses">
-                <img src="../coptic-cross.png" alt="Coptic Cross">
-            </div>
-            <h1 class="hour-title">Sext</h1>
-            <p class="hour-time">The Sixth Hour · 12:00 PM</p>
-            <p class="hour-desc">The Sixth Hour reminds us of the crucifixion and passion of Christ. We pray that, through His life-giving passion, He may deliver our minds from lusts, and turn our thoughts to the remembrance of His commandments, and make of us a light of the world and salt of the earth.</p>
-        </div>
-        <div class="prayer-content">
-            <div class="ornament">
-                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
-                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
-                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
-            </div>
-                        <section class="section">
-                <h2 class="section-title">Introduction to Every Hour</h2>
+<div class="sticky-subheader">
+<div class="dropdown-wrapper">
+<select class="hour-dropdown" id="hourDropdown">
+<option data-long="Home" data-short="Home" value="index.html">Home</option>
+<option data-long="1st Hour - Prime" data-short="1st Hour" value="prime.html">1st Hour - Prime</option>
+<option data-long="3rd Hour - Terce" data-short="3rd Hour" value="terce.html">3rd Hour - Terce</option>
+<option data-long="6th Hour - Sext" data-short="6th Hour" value="sext.html">6th Hour - Sext</option>
+<option data-long="9th Hour - None" data-short="9th Hour" value="none.html">9th Hour - None</option>
+<option data-long="11th Hour - Vespers" data-short="11th Hour" value="vespers.html">11th Hour - Vespers</option>
+<option data-long="12th Hour - Compline" data-short="12th Hour" value="compline.html">12th Hour - Compline</option>
+<option data-long="Midnight" data-short="Midnight" value="midnight.html">Midnight</option>
+<option data-long="Prayer of the Veil" data-short="Veil" value="veil.html">Prayer of the Veil</option>
+<option data-long="Other Prayers" data-short="Other" value="other.html">Other Prayers</option>
+<option data-long="About" data-short="About" value="about.html">About</option>
+</select>
+<select class="section-dropdown" id="sectionDropdown">
+<option value="">Top</option>
+</select>
+</div>
+<button class="settings-btn" id="settingsBtn"><img alt="Settings" src="../cog_wheel.png"/></button>
+<div class="settings-menu" id="settingsMenu">
+<!-- Font Size Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-menu-btn-small" id="fontDownBtn">A-</button>
+<button class="settings-menu-btn settings-menu-btn-small" id="fontResetBtn">100%</button>
+<button class="settings-menu-btn settings-menu-btn-small" id="fontUpBtn">A+</button>
+</div>
+<!-- Line Height Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Comfy line spacing">
+<span class="line-height-icon comfy-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+<button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Default line spacing">
+<span class="line-height-icon default-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+<button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Condensed line spacing">
+<span class="line-height-icon condensed-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+</div>
+<!-- Theme Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-toggle" id="lightModeBtn">Light</button>
+<button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Dark</button>
+</div>
+<!-- Language Selector -->
+<div class="settings-row lang-selector">
+<a class="settings-menu-btn settings-toggle active" data-lang="en" href="../en/sext.html">EN</a>
+<a class="settings-menu-btn settings-toggle" data-lang="ar" href="../ar/sext.html">عربي</a>
+<a class="settings-menu-btn settings-toggle" data-lang="fr" href="../fr/sext.html">FR</a>
+<a class="settings-menu-btn settings-toggle" data-lang="fr-old" href="../fr-old/sext.html">FR cl.</a>
+</div>
+</div>
+</div>
+<main class="container">
+<div class="hour-header">
+<div class="header-crosses">
+<img alt="Coptic Cross" src="../coptic-cross.png"/>
+</div>
+<h1 class="hour-title">Sext</h1>
+<p class="hour-time">The Sixth Hour · 12:00 PM</p>
+<p class="hour-desc">The Sixth Hour reminds us of the crucifixion and passion of Christ. We pray that, through His life-giving passion, He may deliver our minds from lusts, and turn our thoughts to the remembrance of His commandments, and make of us a light of the world and salt of the earth.</p>
+</div>
+<div class="prayer-content">
+<div class="ornament">
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+</div>
+<section class="section">
+<h2 class="section-title">Introduction to Every Hour</h2>
 <div class="prayer-text">
-                    [Traduction française]
+                    Au nom du Père et du Fils et du Saint-Esprit, Un Dieu Unique ! Amen.
                 </div>
 <div class="prayer-text">
-                    [Traduction française]
+                    Seigneur aie pitié, Seigneur aie pitié, Seigneur, bénis ! Amen.
                 </div>
 <div class="prayer-text">
-                    [Traduction française]
+                    Gloire au Père et au Fils et au Saint-Esprit, maintenant et toujours et pour les siècles des siècles ! Amen.
                 </div>
 </section>
-
-                        <section class="section">
-                <h2 class="section-title">The Lord's Prayer</h2>
+<section class="section">
+<h2 class="section-title">The Lord's Prayer</h2>
+<div class="prayer-text"><em>Rends-nous dignes de dire en action de grâce :</em></div>
 <div class="prayer-text">
-                    [Traduction française]
+                    Notre Père qui es aux cieux, que Ton Nom soit sanctifié, que Ton Règne vienne, que Ta Volonté soit faite, comme au ciel, aussi sur la terre. Notre pain de demain, donne-le-nous aujourd'hui,
                 </div>
 <div class="prayer-text">
-                    [Traduction française]
-                </div>
-<div class="prayer-text">
-                    [Traduction française]
+                    et remets-nous nos dettes comme nous les remettons à nos débiteurs, et ne nous induis pas en tentation, mais délivre-nous du Mal. Par le Christ Jésus, notre Seigneur, car à Toi sont le Règne, la Puissance et la Gloire, pour les siècles. Amen !
                 </div>
 </section>
-
-                        <section class="section">
-                <h2 class="section-title">The Prayer of Thanksgiving</h2>
+<section class="section">
+<h2 class="section-title">The Prayer of Thanksgiving</h2>
 <div class="prayer-text">
-                    [Traduction française]
+                    Rendons grâce au Bienfaiteur et Miséricordieux, Dieu le Père de notre Seigneur, notre Dieu et notre Sauveur Jésus-Christ parce qu'Il nous a protégés, secourus, préservés, reçus auprès de Lui, pris en pitié, aidés et amenés jusqu'à cette heure. Supplions-Le encore de nous garder en ce saint jour et tous les jours de notre vie en toute paix, Lui le Tout-Puissant, le Seigneur notre Dieu.
                 </div>
 <div class="prayer-text">
-                    [Traduction française]
+                    Ô Maître, Seigneur, Dieu Tout-Puissant, Père de notre Seigneur, Dieu et Sauveur Jésus-Christ, Nous Te rendons grâce, de toute chose, pour toute chose et en toute chose, parce que c'est Toi qui nous as protégés, secourus, préservés, reçus auprès de Toi, pris en pitié, aidés et amenés jusqu'à cette heure.
                 </div>
 <div class="prayer-text">
-                    [Traduction française]
+                    C'est pourquoi nous supplions et implorons Ta bonté, ô Ami du genre humain, donne-nous de parfaire ce saint jour et tous les jours de notre vie en toute paix dans Ta crainte. Toute envie, toute tentation, toute œuvre de Satan, tout conseil des hommes mauvais, tout assaut des ennemis cachés et manifestes : enlève-les de nous et de tout ton peuple et de cette église et de ce lieu saint qui est à Toi.
                 </div>
 <div class="prayer-text">
-                    [Traduction française]
+                    Les choses bonnes et profitables, fournis-les-nous, car c'est Toi qui nous as donné l'autorité pour fouler aux pieds les serpents, les scorpions et toute la puissance de l'ennemi.
                 </div>
 <div class="prayer-text">
-                    [Traduction française]
+                    Et ne nous induis pas en tentation, mais délivre-nous du Mal, Par la grâce, la miséricorde et l'amour du genre humain de Ton Fils Unique-Engendré notre Seigneur, Dieu et Sauveur Jésus-Christ, par Qui la gloire, l'honneur, la souveraineté et l'adoration Te sont dus avec Lui et le Saint Esprit vivifiant et de même essence que Toi, Maintenant et toujours et dans les siècles des siècles. Amen !
                 </div>
 </section>
-
-            <section class="section">
-                <h2 class="section-title">Psalm 50</h2>
+<section class="section">
+<h2 class="section-title">Psalm 50</h2>
 <div class="psalm-verse drop-cap">
-                    Have mercy upon me, O God, according to Your great mercy; and according to the multitude of Your compassions blot out my iniquity. Wash me thoroughly from my iniquity, and cleanse me from my sin. For I am conscious of my iniquity; and my sin is at all times before me.
+                    Fais-moi miséricorde, Seigneur, selon Ta grande Miséricorde, et selon la multitude de tes compassions, efface mon illégalité ! Lave-moi encore de mon illégalité, et purifie-moi de mon péché ! Car moi, je connais mon illégalité, et mon péché est toujours devant mes yeux. 
                 </div>
 <div class="psalm-verse">
-                    [Traduction française]
+                    C'est contre Toi seul que j'ai péché, et devant tes Yeux que j'ai fait le mal, afin que tu sois justifiée dans tes Paroles, et que tu triomphes dans tes Jugements. Car voilà que j'ai été conçu dans les illégalités, et ma mère m'a enfanté dans les péchés. Car voici que Toi, tu aimes la Vérité, et tu m'as révélé les choses non manifestes et cachées de ta Sagesse. 
                 </div>
 <div class="psalm-verse">
-                    [Traduction française]
+                    Tu m'aspergeras avec l'hysope, et je serai purifié, Tu me laveras, et je serai plus blanc que la neige. Tu me feras entendre la joie et l'allégresse, et les os humiliés exulteront. Détourne ta Face de mes péchés, et efface toutes mes illégalités ! 
                 </div>
 <div class="psalm-verse">
-                    [Traduction française]
+                    Crée en moi un cœur pur, ô Dieu, et renouvelle un esprit droit en mes entrailles ! Ne me rejette pas loin de Ta Face, et ne retire pas de moi Ton Esprit-Saint. Rends-moi la joie de Ton Salut, et raffermis-moi par l'Esprit directeur. 
                 </div>
 <div class="psalm-verse">
-                    [Traduction française]
+                    J'enseignerai Tes voies aux illégaux, et les impies se convertiront à Toi. Sauve-moi des choses sanglantes, ô Dieu, Dieu de mon salut, et ma langue se réjouira de ta Justice ! Seigneur, Tu ouvriras mes lèvres, et ma bouche proclamera ta louange. 
                 </div>
 <div class="psalm-verse">
-                    [Traduction française]
+                    Car si tu avais voulu un sacrifice, je te l'aurais donné ; mais tu n'approuveras point les holocaustes. Le sacrifice à Dieu c'est un esprit contrit, Dieu ne réduira pas à rien un cœur contrit et humilié. Seigneur, fais du bien en ta faveur, pour Sion, et que les remparts de Jérusalem soient édifiés ! Alors Tu approuveras le sacrifice de justice, une offrande avec des holocaustes, alors on offrira des veaux sur Ton autel. <span class="alleluia">ALLELUIA.</span>
                 </div>
 </section>
-
-                        <section class="section">
-                <div class="prayer-text">
-                    [Traduction française]
-                </div>
-                <div class="prayer-text">
-                    [Traduction française]
-                </div>
-            </section>
-
-                        <section class="section">
-                <h2 class="section-title">Psalm 53</h2>
-                <div class="psalm-verse drop-cap">
-                    Save me, O God, by Your name, and judge me by Your power. O God, hear my prayer; hearken to the words of my mouth. For strangers have risen up against me, and mighty men have sought my soul: they have not set God before them.
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-            </section>
-
-                        <section class="section">
-                <h2 class="section-title">Psalm 56</h2>
-                <div class="psalm-verse drop-cap">
-                    Have mercy upon me, O God, have mercy upon me: for my soul has trusted in You: and in the shadow of Your wings I will hope, until the iniquity passes away. I will cry to God Most High; God who has benefitted me.
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-            </section>
-
-                        <section class="section">
-                <h2 class="section-title">Psalm 60</h2>
-                <div class="psalm-verse drop-cap">
-                    Hear, O God, my petition; attend to my prayer. From the ends of the earth I have cried to You, when my heart was in trouble: You elevated me up on a rock, You guided me: You became a hope, a tower of power from the face of an enemy.
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-            </section>
-
-                        <section class="section">
-                <h2 class="section-title">Psalm 62</h2>
+<section class="section">
+<div class="prayer-text"><em>Hymne de la sixième heure du jour béni, je l'offre au Christ mon Roi et mon Dieu, j'espérerai en Lui afin qu'il me remette mes péchés.</em></div>
+<div class="prayer-text"><em>Psaume de David le Prophète, que sa sainte bénédiction soit avec nous, Amen.</em></div>
+</section>
+<section class="section">
+<h2 class="section-title">Psalm 53</h2>
 <div class="psalm-verse drop-cap">
-                    O God, my God, I will rise up early unto You; for my soul has thirsted for You: to make my flesh blossom for You, in a barren land and a trackless and dry place. So I have appeared before You in the Holy, to see Your power and Your glory.
+                    Ô Dieu, sauve-moi par Ton Nom, et juge-moi par ta Puissance ! Ô Dieu, écoute ma prière, prête l'oreille aux paroles de ma bouche ! Car des étrangers se sont élevés contre moi, et des hommes de pouvoir cherchent mon âme. Ils n'ont point mis Dieu devant eux. Et voilà que Dieu est venu à mon secours, et le Seigneur est le Soutien de mon âme. 
                 </div>
 <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-<div class="psalm-verse">
-                    [Traduction française]
-                </div>
-<div class="psalm-verse">
-                    [Traduction française]
+                    Il fera retourner les malheurs sur mes ennemis : efface-les dans Ta Vérité ! Je Te ferai un sacrifice volontaire, je professerai à ton Nom, Seigneur, parce que cela est bon. Car c'est Toi qui m'as délivré de toutes mes tribulations, et mon œil a regardé dans mes ennemis. <span class="alleluia">ALLELUIA.</span>
                 </div>
 </section>
-
-                        <section class="section">
-                <h2 class="section-title">Psalm 66</h2>
+<section class="section">
+<h2 class="section-title">Psalm 56</h2>
 <div class="psalm-verse drop-cap">
-                    God shall pity us, and bless us; and reveal His face upon us and have mercy on us. That Your way may be known on the earth, Your salvation among all nations. Let the peoples, O God, give praise to You; let all the peoples give praise to You.
+                    Fais-moi miséricorde, ô Dieu, fais-moi miséricorde, car mon âme s'est confiée en toi ! Et j'espérerai à l'ombre de tes ailes, jusqu'à ce que l'illégalité soit passée. Je crierai vers le Dieu Très-Haut, vers Dieu mon Bienfaiteur. Il a envoyé du ciel, et il m'a sauvé, il a livré à la honte ceux qui me foulaient aux pieds ! Dieu a envoyé Sa Miséricorde et sa Vérité. 
                 </div>
 <div class="psalm-verse">
-                    [Traduction française]
+                    Il a sauvé mon âme du milieu des lionceaux. J'ai dormi au milieu du trouble. Les fils des humains ont leurs dents pour armes et pour traits, et leur langue est un glaive aiguisé. Ô Dieu, sois exalté au-dessus des cieux, et que sur toute la terre soit Ta Gloire. Ils avaient préparé des pièges pour mes pieds, et ils avaient fait fléchir mon âme, ils avaient creusé devant ma face une fosse, et ils y sont tombés. 
+                </div>
+<div class="psalm-verse">
+                    Mon cœur est prêt, ô Dieu, mon cœur est prêt, je chanterai et je psalmodierai en ma gloire. Réveille-toi, ô ma gloire, réveillez-vous, harpe et cithare, je me lèverai dès l'aurore. Je Te professerai parmi les peuples, Seigneur, je te psalmodierai parmi les nations. 
+                </div>
+<div class="psalm-verse">
+                    Car Ta Miséricorde est magnifiée jusqu'aux cieux, et ta Vérité jusqu'aux nues. Ô Dieu, sois exalté au-dessus des cieux, et que Ta Gloire soit sur toute la terre ! <span class="alleluia">ALLELUIA.</span>
                 </div>
 </section>
-
-                        <section class="section">
-                <h2 class="section-title">Psalm 69</h2>
+<section class="section">
+<h2 class="section-title">Psalm 60</h2>
 <div class="psalm-verse drop-cap">
-                    O God, be mindful of my help; make haste, O Lord, to help me. Let them be ashamed and be scorned, those who seek my soul: let them be turned backward and put to shame, those who wish to do evil unto me. Let those who say to me, "Aha, aha," be turned back in shame immediately.
+                    Ô Dieu, écoute ma supplication, sois attentif à ma prière ! Des confins de la terre j'ai crié vers Toi, lorsque mon cœur était lassé, Tu m'as élevé sur le roc, Tu m'as dirigé, tu es devenu mon Espérance, et comme une tour fortifiée en face de mon ennemi. 
                 </div>
 <div class="psalm-verse">
-                    [Traduction française]
+                    Je demeurerai dans Ta Demeure pour les siècles, je m'abriterai sous l'ombre de tes ailes, Car, ô mon Dieu, Tu as écouté mes prières, tu as doté d'un héritage ceux qui craignent ton Nom. Tu ajouteras des jours aux jours du Roi, tu prolongeras ses années jusqu'au jour des générations et des générations. 
+                </div>
+<div class="psalm-verse">
+                    Il demeurera pour les siècles en face de Dieu. Qui recherchera sa Miséricorde et sa Vérité ? Ainsi je psalmodierai à ton Nom pour les siècles des siècles, pour te rendre mes vœux de jour en jour. <span class="alleluia">ALLELUIA.</span>
                 </div>
 </section>
-
-                        <section class="section">
-                <h2 class="section-title">Psalm 83</h2>
-                <div class="psalm-verse drop-cap">
-                    How beloved are Your dwellings, O Lord, God of hosts! My soul longs, and faints for the courts of the Lord: my heart and my flesh have exulted in the living God. For, the sparrow has found for himself a home, and the turtledove for herself a nest, where she may lay her young; Your altars, O Lord, God of hosts, my King, and my God.
+<section class="section">
+<h2 class="section-title">Psalm 62</h2>
+<div class="psalm-verse drop-cap">
+                    Ô Dieu, tu es mon Dieu, je viens vers toi dès l'aurore : mon âme a soif de toi, afin que ma chair Te proclame, dans la terre déserte, interdite, et un lieu sans eau ! Ainsi je serai vu de Toi dans le Sanctuaire, afin que je voie ta Puissance et ta Gloire. Ta Miséricorde vaut mieux que des vies. Mes lèvres Te loueront ! 
                 </div>
-                <div class="psalm-verse">
-                    [Traduction française]
+<div class="psalm-verse">
+                    Ainsi dans ma vie je Te bénirai, je lèverai les mains en invoquant ton Nom. Comme avec de la moelle et de la graisse mon âme sera comblée, et des lèvres de joie béniront ton Nom. Si j'ai mémoire de Toi sur mon lit, je médite sur toi aux aurores. 
                 </div>
-                <div class="psalm-verse">
-                    [Traduction française]
+<div class="psalm-verse">
+                    Car Tu es devenu mon Secours, et j'exulterai à l'ombre de tes ailes. Mon âme s'attache à Toi, et moi, ta Droite me soutient. Mais ceux qui en vain cherchent mon âme, qu'ils entrent dans les profondeurs de la terre ! 
                 </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-            </section>
-
-                        <section class="section">
-                <h2 class="section-title">Psalm 84</h2>
-                <div class="psalm-verse drop-cap">
-                    O Lord, You have taken pleasure in Your land: You have turned back the captivity of Jacob. You have forgiven the transgressions of Your people: You have covered all their sins. You have dissolved all Your wrath: You have turned from the wrath of Your anger.
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-            </section>
-
-                        <section class="section">
-                <h2 class="section-title">Psalm 85</h2>
-                <div class="psalm-verse drop-cap">
-                    Incline Your ear, O Lord, and hear me; for I am poor and weak. Preserve my soul, for I am pure; save Your servant, O my God, who hopes in You. Have mercy on me, O Lord: for to You I will cry the whole day. Rejoice the soul of Your servant: for to You, O Lord, I have lifted up my soul.
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-            </section>
-
-                        <section class="section">
-                <h2 class="section-title">Psalm 86</h2>
-                <div class="psalm-verse drop-cap">
-                    His foundations are in the holy mountains. The Lord loves the gates of Zion, more than all the dwellings of Jacob. Glorious things have been spoken of You, O city of God.
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-            </section>
-
-                        <section class="section">
-                <h2 class="section-title">Psalm 90</h2>
-                <div class="psalm-verse drop-cap">
-                    He who dwells in the help of the Most High, shall rest under the shelter of the God of heaven. He shall say to the Lord, "You are my defender and my refuge: my God; I will hope in Him." For He shall deliver you from the snare of the hunter, and from troublesome matter.
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-            </section>
-
-                        <section class="section">
-                <h2 class="section-title">Psalm 92</h2>
-                <div class="psalm-verse drop-cap">
-                    The Lord has reigned; He has clothed Himself with beauty: the Lord has clothed and girded Himself with strength; for He has established the world, which shall not be moved. Your throne is prepared from the beginning: You are from everlasting.
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-            </section>
-
-                        <section class="section" id="gospel">
-                <h2 class="section-title">The Holy Gospel (Matthew 5:1-16)</h2>
-                <div class="prayer-text">
-                    [Traduction française]
-                </div>
-                <div class="psalm-verse drop-cap">
-                    And seeing the multitudes, He went up on a mountain, and when He was seated, His disciples came to Him. And He opened His mouth, and taught them, saying:
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-                <div class="psalm-verse">
-                    [Traduction française]
-                </div>
-                <div class="prayer-text">
-                    [Traduction française]
-                </div>
-                <div class="prayer-text doxology">
-                    <span class="doxology-coptic">Tenovw2t `mmok `w Pixrictoc nem Pekiwt `n`aja0oc: nem P`pnevma e0ovab: ge aki akcw5 `mmon nai nan.</span>
-                    <span class="doxology-english">We worship You O Christ with Your Good Father and the Holy Spirit, for You have come and saved us.</span>
-                </div>
-            </section>
-
-                        <section class="section">
-                <h2 class="section-title">Litanies</h2>
-                <div class="prayer-text">
-                    [Traduction française]
-                </div>
-                <div class="prayer-text doxology">
-                    <span class="doxology-coptic">Do7a patri ke Viw ke ajiw 1`Pnevmati</span>
-                    <span class="doxology-english">Glory to the Father, and the Son, and the Holy Spirit.</span>
-                </div>
-                <div class="prayer-text">
-                    [Traduction française]
-                </div>
-                <div class="prayer-text doxology">
-                    <span class="doxology-coptic">Ke nvn ke `a`i ke ic toc `e`wnac twn `e`wnwn: `am3n.</span>
-                    <span class="doxology-english">Now and forever and unto the ages of all ages, Amen.</span>
-                </div>
-                <div class="prayer-text">
-                    [Traduction française]
-                </div>
-                <div class="prayer-text doxology">
-                    <span class="doxology-coptic">Ke nvn ke `a`i ke ic toc `e`wnac twn `e`wnwn: `am3n.</span>
-                    <span class="doxology-english">Now and forever and unto the ages of all ages, Amen.</span>
-                </div>
-                <div class="prayer-text">
-                    [Traduction française]
-                </div>
-                <div class="prayer-text doxology">
-                    <span class="doxology-coptic">Do7a patri ke Viw ke ajiw 1`Pnevmati</span>
-                    <span class="doxology-english">Glory to the Father, and the Son, and the Holy Spirit.</span>
-                </div>
-                <div class="prayer-text">
-                    [Traduction française]
-                </div>
-                <div class="prayer-text doxology">
-                    <span class="doxology-coptic">Ke nvn ke `a`i ke ic toc `e`wnac twn `e`wnwn: `am3n.</span>
-                    <span class="doxology-english">Now and forever and unto the ages of all ages, Amen.</span>
-                </div>
-                <div class="prayer-text">
-                    [Traduction française]
-                </div>
-            </section>
-
-                        <section class="section">
-                <h2 class="section-title">41 Kyrie Eleison</h2>
-<div class="prayer-text">
-                    [Traduction française]
-                </div>
-                <div class="prayer-text">
-                    [Traduction française]
-                </div>
-                <div class="prayer-text">
-                    [Traduction française]
+<div class="psalm-verse">
+                    Qu'on les livre au fil de l'épée, qu'ils deviennent la part des renards ! Mais le roi se réjouira en Dieu. Qui jure par Lui en sera fier, tandis que ceux qui disent des choses injustes auront la bouche close ! <span class="alleluia">ALLELUIA.</span>
                 </div>
 </section>
-
-            <section class="section">
-                <h2 class="section-title">Holy Holy Holy</h2>
-<div class="prayer-text">
-                    [Traduction française]
+<section class="section">
+<h2 class="section-title">Psalm 66</h2>
+<div class="psalm-verse drop-cap">
+                    Dieu aura pitié de nous et nous bénira. Il nous montrera sa Face et nous fera miséricorde, Pour que sur la terre soit connue Ta voie, et que ton Salut parmi toutes les nations ! Que les peuples Te confessent, ô Dieu ! Que tous les peuples te confessent ! Que les nations se réjouissent et exultent, parce que Tu jugeras les peuples avec droiture, et que tu guideras la voie des nations sur la terre ! 
                 </div>
-<div class="prayer-text">
-                    [Traduction française]
-                </div>
-<div class="prayer-text">
-                    [Traduction française]
+<div class="psalm-verse">
+                    Que les peuples te confessent, ô Dieu ! Que tous les peuples te confessent ! La terre a donné son fruit, que Dieu, notre Dieu nous bénisse ! Que Dieu nous bénisse, et que tous les confins de la terre le craignent ! <span class="alleluia">ALLELUIA.</span>
                 </div>
 </section>
-
-                        <section class="section">
-                <h2 class="section-title">The Lord's Prayer</h2>
-<div class="prayer-text">
-                    [Traduction française]
+<section class="section">
+<h2 class="section-title">Psalm 69</h2>
+<div class="psalm-verse drop-cap">
+                    Ô Dieu, pour me secourir rapidement sois attentif ! Seigneur secours-moi ! Qu'ils soient honteux et humiliés, ceux qui cherchent mon âme ! Qu'ils soient contraints à retourner en arrière, couverts de honte, ceux qui veulent me faire du mal ! Qu'ils tournent le dos couverts de honte, ceux qui me déclarent : « Bien ! Bien ! » 
                 </div>
-<div class="prayer-text">
-                    [Traduction française]
-                </div>
-<div class="prayer-text">
-                    [Traduction française]
+<div class="psalm-verse">
+                    Que tous ceux qui Te cherchent exultent et se réjouissent en Toi ! Que ceux qui aiment ton Salut déclarent toujours : « Que Dieu soit magnifié ! » Quant à moi, je suis pauvre et faible. Ô mon Dieu, secours-moi ! Tu es mon Secours et mon Sauveur, Seigneur, ne tarde pas ! <span class="alleluia">ALLELUIA.</span>
                 </div>
 </section>
-
-                        <section class="section">
-                <h2 class="section-title">Absolution</h2>
-                <div class="prayer-text">
-                    [Traduction française]
+<section class="section">
+<h2 class="section-title">Psalm 83</h2>
+<div class="psalm-verse drop-cap">
+                    Comme Tes Demeures sont aimées, ô Seigneur des Puissances ! Mon âme désire à s'en épuiser aller aux parvis du Seigneur, mon cœur et ma chair ont exulté pour le Dieu vivant. Car le passereau a trouvé pour lui une maison, et la tourterelle un nid où elle dépose sa couvée : ce sont Tes autels sacrificiels, Seigneur Dieu des Puissances, ô mon Roi et mon Dieu ! 
                 </div>
-                <div class="prayer-text">
-                    [Traduction française]
+<div class="psalm-verse">
+                    Bienheureux ceux qui demeurent en Ta Maison, ils te béniront pour les siècles des siècles. Bienheureux l'homme dont le Soutien vient de Toi, Seigneur. Il a disposé en son cœur des degrés d'ascension, En la vallée des pleurs, au Lieu qu'Il a établi, car le Législateur donnera des bénédictions, 
                 </div>
-            </section>
-
-                        <section class="section">
-                <h2 class="section-title">Conclusion of Every Hour</h2>
-<div class="prayer-text">
-                    [Traduction française]
+<div class="psalm-verse">
+                    Ils iront de Puissance en Puissance, et le Dieu des dieux apparaîtra en Sion. Seigneur, Dieu des Puissances, écoute ma prière, prête l'oreille, ô Dieu de Jacob ! Vois, ô Dieu notre Protecteur, et regarde la face de ton Christ ! 
                 </div>
-<div class="prayer-text">
-                    [Traduction française]
+<div class="psalm-verse">
+                    Car un seul jour dans Tes parvis est meilleur qu'un millier de jours. J'ai préféré être marginalisé dans la Maison de Dieu, que d'habiter dans les tentes des pécheurs. Parce que le Seigneur Dieu aime la Miséricorde et la Vérité. Il est donateur de la Gloire et de la Grâce. Le Seigneur ne fera pas manquer de biens ceux qui marchent dans l'innocence. Seigneur, Dieu des Puissances, bienheureux l'humain qui espère en toi ! <span class="alleluia">ALLELUIA.</span>
                 </div>
 </section>
-
-            <div class="ornament">
-                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
-                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
-                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
-            </div>
-        </div>
-                <nav class="nav-hours">
-            <a href="prime.html" class="nav-hour">
-                <div>Prime</div>
-            </a>
-            <a href="terce.html" class="nav-hour">
-                <div>Terce</div>
-            </a>
-            <a href="sext.html" class="nav-hour">
-                <div>Sext</div>
-            </a>
-            <a href="none.html" class="nav-hour">
-                <div>None</div>
-            </a>
-            <a href="vespers.html" class="nav-hour">
-                <div>Vespers</div>
-            </a>
-            <a href="compline.html" class="nav-hour">
-                <div>Compline</div>
-            </a>
-            <a href="midnight.html" class="nav-hour">
-                <div>Midnight</div>
-            </a>
-            <a href="veil.html" class="nav-hour">
-                <div>Veil</div>
-            </a>
-            <a href="other.html" class="nav-hour">
-                <div>Other Prayers</div>
-            </a>
-            <a href="about.html" class="nav-hour">
-                <div>About</div>
-            </a>
-        </nav>
-
-    </main>
-    <script src="../agpeya.js"></script>
-    <script>
+<section class="section">
+<h2 class="section-title">Psalm 84</h2>
+<div class="psalm-verse drop-cap">
+                    Seigneur, Tu as favorisé ta terre, tu as fait retourner Jacob de la captivité. Tu as remis ses illégalités à Ton peuple, tu as couvert tous ses péchés. Tu as apaisé Ta Colère, tu as détourné la colère de ta Fureur. Convertis-nous, ô Dieu de notre salut, et détourne de nous ta Fureur. 
+                </div>
+<div class="psalm-verse">
+                    Seras-Tu pour les siècles irrité contre nous ? Étendras-tu ta Colère de générations en générations ? Ô Dieu, en te retournant Tu nous vivifieras, et ton peuple se réjouira en toi. Seigneur, montre-nous Ta Miséricorde, et donne-nous ton Salut ! 
+                </div>
+<div class="psalm-verse">
+                    J'écouterai ce que dira le Seigneur Dieu en moi, car Il prononcera la Paix sur son peuple et sur ses Saints, et sur ceux qui convertissent leur cœur vers Lui. Or Son Salut est près de tous ceux qui le craignent, afin que la Gloire habite dans notre terre. Miséricorde et Vérité se sont rencontrées, Justice et Paix se sont embrassées. 
+                </div>
+<div class="psalm-verse">
+                    Vérité s'est élevée de la terre, et Justice s'est penchée depuis le ciel. Car le Seigneur nous donnera sa Bonté, et notre terre donnera son fruit. Justice devant Lui marchera, et mettra ses pas dans la Voie. <span class="alleluia">ALLELUIA.</span>
+                </div>
+</section>
+<section class="section">
+<h2 class="section-title">Psalm 85</h2>
+<div class="psalm-verse drop-cap">
+                    Incline Ton Oreille, Seigneur, et exauce-moi, car je suis pauvre et faible ! Garde mon âme, car je suis purifié, mon Dieu, sauve ton serviteur qui espère en toi ! Fais-moi miséricorde, Seigneur, car vers toi j'ai crié tout le jour ! Réjouis l'âme de Ton serviteur, car j'ai élevé mon âme vers toi, Seigneur ! 
+                </div>
+<div class="psalm-verse">
+                    Car Seigneur, Tu es bienveillant et indulgent, et abondant en miséricorde pour tous ceux qui t'invoquent. Seigneur, prête l'oreille à ma prière, et sois attentif à la voix de ma supplication ! Au jour de mon affliction, j'ai crié vers Toi, parce que tu m'as écouté. Nul n'est semblable à Toi parmi les dieux, Seigneur, et il n'est nul être qui puisse faire tes œuvres. 
+                </div>
+<div class="psalm-verse">
+                    Toutes les nations que Tu as faites viendront, et se prosterneront devant toi, Seigneur, et elles glorifieront ton Nom, Parce que Tu es grand, et que tu fais des merveilles. Tu es le seul grand Dieu. Guide-moi, Seigneur, en ta Voie, et je cheminerai en ta Vérité ! Que mon cœur se réjouisse de craindre ton Nom ! 
+                </div>
+<div class="psalm-verse">
+                    Je te professerai, Seigneur mon Dieu, de tout mon cœur, et je glorifierai ton Nom pour les siècles. Car Ta Miséricorde est grande envers moi, et Tu as sauvé mon âme du plus profond d'Hadès. Ô Dieu, les transgresseurs de la Loi se sont levés contre moi, et l'assemblée des gens de pouvoir a cherché mon âme, et ils n'ont pas commencé en te mettant à la première place devant eux. 
+                </div>
+<div class="psalm-verse">
+                    Et Toi, Seigneur Dieu, tu as été compatissant et miséricordieux, longanime, abondant en miséricorde et véridique. Jette un regard sur moi, et fais-moi miséricorde, et donne du pouvoir à ton serviteur, et sauve le fils de ta servante ! Fais avec moi un signe qui annonce du Bien, et qu'ils le voient, ceux qui me haïssent, et qu'ils soient honteux, car Toi Seigneur, tu es venu à mon secours, et tu m'as consolé. <span class="alleluia">ALLELUIA.</span>
+                </div>
+</section>
+<section class="section">
+<h2 class="section-title">Psalm 86</h2>
+<div class="psalm-verse drop-cap">
+                    Ses fondements sont dans les Montagnes saintes. Le Seigneur aime les portes de Sion plus que toutes les demeures de Jacob. On a dit de toi des choses glorieuses, ô Cité de Dieu ! Je remémorerai Raab et Babylone, ceux qui Me connaissent. Et voilà que les étrangers et Tyr, et le peuple des Éthiopiens y sont venus. 
+                </div>
+<div class="psalm-verse">
+                    « Sion, Mère » dira l'homme ! Et l'homme est venu en elle, et le Très-Haut lui-même l'a fondée pour les siècles. Le Seigneur racontera cela dans l'écrit des peuples et des princes qui sont advenus en Sion. Puisque ce sera l'habitation de tous ceux qui se réjouissent en toi ! <span class="alleluia">ALLELUIA.</span>
+                </div>
+</section>
+<section class="section">
+<h2 class="section-title">Psalm 90</h2>
+<div class="psalm-verse drop-cap">
+                    Celui qui demeure dans le Secours du Très-Haut reposera à l'ombre du Dieu du ciel. Il dira au Seigneur : « Tu es mon Soutien et mon Refuge ! » Il est mon Dieu, j'espérerai en lui, Car Il te délivrera des filets des chasseurs et des paroles troublantes. Il t'abritera à l'ombre au milieu de Ses épaules, et sous ses ailes tu auras l'espérance. Sa Vérité t'entourera comme une armure. 
+                </div>
+<div class="psalm-verse">
+                    Tu n'auras pas à craindre de terreur nocturne, ni des traits qui volent en plein jour, Ni des choses qui vont dans les ténèbres, ni des accidents, ni du démon de midi. Mille tomberont à ta gauche, et dix mille à ta droite, mais ils n'approcheront point de toi. 
+                </div>
+<div class="psalm-verse">
+                    Cependant, tu considéreras de tes yeux, et tu verras la rétribution des pécheurs. Car Tu es, Seigneur, mon Espérance, et tu as fait du Très-haut ton Refuge. Les malheurs n'arriveront point jusqu'à toi, et les fléaux n'approcheront point de ta demeure. 
+                </div>
+<div class="psalm-verse">
+                    Car Il a donné des ordres à Ses anges te concernant, pour qu'ils te gardent en toutes tes voies : « Ils te soulèveront de leurs mains, de peur que tes pieds ne heurtent contre une pierre. Tu marcheras sur l'aspic et sur le basilic, et tu fouleras aux pieds le lion et le dragon. 
+                </div>
+<div class="psalm-verse">
+                    Parce qu'il a espéré en Moi, Je le délivrerai. Je le protégerai, parce qu'il a connu mon Nom. Il M'invoquera, et Moi je l'exaucerai, Je serai avec lui en ses tribulations, et Je le délivrerai, et Je le glorifierai. Je le remplirai de longs jours, et Je lui montrerai mon Salut. » <span class="alleluia">ALLELUIA.</span>
+                </div>
+</section>
+<section class="section">
+<h2 class="section-title">Psalm 92</h2>
+<div class="psalm-verse drop-cap">
+                    Le Seigneur a pris son règne, il s'est revêtu de splendeur ! Le Seigneur s'est revêtu de puissance, et il s'en est fait une ceinture, car il a affermi le monde habité, qui ne sera pas ébranlé. Ton Trône fut dès lors établi, et depuis les siècles Tu es ! Les fleuves ont élevé, Seigneur, les fleuves ont élevé leur voix, 
+                </div>
+<div class="psalm-verse">
+                    Au-dessus de la voix des eaux nombreuses. Les élévations de la mer sont merveilleuses. Le Seigneur est merveilleux dans les hauteurs. Ses témoignages ont été dignes d'une grande foi. À ta Maison convient la Sanctification, Seigneur, dans la longueur des jours. <span class="alleluia">ALLELUIA.</span>
+                </div>
+</section>
+<section class="section" id="gospel">
+<h2 class="section-title">The Holy Gospel (Matthew 5:1-16)</h2>
+<div class="prayer-text"><em>Gloire à Toi ô notre Dieu ! Seigneur, bénis la lecture du Saint Évangile selon Matthieu :</em></div>
+<div class="psalm-verse drop-cap">
+                    Voyant les foules, il monta sur la montagne, il s'assit, et ses disciples vinrent à lui. Puis il prit la parole et se mit à les instruire : Heureux les pauvres quant à l'Esprit, car le Royaume des cieux est à eux ! Heureux les affligés, car ils seront consolés !
+                </div>
+<div class="psalm-verse">
+                    Heureux ceux qui sont doux, car ils hériteront la terre ! Heureux ceux qui ont faim et soif de justice, car ils seront rassasiés ! Heureux ceux qui sont compatissants, car ils obtiendront compassion !
+                </div>
+<div class="psalm-verse">
+                    Heureux ceux qui sont saints dans leur cœur, car ils verront Dieu ! Heureux les artisans de paix, car ils seront appelés fils de Dieu ! Heureux ceux qui sont persécutés à cause de la justice, car le royaume des cieux est à eux !
+                </div>
+<div class="psalm-verse">
+                    Heureux êtes-vous lorsqu'on vous insulte, qu'on vous persécute et qu'on répand faussement sur vous toutes sortes de méchancetés, à cause de moi. Réjouissez-vous et soyez transportés d'allégresse, parce que votre récompense est grande dans les cieux ; car c'est ainsi qu'on a persécuté les prophètes qui vous ont précédés. C'est vous qui êtes le sel de la terre.
+                </div>
+<div class="psalm-verse">
+                    Mais si le sel devient fade, avec quoi le salera-t-on ? Il n'est plus bon qu'à être jeté dehors et foulé aux pieds par les gens. C'est vous qui êtes la lumière du monde.
+                </div>
+<div class="psalm-verse">
+                    Une ville située sur une montagne ne peut être cachée. On n'allume pas une lampe pour la mettre sous le boisseau, mais on la met sur le porte-lampe, et elle brille pour tous ceux qui sont dans la maison. Que votre lumière brille ainsi devant les hommes, afin qu'ils voient vos belles œuvres et glorifient votre Père qui est dans les cieux.
+                </div>
+<div class="prayer-text">
+                    Gloire à toi Seigneur !
+                </div>
+<div class="prayer-text doxology">
+<span class="doxology-coptic">Tenovw2t `mmok `w Pixrictoc nem Pekiwt `n`aja0oc: nem P`pnevma e0ovab: ge aki akcw5 `mmon nai nan.</span>
+<span class="doxology-english">Nous t'adorons ô Christ avec ton Père qui est bon et le Saint-Esprit, car tu es venu et tu nous as sauvés. Fais-nous miséricorde !</span>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Litanies</h2>
+<div class="prayer-text"><span class="litany-number">(1)</span> Ô Toi qui au sixième jour à la sixième heure a été cloué sur la Croix à cause du péché qu'avait osé commettre Adam au paradis, déchire la liste de nos péchés ô Christ notre Dieu et sauve-nous. J'ai invoqué Dieu et le Seigneur m'a écouté. Ô Dieu entends ma prière et ne rejette pas ma supplique. Tourne-toi vers moi et écoute-moi le soir, le matin ou à midi. Je dirai, je parlerai et Il entendra ma voix, et Il sauvera mon âme en paix.</div>
+<div class="prayer-text doxology">
+<span class="doxology-coptic">Do7a patri ke Viw ke ajiw 1`Pnevmati</span>
+<span class="doxology-english">Gloire au Père, au Fils et au Saint Esprit.</span>
+</div>
+<div class="prayer-text"><span class="litany-number">(2)</span> Ô Jésus-Christ notre Dieu qui a été cloué sur la Croix à la sixième heure, Tu as détruit le péché par la Croix, et par Ta mort Tu as redonné vie à celui qui était mort, l'homme créé de tes mains, et qui est mort par le péché, Détruis nos passions par Tes souffrances salvatrices et vivifiantes, et par les clous transperçant Ton Corps. Délivre notre Intelligence des dommages causés par les choses matérielles, afin que nous fassions mémoire de Tes jugements célestes selon Ta miséricorde.</div>
+<div class="prayer-text doxology">
+<span class="doxology-coptic">Ke nvn ke `a`i ke ic toc `e`wnac twn `e`wnwn: `am3n.</span>
+<span class="doxology-english">Maintenant et toujours et pour les siècles des siècles. Amen !</span>
+</div>
+<div class="prayer-text"><span class="litany-number">(3)</span> N'ayant aucune circonstance atténuante pour nos nombreux péchés, c'est par toi, ô Théotokos, que nous nous adressons hardiment à Celui que tu as enfanté. Car tes intercessions sont nombreuses et agréées par Notre Sauveur. Ô Mère pure, ne refuse pas aux pécheurs tes intercessions auprès de Celui que tu as enfanté, parce qu'Il est miséricordieux et peut nous sauver. En effet il a souffert pour nous afin de nous sauver. Que tes compassion nous devancent vite car nous sommes dans une grande misère. Aide-nous ô Dieu notre Sauveur à cause de Ton Nom. Ô Seigneur tu nous sauveras, tu nous remettras nos péchés à cause de Ton Saint Nom.</div>
+<div class="prayer-text doxology">
+<span class="doxology-coptic">Ke nvn ke `a`i ke ic toc `e`wnac twn `e`wnwn: `am3n.</span>
+<span class="doxology-english">Maintenant et toujours et pour les siècles des siècles. Amen !</span>
+</div>
+<div class="prayer-text"><span class="litany-number">(4)</span> Tu as opéré le Salut au milieu de la terre, ô Christ notre Dieu quand Tu as tendu Tes mains saintes sur la Croix. C'est pourquoi toutes les nations s'écrient : « Gloire à Toi Seigneur ».</div>
+<div class="prayer-text doxology">
+<span class="doxology-coptic">Do7a patri ke Viw ke ajiw 1`Pnevmati</span>
+<span class="doxology-english">Gloire au Père, au Fils et au Saint Esprit.</span>
+</div>
+<div class="prayer-text"><span class="litany-number">(5)</span> Nous nous prosternons devant Ta Forme incorruptible, ô Toi qui es bon, en demandant la rémission de nos péchés, ô Christ notre Dieu, parce qu'il t'a plu de monter sur la Croix pour sauver de l'esclavage de l'ennemi ceux que Tu as créés. Nous crions vers Toi et nous Te rendons grâce car Tu as rempli de joie le Tout, ô Sauveur, quand Tu es venu pour aider le monde. Ô Seigneur, gloire à Toi.</div>
+<div class="prayer-text doxology">
+<span class="doxology-coptic">Ke nvn ke `a`i ke ic toc `e`wnac twn `e`wnwn: `am3n.</span>
+<span class="doxology-english">Maintenant et toujours et pour les siècles des siècles. Amen !</span>
+</div>
+<div class="prayer-text"><span class="litany-number">(6)</span> Tu es Celle qui est pleine de grâce, ô la Vierge Theotokos. Nous t'exaltons car c'est par la Croix de Ton Fils qu'Hadès a été anéanti, la mort vaincue. Nous étions morts, et nous avons été relevés et nous avons été rendus dignes de la Vie éternelle et avons eu part aux délices du Paradis originel. Pour cela nous glorifions avec action de grâce le Christ notre Dieu car Il est puissant.</div>
+</section>
+<section class="section">
+<h2 class="section-title">41 Kyrie Eleison</h2>
+<div class="prayer-text"><em>Que le fidèle prie :</em></div>
+<div class="prayer-text">
+                    Seigneur, entends-nous et aie pitié de nous, et pardonne-nous nos péchés. Amen.
+                </div>
+<div class="prayer-text"><em>(Seigneur aie pitié) 41 fois</em></div>
+</section>
+<section class="section">
+<h2 class="section-title">Holy Holy Holy</h2>
+<div class="prayer-text">
+                    Tu es Saint, Saint, Saint, Seigneur Sabaoth, le ciel et la terre sont remplis de Ta gloire et de Ton honneur ! Aie pitié de nous ô Dieu le Père Tout-Puissant. Ô Trinité Sainte, aie pitié de nous ! Ô Seigneur Dieu des puissances, sois avec nous, car nous n'avons d'aide que de Toi dans nos tribulations et nos angoisses.
+                </div>
+<div class="prayer-text">
+                    Ô Dieu absous, pardonne et remets nos péchés, que nous les ayons commis volontairement ou involontairement, en connaissance ou par ignorance, secrètement ou ouvertement. Ô Seigneur tu nous les pardonneras à cause de Ton saint Nom qui a été invoqué sur nous.
+                </div>
+<div class="prayer-text">
+                    Selon Ta miséricorde Seigneur et non selon nos péchés !
+                </div>
+</section>
+<section class="section">
+<h2 class="section-title">The Lord's Prayer</h2>
+<div class="prayer-text"><em>Rends-nous dignes de dire en action de grâce :</em></div>
+<div class="prayer-text">
+                    Notre Père qui es aux cieux, que Ton Nom soit sanctifié, que Ton Règne vienne, que Ta Volonté soit faite, comme au ciel, aussi sur la terre. Notre pain de demain, donne-le-nous aujourd'hui,
+                </div>
+<div class="prayer-text">
+                    et remets-nous nos dettes comme nous les remettons à nos débiteurs, et ne nous induis pas en tentation, mais délivre-nous du Mal. Par le Christ Jésus, notre Seigneur, car à Toi sont le Règne, la Puissance et la Gloire, pour les siècles. Amen !
+                </div>
+</section>
+<section class="section">
+<h2 class="section-title">Absolution</h2>
+<div class="prayer-text">
+                    Nous Te rendons grâce, ô notre Maître Tout-Puissant, Père de notre Seigneur, notre Dieu et notre Sauveur Jésus-Christ, et nous te glorifions car tu as fait des moments de la Passion de Ton Fils Unique-Engendré des temps de prière et d'imploration. Reçois nos supplications, et efface la liste de nos péchés inscrite contre nous, comme Tu l'as annulée en cette heure sainte par la Croix de Ton Fils Unique-Engendré Jésus-Christ notre Seigneur et le Sauveur de nos âmes, Lui, par qui tu as dissous toute la puissance de l'ennemi. Et donne-nous des moments lumineux, une conduite irréprochable et une vie tranquille pour satisfaire Ton Nom saint et adorable
+                </div>
+<div class="prayer-text">
+                    et que nous puissions nous tenir devant le tribunal redoutable et juste de Ton Fils Unique-Engendré Jésus Christ, notre Seigneur. Fais que nous puissions Te glorifier avec tous Tes saints, Toi le Père qui es sans principe, et le Fils de même essence que Toi et le Saint-Esprit vivifiant, Maintenant et toujours et pour tous les siècles des siècles. Amen !
+                </div>
+</section>
+<section class="section">
+<h2 class="section-title">Conclusion of Every Hour</h2>
+<div class="prayer-text">
+                    Ô Dieu, aie pitié de nous, Toi qui es adoré et glorifié, en tout temps et à toute heure, dans le ciel et sur la terre. Ô Christ notre Dieu bon, longanime, plein de miséricorde et abondant en compassion, Toi qui aimes les justes et qui fais miséricorde aux pécheurs (dont je suis le premier), toi qui ne veux pas la mort du pécheur mais qu'il se repente et vive. Tu appelles tout un chacun au Salut à cause de la promesse des bienfaits attendus.
+                </div>
+<div class="prayer-text">
+                    Ô Seigneur, reçois nos supplications en cette heure, dirige nos vies pour que nous accomplissions Tes commandements. Sanctifie nos esprits, purifie nos corps, rectifie nos pensées, purifie nos consciences, et délivre-nous de toute douleur et de toute peine. Entoure-nous de Tes saints anges, afin qu'ils nous préservent et nous guident comme par une escorte armée. Ainsi nous atteindrons l'Unité de la Foi et la connaissance de Ta Gloire intouchable (et incommensurable), car Tu es béni éternellement. Amen !
+                </div>
+</section>
+<div class="ornament">
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+</div>
+</div>
+<nav class="nav-hours">
+<a class="nav-hour" href="prime.html">
+<div>Prime</div>
+</a>
+<a class="nav-hour" href="terce.html">
+<div>Terce</div>
+</a>
+<a class="nav-hour" href="sext.html">
+<div>Sext</div>
+</a>
+<a class="nav-hour" href="none.html">
+<div>None</div>
+</a>
+<a class="nav-hour" href="vespers.html">
+<div>Vespers</div>
+</a>
+<a class="nav-hour" href="compline.html">
+<div>Compline</div>
+</a>
+<a class="nav-hour" href="midnight.html">
+<div>Midnight</div>
+</a>
+<a class="nav-hour" href="veil.html">
+<div>Veil</div>
+</a>
+<a class="nav-hour" href="other.html">
+<div>Other Prayers</div>
+</a>
+<a class="nav-hour" href="about.html">
+<div>About</div>
+</a>
+</nav>
+</main>
+<script src="../agpeya.js"></script>
+<script>
         // Initialize jump to gospel functionality
         initJumpToGospel();
     </script>

@@ -1,0 +1,45 @@
+---
+description: Agpeya project structure, conventions, and multilanguage workflow
+alwaysApply: true
+---
+
+# Agpeya Project Rules
+
+## Architecture
+
+Static multilanguage site. Shared assets at root, per-language HTML in folders:
+
+```
+/                   -- root: redirect to /fr/, shared CSS/JS/assets
+/en/                -- English (SOURCE OF TRUTH)
+/ar/                -- Arabic (RTL, <html lang="ar" dir="rtl">)
+/fr/                -- French new translation
+/fr-old/            -- French classic translation
+```
+
+Each folder has 11 HTML files: `index.html`, `prime.html`, `terce.html`, `sext.html`, `none.html`, `vespers.html`, `compline.html`, `midnight.html`, `veil.html`, `other.html`, `about.html`.
+
+## English is the Source of Truth
+
+- `/en/` is the reference for all structure, layout, sections, CSS classes, and content order.
+- When adding or modifying HTML structure, sections, navigation, or any non-text element, **always edit `/en/` first**, then propagate to the other language folders.
+- Other language folders must mirror the exact same HTML structure as `/en/` -- only the text content and `lang`/`dir` attributes differ.
+- If a structural change is made (e.g., adding a section, changing a CSS class, modifying the settings panel), apply it to all 4 folders.
+
+## Asset Paths
+
+All HTML files in language folders reference shared assets with `../`:
+- `href="../agpeya-style.css"`
+- `src="../agpeya.js"`
+- `src="../coptic-cross.png"`
+- `src="../cog_wheel.png"`
+
+Never duplicate CSS, JS, or image assets into language folders.
+
+## Language Switcher
+
+The language switcher lives inside the settings panel (cog wheel) on every page. It uses `<a>` tags with `data-lang` attributes linking to `../{lang}/{page}.html`. The active language gets the `active` class. There is no separate language selector page.
+
+## Default Language
+
+French (`/fr/`) is the default. Root `index.html` redirects to `/fr/index.html`.
