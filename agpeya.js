@@ -328,8 +328,8 @@ if (darkModeBtn) {
 
 (function initLangSelector() {
     const path = window.location.pathname;
-    const langs = ['en', 'ar', 'fr', 'fr-old'];
-    let currentLang = 'en';
+    const langs = ['fr', 'ar']; 
+    let currentLang = 'fr';
     for (const l of langs) {
         if (path.includes('/' + l + '/')) { currentLang = l; break; }
     }
@@ -337,9 +337,7 @@ if (darkModeBtn) {
     const langLinks = document.querySelectorAll('.lang-selector a');
     langLinks.forEach(link => {
         const lang = link.getAttribute('data-lang');
-        if (lang === currentLang) {
-            link.classList.add('active');
-        }
+        link.classList.toggle('active', lang === currentLang);
     });
 })();
 

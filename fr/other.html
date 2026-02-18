@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Other Prayers | Agpeya</title>
+<title>Autres Prières | Agpia</title>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;600&amp;family=EB+Garamond:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <link href="../agpeya-style.css" rel="stylesheet"/>
 </head>
@@ -12,20 +12,20 @@
 <div class="sticky-subheader">
 <div class="dropdown-wrapper">
 <select class="hour-dropdown" id="hourDropdown">
-<option data-long="Home" data-short="Home" value="index.html">Home</option>
-<option data-long="1st Hour - Prime" data-short="1st Hour" value="prime.html">1st Hour - Prime</option>
-<option data-long="3rd Hour - Terce" data-short="3rd Hour" value="terce.html">3rd Hour - Terce</option>
-<option data-long="6th Hour - Sext" data-short="6th Hour" value="sext.html">6th Hour - Sext</option>
-<option data-long="9th Hour - None" data-short="9th Hour" value="none.html">9th Hour - None</option>
-<option data-long="11th Hour - Vespers" data-short="11th Hour" value="vespers.html">11th Hour - Vespers</option>
-<option data-long="12th Hour - Compline" data-short="12th Hour" value="compline.html">12th Hour - Compline</option>
-<option data-long="Midnight" data-short="Midnight" value="midnight.html">Midnight</option>
-<option data-long="Prayer of the Veil" data-short="Veil" value="veil.html">Prayer of the Veil</option>
-<option data-long="Other Prayers" data-short="Other" value="other.html">Other Prayers</option>
-<option data-long="About" data-short="About" value="about.html">About</option>
+<option data-long="Accueil" data-short="Accueil" value="index.html">Accueil</option>
+<option data-long="1ère Heure - Prime" data-short="1ère Heure" value="prime.html">1ère Heure - Prime</option>
+<option data-long="3ème Heure - Tierce" data-short="3ème Heure" value="terce.html">3ème Heure - Tierce</option>
+<option data-long="6ème Heure - Sexte" data-short="6ème Heure" value="sext.html">6ème Heure - Sexte</option>
+<option data-long="9ème Heure - None" data-short="9ème Heure" value="none.html">9ème Heure - None</option>
+<option data-long="11ème Heure - Vêpres" data-short="11ème Heure" value="vespers.html">11ème Heure - Vêpres</option>
+<option data-long="12ème Heure - Complies" data-short="12ème Heure" value="compline.html">12ème Heure - Complies</option>
+<option data-long="Minuit" data-short="Minuit" value="midnight.html">Minuit</option>
+<option data-long="Prière du Voile" data-short="Voile" value="veil.html">Prière du Voile</option>
+<option data-long="Autres Prières" data-short="Autres" value="other.html">Autres Prières</option>
+<option data-long="À propos" data-short="À propos" value="about.html">À propos</option>
 </select>
 <select class="section-dropdown" id="sectionDropdown">
-<option value="">Top</option>
+<option value="">Haut</option>
 </select>
 </div>
 <button class="settings-btn" id="settingsBtn"><img alt="Settings" src="../cog_wheel.png"/></button>
@@ -38,19 +38,19 @@
 </div>
 <!-- Line Height Row -->
 <div class="settings-row">
-<button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Comfy line spacing">
+<button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Interligne confortable">
 <span class="line-height-icon comfy-icon">
 <span class="line"></span>
 <span class="line"></span>
 </span>
 </button>
-<button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Default line spacing">
+<button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Interligne standard">
 <span class="line-height-icon default-icon">
 <span class="line"></span>
 <span class="line"></span>
 </span>
 </button>
-<button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Condensed line spacing">
+<button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Interligne condensé">
 <span class="line-height-icon condensed-icon">
 <span class="line"></span>
 <span class="line"></span>
@@ -59,15 +59,15 @@
 </div>
 <!-- Theme Row -->
 <div class="settings-row">
-<button class="settings-menu-btn settings-toggle" id="lightModeBtn">Light</button>
-<button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Dark</button>
+<button class="settings-menu-btn settings-toggle" id="lightModeBtn">Clair</button>
+<button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Sombre</button>
 </div>
 <!-- Language Selector -->
 <div class="settings-row lang-selector">
-<a class="settings-menu-btn settings-toggle active" data-lang="en" href="../en/other.html">EN</a>
+<!-- <a class="settings-menu-btn settings-toggle" data-lang="en" href="../en/other.html">EN</a> -->
+<a class="settings-menu-btn settings-toggle active" data-lang="fr" href="../fr/other.html">FR</a>
 <a class="settings-menu-btn settings-toggle" data-lang="ar" href="../ar/other.html">عربي</a>
-<a class="settings-menu-btn settings-toggle" data-lang="fr" href="../fr/other.html">FR</a>
-<a class="settings-menu-btn settings-toggle" data-lang="fr-old" href="../fr-old/other.html">FR cl.</a>
+<!-- <a href="../fr-old/other.html" class="settings-menu-btn settings-toggle" data-lang="fr-old">FR cl.</a> -->
 </div>
 </div>
 </div>
@@ -75,8 +75,8 @@
 <div class="hour-header"> <div class="header-crosses">
 <img alt="Coptic Cross" src="../coptic-cross.png"/>
 </div>
-<h1 class="hour-title">Other Prayers</h1>
-<p class="hour-desc">Prayer is a living relationship with God. This collection gathers essential Coptic liturgical, sacramental, and daily spiritual prayers from the Agpeya and Gospel tradition. It guides believers through confession, communion, meals, study, and personal petitions, forming a structured rhythm of worship, repentance, gratitude, and disciplined devotion for faithful daily life.</p>
+<h1 class="hour-title">Autres Prières</h1>
+<p class="hour-desc">La prière est une relation vivante avec Dieu. Cette collection rassemble les prières essentielles de la liturgie copte, sacramentelles et spirituelles quotidiennes tirées de l'Agpia et de la tradition évangélique. Elle guide les croyants à travers la confession, la communion, les repas, l'étude et les supplications personnelles, formant un rythme structuré de culte, de repentance, de gratitude et de dévotion disciplinée pour une vie quotidienne fidèle.</p>
 </div>
 <div class="prayer-content">
 <div class="ornament">
@@ -85,7 +85,7 @@
 <img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
 </div>
 <section class="section">
-<h2 class="section-title">Prayer Before Confession</h2>
+<h2 class="section-title">Prière avant la confession</h2>
 <div class="prayer-text">
                     Ô Père saint, Tu aimes le repentir des pécheurs et Tu as promis de les recevoir. Regarde, Seigneur, une âme pécheresse qui fut longtemps égarée dans les dédales de la désobéissance. Elle y a ressenti l'amertume et le malheur à cause de son éloignement de la source de son salut.
                 </div>
@@ -103,7 +103,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Prayer After Confession</h2>
+<h2 class="section-title">Prière après la confession</h2>
 <div class="prayer-text">
                     Je Te rends grâce ô Père ami du genre humain car, par Ta bonté, Tu n'as pas voulu que je périsse. Tu m'as réveillé de ma torpeur et Tu m'as montré Ton chemin. Tu m'as retiré de la vallée de la perdition pour m'abriter dans Ta forteresse sûre. Remplis-moi de l'espérance et de la Foi.
                 </div>
@@ -115,7 +115,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Prayer Before Communion 1</h2>
+<h2 class="section-title">Prière avant la communion 1</h2>
 <div class="prayer-text">
                     Seigneur, je ne suis pas digne de Te recevoir car je suis pécheur mais dis seulement une parole et mon âme sera guérie. Dis à mon âme : tes péchés te sont remis. Je suis stérile et sans aucune bonté. Mon seul secours est Ta tendresse, Ta compassion et Ton amour pour le genre humain.
                 </div>
@@ -130,7 +130,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Prayer Before Communion 2</h2>
+<h2 class="section-title">Prière avant la communion 2</h2>
 <div class="prayer-text">
                     Ô Dieu, source de vie et Roi des siècles, notre Seigneur Jésus Christ, le vrai Pain vivifiant descendu du ciel, Tu as accordé la vie à qui communie à Ton saint Corps et à Ton Sang précieux. Accorde à Ton serviteur Tes bénédictions célestes afin que je sois digne d'avancer vers le mystère de Ton Corps et Ton Sang sacrés avec ferveur.
                 </div>
@@ -145,7 +145,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Prayer After Communion 1</h2>
+<h2 class="section-title">Prière après la communion 1</h2>
 <div class="prayer-text">
                     Mon cœur s'est rempli de joie et ma bouche d'allégresse. Que mon âme exalte le Seigneur et que mon esprit exulte en Dieu, mon sauveur !Seigneur, je me suis présenté devant Toi pour que Tu me revêtes d'un vêtement propre qui me rende digne d'accéder à Ta noce. Que mon union avec Toi demeure pour toujours. Grâce à elle je prospérerai en vertu et en fermeté. Ma Foi sera plus forte et mon espérance plus ferme.
                 </div>
@@ -160,7 +160,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Prayer After Communion 2</h2>
+<h2 class="section-title">Prière après la communion 2</h2>
 <div class="prayer-text">
                     Qu'elle est grande la générosité que Tu as réservée à ceux qui te craignent ! Qu'ils sont doux Ta grâce et ton amour pour ceux qui T'aiment ! Je Te rends grâce, ô Dieu, qui prend soin de moi.
                 </div>
@@ -172,7 +172,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Prayer Before Meals 1</h2>
+<h2 class="section-title">Prière avant les repas 1</h2>
 <div class="prayer-text">
                     Tu es béni, Seigneur, Toi qui t’occupes de nous depuis notre naissance, nous accordes Tes bienfaits et prépares la nourriture pour tous. Car les yeux de tous T'espèrent et c'est Toi qui leur donnes leur nourriture en temps opportun. Par Ta générosité Tu rassasies tout être vivant.
                 </div>
@@ -190,13 +190,13 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Prayer Before Meals 2</h2>
+<h2 class="section-title">Prière avant les repas 2</h2>
 <div class="prayer-text">
                     Tu sais mon Dieu que je ne sais pas ce qui est bon pour moi. Voici que je vais entreprendre de ......... . Comment puis-je savoir ce qui est utile pour moi sans être guidé par Ta grâce ? Je T'implore, Seigneur, guide-moi et ne me laisse pas seul, abandonné à mes pensées, ni attiré par mes mauvais penchants, afin que je ne m'engage pas dans une affaire malsaine et que je ne tombe pas dans l'embarras, mais garde Ton serviteur de tous faux pas. Soit mon appui et mon aide. Gouverne cette affaire selon Ta volonté et comme il convient à Ta bonté. Si Tu la trouves bénéfique, qu'il en soit comme Tu le désires. Accorde-moi la grâce de l'accomplir. Si Tu la trouves nuisible, ôte de moi, Seigneur, ce désir car Tu sais toute chose et rien ne t'est caché. Je suis Ton serviteur, traite-moi comme il Te convient car il n'est pas de réussite complète ni de paix parfaite sans que je me remette à Ta volonté. Apprends-moi à dire toujours "Père, non selon ma volonté, mais selon Ta volonté". A Toi le règne, la puissance et la gloire dès maintenant et éternellement. Amen !
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Prayer After Meals</h2>
+<h2 class="section-title">Prière après les repas</h2>
 <div class="prayer-text">
                     Nous Te rendons grâce, Seigneur notre Dieu, Tout Puissant, car Tu as apprêté pour nous cette table, qui prouve Ton amour pour tes serviteurs en leur procurant les bienfaits de la terre.
                 </div>
@@ -214,7 +214,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Prayer Before Studying</h2>
+<h2 class="section-title">Prière avant l'étude</h2>
 <div class="prayer-text">
                     Ô Seigneur très béni, envoie la grâce de Ton Saint-Esprit sur moi pour me fortifier, afin que j'apprenne bien la matière de mes études et que je l'applique pour Ta gloire et le service de l'humanité. Amen.
                 </div>
@@ -223,7 +223,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Prayer After Studying</h2>
+<h2 class="section-title">Prière après l'étude</h2>
 <div class="prayer-text">
                     Je Te rends grâce, Seigneur notre Dieu, car Tu as de nouveau ouvert mes yeux à la lumière de Ta sagesse.
                 </div>
@@ -248,31 +248,31 @@
 <div>Prime</div>
 </a>
 <a class="nav-hour" href="terce.html">
-<div>Terce</div>
+<div>Tierce</div>
 </a>
 <a class="nav-hour" href="sext.html">
-<div>Sext</div>
+<div>Sexte</div>
 </a>
 <a class="nav-hour" href="none.html">
 <div>None</div>
 </a>
 <a class="nav-hour" href="vespers.html">
-<div>Vespers</div>
+<div>Vêpres</div>
 </a>
 <a class="nav-hour" href="compline.html">
-<div>Compline</div>
+<div>Complies</div>
 </a>
 <a class="nav-hour" href="midnight.html">
-<div>Midnight</div>
+<div>Minuit</div>
 </a>
 <a class="nav-hour" href="veil.html">
-<div>Veil</div>
+<div>Voile</div>
 </a>
 <a class="nav-hour" href="other.html">
-<div>Other Prayers</div>
+<div>Autres Prières</div>
 </a>
 <a class="nav-hour" href="about.html">
-<div>About</div>
+<div>À propos</div>
 </a>
 </nav>
 </main>

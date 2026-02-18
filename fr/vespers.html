@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Vespers | Agpeya</title>
+<title>Vêpres | Agpia</title>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;600&amp;family=EB+Garamond:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <link href="../agpeya-style.css" rel="stylesheet"/>
 </head>
@@ -12,20 +12,20 @@
 <div class="sticky-subheader">
 <div class="dropdown-wrapper">
 <select class="hour-dropdown" id="hourDropdown">
-<option data-long="Home" data-short="Home" value="index.html">Home</option>
-<option data-long="1st Hour - Prime" data-short="1st Hour" value="prime.html">1st Hour - Prime</option>
-<option data-long="3rd Hour - Terce" data-short="3rd Hour" value="terce.html">3rd Hour - Terce</option>
-<option data-long="6th Hour - Sext" data-short="6th Hour" value="sext.html">6th Hour - Sext</option>
-<option data-long="9th Hour - None" data-short="9th Hour" value="none.html">9th Hour - None</option>
-<option data-long="11th Hour - Vespers" data-short="11th Hour" value="vespers.html">11th Hour - Vespers</option>
-<option data-long="12th Hour - Compline" data-short="12th Hour" value="compline.html">12th Hour - Compline</option>
-<option data-long="Midnight" data-short="Midnight" value="midnight.html">Midnight</option>
-<option data-long="Prayer of the Veil" data-short="Veil" value="veil.html">Prayer of the Veil</option>
-<option data-long="Other Prayers" data-short="Other" value="other.html">Other Prayers</option>
-<option data-long="About" data-short="About" value="about.html">About</option>
+<option data-long="Accueil" data-short="Accueil" value="index.html">Accueil</option>
+<option data-long="1ère Heure - Prime" data-short="1ère Heure" value="prime.html">1ère Heure - Prime</option>
+<option data-long="3ème Heure - Tierce" data-short="3ème Heure" value="terce.html">3ème Heure - Tierce</option>
+<option data-long="6ème Heure - Sexte" data-short="6ème Heure" value="sext.html">6ème Heure - Sexte</option>
+<option data-long="9ème Heure - None" data-short="9ème Heure" value="none.html">9ème Heure - None</option>
+<option data-long="11ème Heure - Vêpres" data-short="11ème Heure" value="vespers.html">11ème Heure - Vêpres</option>
+<option data-long="12ème Heure - Complies" data-short="12ème Heure" value="compline.html">12ème Heure - Complies</option>
+<option data-long="Minuit" data-short="Minuit" value="midnight.html">Minuit</option>
+<option data-long="Prière du Voile" data-short="Voile" value="veil.html">Prière du Voile</option>
+<option data-long="Autres Prières" data-short="Autres" value="other.html">Autres Prières</option>
+<option data-long="À propos" data-short="À propos" value="about.html">À propos</option>
 </select>
 <select class="section-dropdown" id="sectionDropdown">
-<option value="">Top</option>
+<option value="">Haut</option>
 </select>
 </div>
 <button class="settings-btn" id="settingsBtn"><img alt="Settings" src="../cog_wheel.png"/></button>
@@ -38,19 +38,19 @@
 </div>
 <!-- Line Height Row -->
 <div class="settings-row">
-<button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Comfy line spacing">
+<button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Interligne confortable">
 <span class="line-height-icon comfy-icon">
 <span class="line"></span>
 <span class="line"></span>
 </span>
 </button>
-<button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Default line spacing">
+<button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Interligne standard">
 <span class="line-height-icon default-icon">
 <span class="line"></span>
 <span class="line"></span>
 </span>
 </button>
-<button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Condensed line spacing">
+<button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Interligne condensé">
 <span class="line-height-icon condensed-icon">
 <span class="line"></span>
 <span class="line"></span>
@@ -59,15 +59,15 @@
 </div>
 <!-- Theme Row -->
 <div class="settings-row">
-<button class="settings-menu-btn settings-toggle" id="lightModeBtn">Light</button>
-<button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Dark</button>
+<button class="settings-menu-btn settings-toggle" id="lightModeBtn">Clair</button>
+<button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Sombre</button>
 </div>
 <!-- Language Selector -->
 <div class="settings-row lang-selector">
-<a class="settings-menu-btn settings-toggle active" data-lang="en" href="../en/vespers.html">EN</a>
+<!-- <a class="settings-menu-btn settings-toggle" data-lang="en" href="../en/vespers.html">EN</a> -->
+<a class="settings-menu-btn settings-toggle active" data-lang="fr" href="../fr/vespers.html">FR</a>
 <a class="settings-menu-btn settings-toggle" data-lang="ar" href="../ar/vespers.html">عربي</a>
-<a class="settings-menu-btn settings-toggle" data-lang="fr" href="../fr/vespers.html">FR</a>
-<a class="settings-menu-btn settings-toggle" data-lang="fr-old" href="../fr-old/vespers.html">FR cl.</a>
+<!-- <a href="../fr-old/vespers.html" class="settings-menu-btn settings-toggle" data-lang="fr-old">FR cl.</a> -->
 </div>
 </div>
 </div>
@@ -76,9 +76,9 @@
 <div class="header-crosses">
 <img alt="Coptic Cross" src="../coptic-cross.png"/>
 </div>
-<h1 class="hour-title">Vespers</h1>
-<p class="hour-time">The Eleventh Hour · 6:00 PM</p>
-<p class="hour-desc">The Vespers (Sunset): Eleventh Hour, is associated with the act of taking down Christ's body from the cross. At the end of the day, we give thanks for God's protection, and confess our sins with the Prodigal Son (Luke 15:11-31) that we may be counted among the labours who were called at the eleventh hour of the day (Matt. 20:1-16).</p>
+<h1 class="hour-title">Vêpres</h1>
+<p class="hour-time">La Onzième Heure · 18h00</p>
+<p class="hour-desc">Les Vêpres (Coucher du soleil) : la Onzième Heure est associée à l'acte de descendre le corps du Christ de la croix. À la fin du jour, nous rendons grâce pour la protection de Dieu, et confessons nos péchés avec le Fils Prodigue (Luc 15:11-31) afin d'être comptés parmi les ouvriers appelés à la onzième heure du jour (Matt. 20:1-16).</p>
 </div>
 <div class="prayer-content">
 <div class="ornament">
@@ -87,7 +87,7 @@
 <img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
 </div>
 <section class="section">
-<h2 class="section-title">Introduction to Every Hour</h2>
+<h2 class="section-title">Introduction de chaque heure</h2>
 <div class="prayer-text">
                     Au nom du Père et du Fils et du Saint-Esprit, Un Dieu Unique ! Amen.
                 </div>
@@ -99,7 +99,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">The Lord's Prayer</h2>
+<h2 class="section-title">Le Notre Père</h2>
 <div class="prayer-text"><em>Rends-nous dignes de dire en action de grâce :</em></div>
 <div class="prayer-text">
                     Notre Père qui es aux cieux, que Ton Nom soit sanctifié, que Ton Règne vienne, que Ta Volonté soit faite, comme au ciel, aussi sur la terre. Notre pain de demain, donne-le-nous aujourd'hui,
@@ -109,7 +109,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">The Prayer of Thanksgiving</h2>
+<h2 class="section-title">Prière d'action de grâce</h2>
 <div class="prayer-text">
                     Rendons grâce au Bienfaiteur et Miséricordieux, Dieu le Père de notre Seigneur, notre Dieu et notre Sauveur Jésus-Christ parce qu'Il nous a protégés, secourus, préservés, reçus auprès de Lui, pris en pitié, aidés et amenés jusqu'à cette heure. Supplions-Le encore de nous garder en ce saint jour et tous les jours de notre vie en toute paix, Lui le Tout-Puissant, le Seigneur notre Dieu.
                 </div>
@@ -127,7 +127,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 50</h2>
+<h2 class="section-title">Psaume 50</h2>
 <div class="psalm-verse drop-cap">
                     Fais-moi miséricorde, Seigneur, selon Ta grande Miséricorde, et selon la multitude de tes compassions, efface mon illégalité ! Lave-moi encore de mon illégalité, et purifie-moi de mon péché ! Car moi, je connais mon illégalité, et mon péché est toujours devant mes yeux. 
                 </div>
@@ -152,13 +152,13 @@
 <div class="prayer-text"><em>Psaume de David le Prophète, que sa sainte bénédiction soit avec nous, Amen.</em></div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 116</h2>
+<h2 class="section-title">Psaume 116</h2>
 <div class="psalm-verse drop-cap">
                     Alléluia ! Nations, louez toutes le Seigneur, peuples, louez-le tous ! Car Sa Miséricorde s'est affermie sur nous, et la Vérité du Seigneur demeure pour les siècles. <span class="alleluia">ALLELUIA.</span>
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 117</h2>
+<h2 class="section-title">Psaume 117</h2>
 <div class="psalm-verse drop-cap">
                     Alléluia ! Professez au Seigneur, parce qu'Il est bon, parce que sa Miséricorde est pour les siècles ! Que la maison d'Israël déclare qu'Il est bon, parce que sa Miséricorde est pour les siècles ! Que la maison d'Aaron déclare qu'Il est bon, parce que sa Miséricorde est pour les siècles ! Que tous ceux qui craignent le Seigneur déclarent qu'il est bon, parce que sa Miséricorde est pour les siècles ! Dans la tribulation j'ai invoqué le Seigneur, et il m'a exaucé, il m'a mis au large. 
                 </div>
@@ -179,19 +179,19 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 119</h2>
+<h2 class="section-title">Psaume 119</h2>
 <div class="psalm-verse drop-cap">
                     Dans ma tribulation, j'ai crié vers le Seigneur, et Tu m'as exaucé. Seigneur, délivre mon âme des lèvres injustes et des langues trompeuses ! Que te revient-il, et quel profit as-tu retiré de ta langue trompeuse ? Les flèches du Puissant sont aiguës comme des charbons du désert. Hélas ! que mon exil est long ! J'ai séjourné avec les tentes de Cédar. Mon âme a été en exil en bien des lieux. J'étais pacifique avec ceux qui haïssent ma paix ; sitôt que je leur parlais, ils m'attaquaient pour rien. <span class="alleluia">ALLELUIA.</span>
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 120</h2>
+<h2 class="section-title">Psaume 120</h2>
 <div class="psalm-verse drop-cap">
                     J'ai levé les yeux vers les montagnes, d'où me viendra mon secours. Le secours me viendra du Seigneur, qui a fait le ciel et la terre. Il ne laissera point vaciller ton pied, et Celui qui te garde ne s'endormira pas. Il ne sommeillera pas, il ne s'endormira point, Celui qui garde Israël. Le Seigneur te gardera, le Seigneur est ton abri, sur ta main droite. Le soleil ne te brûlera point pendant le jour, ni la lune pendant la nuit. Le Seigneur te gardera de tout mal, le Seigneur gardera ton âme. Le Seigneur te gardera, quand tu entreras et quand tu sortiras, dès maintenant et pour les siècles. <span class="alleluia">ALLELUIA.</span>
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 121</h2>
+<h2 class="section-title">Psaume 121</h2>
 <div class="psalm-verse drop-cap">
                     Je me suis réjoui quand on m'a dit : « Nous irons à la Maison du Seigneur ! » Nos pieds se sont tenus droit dans les parvis de Jérusalem ! Jérusalem est édifiée comme une cité dont la faveur est sur tous ensemble. Car c'est là que montaient les tribus, les tribus du Seigneur, en témoignage pour Israël, pour professer au Nom du Seigneur. Là étaient établis des trônes pour le jugement, des trônes sur la maison de David. 
                 </div>
@@ -200,19 +200,19 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 122</h2>
+<h2 class="section-title">Psaume 122</h2>
 <div class="psalm-verse drop-cap">
                     J'ai levé mes yeux vers Toi, qui habites dans le ciel. Comme les yeux des serviteurs sont vers les mains de leurs maîtres, et les yeux de la servante vers les mains de sa maîtresse, ainsi nos yeux seront vers le Seigneur notre Dieu, jusqu'à ce qu'il ait pitié de nous. Fais-nous miséricorde, Seigneur, fais-nous miséricorde, parce que nous sommes remplis de trop de mépris ! Notre âme en est pleine, et déborde : que l'opprobre soit pour les gens prospères, et le mépris pour les orgueilleux ! <span class="alleluia">ALLELUIA.</span>
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 123</h2>
+<h2 class="section-title">Psaume 123</h2>
 <div class="psalm-verse drop-cap">
                     Si le Seigneur n'avait été en nous, qu'Israël déclare : Si le Seigneur n'avait été en nous, lorsque des hommes se sont levés contre nous, Peut-être nous auraient-ils dévorés vivants. Quand leur fureur a éclaté contre nous, Peut-être l'eau nous aurait-elle submergé. Notre âme aurait traversé un torrent. Notre âme aurait traversé l'eau sans fond. Béni soit le Seigneur, qui ne nous a point livrés en proie à leurs dents ! Notre âme s'est échappée comme un passereau du piège des chasseurs, le filet a été rompu, et nous avons été délivrés. Notre Secours est dans le Nom du Seigneur, qui a fait le ciel et la terre. <span class="alleluia">ALLELUIA.</span>
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 124</h2>
+<h2 class="section-title">Psaume 124</h2>
 <div class="psalm-verse drop-cap">
                     Ceux qui ont confiance dans le Seigneur sont comme la Montagne de Sion. Il ne sera point ébranlé pour les siècles, celui qui habite en Jérusalem. Des montagnes sont autour d'elle, et le Seigneur est autour de son peuple, maintenant et jusqu'aux siècles. Le Seigneur ne permettra pas que le bâton des pécheurs soit sur l'héritage des justes, afin que les justes n'étendent pas leurs mains vers l'illégalité. 
                 </div>
@@ -221,13 +221,13 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 125</h2>
+<h2 class="section-title">Psaume 125</h2>
 <div class="psalm-verse drop-cap">
                     Quand le Seigneur fit retourner les captifs de Sion, nous devînmes comme consolés. Alors notre bouche fut remplie de joie, et notre langue d'allégresse, alors les nations dirent entre elles : « Le Seigneur a fait de grandes choses pour eux ». Le Seigneur a fait de grandes choses pour nous, et nous en avons été réjouis. Seigneur, fais retourner nos captifs comme les torrents du midi ! Ceux qui sèment dans les larmes récolteront dans l'allégresse. Ils allaient, ils allaient en pleurant, portant leurs semences : en revenant ils iront dans l'allégresse, portant leurs gerbes. <span class="alleluia">ALLELUIA.</span>
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 126</h2>
+<h2 class="section-title">Psaume 126</h2>
 <div class="psalm-verse drop-cap">
                     Si le Seigneur n'édifie la maison, c'est en vain que peinent ceux qui l'édifient. Si le Seigneur ne veille sur la cité, c'est en vain que veille celui qui la garde. En vain vous vous levez dès l'aurore : levez-vous après vous être couchés, vous qui mangez le pain de la peine, quand Il aura donné le sommeil à ses bien-aimés ! Voilà l'héritage du Seigneur : des fils, récompense du fruit du ventre. 
                 </div>
@@ -236,19 +236,19 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 127</h2>
+<h2 class="section-title">Psaume 127</h2>
 <div class="psalm-verse drop-cap">
                     Bienheureux tous ceux qui craignent le Seigneur, et qui cheminent en Ses voies. Tu mangeras les produits de tes peines, tu seras bienheureux, et ce sera bon pour toi. Ta femme sera comme une vigne prospère dans l'enceinte de ta maison, tes enfants comme de jeunes plants d'olivier seront autour de ta table. Voilà comment sera béni l'homme qui craint le Seigneur. Que le Seigneur te bénisse depuis Sion, et que tu voies les bonnes choses de Jérusalem, tous les jours de ta vie. Et que tu voies les fils de tes fils. Paix sur Israël ! <span class="alleluia">ALLELUIA.</span>
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 128</h2>
+<h2 class="section-title">Psaume 128</h2>
 <div class="psalm-verse drop-cap">
                     Souvent ils m'ont fait la guerre dès ma jeunesse, que maintenant Israël déclare : Souvent ils m'ont fait la guerre dès ma jeunesse, mais ils n'ont rien pu envers moi. Sur mon dos ont frappé les pécheurs, ils ont prolongé leur illégalité. Le Seigneur est juste, Il brisera le cou des pécheurs. Qu'ils soient honteux et mis en fuite, tous ceux qui haïssent Sion. Qu'ils deviennent comme l'herbe des toits, qui sèche avant d'être arrachée, Et qui ne remplit ni la main du faucheur, ni le sein de celui qui rassemble les gerbes. Et sur eux les passants n'ont point dit : « Que la bénédiction du Seigneur soit sur vous ! Nous vous bénissons au Nom du Seigneur ! » <span class="alleluia">ALLELUIA.</span>
                 </div>
 </section>
 <section class="section" id="gospel">
-<h2 class="section-title">The Holy Gospel (Luke 4:38-41)</h2>
+<h2 class="section-title">Le Saint Évangile (Luc 4:38-41)</h2>
 <div class="prayer-text"><em>Gloire à Toi ô notre Dieu ! Seigneur, bénis la lecture du Saint Évangile selon Luc :</em></div>
 <div class="psalm-verse drop-cap">
                     Il partit de la synagogue et se rendit chez Simon. La belle-mère de Simon était en proie à une forte fièvre, et ils le sollicitèrent en sa faveur. Il se pencha sur elle, rabroua la fièvre, et la fièvre la quitta. A l'instant même elle se leva et se mit à les servir.
@@ -287,7 +287,7 @@
 <div class="prayer-text"><em>(Seigneur aie pitié) 41 fois</em></div>
 </section>
 <section class="section">
-<h2 class="section-title">Holy Holy Holy</h2>
+<h2 class="section-title">Saint Saint Saint</h2>
 <div class="prayer-text">
                     Tu es Saint, Saint, Saint, Seigneur Sabaoth, le ciel et la terre sont remplis de Ta gloire et de Ton honneur ! Aie pitié de nous ô Dieu le Père Tout-Puissant. Ô Trinité Sainte, aie pitié de nous ! Ô Seigneur Dieu des puissances, sois avec nous, car nous n'avons d'aide que de Toi dans nos tribulations et nos angoisses.
                 </div>
@@ -299,7 +299,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">The Lord's Prayer</h2>
+<h2 class="section-title">Le Notre Père</h2>
 <div class="prayer-text"><em>Rends-nous dignes de dire en action de grâce :</em></div>
 <div class="prayer-text">
                     Notre Père qui es aux cieux, que Ton Nom soit sanctifié, que Ton Règne vienne, que Ta Volonté soit faite, comme au ciel, aussi sur la terre. Notre pain de demain, donne-le-nous aujourd'hui,
@@ -321,7 +321,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Conclusion of Every Hour</h2>
+<h2 class="section-title">Conclusion de chaque heure</h2>
 <div class="prayer-text">
                     Ô Dieu, aie pitié de nous, Toi qui es adoré et glorifié, en tout temps et à toute heure, dans le ciel et sur la terre. Ô Christ notre Dieu bon, longanime, plein de miséricorde et abondant en compassion, Toi qui aimes les justes et qui fais miséricorde aux pécheurs (dont je suis le premier), toi qui ne veux pas la mort du pécheur mais qu'il se repente et vive. Tu appelles tout un chacun au Salut à cause de la promesse des bienfaits attendus.
                 </div>
@@ -340,31 +340,31 @@
 <div>Prime</div>
 </a>
 <a class="nav-hour" href="terce.html">
-<div>Terce</div>
+<div>Tierce</div>
 </a>
 <a class="nav-hour" href="sext.html">
-<div>Sext</div>
+<div>Sexte</div>
 </a>
 <a class="nav-hour" href="none.html">
 <div>None</div>
 </a>
 <a class="nav-hour" href="vespers.html">
-<div>Vespers</div>
+<div>Vêpres</div>
 </a>
 <a class="nav-hour" href="compline.html">
-<div>Compline</div>
+<div>Complies</div>
 </a>
 <a class="nav-hour" href="midnight.html">
-<div>Midnight</div>
+<div>Minuit</div>
 </a>
 <a class="nav-hour" href="veil.html">
-<div>Veil</div>
+<div>Voile</div>
 </a>
 <a class="nav-hour" href="other.html">
-<div>Other Prayers</div>
+<div>Autres Prières</div>
 </a>
 <a class="nav-hour" href="about.html">
-<div>About</div>
+<div>À propos</div>
 </a>
 </nav>
 </main>

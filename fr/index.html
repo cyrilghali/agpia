@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Agpeya - The Coptic Book of Hours</title>
+<title>Agpia - Le Livre des Heures Copte</title>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;600&amp;family=EB+Garamond:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <link href="../agpeya-style.css" rel="stylesheet"/>
 <style>
@@ -259,20 +259,20 @@
 <div class="sticky-subheader">
 <div class="dropdown-wrapper">
 <select class="hour-dropdown" id="hourDropdown">
-<option data-long="Home" data-short="Home" value="index.html">Home</option>
-<option data-long="1st Hour - Prime" data-short="1st Hour" value="prime.html">1st Hour - Prime</option>
-<option data-long="3rd Hour - Terce" data-short="3rd Hour" value="terce.html">3rd Hour - Terce</option>
-<option data-long="6th Hour - Sext" data-short="6th Hour" value="sext.html">6th Hour - Sext</option>
-<option data-long="9th Hour - None" data-short="9th Hour" value="none.html">9th Hour - None</option>
-<option data-long="11th Hour - Vespers" data-short="11th Hour" value="vespers.html">11th Hour - Vespers</option>
-<option data-long="12th Hour - Compline" data-short="12th Hour" value="compline.html">12th Hour - Compline</option>
-<option data-long="Midnight" data-short="Midnight" value="midnight.html">Midnight</option>
-<option data-long="Prayer of the Veil" data-short="Veil" value="veil.html">Prayer of the Veil</option>
-<option data-long="Other Prayers" data-short="Other" value="other.html">Other Prayers</option>
-<option data-long="About" data-short="About" value="about.html">About</option>
+<option data-long="Accueil" data-short="Accueil" value="index.html">Accueil</option>
+<option data-long="1ère Heure - Prime" data-short="1ère Heure" value="prime.html">1ère Heure - Prime</option>
+<option data-long="3ème Heure - Tierce" data-short="3ème Heure" value="terce.html">3ème Heure - Tierce</option>
+<option data-long="6ème Heure - Sexte" data-short="6ème Heure" value="sext.html">6ème Heure - Sexte</option>
+<option data-long="9ème Heure - None" data-short="9ème Heure" value="none.html">9ème Heure - None</option>
+<option data-long="11ème Heure - Vêpres" data-short="11ème Heure" value="vespers.html">11ème Heure - Vêpres</option>
+<option data-long="12ème Heure - Complies" data-short="12ème Heure" value="compline.html">12ème Heure - Complies</option>
+<option data-long="Minuit" data-short="Minuit" value="midnight.html">Minuit</option>
+<option data-long="Prière du Voile" data-short="Voile" value="veil.html">Prière du Voile</option>
+<option data-long="Autres Prières" data-short="Autres" value="other.html">Autres Prières</option>
+<option data-long="À propos" data-short="À propos" value="about.html">À propos</option>
 </select>
 <select class="section-dropdown" id="sectionDropdown">
-<option value="">Top</option>
+<option value="">Haut</option>
 </select>
 </div>
 <button class="settings-btn" id="settingsBtn"><img alt="Settings" src="../cog_wheel.png"/></button>
@@ -285,19 +285,19 @@
 </div>
 <!-- Line Height Row -->
 <div class="settings-row">
-<button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Comfy line spacing">
+<button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Interligne confortable">
 <span class="line-height-icon comfy-icon">
 <span class="line"></span>
 <span class="line"></span>
 </span>
 </button>
-<button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Default line spacing">
+<button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Interligne standard">
 <span class="line-height-icon default-icon">
 <span class="line"></span>
 <span class="line"></span>
 </span>
 </button>
-<button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Condensed line spacing">
+<button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Interligne condensé">
 <span class="line-height-icon condensed-icon">
 <span class="line"></span>
 <span class="line"></span>
@@ -306,92 +306,92 @@
 </div>
 <!-- Theme Row -->
 <div class="settings-row">
-<button class="settings-menu-btn settings-toggle" id="lightModeBtn">Light</button>
-<button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Dark</button>
+<button class="settings-menu-btn settings-toggle" id="lightModeBtn">Clair</button>
+<button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Sombre</button>
 </div>
 <!-- Language Selector -->
 <div class="settings-row lang-selector">
-<a class="settings-menu-btn settings-toggle active" data-lang="en" href="../en/index.html">EN</a>
+<!-- <a class="settings-menu-btn settings-toggle" data-lang="en" href="../en/index.html">EN</a> -->
+<a class="settings-menu-btn settings-toggle active" data-lang="fr" href="../fr/index.html">FR</a>
 <a class="settings-menu-btn settings-toggle" data-lang="ar" href="../ar/index.html">عربي</a>
-<a class="settings-menu-btn settings-toggle" data-lang="fr" href="../fr/index.html">FR</a>
-<a class="settings-menu-btn settings-toggle" data-lang="fr-old" href="../fr-old/index.html">FR cl.</a>
+<!-- <a href="../fr-old/index.html" class="settings-menu-btn settings-toggle" data-lang="fr-old">FR cl.</a> -->
 </div>
 </div>
 </div>
 <main class="container">
 <section class="hero">
-<div class="hero-title-en">The Agpeya</div>
+<div class="hero-title-en">L'Agpia</div>
 <div class="hero-title-coptic">%agpia</div>
 <img alt="Coptic Cross" class="hero-cross" src="../coptic-cross.png"/>
-<h1>The Coptic Book of Hours</h1>
+<h1>Le Livre des Heures Copte</h1>
 <p class="current-time" id="currentTime"></p>
-<a class="cta" href="prime.html" id="beginPrayerBtn">Begin Prayer →</a>
+<a class="cta" href="prime.html" id="beginPrayerBtn">Commencer la Prière →</a>
 </section>
 <section class="hours">
 <a class="hour-card" href="prime.html"> <div class="hour-info">
-<h3 class="hour-name">Prime - 1st Hour</h3>
-<div class="hour-time">6:00 AM</div>
+<h3 class="hour-name">Prime - 1ère Heure</h3>
+<div class="hour-time">6h00</div>
 </div>
 <div class="hour-arrow">→</div>
 </a>
 <a class="hour-card" href="terce.html"> <div class="hour-info">
-<h3 class="hour-name">Terce - 3rd Hour</h3>
-<div class="hour-time">9:00 AM</div>
+<h3 class="hour-name">Tierce - 3ème Heure</h3>
+<div class="hour-time">9h00</div>
 </div>
 <div class="hour-arrow">→</div>
 </a>
 <a class="hour-card" href="sext.html"> <div class="hour-info">
-<h3 class="hour-name">Sext - 6th Hour</h3>
-<div class="hour-time">12:00 PM</div>
+<h3 class="hour-name">Sexte - 6ème Heure</h3>
+<div class="hour-time">12h00</div>
 </div>
 <div class="hour-arrow">→</div>
 </a>
 <a class="hour-card" href="none.html"> <div class="hour-info">
-<h3 class="hour-name">None - 9th Hour</h3>
-<div class="hour-time">3:00 PM</div>
+<h3 class="hour-name">None - 9ème Heure</h3>
+<div class="hour-time">15h00</div>
 </div>
 <div class="hour-arrow">→</div>
 </a>
 <a class="hour-card" href="vespers.html"> <div class="hour-info">
-<h3 class="hour-name">Vespers - 11th Hour</h3>
-<div class="hour-time">6:00 PM</div>
+<h3 class="hour-name">Vêpres - 11ème Heure</h3>
+<div class="hour-time">18h00</div>
 </div>
 <div class="hour-arrow">→</div>
 </a>
 <a class="hour-card" href="compline.html"> <div class="hour-info">
-<h3 class="hour-name">Compline - 12th Hour</h3>
-<div class="hour-time">9:00 PM</div>
+<h3 class="hour-name">Complies - 12ème Heure</h3>
+<div class="hour-time">21h00</div>
 </div>
 <div class="hour-arrow">→</div>
 </a>
 <a class="hour-card" href="midnight.html"> <div class="hour-info">
-<h3 class="hour-name">Midnight</h3>
-<div class="hour-time">12:00 AM</div>
+<h3 class="hour-name">Minuit</h3>
+<div class="hour-time">0h00</div>
 </div>
 <div class="hour-arrow">→</div>
 </a>
 <a class="hour-card" href="veil.html"> <div class="hour-info">
-<h3 class="hour-name">Prayer of the Veil</h3>
-<div class="hour-time">Special Prayer</div>
+<h3 class="hour-name">Prière du Voile</h3>
+<div class="hour-time">Prière Spéciale</div>
 </div>
 <div class="hour-arrow">→</div>
 </a>
 <a class="hour-card" href="other.html"> <div class="hour-info">
-<h3 class="hour-name">Other Prayers</h3>
-<div class="hour-time">Various Occasions</div>
+<h3 class="hour-name">Autres Prières</h3>
+<div class="hour-time">Diverses Occasions</div>
 </div>
 <div class="hour-arrow">→</div>
 </a>
 <a class="hour-card" href="about.html"> <div class="hour-info">
-<h3 class="hour-name">About the Agpeya</h3>
-<div class="hour-time">Foreword</div>
+<h3 class="hour-name">À propos de l'Agpia</h3>
+<div class="hour-time">Avant-propos</div>
 </div>
 <div class="hour-arrow">→</div>
 </a>
 </section>
 </main>
 <footer>
-<p>© <script>document.write(new Date().getFullYear())</script> Agpeya.org · Coptic Book of Hours</p>
+<p>© <script>document.write(new Date().getFullYear())</script> Agpeya.org · Livre des Heures Copte</p>
 </footer>
 <script src="../agpeya.js"></script>
 <script>
@@ -404,13 +404,13 @@
             
             // Define prayer hours (in minutes from midnight)
             const hours = [
-                { name: 'Prime', file: 'prime.html', time: 6 * 60, label: '1st Hour' },
-                { name: 'Terce', file: 'terce.html', time: 9 * 60, label: '3rd Hour' },
-                { name: 'Sext', file: 'sext.html', time: 12 * 60, label: '6th Hour' },
-                { name: 'None', file: 'none.html', time: 15 * 60, label: '9th Hour' },
-                { name: 'Vespers', file: 'vespers.html', time: 18 * 60, label: '11th Hour' },
-                { name: 'Compline', file: 'compline.html', time: 21 * 60, label: '12th Hour' },
-                { name: 'Midnight', file: 'midnight.html', time: 0, label: 'Midnight Hour' }
+                { name: 'Prime', file: 'prime.html', time: 6 * 60, label: '1ère Heure' },
+                { name: 'Terce', file: 'terce.html', time: 9 * 60, label: '3ème Heure' },
+                { name: 'Sext', file: 'sext.html', time: 12 * 60, label: '6ème Heure' },
+                { name: 'None', file: 'none.html', time: 15 * 60, label: '9ème Heure' },
+                { name: 'Vespers', file: 'vespers.html', time: 18 * 60, label: '11ème Heure' },
+                { name: 'Compline', file: 'compline.html', time: 21 * 60, label: '12ème Heure' },
+                { name: 'Midnight', file: 'midnight.html', time: 0, label: 'Minuit' }
             ];
             
             // Find the closest hour
@@ -432,17 +432,17 @@
             }
             
             // Format current time for button text with timezone
-            const timeString = now.toLocaleTimeString('en-US', { 
+            const timeString = now.toLocaleTimeString('fr-FR', { 
                 hour: 'numeric', 
                 minute: '2-digit',
-                hour12: true 
+                hour12: false 
             });
             
             // Get timezone abbreviation (EST, PST, CST, etc.)
-            const timeWithZone = now.toLocaleTimeString('en-US', {
+            const timeWithZone = now.toLocaleTimeString('fr-FR', {
                 hour: 'numeric',
                 minute: '2-digit',
-                hour12: true,
+                hour12: false,
                 timeZoneName: 'short'
             });
             // Extract just the timezone part (e.g., "EST", "PST")
@@ -450,10 +450,10 @@
             
             // Update time display and button
             const timeEl = document.getElementById('currentTime');
-            timeEl.textContent = `It's ${timeString} ${timezone}`;
+            timeEl.textContent = `Il est ${timeString} ${timezone}`;
             const btn = document.getElementById('beginPrayerBtn');
             btn.href = closestHour.file;
-            btn.textContent = `Pray ${closestHour.label} →`;
+            btn.textContent = `Prier ${closestHour.label} →`;
         }
         
         // Update button on page load

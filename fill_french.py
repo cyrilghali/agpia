@@ -4,6 +4,7 @@ preserving the exact English HTML structure."""
 
 import os, re, sys
 from bs4 import BeautifulSoup, NavigableString, Tag
+from ui_translations import translate_ui, translate_home, translate_about
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -594,6 +595,7 @@ def process_hour(en_path, fr_path, sections, psalms, p118, hour_config, hour_nam
     if hour_name:
         replace_hour_intros(soup, hour_name)
     global_replacements(soup)
+    translate_ui(soup, hour_name)
     with open(fr_path, 'w', encoding='utf-8') as f:
         f.write(str(soup))
     print(f"  Wrote {os.path.basename(fr_path)}")
@@ -685,6 +687,7 @@ def process_midnight(en_path, fr_path, sections, psalms, p118):
                 set_em(div, PSALMS_INTRO_FR)
 
     global_replacements(soup)
+    translate_ui(soup, 'midnight')
     with open(fr_path, 'w', encoding='utf-8') as f:
         f.write(str(soup))
     print(f"  Wrote midnight.html")
@@ -722,6 +725,7 @@ def process_other(en_path, fr_path, sections):
         if key and key in sections:
             replace_prayer(sec, sections[key]['paragraphs'])
     global_replacements(soup)
+    translate_ui(soup, 'other')
     with open(fr_path, 'w', encoding='utf-8') as f:
         f.write(str(soup))
     print(f"  Wrote other.html")
@@ -769,6 +773,12 @@ def main():
             ht = soup.find('html')
             if ht:
                 ht['lang'] = 'fr'
+            if name == 'index.html':
+                translate_home(soup)
+                translate_ui(soup)
+            elif name == 'about.html':
+                translate_about(soup)
+                translate_ui(soup)
             with open(dst, 'w', encoding='utf-8') as f:
                 f.write(str(soup))
             print(f"  Wrote {name}")

@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Prime | Agpeya</title>
+<title>Prime | Agpia</title>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;600&amp;family=EB+Garamond:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <link href="../agpeya-style.css" rel="stylesheet"/>
 </head>
@@ -12,20 +12,20 @@
 <div class="sticky-subheader">
 <div class="dropdown-wrapper">
 <select class="hour-dropdown" id="hourDropdown">
-<option data-long="Home" data-short="Home" value="index.html">Home</option>
-<option data-long="1st Hour - Prime" data-short="1st Hour" value="prime.html">1st Hour - Prime</option>
-<option data-long="3rd Hour - Terce" data-short="3rd Hour" value="terce.html">3rd Hour - Terce</option>
-<option data-long="6th Hour - Sext" data-short="6th Hour" value="sext.html">6th Hour - Sext</option>
-<option data-long="9th Hour - None" data-short="9th Hour" value="none.html">9th Hour - None</option>
-<option data-long="11th Hour - Vespers" data-short="11th Hour" value="vespers.html">11th Hour - Vespers</option>
-<option data-long="12th Hour - Compline" data-short="12th Hour" value="compline.html">12th Hour - Compline</option>
-<option data-long="Midnight" data-short="Midnight" value="midnight.html">Midnight</option>
-<option data-long="Prayer of the Veil" data-short="Veil" value="veil.html">Prayer of the Veil</option>
-<option data-long="Other Prayers" data-short="Other" value="other.html">Other Prayers</option>
-<option data-long="About" data-short="About" value="about.html">About</option>
+<option data-long="Accueil" data-short="Accueil" value="index.html">Accueil</option>
+<option data-long="1ère Heure - Prime" data-short="1ère Heure" value="prime.html">1ère Heure - Prime</option>
+<option data-long="3ème Heure - Tierce" data-short="3ème Heure" value="terce.html">3ème Heure - Tierce</option>
+<option data-long="6ème Heure - Sexte" data-short="6ème Heure" value="sext.html">6ème Heure - Sexte</option>
+<option data-long="9ème Heure - None" data-short="9ème Heure" value="none.html">9ème Heure - None</option>
+<option data-long="11ème Heure - Vêpres" data-short="11ème Heure" value="vespers.html">11ème Heure - Vêpres</option>
+<option data-long="12ème Heure - Complies" data-short="12ème Heure" value="compline.html">12ème Heure - Complies</option>
+<option data-long="Minuit" data-short="Minuit" value="midnight.html">Minuit</option>
+<option data-long="Prière du Voile" data-short="Voile" value="veil.html">Prière du Voile</option>
+<option data-long="Autres Prières" data-short="Autres" value="other.html">Autres Prières</option>
+<option data-long="À propos" data-short="À propos" value="about.html">À propos</option>
 </select>
 <select class="section-dropdown" id="sectionDropdown">
-<option value="">Top</option>
+<option value="">Haut</option>
 </select>
 </div>
 <button class="settings-btn" id="settingsBtn"><img alt="Settings" src="../cog_wheel.png"/></button>
@@ -38,19 +38,19 @@
 </div>
 <!-- Line Height Row -->
 <div class="settings-row">
-<button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Comfy line spacing">
+<button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Interligne confortable">
 <span class="line-height-icon comfy-icon">
 <span class="line"></span>
 <span class="line"></span>
 </span>
 </button>
-<button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Default line spacing">
+<button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Interligne standard">
 <span class="line-height-icon default-icon">
 <span class="line"></span>
 <span class="line"></span>
 </span>
 </button>
-<button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Condensed line spacing">
+<button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Interligne condensé">
 <span class="line-height-icon condensed-icon">
 <span class="line"></span>
 <span class="line"></span>
@@ -59,15 +59,15 @@
 </div>
 <!-- Theme Row -->
 <div class="settings-row">
-<button class="settings-menu-btn settings-toggle" id="lightModeBtn">Light</button>
-<button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Dark</button>
+<button class="settings-menu-btn settings-toggle" id="lightModeBtn">Clair</button>
+<button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Sombre</button>
 </div>
 <!-- Language Selector -->
 <div class="settings-row lang-selector">
-<a class="settings-menu-btn settings-toggle active" data-lang="en" href="../en/prime.html">EN</a>
+<!-- <a class="settings-menu-btn settings-toggle" data-lang="en" href="../en/prime.html">EN</a> -->
+<a class="settings-menu-btn settings-toggle active" data-lang="fr" href="../fr/prime.html">FR</a>
 <a class="settings-menu-btn settings-toggle" data-lang="ar" href="../ar/prime.html">عربي</a>
-<a class="settings-menu-btn settings-toggle" data-lang="fr" href="../fr/prime.html">FR</a>
-<a class="settings-menu-btn settings-toggle" data-lang="fr-old" href="../fr-old/prime.html">FR cl.</a>
+<!-- <a href="../fr-old/prime.html" class="settings-menu-btn settings-toggle" data-lang="fr-old">FR cl.</a> -->
 </div>
 </div>
 </div>
@@ -77,8 +77,8 @@
 <img alt="Coptic Cross" src="../coptic-cross.png"/>
 </div>
 <h1 class="hour-title">Prime</h1>
-<p class="hour-time">The First Hour · 6:00 AM</p>
-<p class="hour-desc">Morning Prayer is designed to be prayed early coming of the true Light, the Lord Jesus Christ. The Prime is mainly associated with the eternity of God, His incarnation, His resurrection from the dead. It is intended to offer thanks to Him for having risen us from the sleep, beseeching Him to shin upon us, enlighten our lives, and grant us the power of His resurrection.</p>
+<p class="hour-time">La Première Heure · 6h00</p>
+<p class="hour-desc">La Prière du Matin est conçue pour être priée tôt, à l'aube, en référence à la venue de la vraie Lumière, le Seigneur Jésus-Christ. Prime est principalement associée à l'éternité de Dieu, Son incarnation et Sa résurrection d'entre les morts. Elle est destinée à Lui offrir des remerciements pour nous avoir relevés du sommeil, Le suppliant de briller sur nous, d'éclairer nos vies et de nous accorder la puissance de Sa résurrection.</p>
 </div>
 <div class="prayer-content">
 <div class="ornament">
@@ -87,7 +87,7 @@
 <img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
 </div>
 <section class="section">
-<h2 class="section-title">Introduction to Every Hour</h2>
+<h2 class="section-title">Introduction de chaque heure</h2>
 <div class="prayer-text">
                     Au nom du Père et du Fils et du Saint-Esprit, Un Dieu Unique ! Amen.
                 </div>
@@ -99,7 +99,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">The Lord's Prayer</h2>
+<h2 class="section-title">Le Notre Père</h2>
 <div class="prayer-text"><em>Rends-nous dignes de dire en action de grâce :</em></div>
 <div class="prayer-text">
                     Notre Père qui es aux cieux, que Ton Nom soit sanctifié, que Ton Règne vienne, que Ta Volonté soit faite, comme au ciel, aussi sur la terre. Notre pain de demain, donne-le-nous aujourd'hui,
@@ -109,7 +109,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">The Prayer of Thanksgiving</h2>
+<h2 class="section-title">Prière d'action de grâce</h2>
 <div class="prayer-text">
                     Rendons grâce au Bienfaiteur et Miséricordieux, Dieu le Père de notre Seigneur, notre Dieu et notre Sauveur Jésus-Christ parce qu'Il nous a protégés, secourus, préservés, reçus auprès de Lui, pris en pitié, aidés et amenés jusqu'à cette heure. Supplions-Le encore de nous garder en ce saint jour et tous les jours de notre vie en toute paix, Lui le Tout-Puissant, le Seigneur notre Dieu.
                 </div>
@@ -127,7 +127,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 50</h2>
+<h2 class="section-title">Psaume 50</h2>
 <div class="psalm-verse drop-cap">
                     Fais-moi miséricorde, Seigneur, selon Ta grande Miséricorde, et selon la multitude de tes compassions, efface mon illégalité ! Lave-moi encore de mon illégalité, et purifie-moi de mon péché ! Car moi, je connais mon illégalité, et mon péché est toujours devant mes yeux. 
                 </div>
@@ -148,7 +148,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Come Let Us Kneel Down</h2>
+<h2 class="section-title">Allons, prosternons-nous</h2>
 <div class="prayer-text">
                     Allons, prosternons-nous, allons implorons le Christ notre Dieu !
                 </div>
@@ -166,7 +166,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">The Pauline Epistle (Ephesians 4:1-5)</h2>
+<h2 class="section-title">L'Épître Paulinienne (Éphésiens 4:1-5)</h2>
 <div class="prayer-text">
                     Paul, serviteur de notre Seigneur Jésus-Christ, appelé apôtre, établi évangélisateur de Dieu : Je vous prie donc, moi le prisonnier dans le Seigneur, de mener une vie digne de l'appel que vous avez reçu : en toute humilité de cœur, douceur et patience, supportez-vous les uns les autres dans l'amour (agapê) ; appliquez-vous à conserver l'unité de l'Esprit par le lien parfait de la Paix. Il n'y a qu'un Corps et qu'un Esprit, comme il n'y a qu'une espérance dans l'appel que vous avez reçu ; un seul Seigneur, une seule foi, un seul baptême.
                 </div>
@@ -175,7 +175,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">The Faith of the Church</h2>
+<h2 class="section-title">La Foi de l'Église</h2>
 <div class="prayer-text">
                     Un est Dieu le Père de tous. Un est aussi Son Fils Jésus-Christ le Logos qui s'est incarné, qui est mort et qui est ressuscité d'entre les morts le troisième jour. Il nous a ressuscités avec Lui.
                 </div>
@@ -191,7 +191,7 @@
 <div class="prayer-text"><em>Psaume de David le Prophète, que sa sainte bénédiction soit avec nous, Amen.</em></div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 1</h2>
+<h2 class="section-title">Psaume 1</h2>
 <div class="psalm-verse drop-cap">
                     Bienheureux l'homme qui n'est point allé dans le conseil des impies, qui ne s'est pas tenu dans la voie des pécheurs, et ne s'est point assis sur le siège des hommes de peste, Mais dont la volonté est dans la Loi du Seigneur, et qui méditera dans sa Loi, jour et nuit. Il sera comme l'arbre planté au croisement des cours d'eaux, et qui donnera son fruit en son temps propice, et ses feuilles ne tomberont pas, et dans tout ce qu'il fait, il réussira. 
                 </div>
@@ -203,7 +203,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 2</h2>
+<h2 class="section-title">Psaume 2</h2>
 <div class="psalm-verse drop-cap">
                     Pourquoi les nations ont-elles fait des clameurs, et les peuples ont-ils médité des choses vaines ? Les rois de la terre se sont présentés, et aussi les princes se sont réunis ensemble contre le Seigneur et contre son Christ : « Déchirons leurs liens, rejetons loin de nous leur joug. » 
                 </div>
@@ -215,7 +215,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 3</h2>
+<h2 class="section-title">Psaume 3</h2>
 <div class="psalm-verse drop-cap">
                     Seigneur, pourquoi ceux qui m'oppriment se sont-ils multipliés ? Il en est tant qui se soulèvent contre moi ! Tant qui déclarent à mon âme : « Il n'est point de salut pour lui en son Dieu ! » Mais Toi, Seigneur, tu es Celui qui m'accueille, et ma gloire, et c'est toi qui relèves ma tête. De ma voix, j'ai crié au Seigneur, et il m'a entendu depuis sa Montagne sainte. Moi, je me suis couché et endormi ; puis je me suis levé, car le Seigneur est Celui qui m'accueille. 
                 </div>
@@ -224,7 +224,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 4</h2>
+<h2 class="section-title">Psaume 4</h2>
 <div class="psalm-verse drop-cap">
                     Lorsque je l'eus invoqué, Il m'exauça, le Dieu de ma justice : Tu m'as élargi en mon affliction. Aie pitié de moi, et écoute mon oraison ! Fils des humains, jusqu'à quand aurez-vous le cœur lourd ? Pourquoi aimez-vous la vanité, et cherchez-vous le mensonge ? Sachez donc que le Seigneur a rendu merveilleux son Saint ! Le Seigneur m'écoutera, lorsque je crierai vers lui. 
                 </div>
@@ -236,7 +236,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 5</h2>
+<h2 class="section-title">Psaume 5</h2>
 <div class="psalm-verse drop-cap">
                     Seigneur, prête l'oreille à mes paroles, et comprends ma clameur ! Prête attention à la voix de ma prière, ô mon Roi et mon Dieu ! Car vers toi je ferai oraison, Seigneur. Dès l'aurore Tu entendras ma voix. Dès l'aube je me présenterai devant toi, et tu me verras. Car Tu n'es point un Dieu qui veuille l'illégalité. Et celui qui fait le mal n'habitera point auprès de toi. 
                 </div>
@@ -251,7 +251,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 6</h2>
+<h2 class="section-title">Psaume 6</h2>
 <div class="psalm-verse drop-cap">
                     Seigneur, ne me blâme pas en ta fureur, et en ta Colère ne me discipline pas. Fais-moi miséricorde, Seigneur, car je suis faible. Guéris-moi, Seigneur, car mes os sont troublés. Et mon âme a été tant troublée, et Toi, Seigneur, jusqu'à quand ? Retourne-toi, Seigneur, délivre mon âme, vivifie-moi à cause de ta miséricorde. 
                 </div>
@@ -263,7 +263,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 8</h2>
+<h2 class="section-title">Psaume 8</h2>
 <div class="psalm-verse drop-cap">
                     Seigneur, ô notre Seigneur, que ton Nom est merveilleux sur toute la terre ! Car la Magnificence de ta Beauté est élevée au-dessus des cieux ! Par la bouche des enfants et des nourrissons Tu as préparé la louange, à cause de tes ennemis, pour mettre fin à l'ennemi et au vengeur. Car je verrai les cieux, œuvres de Tes doigts, la lune et les astres que tu as fondées. 
                 </div>
@@ -275,7 +275,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 11</h2>
+<h2 class="section-title">Psaume 11</h2>
 <div class="psalm-verse drop-cap">
                     Sauve-moi, Seigneur, parce que le Saint a disparu, et que les vérités ont été amoindries chez les fils des humains. Chacun a dit à son prochain des choses vaines. Ils ont des lèvres trompeuses dans leur cœur, et ils ont parlé dans leur cœur. Que le Seigneur efface toutes les lèvres trompeuses, et les langues arrogantes, Qui ont déclaré : « Nous exalterons notre langue. Nos lèvres dépendent de nous, qui est notre seigneur ? » 
                 </div>
@@ -287,7 +287,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 12</h2>
+<h2 class="section-title">Psaume 12</h2>
 <div class="psalm-verse drop-cap">
                     Jusqu'à quand, Seigneur, m'oublieras-tu, à la fin ? Jusqu'à quand détourneras-tu de moi ta Face ? Jusqu'à quand mettrai-je des décisions dans mon âme, et des douleurs dans mon cœur durant tout le jour ? Jusqu'à quand mon ennemi s'élèvera-t-il sur moi ? Regarde et écoute-moi, Seigneur mon Dieu ! Éclaire mes yeux, de peur que je ne m'endorme dans la mort, 
                 </div>
@@ -296,7 +296,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 14</h2>
+<h2 class="section-title">Psaume 14</h2>
 <div class="psalm-verse drop-cap">
                     Seigneur, qui séjournera dans Ta Demeure ? Qui se reposera sur ta Montagne sainte ? Celui qui marche sans tache, et qui œuvre à la Justice, qui dit la vérité en son cœur, Et dont la langue n'a jamais trompé, qui n'a pas fait de mal à son prochain, et n'a point cru à la diffamation contre ses proches. 
                 </div>
@@ -305,7 +305,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 15</h2>
+<h2 class="section-title">Psaume 15</h2>
 <div class="psalm-verse drop-cap">
                     Garde-moi, Seigneur, car j'ai mis en toi mon espérance. J'ai dit au Seigneur : « Tu es mon Seigneur, car tu n'as nul besoin de mes biens. » Il a manifesté ses merveilles aux Saints qui sont sur Sa Terre et Il a fait toutes ses volontés en eux. Leurs infirmités se sont multipliées, et cependant ils se sont hâtés ; je ne rassemblerai plus leurs assemblées par du sang, et je ne remémorerai pas leurs noms de mes lèvres. 
                 </div>
@@ -320,7 +320,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 18</h2>
+<h2 class="section-title">Psaume 18</h2>
 <div class="psalm-verse drop-cap">
                     Les cieux racontent la Gloire de Dieu, et le firmament proclame la création de ses Mains. Le jour énonce une parole au jour, la nuit annonce la connaissance à la nuit. Il n'y a ni paroles ni langages dont leur voix ne soit entendue. 
                 </div>
@@ -338,7 +338,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 24</h2>
+<h2 class="section-title">Psaume 24</h2>
 <div class="psalm-verse drop-cap">
                     Vers Toi, Seigneur, j'ai élevé mon âme, ô mon Dieu, Je me suis confié en Toi : que je ne sois jamais honteux ! Que mes ennemis ne se rient point de moi ! Car tous ceux qui T'attendent ne seront pas honteux. Que soient honteux tous ceux qui violent la Loi, en vain ! Montre-moi Tes voies, Seigneur, et enseigne-moi tes sentiers ! 
                 </div>
@@ -359,7 +359,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 26</h2>
+<h2 class="section-title">Psaume 26</h2>
 <div class="psalm-verse drop-cap">
                     Le Seigneur est ma Lumière et mon Salut : qui craindrai-je ? Le Seigneur protège ma vie : de qui aurai-je peur ? Quand ceux qui me peinent se sont approchés de moi pour manger mes chairs, mes oppresseurs et mes ennemis eux-mêmes se sont affaiblis et sont tombés. Lors même qu'une armée serait campée devant moi, mon cœur ne serait pas effrayé. Lors même que la guerre s'élèverait contre moi, moi j'aurais bon espoir. 
                 </div>
@@ -377,7 +377,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 62</h2>
+<h2 class="section-title">Psaume 62</h2>
 <div class="psalm-verse drop-cap">
                     Ô Dieu, tu es mon Dieu, je viens vers toi dès l'aurore : mon âme a soif de toi, afin que ma chair Te proclame, dans la terre déserte, interdite, et un lieu sans eau ! Ainsi je serai vu de Toi dans le Sanctuaire, afin que je voie ta Puissance et ta Gloire. Ta Miséricorde vaut mieux que des vies. Mes lèvres Te loueront ! 
                 </div>
@@ -392,7 +392,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 66</h2>
+<h2 class="section-title">Psaume 66</h2>
 <div class="psalm-verse drop-cap">
                     Dieu aura pitié de nous et nous bénira. Il nous montrera sa Face et nous fera miséricorde, Pour que sur la terre soit connue Ta voie, et que ton Salut parmi toutes les nations ! Que les peuples Te confessent, ô Dieu ! Que tous les peuples te confessent ! Que les nations se réjouissent et exultent, parce que Tu jugeras les peuples avec droiture, et que tu guideras la voie des nations sur la terre ! 
                 </div>
@@ -401,7 +401,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 69</h2>
+<h2 class="section-title">Psaume 69</h2>
 <div class="psalm-verse drop-cap">
                     Ô Dieu, pour me secourir rapidement sois attentif ! Seigneur secours-moi ! Qu'ils soient honteux et humiliés, ceux qui cherchent mon âme ! Qu'ils soient contraints à retourner en arrière, couverts de honte, ceux qui veulent me faire du mal ! Qu'ils tournent le dos couverts de honte, ceux qui me déclarent : « Bien ! Bien ! » 
                 </div>
@@ -410,7 +410,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 112</h2>
+<h2 class="section-title">Psaume 112</h2>
 <div class="psalm-verse drop-cap">
                     Alléluia ! Louez le Seigneur, jeunes, louez le Nom du Seigneur ! Béni soit le Nom du Seigneur, dès maintenant et pour les siècles ! De l'orient du soleil jusqu'à l'occident, louez le Nom du Seigneur ! Le Seigneur est élevé sur toutes les nations, sa Gloire est sur les cieux. 
                 </div>
@@ -419,7 +419,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psalm 142</h2>
+<h2 class="section-title">Psaume 142</h2>
 <div class="psalm-verse drop-cap">
                     Seigneur, écoute ma prière, prête l'oreille à ma supplication dans ta Vérité, exauce-moi en ta Justice ! Et n'entre point en jugement avec Ton serviteur, car nul être vivant ne sera justifié devant Toi. Car l'ennemi a poursuivi mon âme, il a humilié ma vie jusqu'à la terre, il m'a fait asseoir dans les ténèbres, comme les morts des siècles ! 
                 </div>
@@ -434,7 +434,7 @@
                 </div>
 </section>
 <section class="section" id="gospel">
-<h2 class="section-title">The Holy Gospel According to Saint John (1:1-17)</h2>
+<h2 class="section-title">Le Saint Évangile selon Saint Jean (1:1-17)</h2>
 <div class="psalm-verse drop-cap">
                     Au principe était la Parole, et la Parole était auprès de Dieu, et divine était la Parole. Celle-ci était au principe auprès de Dieu. Tout par elle advint, et en dehors d'elle ne devint rien qui soit advenu. La Vie était en elle, Vie qui est la Lumière des humains. Or la Lumière dans l'obscurité apparut, mais l'obscurité n'a pas pu la saisir.
                 </div>
@@ -470,7 +470,7 @@
 <div class="prayer-text"><span class="litany-number">(3)</span> Tu es honorée ô Mère de la Lumière. Du levant du soleil jusqu'à son couchant des doxologies te sont amenées ô Toi qui enfantes le Divin, toi le second ciel, car tu es la Fleur pure et immuable, la Mère qui se maintient toujours vierge. Le Père t'a choisie, et le Saint Esprit t'a prise sous son ombre et le Fils est venu, par toi il a pris chair. Implore-le de donner le Salut au monde qu'Il a créé, et de le délivrer de la tentation. Louons-le par une louange nouvelle et bénissons-le, maintenant et toujours et pour tous les siècles des siècles. Amen !</div>
 </section>
 <section class="section">
-<h2 class="section-title">The Gloria</h2>
+<h2 class="section-title">La Doxologie</h2>
 <div class="prayer-text">
                     Entonnons la louange avec les anges : Gloire à Dieu dans les lieux suprêmes, et Paix sur la terre et Faveur dans les hommes ! Nous Te louons, nous Te bénissons, nous Te servons, nous T'adorons, nous Te professons, nous Te glorifions, nous Te rendons grâce pour Ta grande gloire. Ô Seigneur Roi qui est au cieux, Dieu le Père Tout-Puissant. Seigneur seul Fils unique-engendré Jésus-Christ, avec le Saint-Esprit.
                 </div>
@@ -485,7 +485,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">The Trisagion</h2>
+<h2 class="section-title">Le Trisagion</h2>
 <div class="prayer-text">
                     Saint Dieu, Saint fort, Saint immortel, né de la Vierge, aie pitié de nous ! Saint Dieu, Saint fort, Saint immortel, crucifié pour nous, aie pitié de nous !
                 </div>
@@ -506,7 +506,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Hail to Saint Mary</h2>
+<h2 class="section-title">Salut à Sainte Marie</h2>
 <div class="prayer-text">
                     Salut à toi, nous te supplions, ô toi la Sainte, pleine de gloire, toujours vierge, Mère de Dieu, Mère du Christ : Fais monter notre prière vers Ton Fils bien-aimé pour qu'Il nous pardonne nos péchés. Salut à toi, qui as enfanté pour nous la Lumière véritable, le Christ, notre Dieu, ô Vierge sainte !
                 </div>
@@ -518,7 +518,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Introduction to the Creed</h2>
+<h2 class="section-title">Introduction au Symbole de la Foi</h2>
 <div class="prayer-text">
                     Nous t'exaltons ô Mère de la vraie Lumière, et nous te glorifions ô sainte Mère de Dieu, car tu as enfanté pour nous le Sauveur du monde entier. Il est venu et a sauvé nos âmes.
                 </div>
@@ -533,7 +533,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">The Orthodox Creed</h2>
+<h2 class="section-title">Le Symbole de la Foi</h2>
 <div class="prayer-text">
                     En vérité, nous croyons en un Dieu Unique : le Père Tout-Puissant qui a créé le ciel et la terre, les choses visibles et invisibles.
                 </div>
@@ -559,7 +559,7 @@
 <div class="prayer-text"><em>(Seigneur aie pitié) 41 fois</em></div>
 </section>
 <section class="section">
-<h2 class="section-title">Holy Holy Holy</h2>
+<h2 class="section-title">Saint Saint Saint</h2>
 <div class="prayer-text">
                     Tu es Saint, Saint, Saint, Seigneur Sabaoth, le ciel et la terre sont remplis de Ta gloire et de Ton honneur ! Aie pitié de nous ô Dieu le Père Tout-Puissant. Ô Trinité Sainte, aie pitié de nous ! Ô Seigneur Dieu des puissances, sois avec nous, car nous n'avons d'aide que de Toi dans nos tribulations et nos angoisses.
                 </div>
@@ -571,7 +571,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">The Lord's Prayer</h2>
+<h2 class="section-title">Le Notre Père</h2>
 <div class="prayer-text"><em>Rends-nous dignes de dire en action de grâce :</em></div>
 <div class="prayer-text">
                     Notre Père qui es aux cieux, que Ton Nom soit sanctifié, que Ton Règne vienne, que Ta Volonté soit faite, comme au ciel, aussi sur la terre. Notre pain de demain, donne-le-nous aujourd'hui,
@@ -581,7 +581,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">First Absolution</h2>
+<h2 class="section-title">Première Absolution</h2>
 <div class="prayer-text">
                     Ô Seigneur Dieu des puissances, qui es d'avant les siècles et demeure pour les siècles. Tu as créé le soleil, pour illuminer le jour et la nuit pour le repos de toute chair. Nous Te rendons grâce, Roi des siècles, car Tu nous as fait passer cette nuit en paix et nous as amenés au début de ce jour. C'est pourquoi nous Te supplions, notre Maître, Roi des siècles, que brille sur nous la Lumière de Ta Vérité, et que nous illumine la Lumière de Ta Connaissance divine.
                 </div>
@@ -590,7 +590,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Second Absolution</h2>
+<h2 class="section-title">Seconde Absolution</h2>
 <div class="prayer-text">
                     Toi qui envoies la Lumière se lever, Toi qui fais lever le soleil sur les justes comme sur les injustes, Toi qui as fait la lumière pour illuminer le monde habité, illumine nos cœurs, Maître de tout un chacun.
                 </div>
@@ -599,7 +599,7 @@
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Conclusion of Every Hour</h2>
+<h2 class="section-title">Conclusion de chaque heure</h2>
 <div class="prayer-text">
                     Ô Dieu, aie pitié de nous, Toi qui es adoré et glorifié, en tout temps et à toute heure, dans le ciel et sur la terre. Ô Christ notre Dieu bon, longanime, plein de miséricorde et abondant en compassion, Toi qui aimes les justes et qui fais miséricorde aux pécheurs (dont je suis le premier), toi qui ne veux pas la mort du pécheur mais qu'il se repente et vive. Tu appelles tout un chacun au Salut à cause de la promesse des bienfaits attendus.
                 </div>
@@ -618,31 +618,31 @@
 <div>Prime</div>
 </a>
 <a class="nav-hour" href="terce.html">
-<div>Terce</div>
+<div>Tierce</div>
 </a>
 <a class="nav-hour" href="sext.html">
-<div>Sext</div>
+<div>Sexte</div>
 </a>
 <a class="nav-hour" href="none.html">
 <div>None</div>
 </a>
 <a class="nav-hour" href="vespers.html">
-<div>Vespers</div>
+<div>Vêpres</div>
 </a>
 <a class="nav-hour" href="compline.html">
-<div>Compline</div>
+<div>Complies</div>
 </a>
 <a class="nav-hour" href="midnight.html">
-<div>Midnight</div>
+<div>Minuit</div>
 </a>
 <a class="nav-hour" href="veil.html">
-<div>Veil</div>
+<div>Voile</div>
 </a>
 <a class="nav-hour" href="other.html">
-<div>Other Prayers</div>
+<div>Autres Prières</div>
 </a>
 <a class="nav-hour" href="about.html">
-<div>About</div>
+<div>À propos</div>
 </a>
 </nav>
 </main>
