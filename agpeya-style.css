@@ -5,6 +5,22 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Crimson Pro';
+    src: url('fonts/crimson-pro.woff2') format('woff2');
+    font-weight: 300 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('fonts/eb-garamond.woff2') format('woff2');
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --bg: #fdfdf9;
     --bg-card: #f8f7f2;

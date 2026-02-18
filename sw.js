@@ -1,4 +1,4 @@
-const CACHE_NAME = 'agpeya-6d44d87a';
+const CACHE_NAME = 'agpeya-0428d0f3';
 
 const PRECACHE_URLS = [
   '/',
@@ -10,6 +10,8 @@ const PRECACHE_URLS = [
   '/Avva_Shenouda.ttf',
   '/icons/icon-192.png',
   '/icons/icon-512.png',
+  '/fonts/crimson-pro.woff2',
+  '/fonts/eb-garamond.woff2',
   '/manifest.json',
   '/en/index.html',
   '/en/prime.html',
@@ -44,6 +46,17 @@ const PRECACHE_URLS = [
   '/ar/veil.html',
   '/ar/other.html',
   '/ar/about.html',
+  '/fr-old/index.html',
+  '/fr-old/prime.html',
+  '/fr-old/terce.html',
+  '/fr-old/sext.html',
+  '/fr-old/none.html',
+  '/fr-old/vespers.html',
+  '/fr-old/compline.html',
+  '/fr-old/midnight.html',
+  '/fr-old/veil.html',
+  '/fr-old/other.html',
+  '/fr-old/about.html',
 ];
 
 self.addEventListener('install', (event) => {
@@ -65,23 +78,6 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  const url = new URL(event.request.url);
-
-  // Google Fonts: network-first, cache on success
-  if (url.origin === 'https://fonts.googleapis.com' || url.origin === 'https://fonts.gstatic.com') {
-    event.respondWith(
-      fetch(event.request)
-        .then((response) => {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
-          return response;
-        })
-        .catch(() => caches.match(event.request))
-    );
-    return;
-  }
-
-  // Local assets: cache-first
   event.respondWith(
     caches.match(event.request)
       .then((cached) => cached || fetch(event.request))
