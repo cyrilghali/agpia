@@ -368,16 +368,25 @@ if (darkModeBtn) {
 
 (function initLangSelector() {
     const path = window.location.pathname;
-    const langs = ['fr-old', 'fr', 'ar'];
-    let currentLang = 'fr';
-    for (const l of langs) {
-        if (path.includes('/' + l + '/')) { currentLang = l; break; }
+    const folders = ['fr-old', 'fr', 'ar'];
+    let currentFolder = 'fr';
+    for (const f of folders) {
+        if (path.includes('/' + f + '/')) { currentFolder = f; break; }
     }
 
-    const langLinks = document.querySelectorAll('.lang-selector a');
-    langLinks.forEach(link => {
-        const lang = link.getAttribute('data-lang');
-        link.classList.toggle('active', lang === currentLang);
+    const isFrench = currentFolder === 'fr' || currentFolder === 'fr-old';
+    const activeLang = isFrench ? 'fr' : 'ar';
+
+    document.querySelectorAll('.lang-selector a').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('data-lang') === activeLang);
+    });
+
+    document.querySelectorAll('.lang-variant-selector').forEach(el => {
+        el.style.display = isFrench ? 'flex' : 'none';
+    });
+
+    document.querySelectorAll('.lang-variant-selector a').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('data-variant') === currentFolder);
     });
 })();
 
