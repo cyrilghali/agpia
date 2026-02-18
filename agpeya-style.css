@@ -772,3 +772,32 @@ body {
 .lang-selector .settings-menu-btn.active {
     pointer-events: none;
 }
+
+/* ============================================================================
+   SITE FOOTER
+   ============================================================================ */
+
+.site-footer {
+    max-width: 38rem;
+    margin: 3rem auto 1.5rem;
+    padding: 1.2rem 1rem;
+    border-top: 1px solid var(--ornament);
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--faded);
+    line-height: 1.6;
+}
+.site-footer a {
+    color: var(--burgundy);
+    text-decoration: none;
+}
+.site-footer a:hover {
+    text-decoration: underline;
+}
+.site-footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.4rem;
+    flex-wrap: wrap;
+}

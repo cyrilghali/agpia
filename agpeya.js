@@ -6,6 +6,42 @@ if ('serviceWorker' in navigator) {
 }
 
 // ============================================================================
+// SITE FOOTER
+// ============================================================================
+
+(function injectFooter() {
+    const lang = document.documentElement.lang || 'en';
+    const footerText = {
+        fr: {
+            derived: 'Ce site est dérivé de',
+            contact: 'Contact',
+            source: 'Code source'
+        },
+        ar: {
+            derived: 'هذا الموقع مشتق من',
+            contact: 'تواصل',
+            source: 'الكود المصدري'
+        }
+    };
+    const t = footerText[lang] || {
+        derived: 'This site is derived from',
+        contact: 'Contact',
+        source: 'Source code'
+    };
+
+    const footer = document.createElement('footer');
+    footer.className = 'site-footer';
+    footer.innerHTML =
+        '<div>' + t.derived + ' <a href="https://agpya.org" target="_blank" rel="noopener">agpya.org</a></div>' +
+        '<div class="footer-links">' +
+            '<a href="https://github.com/cyrilghali/agpia/issues" target="_blank" rel="noopener">' + t.contact + '</a>' +
+            '<a href="https://github.com/cyrilghali/agpia" target="_blank" rel="noopener">' + t.source + '</a>' +
+        '</div>';
+
+    document.body.appendChild(footer);
+})();
+
+// ============================================================================
 // COMMON PRAYER SECTIONS
 // ============================================================================
 
