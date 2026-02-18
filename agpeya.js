@@ -1,6 +1,10 @@
 // Agpeya JavaScript - Common functionality for all prayer hours
 // This file contains all shared JavaScript to reduce file sizes
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+}
+
 // ============================================================================
 // COMMON PRAYER SECTIONS
 // ============================================================================
