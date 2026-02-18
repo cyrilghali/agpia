@@ -4,62 +4,86 @@ from bs4 import BeautifulSoup, NavigableString
 
 TITLE_MAP = {
     'Introduction to Every Hour': 'Introduction de chaque heure',
-    "The Lord's Prayer": 'Le Notre P\u00e8re',
-    'The Prayer of Thanksgiving': "Pri\u00e8re d'action de gr\u00e2ce",
+    "The Lord's Prayer": 'Le Notre Père',
+    'The Prayer of Thanksgiving': "Prière d'action de grâce",
     '41 Kyrie Eleison': '41 Kyrie Eleison',
     'Holy Holy Holy': 'Saint Saint Saint',
-    'The Orthodox Creed': 'Le Symbole de la Foi',
-    'Introduction to the Creed': 'Introduction au Symbole de la Foi',
+    'The Orthodox Creed': 'Acte de Foi',
+    'Introduction to the Creed': "Introduction de l'Acte de Foi",
     'Conclusion of Every Hour': 'Conclusion de chaque heure',
-    'Absolution': 'Absolution',
-    'First Absolution': 'Premi\u00e8re Absolution',
-    'Second Absolution': 'Seconde Absolution',
-    'Hail to Saint Mary': 'Salut \u00e0 Sainte Marie',
-    'Hail to You': 'Salut \u00e0 Toi',
+    'First Absolution': "Première absolution de l'aube",
+    'Second Absolution': "Seconde absolution de l'aube",
+    'Hail to Saint Mary': 'Tropaires de la Vierge',
+    'Hail to You': 'Tropaires de la Vierge',
     'The Trisagion': 'Le Trisagion',
-    'The Gloria': 'La Doxologie',
+    'The Gloria': 'Louange des anges',
     'Graciously Accord, O Lord': 'Daigne, Seigneur',
     'Let My Supplication': 'Que ma supplication',
-    'Opening Prayer': "Pri\u00e8re d'ouverture",
-    'Come Let Us Kneel Down': 'Allons, prosternons-nous',
-    'The Faith of the Church': "La Foi de l'\u00c9glise",
-    'Litanies': 'Litanies',
-    'The First Watch': 'La Premi\u00e8re Veille',
-    'The Second Watch': 'La Deuxi\u00e8me Veille',
-    'The Third Watch': 'La Troisi\u00e8me Veille',
-    'The Holy Gospel According to Saint John (1:1-17)': 'Le Saint \u00c9vangile selon Saint Jean (1:1-17)',
-    'The Holy Gospel (John 14:26-31 & 15:1-4)': 'Le Saint \u00c9vangile (Jean 14:26-31 & 15:1-4)',
-    'The Holy Gospel (Matthew 5:1-16)': 'Le Saint \u00c9vangile (Matthieu 5:1-16)',
-    'The Holy Gospel (Luke 9:10-17)': 'Le Saint \u00c9vangile (Luc 9:10-17)',
-    'The Holy Gospel (Luke 4:38-41)': 'Le Saint \u00c9vangile (Luc 4:38-41)',
-    'The Holy Gospel (St. Luke 2:25-32)': 'Le Saint \u00c9vangile (Saint Luc 2:25-32)',
-    'The Holy Gospel (Matthew 25:1-13)': 'Le Saint \u00c9vangile (Matthieu 25:1-13)',
-    'The Holy Gospel (Luke 7:36-50)': 'Le Saint \u00c9vangile (Luc 7:36-50)',
-    'The Holy Gospel (Luke 12:32-46)': 'Le Saint \u00c9vangile (Luc 12:32-46)',
-    'The Holy Gospel (Luke 2:29-32)': 'Le Saint \u00c9vangile (Luc 2:29-32)',
-    'The Holy Gospel (John 6:15-23)': 'Le Saint \u00c9vangile (Jean 6:15-23)',
-    "The Pauline Epistle (Ephesians 4:1-5)": "L'\u00c9p\u00eetre Paulinienne (\u00c9ph\u00e9siens 4:1-5)",
-    'Prayer Before Confession': 'Pri\u00e8re avant la confession',
-    'Prayer After Confession': 'Pri\u00e8re apr\u00e8s la confession',
-    'Prayer Before Communion 1': 'Pri\u00e8re avant la communion 1',
-    'Prayer Before Communion 2': 'Pri\u00e8re avant la communion 2',
-    'Prayer After Communion 1': 'Pri\u00e8re apr\u00e8s la communion 1',
-    'Prayer After Communion 2': 'Pri\u00e8re apr\u00e8s la communion 2',
-    'Prayer Before Meals 1': 'Pri\u00e8re avant les repas 1',
-    'Prayer Before Meals 2': 'Pri\u00e8re avant les repas 2',
-    'Prayer After Meals': 'Pri\u00e8re apr\u00e8s les repas',
-    'Prayer Before Studying': "Pri\u00e8re avant l'\u00e9tude",
-    'Prayer After Studying': "Pri\u00e8re apr\u00e8s l'\u00e9tude",
+    'Opening Prayer': 'Prière de minuit',
+    'Come Let Us Kneel Down': "Prière de l'aube",
+    'The Faith of the Church': "La foi de l'Église",
+    'The First Watch': 'La Première Veille',
+    'The Second Watch': 'La Deuxième Veille',
+    'The Third Watch': 'La Troisième Veille',
+    'The Holy Gospel According to Saint John (1:1-17)': "Évangile de l'aube",
+    'The Holy Gospel (John 14:26-31 & 15:1-4)': 'Évangile de la troisième heure',
+    'The Holy Gospel (Matthew 5:1-16)': 'Évangile de la sixième heure',
+    'The Holy Gospel (Luke 9:10-17)': 'Évangile de la neuvième heure',
+    'The Holy Gospel (Luke 4:38-41)': 'Évangile de la onzième heure',
+    'The Holy Gospel (St. Luke 2:25-32)': 'Évangile de la douzième heure',
+    'The Holy Gospel (Matthew 25:1-13)': 'Évangile du premier service',
+    'The Holy Gospel (Luke 7:36-50)': 'Évangile du second service',
+    'The Holy Gospel (Luke 12:32-46)': 'Évangile du troisième service',
+    'The Holy Gospel (Luke 2:29-32)': 'Cantique de Siméon',
+    'The Holy Gospel (John 6:15-23)': 'Évangile du voile',
+    "The Pauline Epistle (Ephesians 4:1-5)": 'Epître de Paul',
+    'Prayer Before Confession': 'Prière avant la confession',
+    'Prayer After Confession': 'Prière après la confession',
+    'Prayer Before Communion 1': 'Prière avant la communion',
+    'Prayer Before Communion 2': 'Seconde prière avant la communion',
+    'Prayer After Communion 1': 'Prière après la communion',
+    'Prayer After Communion 2': 'Seconde prière après la communion',
+    'Prayer Before Meals 1': 'Prière avant de manger',
+    'Prayer Before Meals 2': 'Prière pour demander à Dieu de nous guider',
+    'Prayer After Meals': 'Prière / Remerciements',
+    'Prayer Before Studying': "Prière avant l'étude",
+    'Prayer After Studying': "Prière après l'étude",
     'The Word Agpeya': 'Le mot Agpia',
     'The Book of the Agpeya': "Le Livre de l'Agpia",
     'Why Do We Use the Agpeya for Praying?': "Pourquoi utilisons-nous l'Agpia pour prier ?",
-    'The Originality of the Agpeya': "L'originalit\u00e9 de l'Agpia",
+    'The Originality of the Agpeya': "L'originalité de l'Agpia",
     'The Agpeya and the Psalms': "L'Agpia et les Psaumes",
-    'The Agpeya and Prayer': "L'Agpia et la Pri\u00e8re",
+    'The Agpeya and Prayer': "L'Agpia et la Prière",
     'The Order of the Agpeya': "L'Ordre de l'Agpia",
-    'Manner of Praying the Hours': 'Mani\u00e8re de prier les heures',
-    'Themes of the Hours': 'Les th\u00e8mes des heures',
+    'Manner of Praying the Hours': 'Manière de prier les heures',
+    'Themes of the Hours': 'Les thèmes des heures',
     'Advice on How to Use the Agpeya': "Conseils pour l'utilisation de l'Agpia",
+}
+
+LITANIES_BY_HOUR = {
+    'prime': "Tropaires de l'aube",
+    'terce': 'Tropaires de la troisième heure',
+    'sext': 'Tropaires de la sixième heure',
+    'none': 'Tropaires de la neuvième heure',
+    'vespers': 'Tropaires de la onzième heure',
+    'compline': 'Tropaires de la douzième heure',
+    'veil': 'Tropaires du voile',
+}
+
+ABSOLUTION_BY_HOUR = {
+    'terce': 'Absolution de la troisième heure',
+    'sext': 'Absolution de la sixième heure',
+    'none': 'Absolution de la neuvième heure',
+    'vespers': 'Absolution de la onzième heure',
+    'compline': 'Absolution de la douzième heure',
+    'veil': 'Absolution du voile',
+    'midnight': 'Absolution de minuit',
+}
+
+MIDNIGHT_LITANIES_BY_WATCH = {
+    1: 'Tropaires du premier service',
+    2: 'Tropaires du second service',
+    3: 'Tropaires du troisième service',
 }
 
 PAGE_TITLES = {
@@ -209,16 +233,37 @@ ABOUT_CONTENT = {
     ],
 }
 
+def _translate_h2(h2, title, hour_name):
+    """Translate a single h2 section title."""
+    if title == 'Litanies' and hour_name in LITANIES_BY_HOUR:
+        h2.string = LITANIES_BY_HOUR[hour_name]
+    elif title == 'Absolution' and hour_name in ABSOLUTION_BY_HOUR:
+        h2.string = ABSOLUTION_BY_HOUR[hour_name]
+    elif title in TITLE_MAP:
+        h2.string = TITLE_MAP[title]
+    else:
+        m = re.match(r'Psalm (\d+(?:\s*\([IVXLC]+\))?)', title)
+        if m:
+            h2.string = 'Psaume ' + m.group(1)
+
+
 def translate_ui(soup, hour_name=None):
     """Translate all visible UI elements from English to French."""
-    for h2 in soup.find_all('h2', class_='section-title'):
-        title = h2.get_text(strip=True)
-        if title in TITLE_MAP:
-            h2.string = TITLE_MAP[title]
-        else:
-            m = re.match(r'Psalm (\d+(?:\s*\([IVXLC]+\))?)', title)
-            if m:
-                h2.string = 'Psaume ' + m.group(1)
+    if hour_name == 'midnight':
+        watch = 0
+        for h2 in soup.find_all('h2', class_='section-title'):
+            title = h2.get_text(strip=True)
+            if title in ('The First Watch', 'The Second Watch', 'The Third Watch'):
+                watch = {'The First Watch': 1, 'The Second Watch': 2,
+                         'The Third Watch': 3}[title]
+            if title == 'Litanies' and watch in MIDNIGHT_LITANIES_BY_WATCH:
+                h2.string = MIDNIGHT_LITANIES_BY_WATCH[watch]
+            else:
+                _translate_h2(h2, title, hour_name)
+    else:
+        for h2 in soup.find_all('h2', class_='section-title'):
+            title = h2.get_text(strip=True)
+            _translate_h2(h2, title, hour_name)
 
     h1 = soup.find('h1', class_='hour-title')
     if h1:
