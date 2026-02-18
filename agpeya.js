@@ -368,7 +368,7 @@ if (darkModeBtn) {
 
 (function initLangSelector() {
     const path = window.location.pathname;
-    const langs = ['fr', 'ar']; 
+    const langs = ['fr-old', 'fr', 'ar'];
     let currentLang = 'fr';
     for (const l of langs) {
         if (path.includes('/' + l + '/')) { currentLang = l; break; }

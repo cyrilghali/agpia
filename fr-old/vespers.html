@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vêpres | Agpia</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;600&amp;family=EB+Garamond:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../agpeya-style.css" rel="stylesheet"/>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#fdfdf9">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+</head>
+<body>
+<div class="sticky-subheader">
+<div class="dropdown-wrapper">
+<select class="hour-dropdown" id="hourDropdown">
+<option data-long="Accueil" data-short="Accueil" value="index.html">Accueil</option>
+<option data-long="1ère Heure - Prime" data-short="1ère Heure" value="prime.html">1ère Heure - Prime</option>
+<option data-long="3ème Heure - Tierce" data-short="3ème Heure" value="terce.html">3ème Heure - Tierce</option>
+<option data-long="6ème Heure - Sexte" data-short="6ème Heure" value="sext.html">6ème Heure - Sexte</option>
+<option data-long="9ème Heure - None" data-short="9ème Heure" value="none.html">9ème Heure - None</option>
+<option data-long="11ème Heure - Vêpres" data-short="11ème Heure" value="vespers.html">11ème Heure - Vêpres</option>
+<option data-long="12ème Heure - Complies" data-short="12ème Heure" value="compline.html">12ème Heure - Complies</option>
+<option data-long="Minuit" data-short="Minuit" value="midnight.html">Minuit</option>
+<option data-long="Prière du Voile" data-short="Voile" value="veil.html">Prière du Voile</option>
+<option data-long="Prières diverses" data-short="Autres" value="other.html">Prières diverses</option>
+<option data-long="À propos" data-short="À propos" value="about.html">À propos</option>
+</select>
+<select class="section-dropdown" id="sectionDropdown">
+<option value="">Haut</option>
+</select>
+</div>
+<button class="settings-btn" id="settingsBtn"><img alt="Settings" src="../cog_wheel.png"/></button>
+<div class="settings-menu" id="settingsMenu">
+<!-- Font Size Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-menu-btn-small" id="fontDownBtn">A-</button>
+<button class="settings-menu-btn settings-menu-btn-small" id="fontResetBtn">100%</button>
+<button class="settings-menu-btn settings-menu-btn-small" id="fontUpBtn">A+</button>
+</div>
+<!-- Line Height Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Interligne confortable">
+<span class="line-height-icon comfy-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+<button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Interligne standard">
+<span class="line-height-icon default-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+<button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Interligne condensé">
+<span class="line-height-icon condensed-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+</div>
+<!-- Theme Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-toggle" id="lightModeBtn">Clair</button>
+<button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Sombre</button>
+</div>
+<!-- Language Selector -->
+<div class="settings-row lang-selector">
+<a class="settings-menu-btn settings-toggle" data-lang="fr" href="../fr/vespers.html">Français</a>
+<a class="settings-menu-btn settings-toggle" data-lang="ar" href="../ar/vespers.html">عربي</a>
+</div>
+<div class="settings-row lang-variant-selector">
+<a class="settings-menu-btn settings-toggle" data-variant="fr" href="../fr/vespers.html">Nouveau</a>
+<a class="settings-menu-btn settings-toggle" data-variant="fr-old" href="../fr-old/vespers.html">Classique</a>
+</div>
+</div>
+</div>
+<main class="container">
+<div class="hour-header">
+<div class="header-crosses">
+<img alt="Coptic Cross" src="../coptic-cross.png"/>
+</div>
+<h1 class="hour-title">Vêpres</h1>
+<p class="hour-time">La Onzième Heure · 18h00</p>
+<p class="hour-desc">Les Vêpres (Coucher du soleil) : la Onzième Heure est associée à l'acte de descendre le corps du Christ de la croix. À la fin du jour, nous rendons grâce pour la protection de Dieu, et confessons nos péchés avec le Fils Prodigue (Luc 15:11-31) afin d'être comptés parmi les ouvriers appelés à la onzième heure du jour (Matt. 20:1-16).</p>
+</div>
+<div class="prayer-content">
+<div class="ornament">
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+</div>
+<section class="section">
+<h2 class="section-title">Introduction de chaque heure</h2>
+
+<div class="prayer-text">
+                    Au nom du Père, du Fils et du Saint Esprit, un seul Dieu. Amen !
+                </div>
+<div class="prayer-text">
+                    Pitié Seigneur, pitié Seigneur, Seigneur bénis-nous, amen !
+                </div>
+<div class="prayer-text">
+                    Gloire au Père, au Fils et au Saint Esprit.
+                </div>
+<div class="prayer-text">
+                    Maintenant et toujours et dans les siècles des siècles. Amen !
+                </div>
+</section>
+<section class="section">
+<h2 class="section-title">Le Notre Père</h2>
+
+
+<div class="prayer-text">
+                    Rends-nous digne de dire en action de grâce :
+                </div>
+<div class="prayer-text">
+                    Notre Père, qui es aux cieux, Que Ton Nom soit sanctifié, Que Ton règne vienne, Que Ta volonté soit faite sur la terre comme au ciel.
+                </div>
+<div class="prayer-text">
+                    Donne-nous aujourd'hui notre pain de ce jour. Pardonne-nous nos offenses comme nous pardonnons aussi à ceux qui nous ont offensés. Et ne nous soumets pas à la tentation, mais délivre-nous du mal. Par le Christ Jésus Notre Seigneur Car c'est à Toi qu'appartiennent le règne, la puissance et la gloire éternellement. Amen !
+                </div>
+</section>
+<section class="section">
+<h2 class="section-title">Prière d'action de grâce</h2>
+
+<div class="prayer-text">
+                    Rendons grâce à Dieu bienfaiteur et miséricordieux, Père de notre Seigneur, Dieu et Sauveur Jésus-Christ parce qu'il nous a protégés, aidés, conservés, reçus avec bonté, traités avec miséricorde, fortifiés et fait parvenir jusqu'à cette heure.
+                </div>
+<div class="prayer-text">
+                    Supplions-le encore de nous garder en ce saint jour et tous les jours de notre vie en toute paix ; Lui qui est tout puissant, le Seigneur notre Dieu.
+                </div>
+<div class="prayer-text">
+                    O Maître Seigneur, Dieu tout-puissant, Père de notre Seigneur, Dieu et Sauveur Jésus-Christ, nous te rendons grâce, de toute chose, pour toute chose et en toute chose, parce que tu nous as protégés, aidés, conservés, reçus avec bonté, traités avec miséricorde, fortifiés et fait parvenir jusqu'à cette heure.
+                </div>
+<div class="prayer-text">
+                    Pour cela, nous implorons Ta bonté, ô Ami du genre humain, donne-nous d'achever ce saint jour et tous les jours de notre vie en toute paix dans Ta crainte. Toute envie, toute tentation, toute œuvre de satan, toute intrigue des hommes méchants, toute attaque des ennemis visibles et invisibles : éloigne-les de nous et de tout ton peuple et de ce lieu saint qui est à Toi. Comble-nous de tous les biens et de tous les dons convenables car c'est Toi qui nous as donné le pouvoir de fouler aux pieds les serpents, les scorpions et toute la puissance de l'ennemi.
+                </div>
+<div class="prayer-text">
+                    Ne nous induis pas en tentation mais délivre-nous du malin. Par la grâce, la miséricorde et l'amour du genre humain de Ton Fils unique notre Seigneur, Dieu et Sauveur Jésus-Christ par Qui la gloire, l'honneur, la magnificence et l'adoration Te sont dûs avec Lui et le Saint-Esprit vivifiant et consubstantiel à Toi, maintenant et toujours et dans les siècles des siècles. Amen!
+                </div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 50</h2>
+
+<div class="psalm-verse drop-cap">
+                    Pitié pour moi, mon Dieu, en Ton amour, selon Ta grande miséricorde, efface mon péché, Lave-moi tout entier de ma faute et purifies-moi de mon offense.
+                </div>
+<div class="psalm-verse">
+                    Oui, je connais mon péché, ma faute est toujours devant moi contre Toi, Toi seul, j'ai péché, ce qui est mal à Tes yeux, je l'ai fait,
+                </div>
+<div class="psalm-verse">
+                    Ainsi Tu peux parler et montrer Ta justice être juge et montrer Ta victoire. Moi je suis né dans la faute, j'étais pécheur dès le sein de ma mère.
+                </div>
+<div class="psalm-verse">
+                    Mais Tu veux au fond de moi la vérité ; dans le secret Tu m'apprends la sagesse. Purifies-moi avec l'hysope et je serai pur ; lave-moi et je serai blanc, plus que la neige.
+                </div>
+<div class="psalm-verse">
+                    Fais que j'entende les chants et la fête : ils danseront les os que Tu broyais. Détourne Ta Face de mes fautes, enlève tous mes péchés.
+                </div>
+<div class="psalm-verse">
+                    Crée en moi un cœur pur ô mon Dieu, renouvelle et raffermis au fond de moi mon esprit. Ne me chasse pas loin de Ta Face, ne me reprends pas Ton Esprit Saint.
+                </div>
+<div class="psalm-verse">
+                    Rends-moi la joie d'être sauvé ; que l'esprit généreux me soutienne. Aux pécheurs j'enseignerai Tes chemins ; vers Toi, reviendront les égarés.
+                </div>
+<div class="psalm-verse">
+                    Libère-moi du sang versé, Dieu, mon Dieu sauveur, et ma langue acclamera Ta justice ! Seigneur, ouvre mes lèvres, et ma bouche proclamera Ta louange.
+                </div>
+<div class="psalm-verse">
+                    Si j'offre un sacrifice, tu n'en veux pas, Tu n'acceptes pas d'holocauste. Le sacrifice qui plaît à Dieu, c'est un esprit brisé ; Tu ne repousses pas, ô mon Dieu, un cœur brisé et broyé.
+                </div>
+<div class="psalm-verse">
+                    Accorde à Sion le bonheur, relève les murs de Jérusalem. Alors Tu accepteras de justes sacrifices, oblations et holocaustes ;
+                </div>
+<div class="psalm-verse">
+                    alors on offrira des taureaux sur Ton autel.
+                </div>
+<div class="prayer-text"><em>Alléluia !</em></div>
+</section>
+<section class="section">
+<div class="prayer-text"><em>Hymne des Vêpres du jour béni, je l'offre au Christ mon Roi et mon Dieu, j'espérerai en Lui afin qu'il me remette mes péchés.</em></div>
+<div class="prayer-text"><em>Psaume de David le Prophète, que sa sainte bénédiction soit avec nous, Amen.</em></div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 116</h2>
+
+<div class="psalm-verse drop-cap">
+                    Louez le Seigneur, tous les peuples ; fêtez-le tous les pays ! Son amour envers nous s'est montré le plus fort ; éternelle est la fidélité du Seigneur ! <span class="alleluia">ALLELUIA.</span>
+                </div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 117</h2>
+
+<div class="psalm-verse drop-cap">
+                    Rendez grâce au Seigneur : il est bon ! Eternel est son amour !
+                </div>
+<div class="psalm-verse">
+                    Oui que le dise Israël : Eternel est son amour ! Que le dise la maison d'Aaron Eternel est son amour ! Qu'ils le disent, ceux qui craignent le Seigneur : Eternel est son amour !
+                </div>
+<div class="psalm-verse">
+                    Dans mon angoisse j'ai crié vers le Seigneur, et lui m'a exaucé, mis au large. Le Seigneur est pour moi, je ne crains pas ;
+                </div>
+<div class="psalm-verse">
+                    que pourrait un homme contre moi ? Le Seigneur est avec moi pour me défendre, et moi, je braverai mes ennemis.
+                </div>
+<div class="psalm-verse">
+                    Mieux vaut s'appuyer sur le Seigneur que de compter sur les hommes ; mieux vaut s'appuyer sur le Seigneur que de compter sur les puissants !
+                </div>
+<div class="psalm-verse">
+                    Toutes les nations m'ont encerclé ; au nom du Seigneur, je les détruis ! Elles m'ont cerné, encerclé ; au nom du Seigneur je les détruis ! Elles m'ont cerné comme les guêpes : - ce n'était qu'un feu de ronces - au nom du Seigneur je les détruis !
+                </div>
+<div class="psalm-verse">
+                    On m'a poussé, bousculé pour m'abattre ; mais le Seigneur m'a défendu. Ma force et mon chant, c'est le Seigneur il est pour moi le salut
+                </div>
+<div class="psalm-verse">
+                    Clameurs de joie et de victoire sous les tentes des justes : « Le bras du Seigneur est fort, le bras du Seigneur se lève, le bras du Seigneur est fort ! »
+                </div>
+<div class="psalm-verse">
+                    Non je ne mourrai pas, je vivrai pour annoncer les actions du Seigneur :il m'a frappé, le Seigneur, il m'a frappé, mais sans me livrer à la mort.
+                </div>
+<div class="psalm-verse">
+                    Ouvrez-moi les portes de justice : j'entrerai, je rendrai grâce au Seigneur. «C'est ici la porte du Seigneur : qu'ils entrent les justes ! » Je te rends grâce car tu m'as exaucé : tu es pour moi le salut.
+                </div>
+<div class="psalm-verse">
+                    La pierre qu'ont rejetée les bâtisseurs est devenue la pierre d'angle : c'est là l'œuvre du Seigneur, la merveille devant nos yeux. Voici le jour que fit le Seigneur, qu'il soit pour nous jour de fête et de joie !
+                </div>
+<div class="psalm-verse">
+                    Donne, Seigneur, donne le salut ! Donne, Seigneur, donne la victoire !
+                </div>
+<div class="psalm-verse">
+                    Béni soit au nom du Seigneur celui qui vient ! De la maison du Seigneur, nous vous bénissons !
+                </div>
+<div class="psalm-verse">
+                    Dieu, le Seigneur, nous illumine. Rameaux en main, formez vos cortèges jusqu'auprès de l'autel.
+                </div>
+<div class="psalm-verse">
+                    Tu es mon Dieu, je te rends grâce, mon Dieu, je t'exalte ;
+                </div>
+<div class="psalm-verse">
+                    Rendez grâce au Seigneur ; Il est bon Eternel est son amour !
+                </div>
+<div class="prayer-text"><em>Alléluia !</em></div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 119</h2>
+
+<div class="psalm-verse drop-cap">
+                    Dans ma détresse, j'ai crié vers le Seigneur, et lui m'a répondu. Seigneur délivre-moi de la langue perfide, et de la bouche qui ment.
+                </div>
+<div class="psalm-verse">
+                    Que t'infliger, ô langue perfide et qu'ajouter encore ? La flèche meurtrière du guerrier, et la braise des genêts.
+                </div>
+<div class="psalm-verse">
+                    Malheur à moi : je dois vivre en exil et camper dans un désert !
+                </div>
+<div class="psalm-verse">
+                    Trop longtemps, j'ai vécu parmi ces gens qui haïssent la paix.
+                </div>
+<div class="psalm-verse">
+                    Je ne veux que la paix, mais quand je parle ils cherchent la guerre.
+                </div>
+<div class="prayer-text"><em>Alléluia !</em></div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 120</h2>
+
+<div class="psalm-verse drop-cap">
+                    Je lève les yeux vers les montagnes : d'où le secours me viendra-t-il ?
+                </div>
+<div class="psalm-verse">
+                    Le secours me viendra du Seigneur qui a fait le ciel et la terre.
+                </div>
+<div class="psalm-verse">
+                    Qu'il empêche ton pied de glisser, qu'il ne dorme pas, ton gardien. Non, il ne dort pas, ne sommeille pas, le gardien d'Israël.
+                </div>
+<div class="psalm-verse">
+                    Le Seigneur, ton gardien, le Seigneur, ton ombrage, se tient près de toi. Le soleil, pendant le jour, ne pourra te frapper, ni la lune durant la nuit.
+                </div>
+<div class="psalm-verse">
+                    Le Seigneur te gardera de tout mal, Il gardera ta vie. Le Seigneur te gardera, au départ et au retour, maintenant et à jamais. <span class="alleluia">ALLELUIA.</span>
+                </div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 121</h2>
+
+<div class="psalm-verse drop-cap">
+                    Quelle joie quand on m'a dit : « Nous irons vers la maison du Seigneur !
+                </div>
+<div class="psalm-verse">
+                    Maintenant notre marche prend fin devant tes portes, Jérusalem ! Jérusalem, te voici dans tes murs : ville où tout ensemble ne fait qu'un !
+                </div>
+<div class="psalm-verse">
+                    C'est là que montent les tribus, les tribus du Seigneur,là qu'Israël doit rendre grâce au nom du Seigneur. C'est là le siège du droit, le siège de la maison de David.
+                </div>
+<div class="psalm-verse">
+                    Appelez le bonheur sur Jérusalem : “Paix à ceux qui t'aiment ! Que la paix règne dans tes murs, le bonheur dans tes palais !” A cause de mes frères et de mes proches, je dirai “Paix sur toi !” A cause de la maison du Seigneur notre Dieu, je désire ton bien. <span class="alleluia">ALLELUIA.</span>
+                </div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 122</h2>
+
+<div class="psalm-verse drop-cap">
+                    Vers Toi j'ai les yeux levés, vers Toi qui es au ciel.
+                </div>
+<div class="psalm-verse">
+                    Comme les yeux de l'esclave vers la main de son maître, comme les yeux de la servante vers la main de sa maîtresse, nos yeux levés vers le Seigneur notre Dieu, attendent sa pitié.
+                </div>
+<div class="psalm-verse">
+                    Pitié pour nous, Seigneur, pitié pour nous : notre âme est rassasiée de mépris.
+                </div>
+<div class="psalm-verse">
+                    C'en est trop,nous sommes rassasiés du rire des satisfaits, du mépris des orgueilleux !
+                </div>
+<div class="prayer-text"><em>Alléluia !</em></div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 123</h2>
+
+<div class="psalm-verse drop-cap">
+                    Sans le Seigneur qui était pour nous, - qu'Israël le redise - sans le Seigneur qui était pour nous quand des hommes nous assaillirent, alors ils nous avalaient tout vivants, dans le feu de leur colère.
+                </div>
+<div class="psalm-verse">
+                    Alors le flot passait sur nous, le torrent nous submergeait ; alors nous étions submergés par les flots en furie.
+                </div>
+<div class="psalm-verse">
+                    Béni soit le Seigneur qui n'a pas fait de nous la proie de leurs dents!
+                </div>
+<div class="psalm-verse">
+                    Comme un oiseau, nous avons échappé au filet du chasseur ; le filet s'est rompu : nous avons échappé.
+                </div>
+<div class="psalm-verse">
+                    Notre secours est le nom du Seigneur qui a fait le ciel et la terre.
+                </div>
+<div class="prayer-text"><em>Alléluia !</em></div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 124</h2>
+
+<div class="psalm-verse drop-cap">
+                    Qui s'appuie sur le Seigneur ressemble au mont Sion : il est inébranlable, il demeure à jamais.
+                </div>
+<div class="psalm-verse">
+                    Jérusalem, des montagnes l'entourent ; ainsi le Seigneur : il entoure son peuple maintenant et toujours.
+                </div>
+<div class="psalm-verse">
+                    Jamais le sceptre de l'impie ne pèsera sur la part des justes, de peur que la main des justes ne se tende vers l'idole.
+                </div>
+<div class="psalm-verse">
+                    Sois bon pour moi qui est bon, Seigneur, pour l'homme au cœur droit. Mais ceux qui rusent et qui trahissent, que le Seigneur les rejette avec les méchants !
+                </div>
+<div class="psalm-verse">
+                    Paix sur Israël !
+                </div>
+<div class="prayer-text"><em>Alléluia !</em></div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 125</h2>
+
+<div class="psalm-verse drop-cap">
+                    Quand le Seigneur ramena les captifs de Sion, nous étions comme en rêve !
+                </div>
+<div class="psalm-verse">
+                    Alors notre bouche était pleine de rire, nous poussions des cris de joie ; alors on disait parmi les nations :“Quelles merveilles fait pour eux le Seigneur !” Quelles merveilles le Seigneur fit pour nous : nous étions en grande fête !
+                </div>
+<div class="psalm-verse">
+                    Ramène, Seigneur, nos captifs, comme les torrents au désert.
+                </div>
+<div class="psalm-verse">
+                    Qui sème dans les larmes moissonne dans la joie : il s'en va, il s'en va en pleurant, il jette la semence ; il s'en vient, il s'en vient dans la joie, il rapporte les gerbes.
+                </div>
+<div class="prayer-text"><em>Alléluia !</em></div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 126</h2>
+
+<div class="psalm-verse drop-cap">
+                    Si le Seigneur ne bâtit la maison, les bâtisseurs travaillent en vain ; si le Seigneur ne garde la ville, c'est en vain que veillent les gardes.
+                </div>
+<div class="psalm-verse">
+                    En vain tu devances le jour, tu retardes le moment de ton repos, tu manges un pain de douleur : Dieu comble son bien-aimé quand il dort.
+                </div>
+<div class="psalm-verse">
+                    Des fils, voilà ce que donne le Seigneur, des enfants, la récompense qu'il accorde ; comme les flèches aux mains d'un guerrier, ainsi les fils de la jeunesse.
+                </div>
+<div class="psalm-verse">
+                    Heureux l'homme vaillant qui a garni son carquois de telles armes ! S'ils affrontent leurs ennemis sur la place, ils ne seront pas humiliés.
+                </div>
+<div class="prayer-text"><em>Alléluia !</em></div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 127</h2>
+
+<div class="psalm-verse drop-cap">
+                    Heureux qui craint le Seigneur et marche selon ses voies !
+                </div>
+<div class="psalm-verse">
+                    Tu te nourriras du travail de tes mains : Heureux es-tu ! A toi, le bonheur !
+                </div>
+<div class="psalm-verse">
+                    Ta femme sera dans ta maison comme une vigne généreuse, et tes fils, autour de la table, comme des plants d'oliviers.
+                </div>
+<div class="psalm-verse">
+                    Voilà comment sera béni l'homme qui craint le Seigneur. De Sion, que le Seigneur te bénisse !
+                </div>
+<div class="psalm-verse">
+                    Tu verras le bonheur de Jérusalem tous les jours de ta vie, et tu verras les fils de tes fils. Paix à Israël !
+                </div>
+<div class="prayer-text"><em>Alléluia !</em></div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 128</h2>
+
+<div class="psalm-verse drop-cap">
+                    Que de mal ils m'ont fait dès ma jeunesse, - à Israël de le dire -que de mal ils m'ont fait dès ma jeunesse : ils ne m'ont pas soumis.
+                </div>
+<div class="psalm-verse">
+                    Sur mon dos, des laboureurs ont labouré et creusé leurs sillons ; mais le Seigneur, le juste, a brisé l'attelage des impies.
+                </div>
+<div class="psalm-verse">
+                    Qu'ils soient tous humiliés, rejetés, les ennemis de Sion ! Qu'ils deviennent comme l'herbe des toits, aussitôt desséchée !
+                </div>
+<div class="psalm-verse">
+                    Les moissonneurs n'en font pas une poignée, ni les lieurs une gerbe, et les passants ne peuvent leur dire ; « La bénédiction du Seigneur soit sur vous ! »
+                </div>
+<div class="psalm-verse">
+                    Au nom du Seigneur, nous vous bénissons. <span class="alleluia">ALLELUIA.</span>
+                </div>
+</section>
+<section class="section" id="gospel">
+<h2 class="section-title">Évangile de la onzième heure</h2>
+
+<div class="prayer-text">
+                    ⟨38⟩ En quittant la synagogue, Jésus entra chez Simon. Or la belle-mère de Simon était oppressée par une forte fièvre, et on implora Jésus en sa faveur. ⟨39⟩ Il se pencha sur elle, interpella vivement la fièvre, et celle-ci quitta la malade. A l'instant même, elle se leva, et elle les servait.
+                </div>
+<div class="prayer-text">
+                    ⟨40⟩ Au coucher du soleil, tous ceux qui avaient des infirmes atteints de diverses maladies les lui amenèrent. Et Jésus, imposant les mains à chacun d'eux, les guérissait. ⟨41⟩ Des esprits mauvais sortaient de beaucoup d'entre eux en criant : « Tu es le Fils de Dieu ! » Mais Jésus les interpellait vivement et leur interdisait de parler parce qu'ils savaient, eux, qu'il était le Messie.
+                </div>
+<div class="prayer-text"><em>Gloire à Dieu à jamais !</em></div>
+</section>
+<section class="section">
+<h2 class="section-title">Tropaires de la onzième heure</h2>
+
+<div class="prayer-text"><em>Puis on dit les oraisons suivantes :</em></div>
+<div class="prayer-text">
+                    Si le juste n'est sauvé qu'à grand peine, que deviendrai-je, moi, le pécheur. Je n'ai pas supporté le poids du jour et sa chaleur à cause de ma faiblesse. Mais Toi, Dieu miséricordieux, compte-moi parmi ceux de la onzième heure : moi, j'étais pécheur dès le sein de ma mère, je suis né dans la faute. Je n'ose pas lever les yeux vers le ciel mais je compte sur la richesse de Ta miséricorde et de Ton amour pour les hommes en clamant et en disant : "Ô Dieu pardonne moi car je suis pécheur et aie pitié de moi !"
+                </div>
+<div class="prayer-text">
+                    Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ
+Gloire au Père, au Fils et au Saint Esprit.
+                </div>
+<div class="prayer-text">
+                    Hâte-Toi, ô Sauveur, d'ouvrir pour moi les bras paternels car j'ai gaspillé ma vie à assouvir les plaisirs et les désirs. Le jour est passé et touche à sa fin. Maintenant je compte sur la richesse de Ta compassion infinie. Ne Te détourne pas d'un cœur humble qui recherche Ta miséricorde. Voici que je crie vers Toi, Seigneur, avec humilité en disant : "Père, j'ai péché contre le ciel et contre Toi. Je ne mérite plus d'être appelé Ton fils. Prends-moi comme l'un de Tes ouvriers."
+                </div>
+<div class="prayer-text">
+                    ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.
+Maintenant et toujours et pour les siècles des siècles. Amen !
+                </div>
+<div class="prayer-text">
+                    Avec soin et diligence j'ai commis toute transgression. Avec désir et énergie j'ai péché. J'ai mérité le châtiment et le jugement. Aménage pour moi les moyens du repentir ô notre Dame toujours vierge. Je te supplie, j'implore ton intercession et je t'appelle pour m'aider afin que je ne sois pas humilié. Sois avec moi à l'heure où mon âme quittera mon corps. Mets fin au complot des ennemis. Ferme les portes de l'enfer afin que mon âme ne soit pas avalée. Tu es l'épouse irréprochable du vrai époux.
+                </div>
+<div class="prayer-text"><em>Puis on dit :</em></div>
+<div class="prayer-text">
+                    Pitié Seigneur Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ (41 fois) Saint, saint, saint .... Notre Père ...
+                </div>
+</section>
+<section class="section">
+<h2 class="section-title">41 Kyrie Eleison</h2>
+<div class="prayer-text"><em>Que le fidèle prie :</em></div>
+<div class="prayer-text">
+                    Seigneur, entends-nous et aie pitié de nous, et pardonne-nous nos péchés. Amen.
+                </div>
+<div class="prayer-text"><em>(Seigneur aie pitié) 41 fois</em></div>
+</section>
+<section class="section">
+<h2 class="section-title">Saint Saint Saint</h2>
+<div class="prayer-text">
+                    Tu es Saint, Saint, Saint, Seigneur Sabaoth, le ciel et la terre sont remplis de Ta gloire et de Ton honneur ! Aie pitié de nous ô Dieu le Père Tout-Puissant. Ô Trinité Sainte, aie pitié de nous ! Ô Seigneur Dieu des puissances, sois avec nous, car nous n'avons d'aide que de Toi dans nos tribulations et nos angoisses.
+                </div>
+<div class="prayer-text">
+                    Ô Dieu absous, pardonne et remets nos péchés, que nous les ayons commis volontairement ou involontairement, en connaissance ou par ignorance, secrètement ou ouvertement. Ô Seigneur tu nous les pardonneras à cause de Ton saint Nom qui a été invoqué sur nous.
+                </div>
+<div class="prayer-text">
+                    Selon Ta miséricorde Seigneur et non selon nos péchés !
+                </div>
+</section>
+<section class="section">
+<h2 class="section-title">Le Notre Père</h2>
+<div class="prayer-text"><em>Rends-nous dignes de dire en action de grâce :</em></div>
+<div class="prayer-text">
+                    Notre Père qui es aux cieux, que Ton Nom soit sanctifié, que Ton Règne vienne, que Ta Volonté soit faite, comme au ciel, aussi sur la terre. Notre pain de demain, donne-le-nous aujourd'hui,
+                </div>
+<div class="prayer-text">
+                    et remets-nous nos dettes comme nous les remettons à nos débiteurs, et ne nous induis pas en tentation, mais délivre-nous du Mal. Par le Christ Jésus, notre Seigneur, car à Toi sont le Règne, la Puissance et la Gloire, pour les siècles. Amen !
+                </div>
+</section>
+<section class="section">
+<h2 class="section-title">Absolution de la onzième heure</h2>
+
+<div class="prayer-text">
+                    Nous Te rendons grâce ô notre Roi compatissant car Tu nous as donné de passer ce jour en paix et d'atteindre ce soir en Te remerciant. Tu nous as rendus dignes de voir la lumière jusqu'à la tombée du jour.
+                </div>
+<div class="prayer-text">
+                    Ô Dieu reçois cette louange que nous T'adressons maintenant. Sauve-nous des ruses de l'ennemi et détruis tous les pièges qu'il nous a tendus.
+                </div>
+<div class="prayer-text">
+                    Donne-nous de passer cette nuit en paix et sans peine, sans inquiétude ni fatigue ni mauvaise imagination. Fais que nous la traversions dans la paix et la chasteté et que nous nous levions pour Te louer et Te prier en tout temps et en tout lieu. Nous glorifions Ton Saint Nom en toute chose avec le Père inaccessible qui est depuis toujours et le Saint Esprit vivifiant et consubstantiel, maintenant et toujours et dans les siècles des siècles. Amen !
+                </div>
+<div class="prayer-text"><em>Puis on dit la conclusion de chaque heure</em></div>
+</section>
+<section class="section">
+<h2 class="section-title">Conclusion de chaque heure</h2>
+
+<div class="prayer-text"><em>[A COMPLETER - conclusion]</em></div>
+</section>
+<div class="ornament">
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+</div>
+</div>
+<nav class="nav-hours">
+<a class="nav-hour" href="prime.html">
+<div>Prime</div>
+</a>
+<a class="nav-hour" href="terce.html">
+<div>Tierce</div>
+</a>
+<a class="nav-hour" href="sext.html">
+<div>Sexte</div>
+</a>
+<a class="nav-hour" href="none.html">
+<div>None</div>
+</a>
+<a class="nav-hour" href="vespers.html">
+<div>Vêpres</div>
+</a>
+<a class="nav-hour" href="compline.html">
+<div>Complies</div>
+</a>
+<a class="nav-hour" href="midnight.html">
+<div>Minuit</div>
+</a>
+<a class="nav-hour" href="veil.html">
+<div>Voile</div>
+</a>
+<a class="nav-hour" href="other.html">
+<div>Prières diverses</div>
+</a>
+<a class="nav-hour" href="about.html">
+<div>À propos</div>
+</a>
+</nav>
+</main>
+<script src="../agpeya.js"></script>
+<script>
+        // Initialize jump to gospel functionality
+        initJumpToGospel();
+    </script>
+</body>
+</html>
