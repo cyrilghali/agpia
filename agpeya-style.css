@@ -770,6 +770,9 @@ body {
     text-align: center;
 }
 .lang-selector .settings-menu-btn.active {
+    background: var(--burgundy);
+    color: var(--bg);
+    border-color: var(--burgundy);
     pointer-events: none;
 }
 
