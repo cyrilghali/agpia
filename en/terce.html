@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terce | Agpeya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;600&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../agpeya-style.css">
+
+</head>
+<body>
+    <div class="sticky-subheader">
+                <div class="dropdown-wrapper">
+            <select class="hour-dropdown" id="hourDropdown">
+                <option value="index.html" data-short="Home" data-long="Home">Home</option>
+                <option value="prime.html" data-short="1st Hour" data-long="1st Hour - Prime">1st Hour - Prime</option>
+                <option value="terce.html" data-short="3rd Hour" data-long="3rd Hour - Terce">3rd Hour - Terce</option>
+                <option value="sext.html" data-short="6th Hour" data-long="6th Hour - Sext">6th Hour - Sext</option>
+                <option value="none.html" data-short="9th Hour" data-long="9th Hour - None">9th Hour - None</option>
+                <option value="vespers.html" data-short="11th Hour" data-long="11th Hour - Vespers">11th Hour - Vespers</option>
+                <option value="compline.html" data-short="12th Hour" data-long="12th Hour - Compline">12th Hour - Compline</option>
+                <option value="midnight.html" data-short="Midnight" data-long="Midnight">Midnight</option>
+                <option value="veil.html" data-short="Veil" data-long="Prayer of the Veil">Prayer of the Veil</option>
+                <option value="other.html" data-short="Other" data-long="Other Prayers">Other Prayers</option>
+                <option value="about.html" data-short="About" data-long="About">About</option>
+            </select>
+            <select class="section-dropdown" id="sectionDropdown">
+                <option value="">Top</option>
+            </select>
+        </div>
+
+        <button class="settings-btn" id="settingsBtn"><img src="../cog_wheel.png" alt="Settings"></button>
+                <div class="settings-menu" id="settingsMenu">
+            <!-- Font Size Row -->
+            <div class="settings-row">
+                <button class="settings-menu-btn settings-menu-btn-small" id="fontDownBtn">A-</button>
+                <button class="settings-menu-btn settings-menu-btn-small" id="fontResetBtn">100%</button>
+                <button class="settings-menu-btn settings-menu-btn-small" id="fontUpBtn">A+</button>
+            </div>
+            
+            <!-- Line Height Row -->
+            <div class="settings-row">
+                <button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Comfy line spacing">
+                    <span class="line-height-icon comfy-icon">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </span>
+                </button>
+                <button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Default line spacing">
+                    <span class="line-height-icon default-icon">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </span>
+                </button>
+                <button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Condensed line spacing">
+                    <span class="line-height-icon condensed-icon">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </span>
+                </button>
+            </div>
+            
+            <!-- Theme Row -->
+            <div class="settings-row">
+                <button class="settings-menu-btn settings-toggle" id="lightModeBtn">Light</button>
+                <button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Dark</button>
+            </div>
+            
+            <!-- Language Selector -->
+            <div class="settings-row lang-selector">
+                <a href="../en/terce.html" class="settings-menu-btn settings-toggle active" data-lang="en">EN</a>
+                <a href="../ar/terce.html" class="settings-menu-btn settings-toggle" data-lang="ar">عربي</a>
+                <a href="../fr/terce.html" class="settings-menu-btn settings-toggle" data-lang="fr">FR</a>
+                <a href="../fr-old/terce.html" class="settings-menu-btn settings-toggle" data-lang="fr-old">FR cl.</a>
+            </div>
+        </div>
+
+
+        </div>
+
+    <main class="container">
+        <div class="hour-header">
+            <div class="header-crosses">
+                <img src="../coptic-cross.png" alt="Coptic Cross">
+            </div>
+            <h1 class="hour-title">Terce</h1>
+            <p class="hour-time">The Third Hour · 9:00 AM</p>
+            <p class="hour-desc">The Third Hour commemorated three significant events: Christ's trial by Pilate, His ascension to heaven, and the descent of the Holy Spirit may cleanse our hearts and renew our lives.</p>
+        </div>
+        <div class="prayer-content">
+            <div class="ornament">
+                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
+                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
+                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
+            </div>
+                        <section class="section">
+                <h2 class="section-title">Introduction to Every Hour</h2>
+<div class="prayer-text">
+                    In the name of the Father, and the Son, and the Holy Spirit, one God. Amen.
+                </div>
+<div class="prayer-text">
+                    Kyrie eleison. Lord have mercy, Lord have mercy, Lord bless us. Amen.
+                </div>
+<div class="prayer-text">
+                    Glory to the Father, and to the Son, and to the Holy Spirit, now and forever and unto the ages of all ages. Amen.
+                </div>
+</section>
+
+                        <section class="section">
+                <h2 class="section-title">The Lord's Prayer</h2>
+<div class="prayer-text">
+                    <em>Make us worthy to pray thankfully:</em>
+                </div>
+<div class="prayer-text">
+                    Our Father Who art in heaven; hallowed be Thy name. Thy kingdom come. Thy will be done on earth as it is in heaven. Give us this day our daily bread.
+                </div>
+<div class="prayer-text">
+                    And forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation, but deliver us from evil, in Christ Jesus our Lord. For Thine is the kingdom, the power and the glory, forever. Amen.
+                </div>
+</section>
+
+                        <section class="section">
+                <h2 class="section-title">The Prayer of Thanksgiving</h2>
+<div class="prayer-text">
+                    Let us give thanks to the beneficent and merciful God, the Father of our Lord, God and Savior, Jesus Christ, for He has covered us, helped us, guarded us, accepted us unto Him, spared us, supported us, and brought us to this hour. Let us also ask Him, the Lord our God, the Pantocrator, to guard us in all peace this holy day and all the days of our life.
+                </div>
+<div class="prayer-text">
+                    O Master, Lord, God the Pantocrator, the Father of our Lord, God and Savior, Jesus Christ, we thank You for every condition, concerning every condition, and in every condition, for You have covered us, helped us, guarded us, accepted us unto You, spared us, supported us, and brought us to this hour.
+                </div>
+<div class="prayer-text">
+                    Therefore, we ask and entreat Your goodness, O Lover of mankind, to grant us to complete this holy day, and all the days of our life, in all peace with Your fear. All envy, all temptation, all the work of Satan, the counsel of wicked men, and the rising up of enemies, hidden and manifest, take them away from us, and from all Your people, and from this holy place that is Yours.
+                </div>
+<div class="prayer-text">
+                    But those things which are good and profitable do provide for us; for it is You Who have given us the authority to tread on serpents and scorpions, and upon all the power of the enemy.
+                </div>
+<div class="prayer-text">
+                    And lead us not into temptation, but deliver us from evil, by the grace, compassion and love of mankind, of Your Only-Begotten Son, our Lord, God and Savior, Jesus Christ, through Whom the glory, the honor, the dominion, and the adoration are due unto You, with Him, and the Holy Spirit, the Life-Giver, Who is of one essence with You, now and at all times, and unto the ages of all ages. Amen.
+                </div>
+</section>
+
+            <section class="section">
+                <h2 class="section-title">Psalm 50</h2>
+<div class="psalm-verse drop-cap">
+                    Have mercy upon me, O God, according to Your great mercy; and according to the multitude of Your compassions blot out my iniquity. Wash me thoroughly from my iniquity, and cleanse me from my sin. For I am conscious of my iniquity; and my sin is at all times before me.
+                </div>
+<div class="psalm-verse">
+                    Against You only I have sinned, and done evil before You: that You might be just in Your sayings, and might overcome when You are judged. For, behold, I was conceived in iniquities, and in sins my mother conceived me.
+                </div>
+<div class="psalm-verse">
+                    For, behold, You have loved the truth: You have manifested to me the hidden and unrevealed things of Your wisdom. You shall sprinkle me with Your hyssop, and I shall be purified: You shall wash me, and I shall be made whiter than snow. You shall make me to hear gladness and joy: the humbled bones shall rejoice.
+                </div>
+<div class="psalm-verse">
+                    Turn away Your face from my sins, and blot out all my iniquities. Create in me a clean heart, O God; and renew a right spirit in my inward parts. Do not cast me away from Your face; and do not remove Your Holy Spirit from me. Give me the joy of Your salvation: and uphold me with a directing spirit. Then I shall teach the transgressors Your ways; and the ungodly men shall turn to You.
+                </div>
+<div class="psalm-verse">
+                    Deliver me from blood, O God, the God of my salvation: and my tongue shall rejoice in Your righteousness. O Lord, You shall open my lips; and my mouth shall declare Your praise. For if You desired sacrifice, I would have given it: You do not take pleasure in burnt offerings. The sacrifice of God is a broken spirit: a broken and humbled heart God shall not despise.
+                </div>
+<div class="psalm-verse">
+                    Do good, O Lord, in Your good pleasure to Zion; and let the walls of Jerusalem be built. Then You shall be pleased with sacrifices of righteousness, offering, and burnt sacrifices: then they shall offer calves upon Your altar. <span class="alleluia">ALLELUIA.</span>
+                </div>
+</section>
+
+                        <section class="section">
+                <div class="prayer-text"><em>The prayer of the third hour of the blessed day, we offer to Christ our King and our God, beseeching Him to forgive us our sins.</em></div>
+                <div class="prayer-text"><em>From the Psalms of our father David the prophet and the king, may his blessings be upon us all. Amen.</em></div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 19</h2>
+                <div class="psalm-verse drop-cap">
+                    The Lord shall hear you in the day of your trouble, the name of the God of Jacob defend you. He shall send you help from His Holy, and uphold you out of Zion. He shall remember all your sacrifices, and enrich your burnt offerings. The Lord shall grant you according to your heart, and fulfill all your counsel.
+                </div>
+                <div class="psalm-verse">
+                    We will confess your salvation, and in the name of our God we shall grow: the Lord shall fulfill all your petitions. Now I know that the Lord has saved His anointed: He shall hear him from His holy heaven, the salvation of His right hand is in mighty deeds.
+                </div>
+                <div class="psalm-verse">
+                    These in chariots, and these in horses, but in the name of the Lord our God we will grow. They are overthrown and fallen, but we risen, and set upright. O Lord, save Your king: and hear us in the day we call upon You. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 22</h2>
+                <div class="psalm-verse drop-cap">
+                    The Lord is He who shepherds me; I shall need nothing. In a place of green pasture, there He has made me dwell: by the water of rest, He has tended me. He has restored my soul: He has guided me into the paths of righteousness, for His name's sake.
+                </div>
+                <div class="psalm-verse">
+                    Even if I walk in the midst of the shadow of death, I shall not fear evil things, for You are with me: Your rod and Your staff, these comfort me. You have prepared a table before me in the presence of those who afflict me: You have anointed my head with oil; and Your cup makes me drunk like power.
+                </div>
+                <div class="psalm-verse">
+                    Your mercy shall follow me all the days of my life: and my dwelling shall be in the house of the Lord unto length of days. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 23</h2>
+                <div class="psalm-verse drop-cap">
+                    The earth and its fullness are the Lord's; the world and all that dwell in it. He has founded it upon the seas, and prepared it upon the rivers. Who shall go up to the mountain of the Lord, and who shall stand in His holy place?
+                </div>
+                <div class="psalm-verse">
+                    He that is pure in his hands, and clean in his heart; who has not lifted up his soul in vanity, nor sworn deceitfully to his neighbor. He shall receive a blessing from the Lord, and mercy from God his Savior. This is the generation of those who seek the Lord, who seek the face of the God of Jacob.
+                </div>
+                <div class="psalm-verse">
+                    Lift up your gates, you princes, and be lifted up, you everlasting doors; and the king of glory shall come in. Who is this king of glory? The Lord who is strong and mighty, the Lord who is mighty in war. Lift up your gates, you princes; and be lifted up, you everlasting doors; and the king of glory shall come in. Who is this king of glory? The Lord of hosts, He is this king of glory. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 25</h2>
+                <div class="psalm-verse drop-cap">
+                    Judge me, O Lord; for I have walked in my innocence: and trusted in the Lord, I shall not be weakened. Prove me, O Lord, and try me; purify my heart and my reins. For your mercy is before my eyes: and I am pleased with your truth.
+                </div>
+                <div class="psalm-verse">
+                    I have not sat with the vain council, nor shall I enter in with the transgressors. I have hated the assembly of evil doers; and shall not sit with ungodly men. I will wash my hands in purity, and go around Your altar, O Lord, to hear the voice of Your praise, and to speak of all Your wonderful works.
+                </div>
+                <div class="psalm-verse">
+                    O Lord, I have loved the beauty of Your house, and the dwelling place of Your glory. Do not destroy my soul together with the ungodly, nor my life with bloody men: in whose hands are iniquity, and their right hand is filled with bribe. But I have walked in my innocence: save me, and have mercy upon me. My foot stood in uprightness: in the congregations I will praise You, O Lord. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 28</h2>
+                <div class="psalm-verse drop-cap">
+                    Bring to the Lord, O sons of God, bring to the Lord young rams; bring to the Lord glory and honor. Bring to the Lord glory to His name; worship the Lord in His holy court.
+                </div>
+                <div class="psalm-verse">
+                    The voice of the Lord is upon the waters: God of glory has thundered: the Lord is upon the many waters. The voice of the Lord is mighty; the voice of the Lord is in great beauty. The voice of the Lord breaks the cedar; the Lord will break the cedar of Lebanon. And He will beat them small like the calf of Lebanon; and the beloved one like a son of the unicorn. The voice of the Lord cuts a flame of fire. The voice of the Lord shakes the wilderness; the Lord will shake the wilderness of Kadesh. The voice of the Lord strengthens the deer, and will uncover the forests: and in His holy temple every one speaks of glory. The Lord dwells in the flood: and the Lord will sit as a king forever. The Lord will give strength to His people; the Lord will bless His people with peace. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 29</h2>
+                <div class="psalm-verse drop-cap">
+                    I will exalt You, O Lord; for You have accepted me, and not caused my enemies to rejoice over me. O Lord, my God, I cried to You, and You have healed me. O Lord, You have brought up my soul from Hades, You have delivered me from the hands of those who will go down to the pit.
+                </div>
+                <div class="psalm-verse">
+                    Sing to the Lord, all you His saints, and confess the remembrance of His holiness. For anger is in His wrath, but life in His favor: weeping shall be for the evening, but joy shall be in the morning.
+                </div>
+                <div class="psalm-verse">
+                    I said in my prosperity, I shall never be moved. O Lord, in Your will You gave strength to my beauty: but You turned away Your face from me, and I became troubled. To You, O Lord, I shall cry; and to my God I shall make supplication. What profit is there in my blood, when I go down to destruction? Shall the dust confess to You? or shall it declare Your truth?
+                </div>
+                <div class="psalm-verse">
+                    The Lord heard, and had mercy upon me; the Lord became to me a helper. You have turned my mourning into joy for me: You have rent off my sackcloth, and girded me with gladness; that my glory may sing praise to You, and I shall not be troubled at heart. O Lord, my God, I will confess to You forever. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 33</h2>
+                <div class="psalm-verse drop-cap">
+                    I will bless the Lord at all times: His praise shall be continually in my mouth. My soul shall boast herself in the Lord: let the meek hear and rejoice. Magnify the Lord with me, and let us exalt His name together.
+                </div>
+                <div class="psalm-verse">
+                    I sought the Lord diligently, and He heard me, and delivered me from all my fear. Draw near to Him, and be enlightened: and your faces shall not be ashamed. This poor man cried, and the Lord heard him, and delivered him out of all his afflictions. The angel of the Lord will encamp round about those who fear Him, and will deliver them. Taste and see that the Lord is sweet: blessed is the man who hopes in Him. Fear the Lord, all you His saints: for there is no want to those who fear Him. The rich have become poor and they hungered: but those who seek the Lord shall not want any good thing.
+                </div>
+                <div class="psalm-verse">
+                    Come, you children, hear me: I will teach you the fear of the Lord. Who is the man that desires life, and is thinking to see good days? Keep your tongue from evil, and your lips from speaking guile. Turn away from evil, and do good; seek peace, and pursue it. For the eyes of the Lord are over the righteous, and His ears are bent to their prayer: but the face of the Lord is against those who do evil, to wipe out their memorial from upon the earth.
+                </div>
+                <div class="psalm-verse">
+                    The righteous cried, and the Lord heard them, and delivered them out of all their afflictions. The Lord is near to those who are contrite in their heart; and will save the lowly in spirit. Many are the afflictions of the righteous: but out of them all the Lord will deliver them. The Lord will keep all their bones: not one of them shall be broken. The death of the sinners is evil: and those who hate righteousness will grieve. The Lord will save the souls of His servants: and none of those who hope in Him shall grieve. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 40</h2>
+                <div class="psalm-verse drop-cap">
+                    Blessed is he who thinks of the poor and needy: the Lord shall deliver him in an evil day. The Lord shall preserve him and keep him alive, and make him blessed on the earth, and not deliver him into the hands of his enemies. The Lord shall help him upon the bed of his pain; You have made all his bed in his sickness.
+                </div>
+                <div class="psalm-verse">
+                    I said, O Lord, have mercy on me; heal my soul; for I have sinned against You. My enemies have spoken evil against me, saying, "When shall he die, and his name perish?" And if he came to see me, he spoke in vanity; and his heart gathered unto him iniquity; he went forth and spoke in like manner. All my enemies whispered against me; against me they devised evil. They denounced a wicked word against me, saying, "Now that he lies, shall he not rise up again?" For even the man of my peace, he whom I trusted, who ate my bread, lifted up his heel against me.
+                </div>
+                <div class="psalm-verse">
+                    But you, O Lord, have mercy upon me, and raise me up, and I shall compensate them. In this I knew that You were delighted in me, because my enemy shall not rejoice over me. But because of my innocence You accepted me, and have established me before You forever. Blessed be the Lord God of Israel, from everlasting and to everlasting. So be it, so be it. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 42</h2>
+                <div class="psalm-verse drop-cap">
+                    Judge me, O Lord, and avenge my case, against an impure nation: You shall deliver me from the unjust and crafty man. For You are my God and my strength: why have You cast me off? And why do I walk gloomingly, while the enemy oppresses me?
+                </div>
+                <div class="psalm-verse">
+                    Send forth Your light and Your truth: they have led me, and brought me to Your holy mountain, and to Your dwelling. And I will go into the altar of God, before the face of God who gladdens my youth: I will give praise to You with the harp, O God, my God.
+                </div>
+                <div class="psalm-verse">
+                    Why are you sad, O my soul? and why do you trouble me? Hope in God; for I will give thanks to Him. The salvation of my face is my God. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 44</h2>
+                <div class="psalm-verse drop-cap">
+                    My heart has poured forth a good word: I will declare my works to the King: my tongue is a writer's pen, sharpened for writing. You are comely in beauty more than the sons of men: grace has been shed forth from Your lips: therefore God has blessed You forever.
+                </div>
+                <div class="psalm-verse">
+                    Gird Your sword upon Your thigh, O Mighty One, in Your comeliness, and in Your beauty; draw it, prosper, and reign, because of truth and meekness and righteousness; and Your right hand shall guide You wonderfully. Your arrows are sharp, O Mighty One, in the heart of the King's enemies; the nations shall fall under You.
+                </div>
+                <div class="psalm-verse">
+                    Your throne, O God, is for ever and ever: the scepter of Your kingdom is a scepter of uprightness. You have loved righteousness, and hated iniquity: therefore, God, Your God, has anointed You with the oil of gladness more than Your fellows.
+                </div>
+                <div class="psalm-verse">
+                    Myrrh and stacte and cassia are from Your garments, and out of the ivory palaces, with which they have gladdened You; Kings' daughters for Your honor. The queen stood by on Your right hand, clothed in a vestment wrought with gold work, and adorned in divers manners.
+                </div>
+                <div class="psalm-verse">
+                    Hear, O my daughter, and see, and incline your ear; forget your people, and your father's house. Because the King has desired your beauty; for indeed He is your Lord, and you shall worship Him. The daughters of Tyre shall worship Him with gifts; the rich of the people of the land shall supplicate His favor.
+                </div>
+                <div class="psalm-verse">
+                    All the glory of the daughter of the King is within, robed in golden fringed garments, adorned in various manners. Virgins shall be brought to the King after her: all her fellows shall be brought to Him. They shall be brought with gladness and exultation: they shall be brought into the King's temple. Instead of Your fathers, children shall be unto You: You shall make them princes over all the earth. They shall make mention of Your name from generation to generation: therefore the nations shall give praise to You, O God, forever, even forever and ever. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 45</h2>
+                <div class="psalm-verse drop-cap">
+                    God is our refuge and our strength; He is our help in the afflictions that have come heavily upon us. Therefore we shall not fear when the earth is troubled, and the mountains are removed into the heart of the seas. The waters have roared and been troubled, the mountains have been troubled by His might. The streams of the river gladden the city of God: the Most High has sanctified His dwelling. God is in the midst of her; she shall not be moved: God shall help her face. The nations were troubled, the kingdoms tottered: He gave forth His voice, the earth shook. The Lord, God of hosts, is with us; the God of Jacob is our helper.
+                </div>
+                <div class="psalm-verse">
+                    Come, you, and behold the works of the Lord, the wonders which He has set upon the earth. Putting an end to wars to the ends of the earth; He will crush their bows, and break their weapons, and burn their bucklers in the fire. Be still, and know that I am God: I will be exalted among the nations, I will be exalted upon the earth. The Lord God of hosts is with us; the God of Jacob is our helper. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 46</h2>
+                <div class="psalm-verse drop-cap">
+                    Clap your hands, all you nations; shout to God with a voice of exultation. For the Lord is most high and fearful; He is a great king over all the earth. He has subdued peoples under us, and nations under our feet. He has chosen us for His inheritance, the beauty of Jacob He loved.
+                </div>
+                <div class="psalm-verse">
+                    God has ascended with a shout, and the Lord with a sound of a trumpet. Sing praises to our God, sing praises: sing praises to our King, sing praises; for God is king of all the earth. Sing praises with understanding, for the Lord reigned over all the nations: God sits upon His holy throne. Rulers of the people have assembled with God of Abraham: for God's mighty ones have been greatly exalted upon the earth. <span class="alleluia">ALLELUIA.</span>
+                </div>
+            </section>
+
+                        <section class="section" id="gospel">
+                <h2 class="section-title">The Holy Gospel (John 14:26-31 & 15:1-4)</h2>
+                <div class="prayer-text"><em>Glory be to our God. Holy. Holy. Holy. A reading from the Holy Gospel according to our teacher, St. John, may his blessings be with us all. Amen.</em></div>
+                <div class="psalm-verse drop-cap">
+                    When the Comforter, the Holy Spirit, Whom the Father will send in My name, has come, He shall teach you all things, and bring to your remembrance all things that I have said unto you. My peace I leave with you, My peace I give unto you: not as the world gives do I give unto you. Let not your heart be troubled, neither let it be afraid.
+                </div>
+                <div class="psalm-verse">
+                    You have heard how I said unto you, "I go away, and come again unto you." If you loved Me, you would rejoice, because I said, "I go unto the Father": for My Father is greater than I. And now I have told you before it comes to pass, that, when it comes to pass, you might believe.
+                </div>
+                <div class="psalm-verse">
+                    I will not talk much with you: for the prince of this world comes, and has nothing in Me. But that the world may know that I love the Father; and as the Father gave Me commandment, so I do: arise, let us go from here.
+                </div>
+                <div class="psalm-verse">
+                    I am the true vine, and My Father is the vinedresser. Every branch in Me that does not bear fruit He takes away: and every branch that bears fruit He prunes, that it may bring forth more fruit. Now you are clean through the word which I have spoken unto you. Abide in Me, and I in you.
+                </div>
+                <div class="prayer-text">
+                    Glory to God forever. Amen.
+                </div>
+                <div class="prayer-text doxology">
+                    <span class="doxology-coptic">Tenovw2t `mmok `w Pixrictoc nem Pekiwt `n`aja0oc: nem P`pnevma e0ovab: ge aki akcw5 `mmon nai nan.</span>
+                    <span class="doxology-english">We worship You O Christ with Your Good Father and the Holy Spirit, for You have come and saved us.</span>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Litanies</h2>
+                <div class="prayer-text">
+                    <span class="litany-number">(1)</span> Your Holy Spirit, O Lord Whom You sent forth upon Your holy disciples and honored apostles in the third hour, do not take away from us, O Good One, but renew Him within us. Create in me a clean heart, O God, and renew a steadfast spirit within me. Do not cast me away from Your presence. And do not take Your Holy Spirit away from me.
+                </div>
+                <div class="prayer-text doxology">
+                    <span class="doxology-coptic">Do7a patri ke Viw ke ajiw 1`Pnevmati</span>
+                    <span class="doxology-english">Glory to the Father, and the Son, and the Holy Spirit.</span>
+                </div>
+                <div class="prayer-text">
+                    <span class="litany-number">(2)</span> O Lord who sent down Your Holy Spirit upon Your holy disciples and Your honored apostles in the third hour, do not take Him away from us, O Good One, but we ask You to renew Him within us, O Lord Jesus Christ, Son of God, the Word; a steadfast and life giving spirit, a spirit of prophecy and chastity, a spirit of holiness, justice and authority, O the Pantocrator One, for You are the light of our souls. O Who shines upon every man that comes into the world, have mercy on me.
+                </div>
+                <div class="prayer-text doxology">
+                    <span class="doxology-coptic">Ke nvn ke `a`i ke ic toc `e`wnac twn `e`wnwn: `am3n.</span>
+                    <span class="doxology-english">Now and forever and unto the ages of all ages, Amen.</span>
+                </div>
+                <div class="prayer-text">
+                    <span class="litany-number">(3)</span> O Theotokos, you are the true vine who bore the Cluster of Life, we ask you, O full of grace, with the apostles, for the salvation of our souls. Blessed is the Lord our God. Blessed is the Lord day by day. He prepares our way, for He is God of our salvation.
+                </div>
+                <div class="prayer-text doxology">
+                    <span class="doxology-coptic">Ke nvn ke `a`i ke ic toc `e`wnac twn `e`wnwn: `am3n.</span>
+                    <span class="doxology-english">Now and forever and unto the ages of all ages, Amen.</span>
+                </div>
+                <div class="prayer-text">
+                    <span class="litany-number">(4)</span> O Heavenly King, the Comforter, the Spirit of truth, who is present in all places and fills all, the treasury of good things and the Life-Giver, graciously come, and dwell in us and purify us from all defilement, O Good One, and save our souls.
+                </div>
+                <div class="prayer-text doxology">
+                    <span class="doxology-coptic">Do7a patri ke Viw ke ajiw 1`Pnevmati</span>
+                    <span class="doxology-english">Glory to the Father, and the Son, and the Holy Spirit.</span>
+                </div>
+                <div class="prayer-text">
+                    <span class="litany-number">(5)</span> Just as You were with Your disciples, O Savior, and gave them peace, graciously come also and be with us, and grant us Your peace, and save us, and deliver our souls.
+                </div>
+                <div class="prayer-text doxology">
+                    <span class="doxology-coptic">Ke nvn ke `a`i ke ic toc `e`wnac twn `e`wnwn: `am3n.</span>
+                    <span class="doxology-english">Now and forever and unto the ages of all ages, Amen.</span>
+                </div>
+                <div class="prayer-text">
+                    <span class="litany-number">(6)</span> Whenever we stand in Your holy sanctuary, we are considered standing in heaven. O Theotokos, you are the gate of heaven, open for us the gate of mercy.
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">41 Kyrie Eleison</h2>
+<div class="prayer-text">
+                    <em>Then the worshipper prays:</em>
+                </div>
+                <div class="prayer-text">
+                    Lord, hear us and have mercy on us and forgive us our sins. Amen.
+                </div>
+                <div class="prayer-text">
+                    <em>(Lord have mercy) 41 times</em>
+                </div>
+</section>
+
+            <section class="section">
+                <h2 class="section-title">Holy Holy Holy</h2>
+<div class="prayer-text">
+                    Holy Holy Holy. Lord of hosts. Heaven and earth are full of Your glory and honor. Have mercy on us, O God the Father, the Pantocrator. O Holy Trinity, have mercy on us.
+                </div>
+<div class="prayer-text">
+                    O Lord, God of hosts, be with us. For we have no helper in our hardships and tribulations but You. Absolve, forgive, and remit, O God, our transgressions; those which we have committed willingly and those we have committed unwillingly, those which we have committed knowingly and those which we have committed unknowingly, the hidden and manifest, O Lord forgive us, for the sake of Your Holy name which is called upon us.
+                </div>
+<div class="prayer-text">
+                    Let it be according to Your mercy, O Lord, and not according to our sins.
+                </div>
+</section>
+
+                        <section class="section">
+                <h2 class="section-title">The Lord's Prayer</h2>
+<div class="prayer-text">
+                    <em>Make us worthy to pray thankfully:</em>
+                </div>
+<div class="prayer-text">
+                    Our Father Who art in heaven; hallowed be Thy name. Thy kingdom come. Thy will be done on earth as it is in heaven. Give us this day our daily bread.
+                </div>
+<div class="prayer-text">
+                    And forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation, but deliver us from evil, in Christ Jesus our Lord. For Thine is the kingdom, the power and the glory, forever. Amen.
+                </div>
+</section>
+
+                        <section class="section">
+                <h2 class="section-title">Absolution</h2>
+                <div class="prayer-text">
+                    O God of all compassion, and Lord of all comfort, who comforted us at all times with the comfort of Your Holy Spirit, we thank You for You raised us for prayer in this holy hour, in which You abundantly poured the grace of Your Holy Spirit upon Your holy disciples and honorable and blessed apostles, like tongues of fire.
+                </div>
+                <div class="prayer-text">
+                    We ask and entreat You, O lover of mankind, to accept our prayers, and forgive our sins, and send forth upon us the grace of Your Holy Spirit, and purify us from all defilement of body and spirit.
+                </div>
+                <div class="prayer-text">
+                    Change us into a spiritual manner of life, that we may walk in the Spirit and not fulfill the lusts of the flesh. And make us worthy to serve You with purity and righteousness all the days of our life. For unto You is due glory, honor, and dominion, with Your good Father and the Holy Spirit, now and forever and unto the ages of all ages. Amen.
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Conclusion of Every Hour</h2>
+<div class="prayer-text">
+                    Have mercy on us, O God, and have mercy on us, who, at all times and in every hour, in heaven and on earth, is worshipped and glorified, Christ our God, the good, the long suffering, the abundant in mercy, and the great in compassion, who loves the righteous and has mercy on the sinners of whom I am chief; who does not wish the death of the sinner but rather that he returns and lives, who calls all to salvation for the promise of the blessings to come.
+                </div>
+<div class="prayer-text">
+                    Lord receive from us our prayers in this hour and in every hour. Ease our life and guide us to fulfill Your commandments. Sanctify our spirits. Cleanse our bodies. Conduct our thoughts. Purify our intentions. Heal our diseases. Forgive our sins. Deliver us from every evil grief and distress of heart. Surround us by Your holy angels, that, by their camp, we may be guarded and guided, and attain the unity of faith, and the knowledge of Your imperceptible and infinite glory. For You are blessed forever. Amen.
+                </div>
+</section>
+
+            <div class="ornament">
+                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
+                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
+                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
+            </div>
+        </div>
+                <nav class="nav-hours">
+            <a href="prime.html" class="nav-hour">
+                <div>Prime</div>
+            </a>
+            <a href="terce.html" class="nav-hour">
+                <div>Terce</div>
+            </a>
+            <a href="sext.html" class="nav-hour">
+                <div>Sext</div>
+            </a>
+            <a href="none.html" class="nav-hour">
+                <div>None</div>
+            </a>
+            <a href="vespers.html" class="nav-hour">
+                <div>Vespers</div>
+            </a>
+            <a href="compline.html" class="nav-hour">
+                <div>Compline</div>
+            </a>
+            <a href="midnight.html" class="nav-hour">
+                <div>Midnight</div>
+            </a>
+            <a href="veil.html" class="nav-hour">
+                <div>Veil</div>
+            </a>
+            <a href="other.html" class="nav-hour">
+                <div>Other Prayers</div>
+            </a>
+            <a href="about.html" class="nav-hour">
+                <div>About</div>
+            </a>
+        </nav>
+
+    </main>
+    <script src="../agpeya.js"></script>
+    <script>
+        // Initialize jump to gospel functionality
+        initJumpToGospel();
+    </script>
+</body>
+</html>

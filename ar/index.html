@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agpeya - The Coptic Book of Hours</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;600&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../agpeya-style.css">
+    <style>
+        .section-dropdown { display: none !important; }
+        :root {
+            --bg: #fdfdf9;
+            --bg-card: #f8f7f2;
+            --text: #2a2416;
+            --text-light: #5a513d;
+            --text-muted: #8a7f6a;
+            --gold: #c9a961;
+            --burgundy: #7a2828;
+            --border: #d4cec0;
+        }
+        [data-theme="dark"] {
+            --bg: #1a1612;
+            --bg-card: #231f18;
+            --text: #e8e4d9;
+            --text-light: #c4bead;
+            --text-muted: #9a8f7a;
+            --border: #3d3830;
+            --burgundy: #d87070;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            transition: all 0.3s;
+        }
+        header {
+            position: relative;
+            
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text);
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--burgundy);
+        }
+        .logo-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .header-btns { display: flex; gap: 0.5rem; }
+        .btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .btn:hover { transform: scale(1.05); }
+        .btn-primary {
+            background: var(--burgundy);
+            color: var(--bg);
+            border-color: var(--burgundy);
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 0 3rem;
+        }
+        @font-face {
+            font-family: 'Avva Shenouda';
+            src: url('Avva_Shenouda.ttf') format('truetype');
+        }
+        .hero-title-en {
+            font-family: 'EB Garamond', serif;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 700;
+            color: var(--burgundy);
+            margin-bottom: 0.25rem;
+        }
+        .hero-title-coptic {
+            font-family: 'Avva Shenouda', serif;
+            font-size: clamp(3rem, 9vw, 5.25rem);
+            color: var(--burgundy);
+            margin-bottom: 1.5rem;
+        }
+        .hero-cross {
+            width: 120px;
+            height: auto;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            filter: brightness(0) saturate(100%) invert(22%) sepia(18%) saturate(1844%) hue-rotate(314deg) brightness(92%) contrast(90%);
+        }
+        [data-theme="dark"] .hero-cross {
+            filter: brightness(0) saturate(100%) invert(56%) sepia(30%) saturate(1026%) hue-rotate(312deg) brightness(93%) contrast(89%);
+        }
+        .hero h1 {
+            font-family: 'EB Garamond', serif;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 700;
+            color: var(--burgundy);
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        .cta {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--burgundy);
+            color: var(--bg);
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .cta:hover { transform: translateY(-2px); }
+        .current-time {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        .hours {
+            max-width: 700px;
+            margin: 3rem auto;
+            padding: 0;
+        }
+        .hour-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.75rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .hour-card:hover {
+            transform: translateX(8px);
+            border-color: var(--burgundy);
+            background: var(--bg);
+        }
+        .hour-num {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            font-weight: 700;
+            min-width: 30px;
+            text-align: center;
+        }
+        .hour-info {
+            flex: 1;
+        }
+        .hour-name {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .hour-time {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        .hour-arrow {
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            transition: all 0.2s;
+        }
+        .hour-card:hover .hour-arrow {
+            color: var(--burgundy);
+            transform: translateX(4px);
+        }
+        .nav-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--bg);
+            z-index: 200;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            overflow-y: auto;
+        }
+        .nav-overlay.active { opacity: 1; visibility: visible; }
+        .nav-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        .nav-list {
+            list-style: none;
+            max-width: 600px;
+            margin: 5rem auto 2rem;
+            padding: 0 2rem;
+        }
+        .nav-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-link {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem 0;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s;
+        }
+        .nav-link:hover { padding-left: 1rem; color: var(--burgundy); }
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-muted);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="sticky-subheader">
+                <div class="dropdown-wrapper">
+            <select class="hour-dropdown" id="hourDropdown">
+                <option value="index.html" data-short="Home" data-long="Home">Home</option>
+                <option value="prime.html" data-short="1st Hour" data-long="1st Hour - Prime">1st Hour - Prime</option>
+                <option value="terce.html" data-short="3rd Hour" data-long="3rd Hour - Terce">3rd Hour - Terce</option>
+                <option value="sext.html" data-short="6th Hour" data-long="6th Hour - Sext">6th Hour - Sext</option>
+                <option value="none.html" data-short="9th Hour" data-long="9th Hour - None">9th Hour - None</option>
+                <option value="vespers.html" data-short="11th Hour" data-long="11th Hour - Vespers">11th Hour - Vespers</option>
+                <option value="compline.html" data-short="12th Hour" data-long="12th Hour - Compline">12th Hour - Compline</option>
+                <option value="midnight.html" data-short="Midnight" data-long="Midnight">Midnight</option>
+                <option value="veil.html" data-short="Veil" data-long="Prayer of the Veil">Prayer of the Veil</option>
+                <option value="other.html" data-short="Other" data-long="Other Prayers">Other Prayers</option>
+                <option value="about.html" data-short="About" data-long="About">About</option>
+            </select>
+            <select class="section-dropdown" id="sectionDropdown">
+                <option value="">Top</option>
+            </select>
+        </div>
+
+        <button class="settings-btn" id="settingsBtn"><img src="../cog_wheel.png" alt="Settings"></button>
+                <div class="settings-menu" id="settingsMenu">
+            <!-- Font Size Row -->
+            <div class="settings-row">
+                <button class="settings-menu-btn settings-menu-btn-small" id="fontDownBtn">A-</button>
+                <button class="settings-menu-btn settings-menu-btn-small" id="fontResetBtn">100%</button>
+                <button class="settings-menu-btn settings-menu-btn-small" id="fontUpBtn">A+</button>
+            </div>
+            
+            <!-- Line Height Row -->
+            <div class="settings-row">
+                <button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Comfy line spacing">
+                    <span class="line-height-icon comfy-icon">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </span>
+                </button>
+                <button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Default line spacing">
+                    <span class="line-height-icon default-icon">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </span>
+                </button>
+                <button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Condensed line spacing">
+                    <span class="line-height-icon condensed-icon">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </span>
+                </button>
+            </div>
+            
+            <!-- Theme Row -->
+            <div class="settings-row">
+                <button class="settings-menu-btn settings-toggle" id="lightModeBtn">Light</button>
+                <button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Dark</button>
+            </div>
+            
+            <!-- Language Selector -->
+            <div class="settings-row lang-selector">
+                <a href="../en/index.html" class="settings-menu-btn settings-toggle" data-lang="en">EN</a>
+                <a href="../ar/index.html" class="settings-menu-btn settings-toggle active" data-lang="ar">عربي</a>
+                <a href="../fr/index.html" class="settings-menu-btn settings-toggle" data-lang="fr">FR</a>
+                <a href="../fr-old/index.html" class="settings-menu-btn settings-toggle" data-lang="fr-old">FR cl.</a>
+            </div>
+        </div>
+
+    </div>
+
+        <main class="container">
+        <section class="hero">
+            <div class="hero-title-en">The Agpeya</div>
+            <div class="hero-title-coptic">%agpia</div>
+            <img src="../coptic-cross.png" alt="Coptic Cross" class="hero-cross">
+            <h1>The Coptic Book of Hours</h1>
+            <p class="current-time" id="currentTime"></p>
+            <a href="prime.html" class="cta" id="beginPrayerBtn">Begin Prayer →</a>
+        </section>
+        <section class="hours">
+            <a href="prime.html" class="hour-card">                <div class="hour-info">
+                    <h3 class="hour-name">Prime - 1st Hour</h3>
+                    <div class="hour-time">6:00 AM</div>
+                </div>
+                <div class="hour-arrow">→</div>
+            </a>
+
+            <a href="terce.html" class="hour-card">                <div class="hour-info">
+                    <h3 class="hour-name">Terce - 3rd Hour</h3>
+                    <div class="hour-time">9:00 AM</div>
+                </div>
+                <div class="hour-arrow">→</div>
+            </a>
+
+            <a href="sext.html" class="hour-card">                <div class="hour-info">
+                    <h3 class="hour-name">Sext - 6th Hour</h3>
+                    <div class="hour-time">12:00 PM</div>
+                </div>
+                <div class="hour-arrow">→</div>
+            </a>
+
+            <a href="none.html" class="hour-card">                <div class="hour-info">
+                    <h3 class="hour-name">None - 9th Hour</h3>
+                    <div class="hour-time">3:00 PM</div>
+                </div>
+                <div class="hour-arrow">→</div>
+            </a>
+
+            <a href="vespers.html" class="hour-card">                <div class="hour-info">
+                    <h3 class="hour-name">Vespers - 11th Hour</h3>
+                    <div class="hour-time">6:00 PM</div>
+                </div>
+                <div class="hour-arrow">→</div>
+            </a>
+
+            <a href="compline.html" class="hour-card">                <div class="hour-info">
+                    <h3 class="hour-name">Compline - 12th Hour</h3>
+                    <div class="hour-time">9:00 PM</div>
+                </div>
+                <div class="hour-arrow">→</div>
+            </a>
+
+            <a href="midnight.html" class="hour-card">                <div class="hour-info">
+                    <h3 class="hour-name">Midnight</h3>
+                    <div class="hour-time">12:00 AM</div>
+                </div>
+                <div class="hour-arrow">→</div>
+            </a>
+
+            <a href="veil.html" class="hour-card">                <div class="hour-info">
+                    <h3 class="hour-name">Prayer of the Veil</h3>
+                    <div class="hour-time">Special Prayer</div>
+                </div>
+                <div class="hour-arrow">→</div>
+            </a>
+
+            <a href="other.html" class="hour-card">                <div class="hour-info">
+                    <h3 class="hour-name">Other Prayers</h3>
+                    <div class="hour-time">Various Occasions</div>
+                </div>
+                <div class="hour-arrow">→</div>
+            </a>
+
+            <a href="about.html" class="hour-card">                <div class="hour-info">
+                    <h3 class="hour-name">About the Agpeya</h3>
+                    <div class="hour-time">Foreword</div>
+                </div>
+                <div class="hour-arrow">→</div>
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> Agpeya.org · Coptic Book of Hours</p>
+    </footer>
+
+        <script src="../agpeya.js"></script>
+        <script>
+        // Dynamic "Begin Prayer" button based on current time
+        function updateBeginPrayerButton() {
+            const now = new Date();
+            const currentHour = now.getHours();
+            const currentMinute = now.getMinutes();
+            const currentTimeInMinutes = currentHour * 60 + currentMinute;
+            
+            // Define prayer hours (in minutes from midnight)
+            const hours = [
+                { name: 'Prime', file: 'prime.html', time: 6 * 60, label: '1st Hour' },
+                { name: 'Terce', file: 'terce.html', time: 9 * 60, label: '3rd Hour' },
+                { name: 'Sext', file: 'sext.html', time: 12 * 60, label: '6th Hour' },
+                { name: 'None', file: 'none.html', time: 15 * 60, label: '9th Hour' },
+                { name: 'Vespers', file: 'vespers.html', time: 18 * 60, label: '11th Hour' },
+                { name: 'Compline', file: 'compline.html', time: 21 * 60, label: '12th Hour' },
+                { name: 'Midnight', file: 'midnight.html', time: 0, label: 'Midnight Hour' }
+            ];
+            
+            // Find the closest hour
+            let closestHour = hours[0];
+            let minDifference = Math.abs(currentTimeInMinutes - hours[0].time);
+            
+            for (let i = 1; i < hours.length; i++) {
+                let difference = Math.abs(currentTimeInMinutes - hours[i].time);
+                
+                // Special handling for midnight (0:00) - consider it as 24:00 for late night comparison
+                if (hours[i].time === 0 && currentTimeInMinutes > 21 * 60) {
+                    difference = Math.abs(currentTimeInMinutes - (24 * 60));
+                }
+                
+                if (difference < minDifference) {
+                    minDifference = difference;
+                    closestHour = hours[i];
+                }
+            }
+            
+            // Format current time for button text with timezone
+            const timeString = now.toLocaleTimeString('en-US', { 
+                hour: 'numeric', 
+                minute: '2-digit',
+                hour12: true 
+            });
+            
+            // Get timezone abbreviation (EST, PST, CST, etc.)
+            const timeWithZone = now.toLocaleTimeString('en-US', {
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true,
+                timeZoneName: 'short'
+            });
+            // Extract just the timezone part (e.g., "EST", "PST")
+            const timezone = timeWithZone.split(' ').pop();
+            
+            // Update time display and button
+            const timeEl = document.getElementById('currentTime');
+            timeEl.textContent = `It's ${timeString} ${timezone}`;
+            const btn = document.getElementById('beginPrayerBtn');
+            btn.href = closestHour.file;
+            btn.textContent = `Pray ${closestHour.label} →`;
+        }
+        
+        // Update button on page load
+        updateBeginPrayerButton();
+        
+        // Update button every minute
+        setInterval(updateBeginPrayerButton, 60000);    </script>
+</body>
+</html>

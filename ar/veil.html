@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer of the Veil | Agpeya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;600&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../agpeya-style.css">
+
+</head>
+<body>
+    <div class="sticky-subheader">
+                <div class="dropdown-wrapper">
+            <select class="hour-dropdown" id="hourDropdown">
+                <option value="index.html" data-short="Home" data-long="Home">Home</option>
+                <option value="prime.html" data-short="1st Hour" data-long="1st Hour - Prime">1st Hour - Prime</option>
+                <option value="terce.html" data-short="3rd Hour" data-long="3rd Hour - Terce">3rd Hour - Terce</option>
+                <option value="sext.html" data-short="6th Hour" data-long="6th Hour - Sext">6th Hour - Sext</option>
+                <option value="none.html" data-short="9th Hour" data-long="9th Hour - None">9th Hour - None</option>
+                <option value="vespers.html" data-short="11th Hour" data-long="11th Hour - Vespers">11th Hour - Vespers</option>
+                <option value="compline.html" data-short="12th Hour" data-long="12th Hour - Compline">12th Hour - Compline</option>
+                <option value="midnight.html" data-short="Midnight" data-long="Midnight">Midnight</option>
+                <option value="veil.html" data-short="Veil" data-long="Prayer of the Veil">Prayer of the Veil</option>
+                <option value="other.html" data-short="Other" data-long="Other Prayers">Other Prayers</option>
+                <option value="about.html" data-short="About" data-long="About">About</option>
+            </select>
+            <select class="section-dropdown" id="sectionDropdown">
+                <option value="">Top</option>
+            </select>
+        </div>
+
+        <button class="settings-btn" id="settingsBtn"><img src="../cog_wheel.png" alt="Settings"></button>
+                <div class="settings-menu" id="settingsMenu">
+            <!-- Font Size Row -->
+            <div class="settings-row">
+                <button class="settings-menu-btn settings-menu-btn-small" id="fontDownBtn">A-</button>
+                <button class="settings-menu-btn settings-menu-btn-small" id="fontResetBtn">100%</button>
+                <button class="settings-menu-btn settings-menu-btn-small" id="fontUpBtn">A+</button>
+            </div>
+            
+            <!-- Line Height Row -->
+            <div class="settings-row">
+                <button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Comfy line spacing">
+                    <span class="line-height-icon comfy-icon">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </span>
+                </button>
+                <button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Default line spacing">
+                    <span class="line-height-icon default-icon">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </span>
+                </button>
+                <button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Condensed line spacing">
+                    <span class="line-height-icon condensed-icon">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </span>
+                </button>
+            </div>
+            
+            <!-- Theme Row -->
+            <div class="settings-row">
+                <button class="settings-menu-btn settings-toggle" id="lightModeBtn">Light</button>
+                <button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Dark</button>
+            </div>
+            
+            <!-- Language Selector -->
+            <div class="settings-row lang-selector">
+                <a href="../en/veil.html" class="settings-menu-btn settings-toggle" data-lang="en">EN</a>
+                <a href="../ar/veil.html" class="settings-menu-btn settings-toggle active" data-lang="ar">عربي</a>
+                <a href="../fr/veil.html" class="settings-menu-btn settings-toggle" data-lang="fr">FR</a>
+                <a href="../fr-old/veil.html" class="settings-menu-btn settings-toggle" data-lang="fr-old">FR cl.</a>
+            </div>
+        </div>
+
+
+        </div>
+
+    <main class="container">
+        <div class="hour-header">
+            <div class="header-crosses">
+                <img src="../coptic-cross.png" alt="Coptic Cross">
+            </div>
+            <h1 class="hour-title">Prayer of the Veil</h1>
+            <p class="hour-time">Selected Psalms from All Hours</p>
+            <p class="hour-desc">Veil: this prayer is to be read by bishops and priests as a means of examining their hearts. It is also a prayer which concerns Monks.</p>
+        </div>
+        <div class="prayer-content">
+            <div class="ornament">
+                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
+                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
+                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
+            </div>
+                        <section class="section">
+<h2 class="section-title">مقدمة كل ساعة</h2>
+<div class="prayer-text">
+                    باسم الآب والابن والروح القدس الإله الواحد آمين.
+                </div>
+<div class="prayer-text">
+                    يا رب ارحم. يا رب ارحم. يا رب بارك. آمين.
+                </div>
+<div class="prayer-text">
+                    المجد للآب والابن والروح القدس الآن وكل أوان وإلى دهر الدهور آمين.
+                </div>
+            </section>
+
+                        <section class="section">
+<h2 class="section-title">الصلاة الربانية</h2>
+<div class="prayer-text">
+                    <em>اللهم اجعلنا مستحقين أن نقول بشكر:</em>
+                </div>
+<div class="prayer-text">
+                    أبانا الذي في السموات. ليتقدس اسمك. ليأت ملكوتك. لتكن مشيئتك. كما في السماء كذلك على الأرض. خبزنا الذي للغد أعطنا اليوم.
+                </div>
+<div class="prayer-text">
+                    وأغفر لنا ذنوبنا كما نغفر نحن أيضا للمذنبين إلينا. ولا تدخلنا في تجربة. لكن نجنا من الشرير. بالمسيح يسوع ربنا لأن لك الملك والقوة والمجد إلى الأبد. آمين.
+                </div>
+            </section>
+
+                        <section class="section">
+<h2 class="section-title">صلاة الشكر</h2>
+<div class="prayer-text">
+                    فلنشكر صانع الخيرات الرحوم الله، أبا ربنا وإلهنا ومخلصنا يسوع المسيح، لأنه سترنا وأعاننا، وحفظنا، وقبلنا إليه وأشفق علينا وعضدنا، وأتى بنا إلى هذه الساعة. هو أيضا فلنسأله أن يحفظنا في هذا اليوم المقدس وكل أيام حياتنا بكل سلام. الضابط الكل الرب إلهنا.
+                </div>
+<div class="prayer-text">
+                    أيها السيد الإله ضابط الكل أبو ربنا وإلهنا ومخلصنا يسوع المسيح، نشكرك على كل حال ومن أجل كل حال، وفى كل حال، لأنك سترتنا، وأعنتنا، وحفظتنا، وقبلتنا إليك، وأشفقت علينا، وعضدتنا، وأتيت بنا إلى هذه الساعة.
+                </div>
+<div class="prayer-text">
+                    من أجل هذا نسأل ونطلب من صلاحك يا محب البشر، امنحنا أن نكمل هذا اليوم المقدس وكل أيام حياتنا بكل سلام مع خوفك. كل حسد، وكل تجربة وكل فعل الشيطان ومؤامرة الناس الأشرار، وقيام الأعداء الخفيين والظاهريين، انزعها عنا وعن سائر شعبك، وعن موضعك المقدس هذا. أما الصالحات والنافعات فارزقنا إياها.
+                </div>
+<div class="prayer-text">
+                    لأنك أنت الذي أعطيتنا السلطان أن ندوس الحيات والعقارب وكل قوة العدو. ولا تدخلنا في تجربة، لكن نجنا من الشرير.
+                </div>
+<div class="prayer-text">
+                    بالنعمة والرأفات ومحبة البشر اللواتي لابنك الوحيد ربنا وإلهنا ومخلصنا يسوع المسيح. هذا الذي من قبله المجد والإكرام والعزة والسجود تليق بك معه مع الروح القدس المحيي المساوي لك الآن وكل أوان وإلى دهر الدهور آمين.
+                </div>
+            </section>
+
+            <section class="section">
+<h2 class="section-title">المزمور الخمسون</h2>
+<div class="psalm-verse drop-cap">
+                    ارحمني يا الله كعظيم رحمتك، ومثل كثرة رأفتك تمحو إثمي. اغسلني كثيرا من إثمي ومن خطيتي طهرني، لأني أنا عارف بإثمي وخطيتي أمامي في كل حين.
+                </div>
+<div class="psalm-verse">
+                    لك وحدك أخطأت، والشر قدامك صنعت. لكي تتبرر في أقوالك. وتغلب إذا حوكمتُ. لأني هاأنذا بالإثم حبل بي، وبالخطايا ولدتني أمي.
+                </div>
+<div class="psalm-verse">
+                    لأنك هكذا قد أحببت الحق، إذ أوضحت لي غوامض حكمتك ومستوراتها. تنضح على بزوفاك فأطهر، تغسلني فأبيض أكثر من الثلج. تسمعني سرورا وفرحا، فتبتهج عظامي المنسحقة.
+                </div>
+<div class="psalm-verse">
+                    اصرف وجهك عن خطاياي، وامح كل آثامي. قلبا نقيا اخلق في يا الله، وروحا مستقيما جدده في أحشائي. لا تطرحني من قدام وجهك وروحك القدوس لا تنزعه منى. امنحني بهجة خلاصك، وبروح رئاسي عضدني فأعلم الأثمة طرقك والمنافقون إليك يرجعون،
+                </div>
+<div class="psalm-verse">
+                    نجني من الدماء يا الله إله خلاصي، فيبتهج لساني بعدلك. يا رب افتح شفتي، فيخبر فمي بتسبيحك. لأنك لو آثرت الذبيحة لكنت الآن أعطي، ولكنك لا تسر بالمحرقات، فالذبيحة لله روح منسحق. القلب المنكسر والمتواضع لا يرذله الله،
+                </div>
+<div class="psalm-verse">
+                    أنعم يا رب بمسرتك على صهيون، ولتبن أسوار أورشليم. حينئذ تسر بذبائح البر قربانا ومحرقات ويقربون على مذابحك العجول. <span class="alleluia">هلليلويا.</span>
+                </div>
+            </section>
+
+
+            <section class="section">
+                <div class="prayer-text"><em>The blessed prayer of the veil, we offer to Christ our King and our God, beseeching Him to forgive us our sins.</em></div>
+                <div class="prayer-text"><em>From the Psalms of our father David the prophet and the king, may his blessings be upon us all. Amen.</em></div>
+                <div class="prayer-text">
+                    <em>The following psalms are selected from the 1st hour:</em>
+                </div>
+            </section>
+
+            <section class="section">
+<h2 class="section-title">المزمور الرابع</h2>
+<div class="psalm-verse drop-cap">
+        إذ دعوتُ استجبتَ لي يا إله بري. في الشدة فرجت عنى. تراءف على يا رب واسمع صلاتي. يا بني البشر، حتى متى تثقل قلوبكم؟ لماذا تحبون الباطل وتبتغون الكذب؟
+    </div>
+<div class="psalm-verse">
+        اعلموا أن الرب قد جعل صفيه عجبا. الرب يستجيب لي إذا ما صرخت إليه. اغضبوا ولا تخطئوا، الذي تقولونه في قلوبكم اندموا عليه في مضاجعكم. اذبحوا ذبيحة البر، وتوكلوا على الرب.
+    </div>
+<div class="psalm-verse">
+        كثيرون يقولون: من يرينا الخيرات؟ قد أضاء علينا نور وجهك يا رب. أعطيت سرورا لقلبي أوفر من الذين كثرت حنطتهم وخمرهم وزيتهم. فبالسلامة أضطجع أيضا وأنام، لأنك أنت وحدك يا رب أسكنتني على الرجاء <span class="alleluia">هلليلويا.</span>
+        <a href="#gospel" class="jump-gospel-btn">الإنجيل المقدس ↓</a>
+    </div>
+</section>
+
+            <section class="section">
+<h2 class="section-title">المزمور السادس</h2>
+<div class="psalm-verse drop-cap">
+        يا رب لا تبكتني بغضبك، ولا تؤدبني بسخطك. ارحمني يا رب فإني ضعيف، اشفني يا رب فإن عظامي قد اضطربت ونفسي قد انزعجت جدا. وأنت يا رب فإلي متى؟
+    </div>
+<div class="psalm-verse">
+        عد ونج نفسي، وأحيني من أجل رحمتك. لأنه ليس في الموت من يذكرك ولا في الجحيم من يعترف لك. تعبت في تنهدي. أعوم كل ليلة سريري، وبدموعي أبل فراشي. تعكرت من الغضب عيناي. شاخت من سائر أعدائي.
+    </div>
+<div class="psalm-verse">
+        ابعدوا عنى يا جميع فاعلي الإثم. لأن الرب قد سمع صوت بكائي. الرب سمع تضرعي، الرب لصلاتي قبل، فليَخزَ وليضطرب جدا جميع أعدائي، وليرتدوا إلى ورائهم بالخزي سريعا جدا. <span class="alleluia">هلليلويا.</span>
+        <a href="#gospel" class="jump-gospel-btn">الإنجيل المقدس ↓</a>
+    </div>
+</section>
+
+            <section class="section">
+<h2 class="section-title">المزمور الثامن</h2>
+<div class="psalm-verse drop-cap">
+        أيها الرب ربنا، ما أعجب اسمك في الأرض كلها! لأنه قد ارتفع عظم جلالك فوق السموات. من أفواه الأطفال والرضعان هيأت سبحا، من أجل أعدائك، لتسكت عدوا ومنتقما.
+    </div>
+<div class="psalm-verse">
+        لأني أرى السموات أعمال أصابعك. القمر والنجوم أنت أسستها. من هو الإنسان حتى تذكره، أو ابن الإنسان حتى تفتقده؟! أنقصته قليلا عن الملائكة. بالمجد والكرامة توجته، وعلى أعمال يديك أقمته.
+    </div>
+<div class="psalm-verse">
+        كل شيء أخضعت تحت قدميه، الغنم والبقر جميعا وأيضا بهائم الحقل، وطيور السماء وأسماك البحر السالكة في البحار. أيها الرب ربنا. ما أعجب اسمك في الأرض كلها. <span class="alleluia">هلليلويا.</span>
+        <a href="#gospel" class="jump-gospel-btn">الإنجيل المقدس ↓</a>
+    </div>
+</section>
+
+            <section class="section">
+<h2 class="section-title">المزمور الثاني عشر</h2>
+<div class="psalm-verse drop-cap">
+        إلى متى يا رب تنساني؟ إلى الانقضاء؟ حتى متى تصرف وجهك عني؟ إلى متى أردد هذه المشورات في نفسي، وهذه الأوجاع في قلبي النهار كله؟ إلى متى يرتفع عدوى علي؟
+    </div>
+<div class="psalm-verse">
+        انظر واستجب لي يا ربي وإلهي. أنر عيني لئلا أنام نوم الموت، لئلا يقول عدوي: إني قد قويت عليه. الذين يحزنونني يتهللون إن أنا زللت. أما أنا فعلى رحمتك توكلت. يبتهج قلبي بخلاصك. أسبح الرب المحسنَ إلي، وأرتل لاسم الرب العلي. <span class="alleluia">هلليلويا.</span>
+        <a href="#gospel" class="jump-gospel-btn">الإنجيل المقدس ↓</a>
+    </div>
+</section>
+
+            <section class="section">
+<h2 class="section-title">المزمور الخامس عشر</h2>
+<div class="psalm-verse drop-cap">
+        احفظني يا رب فإني عليك توكلت. قلت للرب: أنت ربي، ولا تحتاج إلى صلاحي. أظهر عجائبه لقديسيه الذين في أرضه، وصنع فيهم كل مشيئاته.
+    </div>
+<div class="psalm-verse">
+        كثرت أمراضهم الذين أسرعوا وراء آخر. لا أجمع مجامعهم من الدماء، ولا أذكر أسماءهم بشفتي. الرب هو نصيب ميراثي وكأسي. أنت الذي ترد إلى ميراثي. حبال المساحة وقعت لي في أرض خصبة، وإن ميراثي لثابت لي.
+    </div>
+<div class="psalm-verse">
+        أبارك الرب الذي أفهمني. وأيضا إلى الليل تنذرني كليتاي. تقدمت فرأيت الرب أمامي في كل حين، لأنه عن يميني لكي لا أتزعزع. من أجل هذا فرح قلبي وتهلل لساني. وأيضا جسدي يسكن على الرجاء.
+    </div>
+<div class="psalm-verse">
+        لأنك لا تترك نفسي في الجحيم. ولا تدع قدوسك يرى فسادا. قد عرفتني سبل الحياة. تملأني فرحا مع وجهك. البهجة في يمينك إلى الانقضاء. <span class="alleluia">هلليلويا.</span>
+        <a href="#gospel" class="jump-gospel-btn">الإنجيل المقدس ↓</a>
+    </div>
+</section>
+
+            <section class="section">
+<h2 class="section-title">المزمور الرابع والعشرون</h2>
+<div class="psalm-verse drop-cap">
+        إليك يا رب رفعت نفسي، يا إلهي عليك توكلت. فلا تخزني إلى الأبد، ولا تشْمت بي أعدائي. لأن جميع الذين ينتظرونك لا يخزون. ليخز الذين يصنعون الإثم باطلا.
+    </div>
+<div class="psalm-verse">
+        أظهر لي يا رب طرقك، وعلمني سبلك. اهدني إلى عدلك وعلمني. لأنك أنت هو الله مخلصي، وإياك انتظرت النهار كله. اذكر يا رب رأفاتك ومراحمك، لأنها ثابتة منذ الأزل. خطايا شبابي وجهالاتي لا تذكر. كرحمتك اذكرني أنت من أجل صلاحك يا رب.
+    </div>
+<div class="psalm-verse">
+        الرب صالح ومستقيم، لذلك يرشد الذين يخطئون في الطريق. يهدى الودعاء في الحكم، يعلم الودعاء طرقه. جميع طرق الرب رحمة وحق لحافظي عهده وشهاداته. من أجل اسمك يا رب اغفر لي خطيتي لأنها كثيرة.
+    </div>
+<div class="psalm-verse">
+        من هو الإنسان الخائف الرب، يرشده في الطريق التي ارتضاها. نفسه في الخيرات تثبت، ونسله يرث الأرض. الرب عز لخائفيه، واسم الرب لأتقيائه. ولهم يعلن عهده.
+    </div>
+<div class="psalm-verse">
+        عيناي تنظران إلى الرب في كل حين، لأنه يجتذب من الفخ رجلي. انظر إلى وارحمني، لأني ابن وحيد وفقير أنا. أحزان قلبي قد كثرت، أخرجني من شدائدي. انظر إلى ذلي وتعبي. واغفر لي جميع خطاياي.
+    </div>
+<div class="psalm-verse">
+        انظر إلى أعدائي فإنهم قد كثروا وأبغضوني ظلما. احفظ نفسي ونجني، لا أخزى لأني عليك توكلت. الذين لا شر فيهم والمستقيمون لصقوا بي، لأني انتظرتك يا رب. يا الله أنقذ إسرائيل من جميع شدائده. <span class="alleluia">هلليلويا.</span>
+        <a href="#gospel" class="jump-gospel-btn">الإنجيل المقدس ↓</a>
+    </div>
+</section>
+
+            <section class="section">
+<h2 class="section-title">المزمور السادس والعشرون</h2>
+<div class="psalm-verse drop-cap">
+        الرب نوري وخلاصي ممن أخاف؟! الرب حصن حياتي ممن أجزع؟! عندما يقترب الأشرار منى ليأكلوا لحمي، مضايقي وأعدائي عثروا وسقطوا. إن يحاربني جيش فلن يخاف قلبي. وإن قام على قتال ففي هذا أنا أطمئن.
+    </div>
+<div class="psalm-verse">
+        واحدة سألت من الرب وإياها ألتمس. أن أسكن في بيت الرب كلَّ أيام حياتي. لكي أنظر نعيم الرب، وأتفرس في هيكله المقدس. لأنه أخفاني في خيمته. في يوم شدتي، سترني بستر مظلته. وعلى صخرة رفعني.
+    </div>
+<div class="psalm-verse">
+        والآن هوذا قد رفع رأسي على أعدائي. طفت وذبحت في مظلته ذبيحة التهليل، أسبح وأرتل للرب. استمع يا رب صوتي الذي به دعوتك. ارحمني واستجب لي
+    </div>
+<div class="psalm-verse">
+        فإنه لك قال قلبي: طلبت وجهك، ووجهك يا رب ألتمس. لا تحجب وجهك عنى، ولا تنبذ بغضبك عبدك. كن لي معينا، لا تخذلني ولا ترفضني يا الله مخلصي. فإن أبى وأمي قد تركاني، وأما الرب فقبلني.
+    </div>
+<div class="psalm-verse">
+        علمني يا رب طريقك، واهدني في سبيل مستقيم من أجل أعدائي. لا تسلمني إلى أيدي مضايقي، لأنه قد قام على شهود زور، وكذبوا علي ظلما. وأنا أؤمن أنى أعاين خيرات الرب في أرض الأحياء. انتظر الربّ، تقوَّ وليتشدد قلبك وانتظر الرب. <span class="alleluia">هلليلويا.</span>
+        <a href="#gospel" class="jump-gospel-btn">الإنجيل المقدس ↓</a>
+    </div>
+</section>
+
+                        <section class="section">
+<h2 class="section-title">المزمور السادس والستون</h2>
+<div class="psalm-verse drop-cap">
+                    ليتراءف الله علينا ويباركنا، وليظهر وجهه علينا ويرحمنا. لتعرَف في الأرض طريقك، وفى جميع الأمم خلاصك. فلتعترف لك الشعوب يا الله، فلتعترف لك الشعوب كلها.
+                </div>
+<div class="psalm-verse">
+                    لتفرح الأمم وتبتهج، لأنك تحكم في الشعوب بالاستقامة، وتهدى الأمم في الأرض. فلتعترف لك الشعوب يا الله، فلتعترف لك الشعوب جميعا. الأرض أعطت ثمرتها، فليباركنا الله إلهنا. ليباركنا الله، فلتخشه جميع أقطار الأرض. <span class="alleluia">هلليلويا.</span>
+                    <a href="#gospel" class="jump-gospel-btn">الإنجيل المقدس ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+<h2 class="section-title">المزمور التاسع والستون</h2>
+<div class="psalm-verse drop-cap">
+                    اللهم التفت إلى معونتي، يا رب أسرع وأعنى. ليَخزَ ويخجل طالبو نفسي، وليرتد إلى خلف ويخجل الذين يبتغون لي الشر. وليرجع بالخزي سريعا القائلون لي: نِعِمَّا نِعِمَّا.
+                </div>
+<div class="psalm-verse">
+                    وليبتهج ويفرح بك جميع الذين يلتمسونك، وليقل في كل حين محبو خلاصك: فليتعظم الرب. وأما أنا فمسكين وفقير، اللهم أعنى. أنت معيني ومخلصي يا رب فلا تبطئ. <span class="alleluia">هلليلويا.</span>
+                    <a href="#gospel" class="jump-gospel-btn">الإنجيل المقدس ↓</a>
+                </div>
+            </section>
+
+
+            <section class="section">
+                <div class="prayer-text">
+                    <em>The following psalms are selected from the 3rd hour:</em>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 22</h2>
+                <div class="psalm-verse drop-cap">
+                    The Lord is He who shepherds me; I shall need nothing. In a place of green pasture, there He has made me dwell: by the water of rest, He has tended me. He has restored my soul: He has guided me into the paths of righteousness, for His name's sake.
+                </div>
+                <div class="psalm-verse">
+                    Even if I walk in the midst of the shadow of death, I shall not fear evil things, for You are with me: Your rod and Your staff, these comfort me. You have prepared a table before me in the presence of those who afflict me: You have anointed my head with oil; and Your cup makes me drunk like power.
+                </div>
+                <div class="psalm-verse">
+                    Your mercy shall follow me all the days of my life: and my dwelling shall be in the house of the Lord unto length of days. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 29</h2>
+                <div class="psalm-verse drop-cap">
+                    I will exalt You, O Lord; for You have accepted me, and not caused my enemies to rejoice over me. O Lord, my God, I cried to You, and You have healed me. O Lord, You have brought up my soul from Hades, You have delivered me from the hands of those who will go down to the pit.
+                </div>
+                <div class="psalm-verse">
+                    Sing to the Lord, all you His saints, and confess the remembrance of His holiness. For anger is in His wrath, but life in His favor: weeping shall be for the evening, but joy shall be in the morning.
+                </div>
+                <div class="psalm-verse">
+                    I said in my prosperity, I shall never be moved. O Lord, in Your will You gave strength to my beauty: but You turned away Your face from me, and I became troubled. To You, O Lord, I shall cry; and to my God I shall make supplication. What profit is there in my blood, when I go down to destruction? Shall the dust confess to You? or shall it declare Your truth?
+                </div>
+                <div class="psalm-verse">
+                    The Lord heard, and had mercy upon me; the Lord became to me a helper. You have turned my mourning into joy for me: You have rent off my sackcloth, and girded me with gladness; that my glory may sing praise to You, and I shall not be troubled at heart. O Lord, my God, I will confess to You forever. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 42</h2>
+                <div class="psalm-verse drop-cap">
+                    Judge me, O Lord, and avenge my case, against an impure nation: You shall deliver me from the unjust and crafty man. For You are my God and my strength: why have You cast me off? And why do I walk gloomingly, while the enemy oppresses me?
+                </div>
+                <div class="psalm-verse">
+                    Send forth Your light and Your truth: they have led me, and brought me to Your holy mountain, and to Your dwelling. And I will go into the altar of God, before the face of God who gladdens my youth: I will give praise to You with the harp, O God, my God.
+                </div>
+                <div class="psalm-verse">
+                    Why are you sad, O my soul? and why do you trouble me? Hope in God; for I will give thanks to Him. The salvation of my face is my God. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+
+            <section class="section">
+                <div class="prayer-text">
+                    <em>The following psalms are selected from the 6th hour:</em>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 56</h2>
+                <div class="psalm-verse drop-cap">
+                    Have mercy upon me, O God, have mercy upon me: for my soul has trusted in You: and in the shadow of Your wings I will hope, until the iniquity passes away. I will cry to God Most High; God who has benefitted me.
+                </div>
+                <div class="psalm-verse">
+                    He sent from heaven and saved me; He gave over to reproach those who trampled on me: God has sent forth His mercy and His truth; and He has delivered my soul from the midst of young lions: I laid down to sleep, while troubled. As for the sons of men, their teeth are weapons and arrows, and their tongue a sharp sword.
+                </div>
+                <div class="psalm-verse">
+                    Be You exalted, O God, above the heavens; and Your glory above all the earth. They have prepared snares for my feet, and have bowed down my soul: they have dug a pit before me, and fallen into it.
+                </div>
+                <div class="psalm-verse">
+                    My heart, O God, is ready, my heart is ready: I will sing, and chant in my glory. Arise, my glory; arise, psaltery and harp: I will rise early. O Lord, I will confess You among the peoples: I will sing to You among the nations. For Your mercy has been magnified up to the heavens, and Your truth up to the clouds. Be You exalted, O God, above the heavens; and Your glory above all the earth. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 85</h2>
+                <div class="psalm-verse drop-cap">
+                    Incline Your ear, O Lord, and hear me; for I am poor and weak. Preserve my soul, for I am pure; save Your servant, O my God, who hopes in You. Have mercy on me, O Lord: for to You I will cry the whole day. Rejoice the soul of Your servant: for to You, O Lord, I have lifted up my soul.
+                </div>
+                <div class="psalm-verse">
+                    For You, O Lord, are righteous, and gentle; and plenteous is Your mercy to all who call upon You. Give ear to my prayer, O Lord; and attend to the voice of my supplication. In the day of my trouble I cried to You: for You heard me.
+                </div>
+                <div class="psalm-verse">
+                    There is none like You, O Lord, among the gods; and there is none that is able to do Your works. All nations whom You have made shall come, and shall worship before You, O Lord; and shall glorify Your name. For You are great, and wondrous: You alone are the great God.
+                </div>
+                <div class="psalm-verse">
+                    Guide me, O Lord, in Your way, and I shall walk in Your truth: let my heart rejoice, that I may fear Your name. I will confess You, O Lord my God, with all my heart; and I will glorify Your name forever. For Your mercy is great toward me; and You have delivered my soul from the lowest Hades.
+                </div>
+                <div class="psalm-verse">
+                    O God, transgressors have risen up against me, and an assembly of violent men have sought my soul; and have not, at first, set You before them. But You, O Lord God, are compassionate and merciful, long‑suffering, and abundant in mercy and true. Look down upon me, and have mercy on me: give strength to Your servant, and save the son of Your handmaid. Establish with me a sign for good; and let those who hate me see and be ashamed; because You, O Lord, have helped me, and comforted me. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 90</h2>
+                <div class="psalm-verse drop-cap">
+                    He who dwells in the help of the Most High, shall rest under the shelter of the God of heaven. He shall say to the Lord, "You are my defender and my refuge: my God; I will hope in Him." For He shall deliver you from the snare of the hunter, and from troublesome matter.
+                </div>
+                <div class="psalm-verse">
+                    He shall overshadow you in the midst of His shoulders, and you shall hope under His wings: His truth shall encompass you as a shield. You shall not be afraid of the terror of the night; nor of an arrow flying in the day; nor of a matter walking in darkness; nor of calamity and demon of noon‑day.
+                </div>
+                <div class="psalm-verse">
+                    A thousand shall fall at your left hand, and ten thousand at your right hand; but they shall not be able to come near you. Only with your eyes shall you observe, and see the reward of sinners.
+                </div>
+                <div class="psalm-verse">
+                    For You, O Lord, are my hope. You have made the Most High your refuge. No evil things shall come upon you, and no plague shall draw near to your dwelling. For He shall give his angels charge concerning you, to keep you in all your ways. They shall bear you up on their hands, lest you stumble Your foot against a stone. You shall tread on the serpent and basilisk: and You shall trample on the lion and dragon.
+                </div>
+                <div class="psalm-verse">
+                    For he has hoped in Me, and I shall deliver him: I shall protect him, because he has known My name. He shall beseech Me, and I shall hear him: I am with him in affliction; and I shall deliver him, and glorify him. I shall satisfy him with length of days, and show him My salvation. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+
+            <section class="section">
+                <div class="prayer-text">
+                    <em>The following psalms are selected from the 9th hour:</em>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 96</h2>
+                <div class="psalm-verse drop-cap">
+                    The Lord reigns, let the earth exult, let the many islands rejoice. Cloud and darkness are round about Him; righteousness and judgement are the uprightness of His throne. Fire shall precede Him, and with a flame shall burn up His enemies who surround Him. His lightings lightened the world; the earth saw, and trembled. The mountains melted like wax before the face of the Lord, before the face of the Lord of the whole earth. The heavens have declared His righteousness, and all the peoples have seen His glory.
+                </div>
+                <div class="psalm-verse">
+                    All those who worship graven images and boast in their idols shall be ashamed. Worship Him all you His angels.
+                </div>
+                <div class="psalm-verse">
+                    Zion heard and rejoiced; and the daughters of Judea exulted, because of Your judgements, O Lord. For You are Lord most high over all the earth; You are greatly exalted above all the gods.
+                </div>
+                <div class="psalm-verse">
+                    You who love the Lord, hate evil; the Lord preserves the souls of His saints; He will deliver them from the hands of the sinners. Light has shined for the righteous, and gladness for the upright in their heart. Rejoice in the Lord, you righteous; and praise the remembrance of His holiness. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 109</h2>
+                <div class="psalm-verse drop-cap">
+                    The Lord said to my Lord, "Sit on My right hand, until I place Your enemies under Your feet." A rod of power, the Lord shall send out for You out of Zion: and You shall rule in the midst of Your enemies. With You is dominion in the day of Your power, in the splendor of the saints. From the womb before the morning star I have begotten You.
+                </div>
+                <div class="psalm-verse">
+                    The Lord has sworn and shall not repent: "You are the Priest forever, after the order of Melchizedek." The Lord is at Your right hand; He dashed kings in the day of His wrath. He shall judge among the nations. He shall fill them with dead bodies, He shall crush the heads of many on the earth. He shall drink of the brook in the way; therefore He shall lift up the head. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 114</h2>
+                <div class="psalm-verse drop-cap">
+                    I loved, because the Lord will hear the voice of my supplication. Because He has inclined His ear to me, I will call upon Him in all my days. The pains of death grasped me; the dangers of Hades have found me: I found affliction and sorrow. Then I called on the name of the Lord: "O Lord, deliver my soul."
+                </div>
+                <div class="psalm-verse">
+                    The Lord is merciful and righteous; and our God has mercy. The Lord preserves the infants: I was brought low, and He saved me.
+                </div>
+                <div class="psalm-verse">
+                    Return to your resting place, O my soul, for the Lord has dealt bountifully with you. He has delivered my soul from death, my eyes from tears, and my feet from falling. I shall please the Lord in the land of the living. <span class="alleluia">ALLELUIA.</span>
+                    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+                </div>
+            </section>
+
+                        <section class="section">
+                <h2 class="section-title">Psalm 115</h2>
+                <div class="psalm-verse drop-cap">
+                    I believed, therefore, I have spoken: I was exceedingly humbled. I said in my amazement, "Every man is a liar." What shall I render to the Lord for everything which He has done unto me? I shall take the cup of salvation, and call upon the name of the Lord. I will pay my vows to the Lord, in the presence of all His people.
+                </div>
+                <div class="psalm-verse">
+                    Precious in the sight of the Lord is the death of His saints. O Lord, I am Your servant; I am Your servant, and the son of Your handmaid: You have broken my bonds. I will sacrifice to You the sacrifice of praise, and will call upon the name of the Lord. I will pay my vows to the Lord in the presence of all His people, in the courts of the Lord's house, in the midst of Jerusalem. <span class="alleluia">ALLELUIA.</span>
+                </div>
+            </section>
+
+
+            <section class="section">
+                <div class="prayer-text">
+                    <em>The following psalms are selected from Vespers:</em>
+                </div>
+            </section>
+
+            <section class="section">
+    <h2 class="section-title">Psalm 120</h2>
+    <div class="psalm-verse drop-cap">
+        I lifted up my eyes to the mountains, from where my help shall come. My help shall come from the Lord, who made the heaven and the earth. He will not let your foot be moved; and your keeper will not slumber. Behold, He who keeps Israel shall not slumber nor sleep. The Lord shall keep you: the Lord shall cast a shelter upon your right hand. The sun shall not burn you by day, neither the moon by night. The Lord shall preserve you from every evil: the Lord shall keep your soul. The Lord shall keep your coming in and your going out, from this time and forever. <span class="alleluia">ALLELUIA.</span>
+        <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+    </div>
+</section>
+            <section class="section">
+    <h2 class="section-title">Psalm 128</h2>
+    <div class="psalm-verse drop-cap">
+        Many times they have warred against me from my youth, let Israel now say. Many times they have warred against me from my youth, and yet they have not prevailed against me. The sinners scourged me on my back, and prolonged their iniquity. The Lord is righteous; He has broken the necks of sinners. Let all who hate Zion be put to shame and turned back. Let them be as the grass of the house-tops, which withers before it is plucked up, with which the reaper does not fill his hand, nor he who gathers up sheaves, his bosom. Neither do they who pass by say, “The blessing of the Lord be upon you, we have blessed you in the name of the Lord.” <span class="alleluia">ALLELUIA.</span>
+    </div>
+</section>
+
+            <section class="section">
+                <div class="prayer-text">
+                    <em>The following psalms are selected from Compline:</em>
+                </div>
+            </section>
+
+            <section class="section">
+    <h2 class="section-title">Psalm 129</h2>
+    <div class="psalm-verse drop-cap">
+        Out of the depths I have cried to You, O Lord. O Lord, hear my voice: let Your ears be attentive to the voice of my supplication. If You, O Lord, should mark iniquities, O Lord, who shall stand? For through You is forgiveness. For Your name’s sake I have waited for You, O Lord. My soul has waited for Your law. My soul has hoped in the Lord, from the morning watch till night. From the morning watch, let Israel hope in the Lord. For with the Lord is mercy, and great is His redemption; and He shall redeem Israel from all his iniquities. <span class="alleluia">ALLELUIA.</span>
+        <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+    </div>
+</section>
+            <section class="section">
+    <h2 class="section-title">Psalm 130</h2>
+    <div class="psalm-verse drop-cap">
+        O Lord, my heart was not exalted, neither have my eyes been haughtily raised: neither have I walked in great matters, nor in wonders greater than me. If I have not humbled myself, but raised my soul, as a weaned child with his mother, so is the recompense upon my soul. Let Israel hope in the Lord, from now and forever. <span class="alleluia">ALLELUIA.</span>
+        <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+    </div>
+</section>
+            <section class="section">
+    <h2 class="section-title">Psalm 131</h2>
+    <div class="psalm-verse drop-cap">
+        Lord, remember David and all his meekness: how he swore to the Lord, and vowed to the God of Jacob, saying, “I will not go into the dwelling of my house, or go up to the bed of my couch; I will not give sleep to my eyes, nor slumber to my eyelids, nor rest to my temples, until I find a place for the Lord, and a dwelling place for the God of Jacob. Behold, we heard of it in Ephratha; we found it in the fields of the wood. Let us enter into His dwelling, and worship at the place where His feet stood.
+    </div>
+    <div class="psalm-verse">
+        Arise, O Lord, into Your rest; You, and the ark of Your holy place. Your priests shall clothe themselves with righteousness; and Your righteous shall exult. For the sake of Your servant David, do not turn away Your face from Your anointed.
+    </div>
+    <div class="psalm-verse">
+        The Lord has sworn in truth to David, and He will not turn from it, “Of the fruit of your loins I will set upon your throne. If your children keep My covenant and My testimonies which I will teach them, their children also will sit upon your throne forever.”
+    </div>
+    <div class="psalm-verse">
+        For the Lord has selected Zion, He has chosen her a dwelling for Himself: “This is My resting place forever. Here I will dwell; for I have desired it. In blessing I shall bless her hunting. Her poor I shall satisfy with bread. Her priests I shall clothe with salvation; and her saints with rejoicing shall rejoice. There I shall raise a horn to David. I have prepared a lamp for My anointed. His enemies I shall clothe with shame, and My holiness shall flourish upon Him.” <span class="alleluia">ALLELUIA.</span>
+        <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+    </div>
+</section>
+            <section class="section">
+    <h2 class="section-title">Psalm 132</h2>
+    <div class="psalm-verse drop-cap">
+        Behold! What is so good, or what so pleasant, as for brothers dwelling together? It is as ointment upon the head, that came down upon beard, the beard of Aaron that came down to the fringe of his clothing; as the dew of Aermon, that comes down upon the mountain of Zion: for there the Lord commanded the blessing and the life forever. <span class="alleluia">ALLELUIA.</span>
+        <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+    </div>
+</section>
+            <section class="section">
+    <h2 class="section-title">Psalm 133</h2>
+    <div class="psalm-verse drop-cap">
+        Behold, bless the Lord, O you the servants of the Lord, who stand in the house of the Lord, in the courts of the house of our God. In the nights lift up your hands unto the Holies, and bless the Lord. The Lord shall bless you out of Zion, He who made heaven and earth. <span class="alleluia">ALLELUIA.</span>
+        <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+    </div>
+</section>
+            <section class="section">
+    <h2 class="section-title">Psalm 136</h2>
+    <div class="psalm-verse drop-cap">
+        By the rivers of Babylon, there we sat and wept when we remembered Zion. We hung our harps on the willows in the midst of it. For there those who had taken us captive asked of us the words of a song; and those who had carried us away asked a hymn, saying, “Sing us one of the songs of Zion.”
+    </div>
+    <div class="psalm-verse">
+        How will we sing the Lord’s song in a strange land? If I forget you, O Jerusalem, I shall forget my right hand. My tongue shall cling to my throat, if I did not remember you; if I did not prefer Jerusalem as the head of my joy.
+    </div>
+    <div class="psalm-verse">
+        Remember, O Lord, the children of Edom in the day of Jerusalem; who said, “Tear it down, tear it down, even to its foundations.” Wretched daughter of Babylon! Blessed is he who will reward you with the reward you have given us. Blessed is he who will seize and bury your infants by the rock. <span class="alleluia">ALLELUIA.</span>
+        <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+    </div>
+</section>
+            <section class="section">
+    <h2 class="section-title">Psalm 140</h2>
+    <div class="psalm-verse drop-cap">
+        O Lord, I have cried to You, hear me. Attend to the voice of my supplication when I cry to You. Let my prayer be set forth before You as incense, and the lifting up of my hands as an evening sacrifice. O Lord, set a watch on my mouth and a strong door for my lips. Do not incline my heart to words of evil, to employ excuses for sins with men who work iniquity; and I shall not agree with their choices. The righteous shall chasten me with mercy, and reprove me: but do not let the oil of the sinner anoint my head: for yet my prayer also is in their pleasures.
+    </div>
+    <div class="psalm-verse">
+        Their mighty ones have been swallowed up near the rock: they shall hear my words, for they are delightful. As a lump of earth, they are broken upon the ground, their bones have been scattered at Hades. For my eyes are to You, O Lord: O Lord, I have hoped in You; do not take away my soul. Keep me from the snare which they have set for me, and from the stumbling blocks of those who work iniquity. Sinners shall fall by their own net: I am alone until iniquity passes by. <span class="alleluia">ALLELUIA.</span>
+        <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+    </div>
+</section>
+            <section class="section">
+    <h2 class="section-title">Psalm 145</h2>
+    <div class="psalm-verse drop-cap">
+        Praise the Lord, O my soul. I will praise the Lord in my life. I will sing praises to my God as long as I exist. Do not trust in the princes, nor in the children of men, in whom there is no salvation. Their spirit shall go forth, and they shall return to their earth. In that day all their thoughts shall perish.
+    </div>
+    <div class="psalm-verse">
+        Blessed is he whose helper is the God of Jacob, whose hope is in the Lord his God: who made heaven and earth, the sea and all things in them; who keeps truth forever: who executes judgement for the oppressed, who gives food to the hungry.
+    </div>
+    <div class="psalm-verse">
+        The Lord looses the bound; the Lord sets up the broken down. The Lord gives wisdom to the blind; the Lord loves the righteous. The Lord preserves the strangers; He accepts the orphan and widow: but He will destroy the way of sinners. The Lord shall reign forever, and your God, O Zion, from generation to generation. <span class="alleluia">ALLELUIA.</span>
+        <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+    </div>
+</section>
+
+            <section class="section">
+                <div class="prayer-text">
+                    <em>The following psalms are selected from Midnight:</em>
+                </div>
+            </section>
+
+            <section class="section">
+    <h2 class="section-title">Psalm 118 (XX)</h2>
+    <div class="psalm-verse drop-cap">
+        Look upon my humiliation, and save me: for I have not forgotten Your law. Plead my cause, and redeem me: revive me for the sake of Your word. Salvation is far from sinners: for they have not searched out Your ordinances. Your mercies, O Lord, are many: revive me according to Your judgments. Many are they who persecute me and distress me: but I did not turn away from Your testimonies. I beheld foolish men, and I suffered; for they did not keep Your words. Behold, O Lord, I have loved Your commandments: revive me in Your mercy. The beginning of Your words is truth; and all judgments of Your righteousness are forever.
+    </div>
+    <div class="prayer-text doxology">
+        <span class="doxology-coptic">Do7a ci filan`0rwpe.</span>
+        <span class="doxology-english">Glory to You, the Lover of mankind.</span>
+    </div>
+    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+</section>
+            <section class="section">
+    <h2 class="section-title">Psalm 118 (XXI)</h2>
+    <div class="psalm-verse drop-cap">
+        Princes persecuted me without a cause, my heart was afraid of Your words. I will exult because of Your words, as one who has found a great treasure. I hated and abhorred unrighteousness; but I loved Your law. Seven times a day I have praised You because of the judgments of Your righteousness. Let great peace be for those who love Your law: and there is no stumbling in them. I waited for Your salvation, O Lord, and have loved Your commandments. My soul has kept Your testimonies, and loved them exceedingly. I have kept Your commandments and Your testimonies; and all my ways are before You, O Lord.
+    </div>
+    <div class="prayer-text doxology">
+        <span class="doxology-coptic">Do7a ci filan`0rwpe.</span>
+        <span class="doxology-english">Glory to You, the Lover of mankind.</span>
+    </div>
+    <a href="#gospel" class="jump-gospel-btn">Jump to Holy Gospel ↓</a>
+</section>
+            <section class="section">
+    <h2 class="section-title">Psalm 118 (XXII)</h2>
+    <div class="psalm-verse drop-cap">
+        Let my supplication come near before You; give me understanding according to Your word. Let my petition come before You, revive me according to Your word. Let my lips flow with praise, when You have taught me Your ordinances. Let my tongue speak of Your words; for all Your commandments are righteous. Let Your hand be for saving me; for I have desired Your commandments. I have longed for Your salvation, O Lord; and Your law is my meditation. My soul shall live and praise You; and Your judgments shall help me. I have gone astray like a lost sheep; seek Your servant; for I have not forgotten Your commandments.
+    </div>
+    <div class="prayer-text doxology">
+        <span class="doxology-coptic">Do7a ci filan`0rwpe.</span>
+        <span class="doxology-english">Glory to You, the Lover of mankind.</span>
+    </div>
+</section>
+
+            <section class="section" id="gospel">
+    <h2 class="section-title">The Holy Gospel (John 6:15-23)</h2>
+    <div class="prayer-text gospel-intro">
+        <em>Glory be to our God. Holy. Holy. Holy. A reading from the Holy Gospel according to our teacher, St. John, may his blessings be with us all. Amen.</em>
+    </div>
+    <div class="psalm-verse drop-cap">
+        When Jesus therefore perceived that they would come and take Him by force, to make Him a king, He departed again into a mountain Himself alone. And when evening came, His disciples went down to the sea, and entered into a ship, and went over the sea toward Capernaum. And it was now dark, and Jesus had not come to them. And the sea arose by reason of a great wind that blew. So when they had rowed about three or four miles, they saw Jesus walking on the sea, and drawing near to the ship: and they were afraid. But He said to them, It is I; do not be afraid. Then they willingly received Him into the ship: and immediately the ship was at the land where they were going.
+    </div>
+    <div class="psalm-verse">
+        The day following, the people who stood on the other side of the sea saw that there was no other boat there, except that one which His disciples were entered, and that Jesus went not with His disciples into the boat, but that His disciples were gone away alone. However, there came other boats from Tiberias near the place where they ate bread, after the Lord had given thanks.
+    </div>
+    <div class="prayer-text">
+        Glory to God forever. Amen.
+    </div>
+    <div class="prayer-text doxology">
+        <span class="doxology-coptic">Tenovw2t `mmok `w Pixrictoc nem Pekiwt `n`aja0oc: nem P`pnevma e0ovab: ge aki akcw5 `mmon nai nan.</span>
+        <span class="doxology-english">We worship You O Christ with Your Good Father and the Holy Spirit, for You have come and saved us.</span>
+    </div>
+</section>
+
+            <section class="section">
+    <h2 class="section-title">Litanies</h2>
+    <div class="prayer-text">
+        <span class="litany-number">(1)</span> Lord, You know the alertness of my enemies, and as for my weakness, You are aware of it, My Creator.  Therefore, I, hereby, place my soul into Your Hands.  So cover me with the wings of Your goodness, lest I might sleep till death. Enlighten my eyes by the greatness of Your sayings, and raise me up at all times for Your glorification, for You alone are good and lover of mankind.
+    </div>
+    <div class="prayer-text doxology">
+        <span class="doxology-coptic">Do7a patri ke Viw ke ajiw 1`Pnevmati</span>
+        <span class="doxology-english">Glory to the Father, and the Son, and the Holy Spirit.</span>
+    </div>
+    <div class="prayer-text">
+        <span class="litany-number">(2)</span> Lord, Your Judgement is dreadful; when men shall be rushed, the angels shall stand, the books shall be opened, the deeds shall be revealed, and the thoughts examined.  What a Judgment mine will be, I who am entangled by sin?!  Who would quench the flames of fire about me?!  Who would enlighten my darkness, unless You, Lord?! Have mercy on me, for You are compassionate to mankind.
+    </div>
+    <div class="prayer-text doxology">
+        <span class="doxology-coptic">Ke nvn ke `a`i ke ic toc `e`wnac twn `e`wnwn: `am3n.</span>
+        <span class="doxology-english">Now and forever and unto the ages of all ages, Amen.</span>
+    </div>
+    <div class="prayer-text">
+        <span class="litany-number">(3)</span> O Theotokos, because we have put our trust in you, we shall not be put to shame, but shall be saved.  And because we have attained your help and intercession, O pure and perfect one, we shall not fear, but shall drive out our enemies and shall disperse them.  And, in all, we take your great help to protect us as if with a shield.  We ask and entreat you, crying, O Theotokos, to save us by your intercessions, and raise us up from the dark sleep, in order to powerfully glorify God Who took flesh from you.
+    </div>
+</section>
+
+            <section class="section">
+<h2 class="section-title">الثلاث تقديسات</h2>
+<div class="prayer-text">
+                    قدوس الله، قدوس القوى، قدوس الحي الذي لا يموت، الذي ولد من العذراء، ارحمنا.
+                </div>
+<div class="prayer-text">
+                    قدوس الله، قدوس القوى، قدوس الحي الذي لا يموت، الذي صلب عنا، ارحمنا.
+                </div>
+<div class="prayer-text">
+                    قدوس الله، قدوس القوى، قدوس الحي الذي لا يموت، الذي قام من الأموات وصعد إلى السموات، ارحمنا.
+                </div>
+<div class="prayer-text">
+                    المجد للآب والابن والروح القدس، الآن وكل أوان وإلى دهر الدهور. أمين. أيها الثالوث القدوس ارحمنا. أيها الثالوث القدوس ارحمنا. أيها الثالوث القدوس ارحمنا.
+                </div>
+<div class="prayer-text">
+                    يا رب اغفر لنا خطايانا. يا رب اغفر لنا آثامنا. يا رب اغفر لنا زلاتنا. يا رب افتقد مرضى شعبك، اشفهم من أجل اسمك القدوس. آباؤنا وإخوتنا الذين رقدوا، يا رب نيح نفوسهم. يا من هو بلا خطية، يا رب ارحمنا. يا من بلا خطية، يا رب أعنا، واقبل طلباتنا إليك. لأن لك المجد والعزة والتقديس المثلث. يا رب ارحم. يا رب ارحم يا رب بارك. أمين.
+                </div>
+<div class="prayer-text">
+                    واجعلنا مستحقين أن نقول بشكر: أبانا الذي في السموات....
+                </div>
+            </section>
+
+                        <section class="section">
+<h2 class="section-title">بدء قانون الإيمان</h2>
+<div class="prayer-text">
+                    نعظمك يا أم النور الحقيقي، ونمجدك أيتها العذراء القديسة، والدة الإله، لأنك ولدت لنا مخلص العالم، أتى وخلص نفوسنا.
+                </div>
+<div class="prayer-text">
+                    المجد لكَ يا سيدنا وملكنا المسيح، فخر الرسل، إكليل الشهداء تهليل الصديقين، ثبات الكنائس، غفران الخطايا.
+                </div>
+<div class="prayer-text">
+                    نبشر بالثالوث القدوس، لاهوت واحد، نسجد له ونمجده.
+                </div>
+<div class="prayer-text">
+                    يا رب ارحم. يا رب ارحم. يا رب بارك. أمين.
+                </div>
+            </section>
+
+                        <section class="section">
+<h2 class="section-title">قانون الإيمان المقدس الأرثوذكسي</h2>
+<div class="prayer-text">
+                    بالحقيقة نؤمن بإله واحد، الله الآب، ضابط الكل، خالق السماء والأرض، ما يُرَى وما لا يرى.
+                </div>
+<div class="prayer-text">
+                    نؤمن برب واحد يسوع المسيح، ابن الله الوحيد، المولود من الآب قبل كل الدهور، نور من نور، إله حق من إله حق، مولود غير مخلوق، مساو للآب في الجوهر، الذي به كان كل شيء.
+                </div>
+<div class="prayer-text">
+                    هذا الذي من أجلنا نحن البشر، ومن أجل خلاصنا، نزل من السماء، وتجسد من الروح القدس ومن مريم العذراء، وتأنس. وصلب عنا على عهد بيلاطس البنطي. وتألم وقبر وقام من بين الأموات في اليوم الثالث كما في الكتب، وصعد إلى السموات، وجلس عن يمين أبيه،
+                </div>
+<div class="prayer-text">
+                    وأيضا يأتي في مجده ليدين الأحياء والأموات، الذي ليس لملكه انقضاء. نعم نؤمن بالروح القدس، الرب المحيى المنبثق من الآب. نسجد له ونمجده مع الآب والابن، الناطق في الأنبياء.
+                </div>
+<div class="prayer-text">
+                    وبكنيسة واحدة مقدسة جامعة رسولية. ونعترف بمعمودية واحدة لمغفرة الخطايا. وننتظر قيامة الأموات وحياة الدهر الآتي. أمين.
+                </div>
+            </section>
+
+                        <section class="section">
+<h2 class="section-title">كيرياليسون ٤١ مرة</h2>
+<div class="prayer-text">
+                    <em>(يا رب ارحم) ٤١ مرة</em>
+                </div>
+            </section>
+
+            <section class="section">
+<h2 class="section-title">قدوس قدوس قدوس</h2>
+<div class="prayer-text">
+                    قدوس، قدوس، قدوس، رب الصباؤوت. السماء والأرض مملوءتان من مجدك وكرامتك. ارحمنا يا الله الآب ضابط الكل. أيها الثالوث القدوس ارحمنا. أيها الرب إله القوات كن معنا، لأنه ليس لنا معين في شدائدنا وضيقاتنا سواك.
+                </div>
+<div class="prayer-text">
+                    حل واغفر واصفح لنا يا الله عن سيئاتنا، التي صنعناها بإرادتنا والتي صنعناها بغير إرادتنا، التي فعلناها بمعرفة والتي فعلناها بغير معرفة، الخفية والظاهرة. يا رب اغفرها لنا، من أجل اسمك القدوس الذي دعي علينا. كرحمتك يا رب وليس كخطايانا.
+                </div>
+<div class="prayer-text">
+                    واجعلنا مستحقين أن نقول بشكر: أبانا الذي في السموات..
+                </div>
+            </section>
+
+                        <section class="section">
+<h2 class="section-title">الصلاة الربانية</h2>
+<div class="prayer-text">
+                    <em>اللهم اجعلنا مستحقين أن نقول بشكر:</em>
+                </div>
+<div class="prayer-text">
+                    أبانا الذي في السموات. ليتقدس اسمك. ليأت ملكوتك. لتكن مشيئتك. كما في السماء كذلك على الأرض. خبزنا الذي للغد أعطنا اليوم.
+                </div>
+<div class="prayer-text">
+                    وأغفر لنا ذنوبنا كما نغفر نحن أيضا للمذنبين إلينا. ولا تدخلنا في تجربة. لكن نجنا من الشرير. بالمسيح يسوع ربنا لأن لك الملك والقوة والمجد إلى الأبد. آمين.
+                </div>
+            </section>
+
+            <section class="section">
+    <h2 class="section-title">Absolution</h2>
+    <div class="prayer-text">
+        O Lord and Master, Jesus Christ our God, grant us rest in our sleep, repose of our bodies, and purity of our souls, and protect us from the darkness of devastating sin. May the pangs of pain subside, and the heat of the flesh calm down, and the turmoil of the body come to an end.
+    </div>
+    <div class="prayer-text">
+        Grant us an alert mind, a humble thought, a life full of virtue, and a pure and undefiled bed. Raise us up for the night and morning praises, steadfast in Your commandments, keeping in ourselves, at all times, the thought of Your judgments.
+    </div>
+    <div class="prayer-text">
+        Grant us to praise You the whole night; blessing Your holy name full of glory and splendor, with Your good Father, and the Holy Spirit, the Life-Giver, now and at all times and unto the ages of all ages. Amen.
+    </div>
+</section>
+
+                        <section class="section">
+<h2 class="section-title">طلبة تصلى آخر كل ساعة</h2>
+<div class="prayer-text">
+                    ارحمنا يا الله ثم ارحمنا. يا من في كل وقت وكل ساعة، في السماء وعلى الأرض، مسجود له وممجد. المسيح إلهنا الصالح، الطويل الروح، الكثير الرحمة، الجزيل التحنن، الذي يحب الصديقين ويرحم الخطاة الذين أولهم أنا. الذي لا يشاء موت الخاطئ مثل ما يرجع ويحيا. الداعي الكل إلى الخلاص لأجل الموعد بالخيرات المنتظرة.
+                </div>
+<div class="prayer-text">
+                    يا رب اقبل منا في هذه الساعة وكل ساعة طلباتنا. سهل حياتنا، وأرشدنا إلى العمل بوصاياك. قدس أرواحنا. طهر أجسامنا. قوم أفكارنا. نق نياتنا. اشف أمراضنا واغفر خطايانا. ونجنا من كل حزن رديء ووجع قلب. أحطنا بملائكتك القديسين، لكي نكون بمعسكرهم محفوظين ومرشدين، لنصل إلى اتحاد الإيمان وإلى معرفة مجدك غير المحسوس وغير المحدود، فإنك مبارك إلى الأبد. أمين.
+                </div>
+            </section>
+
+            <div class="ornament">
+                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
+                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
+                <img src="../coptic-cross.png" alt="Coptic Cross" class="ornament-cross">
+            </div>
+        </div>
+                <nav class="nav-hours">
+            <a href="prime.html" class="nav-hour">
+                <div>Prime</div>
+            </a>
+            <a href="terce.html" class="nav-hour">
+                <div>Terce</div>
+            </a>
+            <a href="sext.html" class="nav-hour">
+                <div>Sext</div>
+            </a>
+            <a href="none.html" class="nav-hour">
+                <div>None</div>
+            </a>
+            <a href="vespers.html" class="nav-hour">
+                <div>Vespers</div>
+            </a>
+            <a href="compline.html" class="nav-hour">
+                <div>Compline</div>
+            </a>
+            <a href="midnight.html" class="nav-hour">
+                <div>Midnight</div>
+            </a>
+            <a href="veil.html" class="nav-hour">
+                <div>Veil</div>
+            </a>
+            <a href="other.html" class="nav-hour">
+                <div>Other Prayers</div>
+            </a>
+            <a href="about.html" class="nav-hour">
+                <div>About</div>
+            </a>
+        </nav>
+
+    </main>
+    <script src="../agpeya.js"></script>
+    <script>
+        // Initialize jump to gospel functionality
+        initJumpToGospel();
+    </script>
+</body>
+</html>
