@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+
+<html dir="rtl" lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agpeya - The Coptic Book of Hours</title>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;600&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../agpeya-style.css">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>الأجبية - كتاب السبع صلوات</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;600&amp;family=EB+Garamond:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../agpeya-style.css" rel="stylesheet"/>
+<style>
         .section-dropdown { display: none !important; }
         :root {
             --bg: #fdfdf9;
@@ -172,7 +173,7 @@
             gap: 1.5rem;
         }
         .hour-card:hover {
-            transform: translateX(8px);
+            transform: translateX(-8px);
             border-color: var(--burgundy);
             background: var(--bg);
         }
@@ -204,7 +205,7 @@
         }
         .hour-card:hover .hour-arrow {
             color: var(--burgundy);
-            transform: translateX(4px);
+            transform: translateX(-4px);
         }
         .nav-overlay {
             position: fixed;
@@ -246,178 +247,159 @@
             color: var(--text);
             transition: all 0.2s;
         }
-        .nav-link:hover { padding-left: 1rem; color: var(--burgundy); }
+        .nav-link:hover { padding-right: 1rem; color: var(--burgundy); }
         footer {
             text-align: center;
             padding: 3rem 0;
             color: var(--text-muted);
         }
     </style>
-
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#fdfdf9">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link href="/manifest.json" rel="manifest"/>
+<meta content="#fdfdf9" name="theme-color"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<link href="/icons/icon-192.png" rel="apple-touch-icon"/>
 </head>
 <body>
-    <div class="sticky-subheader">
-                <div class="dropdown-wrapper">
-            <select class="hour-dropdown" id="hourDropdown">
-                <option value="index.html" data-short="Home" data-long="Home">Home</option>
-                <option value="prime.html" data-short="1st Hour" data-long="1st Hour - Prime">1st Hour - Prime</option>
-                <option value="terce.html" data-short="3rd Hour" data-long="3rd Hour - Terce">3rd Hour - Terce</option>
-                <option value="sext.html" data-short="6th Hour" data-long="6th Hour - Sext">6th Hour - Sext</option>
-                <option value="none.html" data-short="9th Hour" data-long="9th Hour - None">9th Hour - None</option>
-                <option value="vespers.html" data-short="11th Hour" data-long="11th Hour - Vespers">11th Hour - Vespers</option>
-                <option value="compline.html" data-short="12th Hour" data-long="12th Hour - Compline">12th Hour - Compline</option>
-                <option value="midnight.html" data-short="Midnight" data-long="Midnight">Midnight</option>
-                <option value="veil.html" data-short="Veil" data-long="Prayer of the Veil">Prayer of the Veil</option>
-                <option value="other.html" data-short="Other" data-long="Other Prayers">Other Prayers</option>
-                <option value="about.html" data-short="About" data-long="About">About</option>
-            </select>
-            <select class="section-dropdown" id="sectionDropdown">
-                <option value="">Top</option>
-            </select>
-        </div>
-
-        <button class="settings-btn" id="settingsBtn"><img src="../cog_wheel.png" alt="Settings"></button>
-                <div class="settings-menu" id="settingsMenu">
-            <!-- Font Size Row -->
-            <div class="settings-row">
-                <button class="settings-menu-btn settings-menu-btn-small" id="fontDownBtn">A-</button>
-                <button class="settings-menu-btn settings-menu-btn-small" id="fontResetBtn">100%</button>
-                <button class="settings-menu-btn settings-menu-btn-small" id="fontUpBtn">A+</button>
-            </div>
-            
-            <!-- Line Height Row -->
-            <div class="settings-row">
-                <button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Comfy line spacing">
-                    <span class="line-height-icon comfy-icon">
-                        <span class="line"></span>
-                        <span class="line"></span>
-                    </span>
-                </button>
-                <button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Default line spacing">
-                    <span class="line-height-icon default-icon">
-                        <span class="line"></span>
-                        <span class="line"></span>
-                    </span>
-                </button>
-                <button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Condensed line spacing">
-                    <span class="line-height-icon condensed-icon">
-                        <span class="line"></span>
-                        <span class="line"></span>
-                    </span>
-                </button>
-            </div>
-            
-            <!-- Theme Row -->
-            <div class="settings-row">
-                <button class="settings-menu-btn settings-toggle" id="lightModeBtn">Light</button>
-                <button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Dark</button>
-            </div>
-            
-            <!-- Language Selector -->
-            <div class="settings-row lang-selector">
-                <!-- <a href="../en/index.html" class="settings-menu-btn settings-toggle" data-lang="en">EN</a> -->
-                <a href="../fr/index.html" class="settings-menu-btn settings-toggle" data-lang="fr">Français</a>
-                <a href="../ar/index.html" class="settings-menu-btn settings-toggle active" data-lang="ar">عربي</a>
-                <!-- <a href="../fr-old/index.html" class="settings-menu-btn settings-toggle" data-lang="fr-old">FR cl.</a> -->
-            </div>
-        </div>
-
-    </div>
-
-        <main class="container">
-        <section class="hero">
-            <div class="hero-title-en">The Agpeya</div>
-            <div class="hero-title-coptic">%agpia</div>
-            <img src="../coptic-cross.png" alt="Coptic Cross" class="hero-cross">
-            <h1>The Coptic Book of Hours</h1>
-            <p class="current-time" id="currentTime"></p>
-            <a href="prime.html" class="cta" id="beginPrayerBtn">Begin Prayer →</a>
-        </section>
-        <section class="hours">
-            <a href="prime.html" class="hour-card">                <div class="hour-info">
-                    <h3 class="hour-name">Prime - 1st Hour</h3>
-                    <div class="hour-time">6:00 AM</div>
-                </div>
-                <div class="hour-arrow">→</div>
-            </a>
-
-            <a href="terce.html" class="hour-card">                <div class="hour-info">
-                    <h3 class="hour-name">Terce - 3rd Hour</h3>
-                    <div class="hour-time">9:00 AM</div>
-                </div>
-                <div class="hour-arrow">→</div>
-            </a>
-
-            <a href="sext.html" class="hour-card">                <div class="hour-info">
-                    <h3 class="hour-name">Sext - 6th Hour</h3>
-                    <div class="hour-time">12:00 PM</div>
-                </div>
-                <div class="hour-arrow">→</div>
-            </a>
-
-            <a href="none.html" class="hour-card">                <div class="hour-info">
-                    <h3 class="hour-name">None - 9th Hour</h3>
-                    <div class="hour-time">3:00 PM</div>
-                </div>
-                <div class="hour-arrow">→</div>
-            </a>
-
-            <a href="vespers.html" class="hour-card">                <div class="hour-info">
-                    <h3 class="hour-name">Vespers - 11th Hour</h3>
-                    <div class="hour-time">6:00 PM</div>
-                </div>
-                <div class="hour-arrow">→</div>
-            </a>
-
-            <a href="compline.html" class="hour-card">                <div class="hour-info">
-                    <h3 class="hour-name">Compline - 12th Hour</h3>
-                    <div class="hour-time">9:00 PM</div>
-                </div>
-                <div class="hour-arrow">→</div>
-            </a>
-
-            <a href="midnight.html" class="hour-card">                <div class="hour-info">
-                    <h3 class="hour-name">Midnight</h3>
-                    <div class="hour-time">12:00 AM</div>
-                </div>
-                <div class="hour-arrow">→</div>
-            </a>
-
-            <a href="veil.html" class="hour-card">                <div class="hour-info">
-                    <h3 class="hour-name">Prayer of the Veil</h3>
-                    <div class="hour-time">Special Prayer</div>
-                </div>
-                <div class="hour-arrow">→</div>
-            </a>
-
-            <a href="other.html" class="hour-card">                <div class="hour-info">
-                    <h3 class="hour-name">Other Prayers</h3>
-                    <div class="hour-time">Various Occasions</div>
-                </div>
-                <div class="hour-arrow">→</div>
-            </a>
-
-            <a href="about.html" class="hour-card">                <div class="hour-info">
-                    <h3 class="hour-name">About the Agpeya</h3>
-                    <div class="hour-time">Foreword</div>
-                </div>
-                <div class="hour-arrow">→</div>
-            </a>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; <script>document.write(new Date().getFullYear())</script> Agpia.fr· Coptic Book of Hours</p>
-    </footer>
-
-        <script src="../agpeya.js"></script>
-        <script>
+<div class="sticky-subheader">
+<div class="dropdown-wrapper">
+<select class="hour-dropdown" id="hourDropdown">
+<option data-long="الرئيسية" data-short="الرئيسية" value="index.html">الرئيسية</option>
+<option data-long="الساعة الأولى - باكر" data-short="الساعة ١" value="prime.html">الساعة الأولى - باكر</option>
+<option data-long="الساعة الثالثة" data-short="الساعة ٣" value="terce.html">الساعة الثالثة</option>
+<option data-long="الساعة السادسة" data-short="الساعة ٦" value="sext.html">الساعة السادسة</option>
+<option data-long="الساعة التاسعة" data-short="الساعة ٩" value="none.html">الساعة التاسعة</option>
+<option data-long="الساعة الحادية عشر - الغروب" data-short="الساعة ١١" value="vespers.html">الساعة الحادية عشر - الغروب</option>
+<option data-long="الساعة الثانية عشر - النوم" data-short="الساعة ١٢" value="compline.html">الساعة الثانية عشر - النوم</option>
+<option data-long="نصف الليل" data-short="نصف الليل" value="midnight.html">نصف الليل</option>
+<option data-long="صلاة الستار" data-short="الستار" value="veil.html">صلاة الستار</option>
+<option data-long="صلوات أخرى" data-short="أخرى" value="other.html">صلوات أخرى</option>
+<option data-long="عن الأجبية" data-short="عن" value="about.html">عن الأجبية</option>
+</select>
+<select class="section-dropdown" id="sectionDropdown">
+<option value="">أعلى</option>
+</select>
+</div>
+<button class="settings-btn" id="settingsBtn"><img alt="Settings" src="../cog_wheel.png"/></button>
+<div class="settings-menu" id="settingsMenu">
+<!-- Font Size Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-menu-btn-small" id="fontDownBtn">A-</button>
+<button class="settings-menu-btn settings-menu-btn-small" id="fontResetBtn">100%</button>
+<button class="settings-menu-btn settings-menu-btn-small" id="fontUpBtn">A+</button>
+</div>
+<!-- Line Height Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Comfy line spacing">
+<span class="line-height-icon comfy-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+<button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Default line spacing">
+<span class="line-height-icon default-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+<button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Condensed line spacing">
+<span class="line-height-icon condensed-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+</div>
+<!-- Theme Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-toggle" id="lightModeBtn">فاتح</button>
+<button class="settings-menu-btn settings-toggle active" id="darkModeBtn">داكن</button>
+</div>
+<!-- Language Selector -->
+<div class="settings-row lang-selector">
+<!-- <a href="../en/index.html" class="settings-menu-btn settings-toggle" data-lang="en">EN</a> -->
+<a class="settings-menu-btn settings-toggle" data-lang="fr" href="../fr/index.html">Français</a>
+<a class="settings-menu-btn settings-toggle" data-lang="ar" href="../ar/index.html">عربي</a>
+<!-- <a href="../fr-old/index.html" class="settings-menu-btn settings-toggle" data-lang="fr-old">FR cl.</a> -->
+</div>
+</div>
+</div>
+<main class="container">
+<section class="hero">
+<div class="hero-title-en">الأجبية</div>
+<div class="hero-title-coptic" dir="ltr">%agpia</div>
+<img alt="Coptic Cross" class="hero-cross" src="../coptic-cross.png"/>
+<h1>كتاب السبع صلوات</h1>
+<p class="current-time" id="currentTime"></p>
+<a class="cta" dir="ltr" href="prime.html" id="beginPrayerBtn">Begin Prayer →</a>
+</section>
+<section class="hours">
+<a class="hour-card" href="prime.html"> <div class="hour-info">
+<h3 class="hour-name">باكر - الساعة الأولى</h3>
+<div class="hour-time">٦:٠٠ ص</div>
+</div>
+<div class="hour-arrow">←</div>
+</a>
+<a class="hour-card" href="terce.html"> <div class="hour-info">
+<h3 class="hour-name">الساعة الثالثة</h3>
+<div class="hour-time">٩:٠٠ ص</div>
+</div>
+<div class="hour-arrow">←</div>
+</a>
+<a class="hour-card" href="sext.html"> <div class="hour-info">
+<h3 class="hour-name">الساعة السادسة</h3>
+<div class="hour-time">١٢:٠٠ م</div>
+</div>
+<div class="hour-arrow">←</div>
+</a>
+<a class="hour-card" href="none.html"> <div class="hour-info">
+<h3 class="hour-name">الساعة التاسعة</h3>
+<div class="hour-time">٣:٠٠ م</div>
+</div>
+<div class="hour-arrow">←</div>
+</a>
+<a class="hour-card" href="vespers.html"> <div class="hour-info">
+<h3 class="hour-name">الغروب - الساعة الحادية عشر</h3>
+<div class="hour-time">٦:٠٠ م</div>
+</div>
+<div class="hour-arrow">←</div>
+</a>
+<a class="hour-card" href="compline.html"> <div class="hour-info">
+<h3 class="hour-name">النوم - الساعة الثانية عشر</h3>
+<div class="hour-time">٩:٠٠ م</div>
+</div>
+<div class="hour-arrow">←</div>
+</a>
+<a class="hour-card" href="midnight.html"> <div class="hour-info">
+<h3 class="hour-name">نصف الليل</h3>
+<div class="hour-time">١٢:٠٠ ص</div>
+</div>
+<div class="hour-arrow">←</div>
+</a>
+<a class="hour-card" href="veil.html"> <div class="hour-info">
+<h3 class="hour-name">صلاة الستار</h3>
+<div class="hour-time">صلاة خاصة</div>
+</div>
+<div class="hour-arrow">←</div>
+</a>
+<a class="hour-card" href="other.html"> <div class="hour-info">
+<h3 class="hour-name">صلوات أخرى</h3>
+<div class="hour-time">مناسبات مختلفة</div>
+</div>
+<div class="hour-arrow">←</div>
+</a>
+<a class="hour-card" href="about.html"> <div class="hour-info">
+<h3 class="hour-name">عن الأجبية</h3>
+<div class="hour-time">تقديم</div>
+</div>
+<div class="hour-arrow">←</div>
+</a>
+</section>
+</main>
+<footer>
+<p>© <script>document.write(new Date().getFullYear())</script> Agpia.fr· كتاب السبع صلوات</p>
+</footer>
+<script src="../agpeya.js"></script>
+<script>
         // Dynamic "Begin Prayer" button based on current time
         function updateBeginPrayerButton() {
             const now = new Date();
@@ -427,13 +409,13 @@
             
             // Define prayer hours (in minutes from midnight)
             const hours = [
-                { name: 'Prime', file: 'prime.html', time: 6 * 60, label: '1st Hour' },
-                { name: 'Terce', file: 'terce.html', time: 9 * 60, label: '3rd Hour' },
-                { name: 'Sext', file: 'sext.html', time: 12 * 60, label: '6th Hour' },
-                { name: 'None', file: 'none.html', time: 15 * 60, label: '9th Hour' },
-                { name: 'Vespers', file: 'vespers.html', time: 18 * 60, label: '11th Hour' },
-                { name: 'Compline', file: 'compline.html', time: 21 * 60, label: '12th Hour' },
-                { name: 'Midnight', file: 'midnight.html', time: 0, label: 'Midnight Hour' }
+                { name: 'Prime', file: 'prime.html', time: 6 * 60, label: 'باكر' },
+                { name: 'Terce', file: 'terce.html', time: 9 * 60, label: 'الساعة الثالثة' },
+                { name: 'Sext', file: 'sext.html', time: 12 * 60, label: 'الساعة السادسة' },
+                { name: 'None', file: 'none.html', time: 15 * 60, label: 'الساعة التاسعة' },
+                { name: 'Vespers', file: 'vespers.html', time: 18 * 60, label: 'الغروب' },
+                { name: 'Compline', file: 'compline.html', time: 21 * 60, label: 'النوم' },
+                { name: 'Midnight', file: 'midnight.html', time: 0, label: 'نصف الليل' }
             ];
             
             // Find the closest hour
@@ -473,10 +455,10 @@
             
             // Update time display and button
             const timeEl = document.getElementById('currentTime');
-            timeEl.textContent = `It's ${timeString} ${timezone}`;
+            timeEl.textContent = `${timeString} ${timezone}`;
             const btn = document.getElementById('beginPrayerBtn');
             btn.href = closestHour.file;
-            btn.textContent = `Pray ${closestHour.label} →`;
+            btn.textContent = `← ${closestHour.label}`;
         }
         
         // Update button on page load

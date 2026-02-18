@@ -724,7 +724,7 @@ body {
 }
 
 /* RTL drop cap */
-.drop-cap[dir="rtl"]::first-letter {
+[dir="rtl"] .drop-cap::first-letter {
     float: right;
     padding-right: 0;
     padding-left: 10px;

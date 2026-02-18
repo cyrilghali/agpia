@@ -427,11 +427,13 @@ def replace_psalm_ar(section_el, ar_paras):
     if len(paras) > len(divs):
         paras = distribute(paras, len(divs))
 
+    filled_count = min(len(paras), len(divs))
     for i, div in enumerate(divs):
         if i >= len(paras):
-            break
+            div.decompose()
+            continue
         had_alleluia = div.find('span', class_='alleluia')
-        is_last = (i == len(divs) - 1)
+        is_last = (i == filled_count - 1)
         div.clear()
         div.append(NavigableString(SP + paras[i] + ' '))
         if (had_alleluia or is_last) and has_hallelujah:
@@ -451,7 +453,8 @@ def replace_prayer_ar(section_el, ar_paras):
         paras = distribute(paras, len(divs))
     for i, div in enumerate(divs):
         if i >= len(paras):
-            break
+            div.decompose()
+            continue
         em_child = div.find('em')
         if em_child and len(list(div.children)) <= 2:
             set_em(div, paras[i])
@@ -482,13 +485,12 @@ def replace_gospel_ar(section_el, ar_paras):
             if i < len(body):
                 div.clear()
                 div.append(NavigableString(SP + body[i] + SP_END))
+            else:
+                div.decompose()
 
     for div in section_el.find_all('div'):
         classes = div.get('class', [])
         if 'doxology' in classes:
-            eng = div.find('span', class_='doxology-english')
-            if eng:
-                eng.string = 'نسجد لك أيها المسيح مع أبيك الصالح والروح القدس لأنك أتيت وخلصتنا فارحمنا.'
             continue
         em_child = div.find('em')
         if em_child and 'psalm-verse' not in classes:
@@ -509,15 +511,17 @@ def replace_litanies_ar(section_el, ar_paras):
         if 'doxology' in classes:
             continue
         num = div.find('span', class_='litany-number')
-        if num and lit_idx < len(ar_paras):
-            num_html = str(num)
-            div.clear()
-            div.append(BeautifulSoup(num_html, 'html.parser'))
-            div.append(NavigableString(' ' + ar_paras[lit_idx]))
+        if lit_idx < len(ar_paras):
+            if num:
+                num_html = str(num)
+                div.clear()
+                div.append(BeautifulSoup(num_html, 'html.parser'))
+                div.append(NavigableString(' ' + ar_paras[lit_idx]))
+            else:
+                set_text(div, ar_paras[lit_idx])
             lit_idx += 1
-        elif lit_idx < len(ar_paras):
-            set_text(div, ar_paras[lit_idx])
-            lit_idx += 1
+        else:
+            div.decompose()
 
 # ===================================================================
 # 8. Arabic common section text (hard-coded from St-Takla)
@@ -630,7 +634,14 @@ GLOBAL_TEXT_REPLACEMENTS_AR = {
 }
 
 GLOBAL_DOX_REPLACEMENTS_AR = {
-    'Glory to You, the Lover of mankind.': 'المجد لك يا محب البشر.',
+    'We worship You O Christ with Your Good Father and the Holy Spirit, for You have come and saved us.':
+        'نسجد لك أيها المسيح مع أبيك الصالح والروح القدس لأنك أتيت وخلصتنا فارحمنا.',
+    'Glory to the Father, and the Son, and the Holy Spirit.':
+        'المجد للآب والابن والروح القدس.',
+    'Now and forever and unto the ages of all ages, Amen.':
+        'الآن وكل أوان وإلى دهر الدهور آمين.',
+    'Glory to You, the Lover of mankind.':
+        'المجد لك يا محب البشر.',
 }
 
 # ===================================================================
@@ -732,7 +743,19 @@ def process_section_ar(section_el, title, ar_data_by_en, ar_psalms, hour):
         return
 
 def global_replacements_ar(soup):
+    for span in soup.find_all('span', class_='doxology-english'):
+        span_txt = span.get_text(strip=True)
+        for eng, ar in GLOBAL_DOX_REPLACEMENTS_AR.items():
+            if eng in span_txt:
+                span.string = ar
+                break
+
+    for span in soup.find_all('span', class_='doxology-coptic'):
+        span['dir'] = 'ltr'
+
     for div in soup.find_all('div', class_='prayer-text'):
+        if 'doxology' in div.get('class', []):
+            continue
         txt = div.get_text(strip=True)
         for eng, ar in GLOBAL_EM_REPLACEMENTS_AR.items():
             if eng in txt:
@@ -742,13 +765,6 @@ def global_replacements_ar(soup):
             if txt.strip() == eng:
                 set_text(div, ar)
                 break
-        eng_span = div.find('span', class_='doxology-english')
-        if eng_span:
-            span_txt = eng_span.get_text(strip=True)
-            for eng, ar in GLOBAL_DOX_REPLACEMENTS_AR.items():
-                if eng in span_txt:
-                    eng_span.string = ar
-                    break
 
 def replace_hour_intros_ar(soup, hour_name):
     hymn = HOUR_INTRO_AR.get(hour_name)
@@ -1058,7 +1074,201 @@ def process_midnight_ar(en_path, ar_path, hour_sections, ar_psalms):
     print(f"  Wrote midnight.html")
 
 # ===================================================================
-# 12. Main
+# 12. Process index, about, other pages (UI-only translation)
+# ===================================================================
+
+INDEX_HOUR_CARDS_AR = {
+    'Prime - 1st Hour': 'باكر - الساعة الأولى',
+    'Terce - 3rd Hour': 'الساعة الثالثة',
+    'Sext - 6th Hour': 'الساعة السادسة',
+    'None - 9th Hour': 'الساعة التاسعة',
+    'Vespers - 11th Hour': 'الغروب - الساعة الحادية عشر',
+    'Compline - 12th Hour': 'النوم - الساعة الثانية عشر',
+    'Midnight': 'نصف الليل',
+    'Prayer of the Veil': 'صلاة الستار',
+    'Other Prayers': 'صلوات أخرى',
+    'About the Agpeya': 'عن الأجبية',
+}
+
+INDEX_HOUR_TIMES_AR = {
+    '6:00 AM': '٦:٠٠ ص',
+    '9:00 AM': '٩:٠٠ ص',
+    '12:00 PM': '١٢:٠٠ م',
+    '3:00 PM': '٣:٠٠ م',
+    '6:00 PM': '٦:٠٠ م',
+    '9:00 PM': '٩:٠٠ م',
+    '12:00 AM': '١٢:٠٠ ص',
+    'Special Prayer': 'صلاة خاصة',
+    'Various Occasions': 'مناسبات مختلفة',
+    'Foreword': 'تقديم',
+}
+
+ABOUT_TITLES_AR = {
+    'The Word Agpeya': 'كلمة أجبية',
+    'The Book of the Agpeya': 'كتاب الأجبية',
+    'Why Do We Use the Agpeya for Praying?': 'لماذا نستخدم الأجبية في الصلاة؟',
+    'The Originality of the Agpeya': 'أصالة الأجبية',
+    'The Agpeya and the Psalms': 'الأجبية والمزامير',
+    'The Agpeya and Prayer': 'الأجبية والصلاة',
+    'The Order of the Agpeya': 'ترتيب الأجبية',
+    'Manner of Praying the Hours': 'طريقة صلاة الساعات',
+    'Themes of the Hours': 'موضوعات الساعات',
+    'Advice on How to Use the Agpeya': 'نصائح لاستخدام الأجبية',
+}
+
+OTHER_TITLES_AR = {
+    'Prayer for Repentance': 'صلاة التوبة',
+    'Priestly Absolution Prayer': 'صلاة التحليل الكهنوتي',
+}
+
+NAV_HOUR_NAMES_AR = {
+    'Prime': 'باكر',
+    'Terce': 'الثالثة',
+    'Sext': 'السادسة',
+    'None': 'التاسعة',
+    'Vespers': 'الغروب',
+    'Compline': 'النوم',
+    'Midnight': 'نصف الليل',
+    'Veil': 'الستار',
+    'Other Prayers': 'صلوات أخرى',
+    'About': 'عن الأجبية',
+}
+
+def process_index_ar(en_path, ar_path):
+    """Generate Arabic index.html from English template."""
+    with open(en_path, 'r', encoding='utf-8') as f:
+        soup = BeautifulSoup(f.read(), 'html.parser')
+
+    html_tag = soup.find('html')
+    if html_tag:
+        html_tag['lang'] = 'ar'
+        html_tag['dir'] = 'rtl'
+
+    title_tag = soup.find('title')
+    if title_tag:
+        txt = title_tag.get_text(strip=True)
+        if txt in PAGE_TITLES_AR:
+            title_tag.string = PAGE_TITLES_AR[txt]
+
+    hero_en = soup.find('div', class_='hero-title-en')
+    if hero_en:
+        hero_en.string = 'الأجبية'
+
+    hero_coptic = soup.find('div', class_='hero-title-coptic')
+    if hero_coptic:
+        hero_coptic['dir'] = 'ltr'
+
+    h1 = soup.find('h1')
+    if h1:
+        h1.string = 'كتاب السبع صلوات'
+
+    hero_p = soup.find('p', class_='current-time')
+
+    cta = soup.find('a', class_='cta')
+    if cta:
+        cta['dir'] = 'ltr'
+
+    for card in soup.find_all('a', class_='hour-card'):
+        h3 = card.find('h3', class_='hour-name')
+        if h3:
+            en_name = h3.get_text(strip=True)
+            if en_name in INDEX_HOUR_CARDS_AR:
+                h3.string = INDEX_HOUR_CARDS_AR[en_name]
+        time_div = card.find('div', class_='hour-time')
+        if time_div:
+            en_time = time_div.get_text(strip=True)
+            if en_time in INDEX_HOUR_TIMES_AR:
+                time_div.string = INDEX_HOUR_TIMES_AR[en_time]
+        arrow = card.find('div', class_='hour-arrow')
+        if arrow:
+            arrow.string = '←'
+
+    for style_tag in soup.find_all('style'):
+        if style_tag.string and 'translateX(8px)' in style_tag.string:
+            style_tag.string = style_tag.string.replace(
+                'translateX(8px)', 'translateX(-8px)'
+            ).replace(
+                'translateX(4px)', 'translateX(-4px)'
+            ).replace(
+                'padding-left: 1rem', 'padding-right: 1rem'
+            )
+
+    translate_ui_ar(soup)
+
+    footer = soup.find('footer')
+    if footer:
+        for child in footer.descendants:
+            if isinstance(child, NavigableString) and 'Coptic Book of Hours' in child:
+                child.replace_with(child.replace('Coptic Book of Hours', 'كتاب السبع صلوات'))
+
+    script_tags = soup.find_all('script')
+    for st in script_tags:
+        if st.string and 'updateBeginPrayerButton' in st.string:
+            st.string = st.string.replace(
+                "btn.textContent = `Pray ${closestHour.label} →`;",
+                "btn.textContent = `← ${closestHour.label}`;",
+            ).replace(
+                "timeEl.textContent = `It's ${timeString} ${timezone}`;",
+                "timeEl.textContent = `${timeString} ${timezone}`;",
+            ).replace(
+                "{ name: 'Prime', file: 'prime.html', time: 6 * 60, label: '1st Hour' }",
+                "{ name: 'Prime', file: 'prime.html', time: 6 * 60, label: 'باكر' }",
+            ).replace(
+                "{ name: 'Terce', file: 'terce.html', time: 9 * 60, label: '3rd Hour' }",
+                "{ name: 'Terce', file: 'terce.html', time: 9 * 60, label: 'الساعة الثالثة' }",
+            ).replace(
+                "{ name: 'Sext', file: 'sext.html', time: 12 * 60, label: '6th Hour' }",
+                "{ name: 'Sext', file: 'sext.html', time: 12 * 60, label: 'الساعة السادسة' }",
+            ).replace(
+                "{ name: 'None', file: 'none.html', time: 15 * 60, label: '9th Hour' }",
+                "{ name: 'None', file: 'none.html', time: 15 * 60, label: 'الساعة التاسعة' }",
+            ).replace(
+                "{ name: 'Vespers', file: 'vespers.html', time: 18 * 60, label: '11th Hour' }",
+                "{ name: 'Vespers', file: 'vespers.html', time: 18 * 60, label: 'الغروب' }",
+            ).replace(
+                "{ name: 'Compline', file: 'compline.html', time: 21 * 60, label: '12th Hour' }",
+                "{ name: 'Compline', file: 'compline.html', time: 21 * 60, label: 'النوم' }",
+            ).replace(
+                "{ name: 'Midnight', file: 'midnight.html', time: 0, label: 'Midnight Hour' }",
+                "{ name: 'Midnight', file: 'midnight.html', time: 0, label: 'نصف الليل' }",
+            )
+
+    with open(ar_path, 'w', encoding='utf-8') as f:
+        f.write(str(soup))
+    print(f"  Wrote index.html")
+
+def process_static_page_ar(en_path, ar_path, page_name):
+    """Generate Arabic about/other page: translate UI only, keep English content."""
+    with open(en_path, 'r', encoding='utf-8') as f:
+        soup = BeautifulSoup(f.read(), 'html.parser')
+
+    html_tag = soup.find('html')
+    if html_tag:
+        html_tag['lang'] = 'ar'
+        html_tag['dir'] = 'rtl'
+
+    title_map = ABOUT_TITLES_AR if page_name == 'about' else {**AR_TITLE_MAP, **OTHER_TITLES_AR}
+    for h2 in soup.find_all('h2', class_='section-title'):
+        title = h2.get_text(strip=True)
+        if title in title_map:
+            h2.string = title_map[title]
+
+    translate_ui_ar(soup, page_name)
+
+    for nav_a in soup.find_all('a', class_='nav-hour'):
+        div = nav_a.find('div')
+        if div:
+            en_text = div.get_text(strip=True)
+            if en_text in NAV_HOUR_NAMES_AR:
+                div.string = NAV_HOUR_NAMES_AR[en_text]
+
+    with open(ar_path, 'w', encoding='utf-8') as f:
+        f.write(str(soup))
+    print(f"  Wrote {os.path.basename(ar_path)}")
+
+
+# ===================================================================
+# 13. Main
 # ===================================================================
 
 def main():
@@ -1105,6 +1315,19 @@ def main():
         if os.path.exists(mn_en):
             print("  Processing midnight...")
             process_midnight_ar(mn_en, mn_ar, all_data.get('midnight', []), ar_psalms)
+
+        idx_en = os.path.join(ROOT, 'en', 'index.html')
+        idx_ar = os.path.join(ROOT, 'ar', 'index.html')
+        if os.path.exists(idx_en):
+            print("  Processing index...")
+            process_index_ar(idx_en, idx_ar)
+
+        for page in ['about', 'other']:
+            pg_en = os.path.join(ROOT, 'en', f'{page}.html')
+            pg_ar = os.path.join(ROOT, 'ar', f'{page}.html')
+            if os.path.exists(pg_en):
+                print(f"  Processing {page}...")
+                process_static_page_ar(pg_en, pg_ar, page)
 
         print("\nDone filling ar/ HTML!")
 
