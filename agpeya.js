@@ -368,7 +368,7 @@ if (darkModeBtn) {
 
 (function initLangSelector() {
     const path = window.location.pathname;
-    const folders = ['fr-old', 'fr', 'ar'];
+    const folders = ['fr-old', 'fr', 'en'];
     let currentFolder = 'fr';
     for (const f of folders) {
         if (path.includes('/' + f + '/')) { currentFolder = f; break; }
@@ -377,7 +377,7 @@ if (darkModeBtn) {
     localStorage.setItem('lang', currentFolder);
 
     const isFrench = currentFolder === 'fr' || currentFolder === 'fr-old';
-    const activeLang = isFrench ? 'fr' : 'ar';
+    const activeLang = isFrench ? 'fr' : currentFolder;
 
     document.querySelectorAll('.lang-selector a').forEach(link => {
         link.classList.toggle('active', link.getAttribute('data-lang') === activeLang);
