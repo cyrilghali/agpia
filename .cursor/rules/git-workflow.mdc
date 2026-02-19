@@ -1,0 +1,24 @@
+---
+description: Git branching and PR workflow for the Agpeya project
+alwaysApply: true
+---
+
+# Git Workflow
+
+## Branch Protection
+
+`main` is protected. Direct pushes are blocked.
+
+- Always create a feature branch and open a PR to merge into `main`.
+- Never force-push to `main`.
+- PRs cannot be merged until the Vercel deployment succeeds.
+
+## Commits
+
+- Keep commit messages short, lowercase, in English (e.g. `fix build`, `add arabic`, `store language pref`).
+- One logical change per commit.
+
+## Branching
+
+- Branch from `main`, name branches descriptively: `fix/scroll-bug`, `feat/add-coptic-font`, `content/update-vespers-ar`.
+- Delete branches after merge.

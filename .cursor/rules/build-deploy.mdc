@@ -1,0 +1,29 @@
+---
+description: Build, deploy, and service worker conventions
+globs: "build.sh, sw.js, manifest.json, vercel.json, capacitor.config.json"
+alwaysApply: false
+---
+
+# Build & Deploy
+
+## Build
+
+`build.sh` copies language folders (`en`, `fr`, `ar`, `fr-old`), shared assets, and config files into `dist/`. Run with `npm run build`.
+
+When adding a new root-level asset, add a corresponding `cp` line in `build.sh` so it ends up in `dist/`.
+
+## Vercel
+
+Vercel deploys from `dist/` (configured in `vercel.json`). Every PR gets a preview deployment. The Vercel status check must pass before a PR can be merged.
+
+## Service Worker (`sw.js`)
+
+Uses a cache-first strategy. The cache name contains a version hash (e.g. `agpeya-430201a5`).
+
+**After any content or asset change**, bump the cache name in `sw.js` so returning users get the update. Also update the precache URL list if files were added or removed.
+
+## Capacitor (Mobile)
+
+- Config: `capacitor.config.json` — `webDir` is `dist/`.
+- Always run `npm run build` before `npx cap sync`.
+- iOS project lives in `ios/`, Android in `android/`.
