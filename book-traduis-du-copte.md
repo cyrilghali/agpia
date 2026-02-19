@@ -634,7 +634,7 @@ Mais le roi se réjouira en Dieu. Qui jure par Lui en sera fier, tandis que ceux
 
 Dieu aura pitié de nous et nous bénira. Il nous montrera sa Face et nous fera miséricorde,
 
-Pour que sur la terre soit connue Ta voie, et que ton Salut parmi toutes les nations !
+Pour que sur la terre soit connue Ta voie, et ton Salut parmi toutes les nations !
 
 Que les peuples Te confessent, ô Dieu ! Que tous les peuples te confessent !
 
@@ -1437,7 +1437,7 @@ Mais le roi se réjouira en Dieu. Qui jure par Lui sera loué, tandis que ceux q
 
 Dieu, aie pitié de nous et bénis-nous ! Manifeste sur nous ta Face, et fais-nous miséricorde !
 
-Pour qu'en cette terre nous connaissions Ta voie, et que ton Salut soit parmi toutes les nations !
+Pour qu'en cette terre nous connaissions Ta voie, et ton Salut soit parmi toutes les nations !
 
 Que les peuples Te confessent, ô Dieu ! Que tous les peuples te confessent !
 
