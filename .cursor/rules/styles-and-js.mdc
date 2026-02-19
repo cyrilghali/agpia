@@ -1,0 +1,27 @@
+---
+description: CSS and JavaScript conventions for the Agpeya app
+globs: "agpeya-style.css, agpeya.js"
+alwaysApply: false
+---
+
+# CSS & JS Conventions
+
+## CSS
+
+- **Theme variables**: `--bg`, `--text`, `--burgundy`, `--gold`, `--border`. Define light values at `:root`, dark overrides under `[data-theme="dark"]`.
+- **Font scale**: Use `--font-scale` (range 1.0–2.0, default 1.3). Size text with `calc(... * var(--font-scale))`.
+- **RTL support**: Add RTL-specific rules under `[dir="rtl"]` selectors.
+- **Line height**: Three modes (`comfy`, default, `condensed`) via `[data-line-height]` attribute on `<html>`.
+- **No utility-class frameworks** — keep styles component-based and co-located by feature.
+
+## JavaScript
+
+- **Vanilla JS only** — no frameworks, no bundler.
+- **User preferences**: Persist theme, font scale, line height, and language in `localStorage`.
+- **Scroll tracking**: Uses `IntersectionObserver` with an `isUserScrolling` flag to avoid feedback loops.
+- **Common sections**: `loadCommonSections()` reads `data-common-section` attributes and injects shared prayer HTML.
+- **Single file**: All logic lives in `agpeya.js`. Keep it under ~700 lines; extract helpers as inner functions, not separate files.
+
+## Shared Assets
+
+CSS, JS, images, and fonts live at the project root. Language folders reference them with `../`. Never duplicate assets into language folders.

@@ -1,0 +1,53 @@
+---
+description: Conventions for prayer HTML pages across all languages
+globs: "**/en/*.html, **/fr/*.html, **/ar/*.html, **/fr-old/*.html"
+alwaysApply: false
+---
+
+# Prayer HTML Conventions
+
+## Source of Truth
+
+Edit `/en/` first, then propagate the same structural changes to `/fr/`, `/ar/`, and `/fr-old/`. Only text content and `lang`/`dir` attributes differ between languages.
+
+## Page Structure
+
+```
+<main class="container">
+  <div class="hour-header"> ... </div>
+  <div class="prayer-content">
+    <div class="ornament"> ✝ ✝ ✝ </div>
+    <section class="section">
+      <h2 class="section-title">Section Name</h2>
+      <div class="prayer-text">...</div>
+    </section>
+    ...
+  </div>
+  <nav class="nav-hours"> ... </nav>
+</main>
+```
+
+## Key Classes
+
+| Class | Usage |
+|---|---|
+| `.section` | Wraps each prayer section |
+| `.section-title` | `<h2>` heading inside each section (used by JS for dropdown nav) |
+| `.prayer-text` | Regular prayer paragraphs |
+| `.psalm-verse` | Psalm verses |
+| `.drop-cap` | First-letter drop cap on opening paragraphs |
+| `.alleluia` | Highlighted "ALLELUIA" text |
+| `.doxology` | Two-column Coptic/translation layout |
+| `.ornament` | Decorative cross dividers between sections |
+
+## Common Sections
+
+Shared prayers (intro, Lord's Prayer, thanksgiving, Psalm 50, conclusion) are loaded by JS. Mark the container with `data-common-section="section-name"` instead of duplicating content.
+
+## Midnight Hour
+
+Uses watch-specific IDs: `gospel-watch1`, `gospel-watch2`, `gospel-watch3` for the jump-to-gospel feature.
+
+## Navigation
+
+Bottom nav (`.nav-hours`) links to all 11 hour pages. Hour dropdown and section dropdown live in `.sticky-subheader`.
