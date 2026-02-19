@@ -1,4 +1,4 @@
-const CACHE_NAME = 'agpeya-82f53f2c';
+const CACHE_NAME = 'agpeya-64fbd004';
 
 const PRECACHE_URLS = [
   '/',
@@ -46,17 +46,6 @@ const PRECACHE_URLS = [
   '/ar/veil.html',
   '/ar/other.html',
   '/ar/about.html',
-  '/fr-old/index.html',
-  '/fr-old/prime.html',
-  '/fr-old/terce.html',
-  '/fr-old/sext.html',
-  '/fr-old/none.html',
-  '/fr-old/vespers.html',
-  '/fr-old/compline.html',
-  '/fr-old/midnight.html',
-  '/fr-old/veil.html',
-  '/fr-old/other.html',
-  '/fr-old/about.html',
 ];
 
 self.addEventListener('install', (event) => {
