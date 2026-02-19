@@ -369,7 +369,7 @@ if (darkModeBtn) {
 (function initLangSelector() {
     const path = window.location.pathname;
     const folders = ['fr-old', 'fr', 'ar'];
-    let currentFolder = 'fr';
+    let currentFolder = 'fr-old';
     for (const f of folders) {
         if (path.includes('/' + f + '/')) { currentFolder = f; break; }
     }

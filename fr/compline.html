@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 
-<html lang="fr">
+<html dir="rtl" lang="ar">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<title>Complies | Agpia</title>
+<title>صلاة النوم | الأجبية</title>
 <link href="../agpeya-style.css" rel="stylesheet"/>
-<meta name="description" content="Priez l'Agpia (le Livre des Heures Copte) en français, anglais et arabe.">
-<meta property="og:title" content="Complies | Agpia">
-<meta property="og:description" content="Priez l'Agpia (le Livre des Heures Copte) en français, anglais et arabe.">
+<meta name="description" content="صلِّ الأجبية (كتاب السبع صلوات القبطي) بالعربية والفرنسية والإنجليزية.">
+<meta property="og:title" content="صلاة النوم | الأجبية">
+<meta property="og:description" content="صلِّ الأجبية (كتاب السبع صلوات القبطي) بالعربية والفرنسية والإنجليزية.">
 <meta property="og:image" content="https://agpia.fr/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="https://agpia.fr/fr/compline.html">
+<meta property="og:url" content="https://agpia.fr/ar/compline.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Agpia">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://agpia.fr/og-image.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#fdfdf9">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link href="/manifest.json" rel="manifest"/>
+<meta content="#fdfdf9" name="theme-color"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<link href="/icons/icon-192.png" rel="apple-touch-icon"/>
 </head>
 <body>
 <div class="sticky-subheader">
 <div class="dropdown-wrapper">
 <select class="hour-dropdown" id="hourDropdown">
-<option data-long="Accueil" data-short="Accueil" value="index.html">Accueil</option>
-<option data-long="1ère Heure - Prime" data-short="1ère Heure" value="prime.html">1ère Heure - Prime</option>
-<option data-long="3ème Heure - Tierce" data-short="3ème Heure" value="terce.html">3ème Heure - Tierce</option>
-<option data-long="6ème Heure - Sexte" data-short="6ème Heure" value="sext.html">6ème Heure - Sexte</option>
-<option data-long="9ème Heure - None" data-short="9ème Heure" value="none.html">9ème Heure - None</option>
-<option data-long="11ème Heure - Vêpres" data-short="11ème Heure" value="vespers.html">11ème Heure - Vêpres</option>
-<option data-long="12ème Heure - Complies" data-short="12ème Heure" value="compline.html">12ème Heure - Complies</option>
-<option data-long="Minuit" data-short="Minuit" value="midnight.html">Minuit</option>
-<option data-long="Prière du Voile" data-short="Voile" value="veil.html">Prière du Voile</option>
-<option data-long="Prières diverses" data-short="Autres" value="other.html">Prières diverses</option>
-<option data-long="À propos" data-short="À propos" value="about.html">À propos</option>
+<option data-long="الرئيسية" data-short="الرئيسية" value="index.html">الرئيسية</option>
+<option data-long="الساعة الأولى - باكر" data-short="الساعة ١" value="prime.html">الساعة الأولى - باكر</option>
+<option data-long="الساعة الثالثة" data-short="الساعة ٣" value="terce.html">الساعة الثالثة</option>
+<option data-long="الساعة السادسة" data-short="الساعة ٦" value="sext.html">الساعة السادسة</option>
+<option data-long="الساعة التاسعة" data-short="الساعة ٩" value="none.html">الساعة التاسعة</option>
+<option data-long="الساعة الحادية عشر - الغروب" data-short="الساعة ١١" value="vespers.html">الساعة الحادية عشر - الغروب</option>
+<option data-long="الساعة الثانية عشر - النوم" data-short="الساعة ١٢" value="compline.html">الساعة الثانية عشر - النوم</option>
+<option data-long="نصف الليل" data-short="نصف الليل" value="midnight.html">نصف الليل</option>
+<option data-long="صلاة الستار" data-short="الستار" value="veil.html">صلاة الستار</option>
+<option data-long="صلوات أخرى" data-short="أخرى" value="other.html">صلوات أخرى</option>
+<option data-long="عن الأجبية" data-short="عن" value="about.html">عن الأجبية</option>
 </select>
 <select class="section-dropdown" id="sectionDropdown">
-<option value="">Haut</option>
+<option value="">أعلى</option>
 </select>
 </div>
 <button class="settings-btn" id="settingsBtn"><img alt="Settings" src="../cog_wheel.png"/></button>
@@ -53,19 +53,19 @@
 </div>
 <!-- Line Height Row -->
 <div class="settings-row">
-<button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Interligne confortable">
+<button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Comfy line spacing">
 <span class="line-height-icon comfy-icon">
 <span class="line"></span>
 <span class="line"></span>
 </span>
 </button>
-<button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Interligne standard">
+<button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Default line spacing">
 <span class="line-height-icon default-icon">
 <span class="line"></span>
 <span class="line"></span>
 </span>
 </button>
-<button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Interligne condensé">
+<button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Condensed line spacing">
 <span class="line-height-icon condensed-icon">
 <span class="line"></span>
 <span class="line"></span>
@@ -74,17 +74,13 @@
 </div>
 <!-- Theme Row -->
 <div class="settings-row">
-<button class="settings-menu-btn settings-toggle" id="lightModeBtn">Clair</button>
-<button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Sombre</button>
+<button class="settings-menu-btn settings-toggle" id="lightModeBtn">فاتح</button>
+<button class="settings-menu-btn settings-toggle active" id="darkModeBtn">داكن</button>
 </div>
 <!-- Language Selector -->
 <div class="settings-row lang-selector">
-<a class="settings-menu-btn settings-toggle" data-lang="fr" href="../fr/compline.html">Français</a>
+<a class="settings-menu-btn settings-toggle" data-lang="fr" href="../fr-old/compline.html">Français</a>
 <a class="settings-menu-btn settings-toggle" data-lang="ar" href="../ar/compline.html">عربي</a>
-</div>
-<div class="settings-row lang-variant-selector">
-<a class="settings-menu-btn settings-toggle" data-variant="fr" href="../fr/compline.html">Traduit du copte</a>
-<a class="settings-menu-btn settings-toggle" data-variant="fr-old" href="../fr-old/compline.html">Classique</a>
 </div>
 </div>
 </div>
@@ -93,9 +89,9 @@
 <div class="header-crosses">
 <img alt="Coptic Cross" src="../coptic-cross.png"/>
 </div>
-<h1 class="hour-title">Complies</h1>
-<p class="hour-time">La Douzième Heure · 21h00</p>
-<p class="hour-desc">Les Complies (Coucher) : la Douzième Heure commémore l'ensevelissement du Christ. Nous nous souvenons du monde qui passe et du jugement dernier. Conscients de notre comparution imminente devant Dieu, nous demandons le pardon de nos péchés et la protection durant la nuit.</p>
+<h1 class="hour-title">صلاة النوم</h1>
+<p class="hour-time">The Twelfth Hour · 9:00 PM</p>
+<p class="hour-desc">صلاة النوم نتذكر فيها دفن السيد المسيح، والعالم الفاني والحساب الأخير، مُتَيَقظين لقدوم الله الوشيك والوقوف قدامه، ونطلب الصفح عن خطايانا، والحماية خلال الليل.</p>
 </div>
 <div class="prayer-content">
 <div class="ornament">
@@ -104,357 +100,301 @@
 <img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
 </div>
 <section class="section">
-<h2 class="section-title">Introduction de chaque heure</h2>
+<h2 class="section-title">مقدمة كل ساعة</h2>
 <div class="prayer-text">
-                    Au nom du Père et du Fils et du Saint-Esprit, Un Dieu Unique ! Amen.
-                </div>
-<div class="prayer-text">
-                    Seigneur aie pitié, Seigneur aie pitié, Seigneur, bénis ! Amen.
+                    باسم الآب والابن والروح القدس الإله الواحد آمين.
                 </div>
 <div class="prayer-text">
-                    Gloire au Père et au Fils et au Saint-Esprit, maintenant et toujours et pour les siècles des siècles ! Amen.
-                </div>
-</section>
-<section class="section">
-<h2 class="section-title">Le Notre Père</h2>
-<div class="prayer-text"><em>Rends-nous dignes de dire en action de grâce :</em></div>
-<div class="prayer-text">
-                    Notre Père qui es aux cieux, que Ton Nom soit sanctifié, que Ton Règne vienne, que Ta Volonté soit faite, comme au ciel, aussi sur la terre. Notre pain de demain, donne-le-nous aujourd'hui,
+                    يا رب ارحم. يا رب ارحم. يا رب بارك. آمين.
                 </div>
 <div class="prayer-text">
-                    et remets-nous nos dettes comme nous les remettons à nos débiteurs, et ne nous induis pas en tentation, mais délivre-nous du Mal. Par le Christ Jésus, notre Seigneur, car à Toi sont le Règne, la Puissance et la Gloire, pour les siècles. Amen !
+                    المجد للآب والابن والروح القدس الآن وكل أوان وإلى دهر الدهور آمين.
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Prière d'action de grâce</h2>
+<h2 class="section-title">الصلاة الربانية</h2>
+<div class="prayer-text"><em>اللهم اجعلنا مستحقين أن نقول بشكر:</em></div>
 <div class="prayer-text">
-                    Rendons grâce au Bienfaiteur et Miséricordieux, Dieu le Père de notre Seigneur, notre Dieu et notre Sauveur Jésus-Christ parce qu'Il nous a protégés, secourus, préservés, reçus auprès de Lui, pris en pitié, aidés et amenés jusqu'à cette heure. Supplions-Le encore de nous garder en ce saint jour et tous les jours de notre vie en toute paix, Lui le Tout-Puissant, le Seigneur notre Dieu.
-                </div>
-<div class="prayer-text">
-                    Ô Maître, Seigneur, Dieu Tout-Puissant, Père de notre Seigneur, Dieu et Sauveur Jésus-Christ, Nous Te rendons grâce, de toute chose, pour toute chose et en toute chose, parce que c'est Toi qui nous as protégés, secourus, préservés, reçus auprès de Toi, pris en pitié, aidés et amenés jusqu'à cette heure.
+                    أبانا الذي في السموات. ليتقدس اسمك. ليأت ملكوتك. لتكن مشيئتك. كما في السماء كذلك على الأرض. خبزنا الذي للغد أعطنا اليوم.
                 </div>
 <div class="prayer-text">
-                    C'est pourquoi nous supplions et implorons Ta bonté, ô Ami du genre humain, donne-nous de parfaire ce saint jour et tous les jours de notre vie en toute paix dans Ta crainte. Toute envie, toute tentation, toute œuvre de Satan, tout conseil des hommes mauvais, tout assaut des ennemis cachés et manifestes : enlève-les de nous et de tout ton peuple et de cette église et de ce lieu saint qui est à Toi.
+                    وأغفر لنا ذنوبنا كما نغفر نحن أيضا للمذنبين إلينا. ولا تدخلنا في تجربة. لكن نجنا من الشرير. بالمسيح يسوع ربنا لأن لك الملك والقوة والمجد إلى الأبد. آمين.
+                </div>
+</section>
+<section class="section">
+<h2 class="section-title">صلاة الشكر</h2>
+<div class="prayer-text">
+                    فلنشكر صانع الخيرات الرحوم الله، أبا ربنا وإلهنا ومخلصنا يسوع المسيح، لأنه سترنا وأعاننا، وحفظنا، وقبلنا إليه وأشفق علينا وعضدنا، وأتى بنا إلى هذه الساعة. هو أيضا فلنسأله أن يحفظنا في هذا اليوم المقدس وكل أيام حياتنا بكل سلام. الضابط الكل الرب إلهنا.
                 </div>
 <div class="prayer-text">
-                    Les choses bonnes et profitables, fournis-les-nous, car c'est Toi qui nous as donné l'autorité pour fouler aux pieds les serpents, les scorpions et toute la puissance de l'ennemi.
+                    أيها السيد الإله ضابط الكل أبو ربنا وإلهنا ومخلصنا يسوع المسيح، نشكرك على كل حال ومن أجل كل حال، وفى كل حال، لأنك سترتنا، وأعنتنا، وحفظتنا، وقبلتنا إليك، وأشفقت علينا، وعضدتنا، وأتيت بنا إلى هذه الساعة.
                 </div>
 <div class="prayer-text">
-                    Et ne nous induis pas en tentation, mais délivre-nous du Mal, Par la grâce, la miséricorde et l'amour du genre humain de Ton Fils Unique-Engendré notre Seigneur, Dieu et Sauveur Jésus-Christ, par Qui la gloire, l'honneur, la souveraineté et l'adoration Te sont dus avec Lui et le Saint Esprit vivifiant et de même essence que Toi, Maintenant et toujours et dans les siècles des siècles. Amen !
+                    من أجل هذا نسأل ونطلب من صلاحك يا محب البشر، امنحنا أن نكمل هذا اليوم المقدس وكل أيام حياتنا بكل سلام مع خوفك. كل حسد، وكل تجربة وكل فعل الشيطان ومؤامرة الناس الأشرار، وقيام الأعداء الخفيين والظاهريين، انزعها عنا وعن سائر شعبك، وعن موضعك المقدس هذا. أما الصالحات والنافعات فارزقنا إياها.
+                </div>
+<div class="prayer-text">
+                    لأنك أنت الذي أعطيتنا السلطان أن ندوس الحيات والعقارب وكل قوة العدو. ولا تدخلنا في تجربة، لكن نجنا من الشرير.
+                </div>
+<div class="prayer-text">
+                    بالنعمة والرأفات ومحبة البشر اللواتي لابنك الوحيد ربنا وإلهنا ومخلصنا يسوع المسيح. هذا الذي من قبله المجد والإكرام والعزة والسجود تليق بك معه مع الروح القدس المحيي المساوي لك الآن وكل أوان وإلى دهر الدهور آمين.
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psaume 50</h2>
+<h2 class="section-title">المزمور الخمسون</h2>
 <div class="psalm-verse drop-cap">
-                    Fais-moi miséricorde, Seigneur, selon Ta grande Miséricorde, et selon la multitude de tes compassions, efface mon illégalité ! Lave-moi encore de mon illégalité, et purifie-moi de mon péché ! Car moi, je connais mon illégalité, et mon péché est toujours devant mes yeux. 
+                    ارحمني يا الله كعظيم رحمتك، ومثل كثرة رأفتك تمحو إثمي. اغسلني كثيرا من إثمي ومن خطيتي طهرني، لأني أنا عارف بإثمي وخطيتي أمامي في كل حين. لك وحدك أخطأت، والشر قدامك صنعت. لكي تتبرر في أقوالك. وتغلب إذا حوكمتُ. لأني هاأنذا بالإثم حبل بي، وبالخطايا ولدتني أمي. لأنك هكذا قد أحببت الحق، إذ أوضحت لي غوامض حكمتك ومستوراتها. تنضح على بزوفاك فأطهر، تغسلني فأبيض أكثر من الثلج. تسمعني سرورا وفرحا، فتبتهج عظامي المنسحقة. اصرف وجهك عن خطاياي، وامح كل آثامي. قلبا نقيا اخلق في يا الله، وروحا مستقيما جدده في أحشائي. لا تطرحني من قدام وجهك وروحك القدوس لا تنزعه منى. امنحني بهجة خلاصك، وبروح رئاسي عضدني فأعلم الأثمة طرقك والمنافقون إليك يرجعون، نجني من الدماء يا الله إله خلاصي، فيبتهج لساني بعدلك. يا رب افتح شفتي، فيخبر فمي بتسبيحك. لأنك لو آثرت الذبيحة لكنت الآن أعطي، ولكنك لا تسر بالمحرقات، فالذبيحة لله روح منسحق. القلب المنكسر والمتواضع لا يرذله الله، أنعم يا رب بمسرتك على صهيون، ولتبن أسوار أورشليم. حينئذ تسر بذبائح البر قربانا ومحرقات ويقربون على مذابحك العجول. <span class="alleluia">هلليلويا.</span>
                 </div>
-<div class="psalm-verse">
-                    C'est contre Toi seul que j'ai péché, et devant tes Yeux que j'ai fait le mal, afin que tu sois justifié dans tes Paroles, et que tu triomphes dans tes Jugements. Car voilà que j'ai été conçu dans les illégalités, et ma mère m'a enfanté dans les péchés. Car voici que Toi, tu aimes la Vérité, et tu m'as révélé les choses non manifestes et cachées de ta Sagesse. 
-                </div>
-<div class="psalm-verse">
-                    Tu m'aspergeras avec l'hysope, et je serai purifié, Tu me laveras, et je serai plus blanc que la neige. Tu me feras entendre la joie et l'allégresse, et les os humiliés exulteront. Détourne ta Face de mes péchés, et efface toutes mes illégalités ! 
-                </div>
-<div class="psalm-verse">
-                    Crée en moi un cœur pur, ô Dieu, et renouvelle un esprit droit en mes entrailles ! Ne me rejette pas loin de Ta Face, et ne retire pas de moi Ton Esprit-Saint. Rends-moi la joie de Ton Salut, et raffermis-moi par l'Esprit directeur. 
-                </div>
-<div class="psalm-verse">
-                    J'enseignerai Tes voies aux illégaux, et les impies se convertiront à Toi. Sauve-moi des choses sanglantes, ô Dieu, Dieu de mon salut, et ma langue se réjouira de ta Justice ! Seigneur, Tu ouvriras mes lèvres, et ma bouche proclamera ta louange. 
-                </div>
-<div class="psalm-verse">
-                    Car si tu avais voulu un sacrifice, je te l'aurais donné ; mais tu n'approuveras point les holocaustes. Le sacrifice à Dieu c'est un esprit contrit, Dieu ne réduira pas à rien un cœur contrit et humilié. Seigneur, fais du bien en ta faveur, pour Sion, et que les remparts de Jérusalem soient édifiés ! Alors Tu approuveras le sacrifice de justice, une offrande avec des holocaustes, alors on offrira des veaux sur Ton autel. <span class="alleluia">ALLELUIA.</span>
-                </div>
+
+
+
+
+
 </section>
 <section class="section">
-<div class="prayer-text"><em>Hymne des Complies du jour béni, je l'offre au Christ mon Roi et mon Dieu, j'espérerai en Lui afin qu'il me remette mes péchés.</em></div>
-<div class="prayer-text"><em>Psaume de David le Prophète, que sa sainte bénédiction soit avec nous, Amen.</em></div>
+<div class="prayer-text"><em>صلاة النوم من النهار المبارك، أقدمها للمسيح ملكي وإلهي، وأرجوه أن يغفر لي خطاياي.</em></div>
+<div class="prayer-text"><em>من مزامير معلمنا داود النبي بركاته علينا أمين.</em></div>
 </section>
 <section class="section">
-<h2 class="section-title">Psaume 129</h2>
+<h2 class="section-title">المزمور المائة والتاسع والعشرون</h2>
 <div class="psalm-verse drop-cap">
-                    Des profondeurs, j'ai crié vers Toi, Seigneur ! Seigneur, écoute ma voix, que ton Oreille soit attentive à la voix de ma supplication ! Si Tu observes l'illégalité, Seigneur, Seigneur, qui peut tenir ? Car la rémission ne vient que de Toi. À cause de Ton Nom, je t'ai attendu, Seigneur. Mon âme a mis son attente en ta Loi. Mon âme a espéré dans le Seigneur. Que depuis la garde du matin jusqu'à la nuit, depuis la garde du matin, qu'Israël espère dans le Seigneur ! Car la Miséricorde est auprès du Seigneur, et abondante est Sa Rédemption.                     Et c'est Lui qui sauvera Israël de toutes ses illégalités. <span class="alleluia">ALLELUIA.</span>
-                    <a href="#gospel" class="jump-gospel-btn">Aller à l'évangile ↓</a>
+                    من الأعماق صرخت إليك يا رب، يا رب استمع صوتي. لتكن أذناك مصغيتين إلى صوت تضرعي. إن كنت للآثام راصدا يا رب، يا رب من يثبت لأن من عندك المغفرة. من أجل اسمك صبرْتُ لك يا رب، صبرَتْ نفسي لناموسك. انتظرت نفسي الرب من محرس الصبح إلى الليل. من محرس الصبح فلينتظر إسرائيل الرب. لأن الرحمة من عند الرب. عظيم هو خلاصه وهو يفتدي إسرائيل من كل آثامه <span class="alleluia">هلليلويا.</span>
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psaume 130</h2>
+<h2 class="section-title">المزمور المائة والثلاثون</h2>
 <div class="psalm-verse drop-cap">
-                    Seigneur, mon cœur ne s'est point exalté, et mes yeux ne se sont point élevés, je n'ai point cheminé dans les grandeurs ni en des merveilles au-dessus de moi. Si je ne me suis point humilié, si j'ai trop élevé ma voix, pour rétribution fais de mon âme comme d'un enfant privé du lait de sa mère !                     Qu'Israël espère dans le Seigneur, maintenant et jusqu'aux siècles ! <span class="alleluia">ALLELUIA.</span>
-                    <a href="#gospel" class="jump-gospel-btn">Aller à l'évangile ↓</a>
+                    يا رب لم يرتفع قلبي، ولم تستعلِ عيناي، ولم أسلك في العظائم ولا في العجائب التي هي أعلى مني. فان كنت لم أتضع لكن رفعت صوتي مثل الفطيم من اللبن على أمه، كذلك المجازاة على نفسي. فليتكل إسرائيل على الرب من الآن والى الأبد <span class="alleluia">هلليلويا.</span>
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psaume 131</h2>
+<h2 class="section-title">المزمور المائة والحادي والثلاثون</h2>
 <div class="psalm-verse drop-cap">
-                    Ô Seigneur, remémore-toi David et toute sa douceur ! Comment il a juré au Seigneur, et adjuré au Dieu de Jacob : « Je n'entrerai pas dans le séjour de ma demeure, je ne monterai pas sur le lit de mon repos, Je ne donnerai point de sommeil à mes yeux, ni à mes paupières le moindre assoupissement, ni de repos à mon front, Avant que j'aie trouvé un Lieu pour le Seigneur, une Demeure pour le Dieu de Jacob. » 
+                    اذكر يا رب داود وكل دعته، كيف أقسم للرب ونذر لإله يعقوب: إني لا أدخل إلى مسكن بيتي، ولا أصعد على سرير فراشي، ولا أعطى لعيني نوما، ولا لأجفاني نعاسا، ولا راحة لصدغيَّ، إلى أن أجد موضعا للرب ومسكنا لإله يعقوبَ. ها قد سمعنا به في افراته ووجدناه في موضع الغابة. فلندخل إلى مساكنه ونسجد في الموضع الذي فيه استقرت قدماه. 
                 </div>
 <div class="psalm-verse">
-                    Voilà que nous avons entendu parler d'Elle en Éphrata, nous l'avons trouvée dans les plaines de la forêt ! Nous entrerons dans Ses Demeures, nous nous prosternerons vers le Lieu où Il a arrêté ses pieds. Lève-toi, Seigneur, pour entrer en ton Repos, toi et l'Arche de ton Lieu Saint ! Tes prêtres se revêtiront de Justice, et tes Saints exulteront ! À cause de David Ton serviteur, ne détourne pas Ta Face loin de ton Christ ! 
+                    قم يا رب إلى راحتك أنت وتابوت موضع قدسك. كهنتك يلبسون البر وأبرارك يبتهجون. من أجل داود عبدك لا ترد وجهك عن مسيحك. حلف الرب لداود حقا ولا يخلف: لأجعَلنَّ من ثمرة بطنك على كرسيك. إن حفظ بنوك عهدي وشهاداتي التي أعلمهم إياها، فبنوهم أيضا يجلسون إلى الأبد على كرسيك. لأن الرب اختار صهيون ورضيها مسكنًا له. هذا هو موضع راحتي إلى أبد الأبد، ههنا أسكن لأني أردته. لصيدها أبارك بركة، لمساكينها أشبع خبزا، لكهنتها ألبس الخلاص وأبرارها يبتهجون ابتهاجا. هناك أقيم قرنا لداود. هيأتُ سراجا لمسيحي. لأعدائه ألبس الخزي وعليه يزهر قدسي <span class="alleluia">هلليلويا.</span>
                 </div>
-<div class="psalm-verse">
-                    Le Seigneur a juré à David en vérité, et il ne s'en dédira pas : « Je mettrai sur ton trône le fruit de ton sein. Si tes fils gardent Mon Alliance et mes témoignages que Je leur enseignerai, leurs fils aussi siégeront pour les siècles sur ton trône. Parce que le Seigneur a élu Sion, il l'a choisie pour sa Demeure. C'est Mon Lieu de repos pour les siècles des siècles, J'y résiderai, parce que je l'ai choisie. 
-                </div>
-<div class="psalm-verse">
-                    Je bénirai de ma bénédiction sa chasse. Ses pauvres, Je les rassasierai de pain. Ses prêtres, Je les revêtirai du Salut, et ses Saints exulteront d'allégresse. C'est là que j'élèverai la corne de David, là que j'ai préparé une lampe pour mon Christ.                     Quant à ses ennemis, je les revêtirai de honte, mais sur sa tête fleurira Mon Saint. » <span class="alleluia">ALLELUIA.</span>
-                    <a href="#gospel" class="jump-gospel-btn">Aller à l'évangile ↓</a>
+
+
+</section>
+<section class="section">
+<h2 class="section-title">المزمور المائة والثاني والثلاثون</h2>
+<div class="psalm-verse drop-cap">
+                    هوذا ما أحسن وما أحلي أن يسكن الاخوة معا. كالطيب الكائن على الرأس الذي ينزل على اللحية، لحية هارون النازلة على جيب قميصه. ومثل ندى حرمون المنحدر على جبل صهيون. لأن هناك أمر الرب بالبركة والحياة إلى الأبد <span class="alleluia">هلليلويا.</span>
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psaume 132</h2>
+<h2 class="section-title">المزمور المائة والثالث والثلاثون</h2>
 <div class="psalm-verse drop-cap">
-                    Voyez comme il est bon, et comme il est doux pour des frères d'habiter ensemble ! C'est comme de la myrrhe sur la tête qui descend sur la barbe, la barbe d'Aaron, qui descend sur la frange de son vêtement. Comme la rosée de l'Hermon, qui descend sur les montagnes de Sion,                     parce que c'est là que le Seigneur a commandé que soient la bénédiction et la Vie jusqu'aux siècles. <span class="alleluia">ALLELUIA.</span>
-                    <a href="#gospel" class="jump-gospel-btn">Aller à l'évangile ↓</a>
+                    ها باركوا الربَّ يا عبيدَ الرب، القائمين في بيت الرب في ديار إلهنا. في الليالي ارفعوا أيديكم إلى القدس وباركوا الرب. يبارككم الرب من صهيون الذي خلق السماء والأرض <span class="alleluia">هلليلويا.</span>
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psaume 133</h2>
+<h2 class="section-title">المزمور المائة والسادس والثلاثون</h2>
 <div class="psalm-verse drop-cap">
-                    Voici maintenant, bénissez le Seigneur, vous tous qui êtes Ses serviteurs et qui vous tenez en la Maison du Seigneur, dans les parvis de la Maison de notre Dieu ! Durant les nuits, levez vos mains vous les Saints, et bénissez le Seigneur !                     Le Seigneur te bénira depuis Sion, Lui qui a créé le Ciel et la terre ! <span class="alleluia">ALLELUIA.</span>
-                    <a href="#gospel" class="jump-gospel-btn">Aller à l'évangile ↓</a>
-                </div>
-</section>
-<section class="section">
-<h2 class="section-title">Psaume 136</h2>
-<div class="psalm-verse drop-cap">
-                    Sur les fleuves de Babylone nous nous sommes assis, et nous avons pleuré, en nous souvenant de Sion. Aux saules, au milieu d'elle, nous avons suspendu nos harpes, Car ceux qui nous avaient faits captifs nous demandaient des paroles des odes, et ceux qui nous avaient emmenés ici nous demandaient : « Chantez-nous une louange d'entre les odes de Sion ! » 
+                    على أنهار بابل هناك جلسنا، فبكينا عندما تذكرنا صهيون. على الصفصاف في وسطها علقنا قيثاراتنا، لأنه هناك سألنا الذين سبونا أقوالَ التسبيح. والذين استاقونا إلى هناك قالوا: سبحوا لنا تسبحة من تسابيح صهيون. 
                 </div>
 <div class="psalm-verse">
-                    Comment chanterons-nous l'ode du Seigneur sur une terre étrangère ? Si je t'oublie, Jérusalem, que j'oublie ma main droite ! Que ma langue reste collée à mon larynx, si je ne me souviens point de toi, et si je ne mets pas d'abord Jérusalem au principe de ma joie ! 
+                    كيف نسبِّح تسبحة الرب في أرض غريبة. إن نسيتك يا أورشليم أنسَ يميني، ويلتصق لساني بحنكي إن لم أذكرك، إن لم أفضل أورشليم في ابتداء فرحي. 
                 </div>
 <div class="psalm-verse">
-                    Souviens-toi, Seigneur, des fils d'Édom, qui, au jour de Jérusalem, déclaraient : « Faites le vide, faites le vide en elle jusqu'au fondement ! » Fille de Babylone, la misérable ! Bienheureux celui qui te rétribuera en te rendant en retour ce que tu nous as fait !                     Bienheureux celui qui saisira tes petits enfants et les écrasera contre la pierre ! <span class="alleluia">ALLELUIA.</span>
-                    <a href="#gospel" class="jump-gospel-btn">Aller à l'évangile ↓</a>
+                    اذكر يا رب بني أدوم في يوم أورشليم القائلين: انقضوا انقضوا حتى الأساس منها. يا بنت بابل الشقية طوبى لمن يكافئك مكافأتك التي جازيتينا. طوبى لمن يمسك أطفالك ويدفنهم عند الصخرة <span class="alleluia">هلليلويا.</span>
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psaume 137</h2>
+<h2 class="section-title">المزمور المائة والسابع والثلاثون</h2>
 <div class="psalm-verse drop-cap">
-                    Seigneur, je Te professerai de toute mon âme, parce que Tu as écouté les paroles de ma bouche, et je psalmodierai pour toi devant les anges ! Je T'adorerai en ton saint Temple, et je ferai profession à ton Nom, à cause de ta Miséricorde et de ta Vérité, car tu as magnifié ton Saint Nom au-dessus de tout être. Au jour où je T'invoque, aussitôt exauce-moi, et tu prendras grand soin de mon âme avec Puissance ! Seigneur, que tous les rois de la terre te professent, car ils ont entendu toutes les paroles de ta bouche ! 
+                    أعترف لك يا رب من كل قلبي لأنك استمعت كل كلمات فمي. أمام الملائكة أرتل لك وأسجد قدام هيكلك المقدس، وأعترف لاسمك على رحمتك وحقك، لأنك قد عظمت اسمك القدوس على الكل. اليوم الذي أدعوك فيه أجبني بسرعة. تكثر التطلع على نفسي بقوة. 
                 </div>
 <div class="psalm-verse">
-                    Et qu'ils chantent dans les voies du Seigneur, car la Gloire du Seigneur est grande ! Car le Seigneur est élevé, et il regarde les humbles, et reconnaît de loin ceux qui sont élevés. Si je vais au milieu des tribulations, Tu me vivifieras, tu as étendu Ta Main contre la colère des ennemis, et ta Droite m'a sauvé ! Le Seigneur rétribuera en ma faveur. Seigneur, ta Miséricorde est pour les siècles :                     n'abandonne pas les œuvres de tes mains ! <span class="alleluia">ALLELUIA.</span>
-                    <a href="#gospel" class="jump-gospel-btn">Aller à l'évangile ↓</a>
+                    فليعترف لك يا رب كل ملوك الأرض. لأنهم قد سمعوا سائر كلمات فمك وليسبحوا في طرق الرب. لأن مجد الرب عظيم لأن الرب عال ويعاين المتواضعات والكائنات يعرفها من بعد. إن سلكت في وسط الشدة فإنك تحييني. على رجز الأعداء مددت يدك وخلصتني يمينك. الرب يجازي عني، يا رب رحمتك دائمة إلى الأبد. أعمال يديك يا رب لا تتركها <span class="alleluia">هلليلويا.</span>
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psaume 140</h2>
+<h2 class="section-title">المزمور المائة والأربعون</h2>
 <div class="psalm-verse drop-cap">
-                    Seigneur, j'ai crié vers Toi, écoute-moi ! Sois attentif à la voix de ma supplication, quand je crie vers toi ! Que ma prière se dirige jusque devant Toi comme de l'encens, que l'élévation de mes mains vers Toi soit un sacrifice du soir. Mets, Seigneur, une garde à ma bouche, et une porte de sûreté autour de mes lèvres. N'incline pas mon cœur vers les paroles de méchanceté, pour trouver des prétextes aux péchés, en compagnie des hommes œuvrant contre la Loi, et que je ne me joigne pas avec leurs élus. Que le juste me discipline avec miséricorde, et me réprimande, mais que l'huile des pécheurs n'oigne point ma tête, car ma prière est encore en faveur. 
+                    يا رب إليك صرخت فاستمع لي. أنصت إلى صوت تضرعي، إذا ما صرختُ إليك. لتستقم صلاتي كالبخور قدامك. وليكن رفع يدي كذبيحة مسائية. ضع يا رب حافظا لفمي، وبابا حصينا لشفتي. ولا تمل قلبي إلى كلام الشر، فيتعلل بعلل في الخطايا مع أناس فاعلي الإثم، ولا أتفق مع مختاريهم. فليؤدبني الصديق برحمة ويوبخني. أما زيت الخاطئ فلا يدهن رأسي، لأن صلاتي أيضا بمسرة. قد ابتُلِع أقوياؤهم عند الصخرة، يسمعون كلماتي لأنهم استلذوا. مثل شحم الأرض انشقوا على الأرض. تبددت عظامهم عند الجحيم، لأن عيوننا إليك يا رب، يا رب عليك توكلت فلا تقتل نفسي. احفظني من الفخ الذي قد نصبوه لي. ومن شكوك فاعلي الإثم. يسقط الخطاة في شبكتهم، وأكون أنا وحدي حتى يجوزَ الإثم <span class="alleluia">هلليلويا.</span>
                 </div>
-<div class="psalm-verse">
-                    Leurs hommes forts ont été précipités vers le roc. Ils écouteront mes paroles, parce qu'elles sont adoucies. Comme les mottes de terre sont brisées sur la terre, leurs os ont été dispersés en Hadès. Car vers Toi Seigneur, Seigneur, nos yeux sont tournés, en toi j'ai espéré, ne tue point mon âme. Garde-moi des pièges qu'on a tendus contre moi, et des pierres de scandale des ouvriers de l'illégalité. Les pécheurs tomberont dans son filet ! Quant à moi, je suis en solitaire,                     jusqu'à ce que passe l'illégalité. <span class="alleluia">ALLELUIA.</span>
-                    <a href="#gospel" class="jump-gospel-btn">Aller à l'évangile ↓</a>
+
+</section>
+<section class="section">
+<h2 class="section-title">المزمور المائة والحادي والأربعون</h2>
+<div class="psalm-verse drop-cap">
+                    بصوتي إلى الرب صرختُ، بصوتي إلى الرب تضرعتُ. أسكب أمامه توسلي. أبث لديه ضيقي، عند فناء روحي مني وأنت علمتَ سبلي. في الطريق التي أسلك أخفوا لي فخا، تأملت عن اليمين وأبصرت فلم يكن من يعرفني. ضاع المهرب مني وليس من يسأل عن نفسي. فصرختُ إليك يا رب وقلت: أنت هو رجائي وحظي في أرض الأحياء. أنصت إلى طلبتي فإنني قد تذللتُ جدا. نجني من الذين يضطهدونني لأنهم قد اعتزوا أكثر مني. أخرج من الحبس نفسي، لكي أشكر اسمك يا رب. إياي ينتظر الصديقون حتى تجازيني <span class="alleluia">هلليلويا.</span>
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psaume 141</h2>
+<h2 class="section-title">المزمور المائة والخامس والأربعون</h2>
 <div class="psalm-verse drop-cap">
-                    De ma voix j'ai crié au Seigneur, de ma voix j'ai supplié le Seigneur. J'épancherai devant Lui ma supplique, j'épancherai mon affliction devant Lui. Pendant que mon esprit s'épuisait en moi, Toi tu connaissais mes sentiers. Dans la voie où je cheminais, ils avaient caché pour moi des pièges. Je regardais à ma droite, je voyais qu'il n'y avait personne qui me connaisse. Tout refuge était perdu pour moi, et nul n'était là pour rechercher mon âme. J'ai crié vers Toi, Seigneur, et j'ai déclaré : « Tu es mon Espérance et mon Partage en la terre des vivants. » Sois attentif à ma supplication, car je suis humilié à l'excès ! Délivre-moi de ceux qui me poursuivent, car ils ont pris le pouvoir sur moi ! Fais sortir mon âme hors de sa prison, pour qu'elle professe Ton Nom, Seigneur !                     Les justes m'attendront jusqu'à ce que Tu m'aies récompensé. <span class="alleluia">ALLELUIA.</span>
-                    <a href="#gospel" class="jump-gospel-btn">Aller à l'évangile ↓</a>
+                    سبحي يا نفسي الربَّ، أسبح الرب في حياتي وأرتل لإلهي ما دمت موجودا. لا تتكلوا على الرؤساء ولا على بني البشر الذين ليس عندهم خلاص. تخرج روحهم فيعودون إلى ترابهم. في ذلك اليوم تهلك كافة أفكارهم. 
+                </div>
+<div class="psalm-verse">
+                    طوبى لمن إله يعقوب معينه. واتكاله على الرب إلهه، الذي صنع السماء والأرض والبحر وكل ما فيها. الحافظ العدل إلى الدهر، الصانع الحكم للمظلومين المعطي الطعام للجياع. الرب يحل المربوطين الرب يقيم الساقطين. الرب يُحَكِّم العميان. الرب يحب الصديقين. الرب يحفظ الغرباء، ويعضد اليتيم والأرملة. ويبيد طرق الخطاة. يملك الرب إلى الدهر، وإلهك يا صهيون من جيل إلى جيل هلليلويا . <span class="alleluia">هلليلويا.</span>
+                </div>
+
+</section>
+<section class="section">
+<h2 class="section-title">المزمور المائة والسادس والأربعون</h2>
+<div class="psalm-verse drop-cap">
+                    سبحوا الرب فان المزمور جيد، ولإلهنا يلذ التسبيح. الرب يبني أورشليم. الرب يجمع متفرقي إسرائيل. الرب يشفي المنكسري القلوب، ويجبر جميع كسرهم. المحصي كثرة الكواكب، ولكافتها يعطي أسماء. عظيم هو الرب وعظيمة هي قوته، ولا إحصاء لفهمه. الرب يرفع الودعاء ويذل الخطاة إلى الأرض. 
+                </div>
+<div class="psalm-verse">
+                    ابتدئوا للرب بالاعتراف، رتلوا لإلهنا بالقيثارة. الذي يجلل السماء بالغمام، الذي يهيئ للأرض المطر، الذي يُنبت العشب على الجبال، والخضرة لخدمة البشر، ويعطي البهائم طعامها، ولفراخ الغربان التي تدعوه. لا يؤْثر قوة الفرس ولا يسر بساقي الرجل، بل يسر الرب بخائفيه وبالراجين رحمته <span class="alleluia">هلليلويا.</span>
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Psaume 145</h2>
+<h2 class="section-title">المزمور المائة والسابع والأربعون</h2>
 <div class="psalm-verse drop-cap">
-                    Alléluia ! Ô mon âme, loue le Seigneur ! Je louerai le Seigneur durant ma vie, je psalmodierai à mon Dieu tant que j'existerai. Ne mettez point votre confiance dans les princes, ni dans les fils des humains, car pour eux il n'est point de salut ! Son esprit sortira, et il retournera en sa terre, en ce jour-là périront toutes ses pensées. 
-                </div>
-<div class="psalm-verse">
-                    Bienheureux celui qui a pour aide le Dieu de Jacob, son espérance dans le Seigneur son Dieu, Qui a fait le ciel et la terre, et la mer, et tout ce qui est en elle, qui garde la Vérité pour les siècles, Qui rend justice à ceux à qui on a fait injustice, qui donne la nourriture aux affamés. Le Seigneur déliera ceux qui sont enchaînés. 
-                </div>
-<div class="psalm-verse">
-                    Le Seigneur redresse ceux qui sont brisés, le Seigneur rend sages les aveugles, le Seigneur aime les justes. Le Seigneur gardera les étrangers, il secourra l'orphelin et la veuve, et il fera disparaître la voie des pécheurs. Le Seigneur régnera pour les siècles, c'est ton Dieu, ô Sion,                     de génération en génération. <span class="alleluia">ALLELUIA.</span>
-                    <a href="#gospel" class="jump-gospel-btn">Aller à l'évangile ↓</a>
-                </div>
-</section>
-<section class="section">
-<h2 class="section-title">Psaume 146</h2>
-<div class="psalm-verse drop-cap">
-                    Alléluia ! Louez le Seigneur, car il est bon de psalmodier ! Puisse la louange être agréable à notre Dieu ! C'est le Seigneur qui a bâti Jérusalem, il rassemblera la diaspora d'Israël. Il guérit ceux qui sont affligés en leur cœur, et il bande leurs plaies. Il dénombre les multitudes d'étoiles, et toutes, Il les appelle par leur nom. Grand est notre Seigneur, et grande est sa Puissance, et son intelligence infinie. Le Seigneur accueille les doux, et humilie les pécheurs jusqu'à terre. 
-                </div>
-<div class="psalm-verse">
-                    Entonnez des chants de profession au Seigneur, psalmodiez à notre Dieu sur la cithare ! C'est Lui qui revêt le ciel de nuages, lui qui prépare de la pluie pour la terre, lui qui fait pousser de l'herbe dans les montagnes, et du fourrage pour le service de l'homme. C'est Lui qui donne aux bétails leur nourriture, et aux petits des corbeaux qui l'invoquent. Il ne voudrait pas de la puissance du cheval, ni ne donne son approbation aux jarrets de l'homme. Le Seigneur approuvera ceux qui le craignent,                     et tous ceux qui espèrent en Sa Miséricorde. <span class="alleluia">ALLELUIA.</span>
-                    <a href="#gospel" class="jump-gospel-btn">Aller à l'évangile ↓</a>
-                </div>
-</section>
-<section class="section">
-<h2 class="section-title">Psaume 147</h2>
-<div class="psalm-verse drop-cap">
-                    Alléluia ! Jérusalem, loue le Seigneur ! Ô Sion, loue ton Dieu ! Car Il a fortifié les verrous de tes portes, il a béni tes fils qui sont en toi. C'est Lui qui a établi la paix sur tes frontières, et qui t'emplit de fleur de froment ! C'est Lui qui envoie sa Parole à la terre, et sa Parole court vite ! C'est Lui qui couvre la terre de neige comme d'une toison, et verse des brouillards comme de la cendre. C'est Lui qui jette de la glace comme des morceaux de pain, qui alors peut supporter la face de la froidure ? Il enverra Sa Parole, et elle les fera fondre, Il soufflera son Esprit, et les eaux couleront. C'est Lui qui annonce sa Parole à Jacob, ses ordonnances et ses jugements à Israël.                     Il n'a point fait ainsi pour toutes les nations, et Il ne leur a pas révélé ses ordonnances. <span class="alleluia">ALLELUIA.</span>
-                    <a href="#gospel" class="jump-gospel-btn">Aller à l'évangile ↓</a>
+                    سبحي الرب يا أورشليم، سبحي إلهك يا صهيون. لأنه قد قوى مغاليق أبوابك وبارك بنيك فيك. الذي جعل تخومَك في سلام، ويملأك من شحم الحنطة. الذي يرسل كلمته إلى الأرض فيسرع قوله عاجلا جدا. المعطي الثلج كالصوف، المذري الضباب كالرماد، ويلقي الجليد مثل الفتات. قدام وجه برْدِه من يقوم. يرسل كلمته فتذيبه، تهب ريحه فتسيل المياه. المخبر كلمته ليعقوب وفرائضه وأحكامه لإسرائيل. لم يصنع هكذا بكل الأمم، وأحكامُه لم يوضحها لهم <span class="alleluia">هلليلويا.</span>
                 </div>
 </section>
 <section class="section" id="gospel">
-<h2 class="section-title">Évangile de la douzième heure</h2>
-<div class="prayer-text"><em>Gloire à Toi ô notre Dieu ! Seigneur, bénis la lecture du Saint Évangile selon Luc :</em></div>
-<div class="psalm-verse drop-cap">
-                    Et voici qu'il y avait à Jérusalem un homme du nom de Syméon. Cet homme était juste et pieux ; il attendait la consolation d'Israël et l'Esprit Saint reposait sur lui.
-                </div>
+<h2 class="section-title">إنجيل لوقا (٢: ٢٥-٣٢)</h2>
 <div class="prayer-text">
-                    Gloire à toi Seigneur !
+                    وإذا إنسان كان بأورشليم اسمه سمعان، وهذا الإنسان كان بارا تقيا متوقعا تعزية إسرائيل، والروح القدس كان عليه. وكان قد أعلم بوحي من الروح القدس أنه لا يرى الموت قبل أن يعاين المسيح الرب. فأقبل بالروح إلى الهيكل. ولما دخل بالطفل يسوع أبواه ليصنعا عنه كما يجب في الناموس، حمله سمعان على ذراعيه وبارك الله قائلا: الآن يا سيدي تطلق عبدك بسلام حسب قولك، لأن عيني قد أبصرتا خلاصك الذي أعددته قدام جميع الشعوب. نورا تجلى للأمم، ومجدا لشعبك إسرائيل. (والمجد لله دائما)
+                </div>
+
+<div class="prayer-text">
+                    والمجد لله دائمًا أبديًا آمين.
                 </div>
 <div class="prayer-text doxology">
-<span class="doxology-coptic">Tenovw2t `mmok `w Pixrictoc nem Pekiwt `n`aja0oc: nem P`pnevma e0ovab: ge aki akcw5 `mmon nai nan.</span>
-<span class="doxology-english">Nous t'adorons ô Christ avec ton Père qui est bon et le Saint-Esprit, car tu es venu et tu nous as sauvés. Fais-nous miséricorde !</span>
+<span class="doxology-coptic" dir="ltr">Tenovw2t `mmok `w Pixrictoc nem Pekiwt `n`aja0oc: nem P`pnevma e0ovab: ge aki akcw5 `mmon nai nan.</span>
+<span class="doxology-english">نسجد لك أيها المسيح مع أبيك الصالح والروح القدس لأنك أتيت وخلصتنا فارحمنا.</span>
 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Tropaires de la douzième heure</h2>
-<div class="prayer-text"><span class="litany-number">(1)</span> Me voici prêt à me tenir debout devant le Juge juste, effrayé et troublé par mes nombreux péchés car l'existence consumée dans les convoitises mérite le jugement. Mais fais ta métanoia, ô mon âme, tant que tu demeures sur terre, car le tas de poussière dans le tombeau ne fait aucune louange, et nul parmi les morts ne fait mémoire de rien, et nul en enfer ne Lui rend grâce. Alors réveille-toi du sommeil de la paresse et implore le Sauveur dans une métanoia, en disant : Ô Dieu fais-moi miséricorde et sauve-moi !</div>
+<h2 class="section-title">القطع</h2>
+<div class="prayer-text"><span class="litany-number">(1)</span> ¨ هوذا أنا عتيد أن أقف أمام الديان العادل، مرعوبا ومرتعبا من كثرة ذنوبي، لأن العمر المنقضي في الملاهي يستوجب الدينونة. لكن توبي يا نفسي مادمتِ في الأرض ساكنة، لأن التراب في القبر لا يسبح. وليس في الموتى من يذكر، ولا في الجحيم من يشكر. بل انهضي من رقاد الكسل وتضرعي إلى المخلص بالتوبة قائلة: اللهم ارحمني وخلصني. (ذوكصابتري كيه إيو كي آجيو ابنيفماتي Doxa Patri ke Uiw ke `agiw `Pneumati -</div>
 <div class="prayer-text doxology">
-<span class="doxology-coptic">Do7a patri ke Viw ke ajiw 1`Pnevmati</span>
-<span class="doxology-english">Gloire au Père, au Fils et au Saint Esprit !</span>
+<span class="doxology-coptic" dir="ltr">Do7a patri ke Viw ke ajiw 1`Pnevmati</span>
+<span class="doxology-english">المجد للآب والابن والروح القدس.</span>
 </div>
-<div class="prayer-text"><span class="litany-number">(2)</span> Si l'existence était perpétuelle et si ce monde n'avait pas de fin, il y aurait longtemps qu'une excuse évidente se serait manifestée. Mais lorsque tes mauvaises œuvres et tes viles méchancetés seront dévoilées devant le Juge juste, comment te trouveras-tu, alors que tu es renversée sur le lit des péchés, négligente à mater le corps ? Ô Christ notre Dieu, je suis saisi de crainte devant le Siège de Ton Jugement redoutable, et je suis dans l'effroi devant le rayonnement de ta Divinité, Je suis un misérable plein de souillures, couché dans mon lit, et négligent dans ma vie. Cependant, comme le publicain, je me frappe la poitrine et je dis : Ô Dieu pardonne-moi, car je suis pêcheur !</div>
+<div class="prayer-text"><span class="litany-number">(2)</span> ¨ لو كان العمر ثابتا وهذا العالم مؤبدا، لكان لك يا نفسي حجة واضحة، لكن إذا انكشفت أفعالك الرديئة وشرورك القبيحة أمام الديان العادل، فأيَّ جواب تجيبين وأنت على سرير الخطايا منطرحة، وفى إخضاع الجسد متهاونة؟ أيها المسيح إلهنا لكرسي حكمك المرهوب أفزع، ولمجلس دينونتك أخشع، ولنور شعاع لاهوتك أجزع، أنا الشقي المتدنس، الراقد على فراشي المتهاون في حياتي. لكنى أتخذ صورة العشار قارعا صدري، قائلا: اللهم اغفر لي فإني خاطى. (كي نين، كي آ إي، كي ايستوس إي أوناس تون إي أونون آمين Ke nun ke `a`i ke ic touc `e`wnac twn `e`wnwn `amyn - الآن وكل أوان وإلى دهر الداهرين آمين).</div>
 <div class="prayer-text doxology">
-<span class="doxology-coptic">Ke nvn ke `a`i ke ic toc `e`wnac twn `e`wnwn: `am3n.</span>
-<span class="doxology-english">Maintenant et toujours et pour les siècles des siècles. Amen !</span>
+<span class="doxology-coptic" dir="ltr">Ke nvn ke `a`i ke ic toc `e`wnac twn `e`wnwn: `am3n.</span>
+<span class="doxology-english">الآن وكل أوان وإلى دهر الدهور آمين.</span>
 </div>
-<div class="prayer-text"><span class="litany-number">(3)</span> Ô Vierge immaculée envoie ton ombre, mon secours, vite à ton serviteur (viens-moi en aide, à moi qui suis ton serviteur !) Éloigne de moi les flots des pensées mauvaises, et éveille mon âme faiblarde pour prier et veiller, car elle est plongée dans un lourd sommeil. Car tu es une Mère puissante, miséricordieuse et secourable, Mère de la Source de la Vie, mon Roi et mon Dieu, Jésus Christ est mon espérance.</div>
+<div class="prayer-text"><span class="litany-number">(3)</span> ¨ أيتها العذراء الطاهرة أسبلي ظلك السريع المعونة على عبدك. وأبعدي أمواج الأفكار الرديئة عنى. وأنهضي نفسي المريضة للصلاة والسهر، لأنها استغرقت في سُبات عميق. فإنك أم قادرة رحيمة معينة، والدة ينبوع الحياة، ملكي والهي، يسوع المسيح رجائي.</div>
 </section>
 <section class="section">
-<h2 class="section-title">Daigne, Seigneur</h2>
+<h2 class="section-title">تفضل يا رب</h2>
 <div class="prayer-text">
-                    Daigne, Seigneur, nous garder cette nuit sans péché. Tu es béni, Seigneur, Dieu de nos pères, et excessivement béni et glorifié est Ton Nom à jamais. Amen.
+                    تفضل يا رب أن تحفظنا في هذه الليلة بغير خطية. مبارك أنت يا رب إله آبائنا، ومبارك ومتعالي ومتمجد هو اسمك إلى الأبد. آمين.
                 </div>
 <div class="prayer-text">
-                    Que Ta miséricorde, Seigneur, soit sur nous, selon notre espérance en Toi ; car les yeux de tous sont tournés vers Toi, et Tu leur donnes leur nourriture en temps opportun. Exauce-nous, ô Dieu, notre Sauveur, espérance de toutes les régions de la terre. Et Toi, Seigneur, garde-nous de cette génération et pour toujours. Amen.
+                    فلتكن رحمتك يا رب علينا حسب اتكالنا عليك. لأن عيون الجميع تنتظرك وأنت تعطيهم طعامهم في حينه. اسمعنا أيها الإله مخلصنا رجاء كل أقاصي الأرض. وأنت يا رب أنقذنا من هذا الجيل وإلى الأبد. آمين.
                 </div>
 <div class="prayer-text">
-                    Tu es béni, Seigneur, enseigne-moi Tes ordonnances. Tu es béni, Seigneur, fais-moi comprendre Tes commandements. Tu es béni, Seigneur, éclaire-moi de Ta justice. Ta miséricorde, Seigneur, dure à jamais. Ne dédaigne pas, Seigneur, les œuvres de Tes mains. Tu as été mon refuge de génération en génération.
+                    مبارك أنت يا رب علمني عدلك. مبارك أنت يا سيدي فهمني حقوقك. مبارك أنت يا قدوس أنرني ببرك. رحمتك يا رب إلى الأبد وأعمال يديك لا ترفضها. لك التسبيح. لك التمجيد. لك التعظيم يا أبا الآب والابن والروح القدس من الآن وإلى الأبد. آمين.
                 </div>
-<div class="prayer-text">
-                    J'ai dit : Seigneur, aie pitié de moi, guéris mon âme, car j'ai péché contre Toi. Seigneur, je me suis réfugié en Toi, sauve-moi et enseigne-moi à faire Ta volonté, car Tu es mon Dieu, et auprès de Toi est la source de la vie. Dans Ta lumière nous verrons la lumière.
-                </div>
-<div class="prayer-text">
-                    Que Ta miséricorde s'étende sur ceux qui Te connaissent, et Ta justice sur les cœurs droits. À Toi la bénédiction. À Toi la louange. À Toi la gloire, ô Père, Fils et Saint-Esprit, de tout temps, maintenant et pour les siècles des siècles. Amen.
-                </div>
-<div class="prayer-text">
-                    Il est bon de confesser le Seigneur et de chanter des louanges à Ton Nom, ô Très-Haut ; de proclamer Ta miséricorde chaque matin et Ta fidélité chaque nuit.
-                </div>
+
+
+
 </section>
 <section class="section">
-<h2 class="section-title">Le Trisagion</h2>
+<h2 class="section-title">الثلاث تقديسات</h2>
 <div class="prayer-text">
-                    Saint Dieu, Saint fort, Saint immortel, né de la Vierge, aie pitié de nous ! Saint Dieu, Saint fort, Saint immortel, crucifié pour nous, aie pitié de nous !
+                    قدوس الله، قدوس القوى، قدوس الحي الذي لا يموت، الذي ولد من العذراء، ارحمنا. قدوس الله، قدوس القوى، قدوس الحي الذي لا يموت، الذي صلب عنا، ارحمنا. قدوس الله، قدوس القوى، قدوس الحي الذي لا يموت، الذي قام من الأموات وصعد إلى السموات، ارحمنا. المجد للآب والابن والروح القدس، الآن وكل أوان وإلى دهر الدهور. أمين. أيها الثالوث القدوس ارحمنا. أيها الثالوث القدوس ارحمنا. أيها الثالوث القدوس ارحمنا.
                 </div>
 <div class="prayer-text">
-                    Saint Dieu, Saint fort, Saint immortel, ressuscité d'entre les morts et monté aux cieux, aie pitié de nous ! Gloire au Père, au Fils et au Saint Esprit ; et maintenant et toujours et dans les siècles des siècles, Amen !
+                    يا رب اغفر لنا خطايانا. يا رب اغفر لنا آثامنا. يا رب اغفر لنا زلاتنا. يا رب افتقد مرضى شعبك، اشفهم من أجل اسمك القدوس. آباؤنا وإخوتنا الذين رقدوا، يا رب نيح نفوسهم. يا من هو بلا خطية، يا رب ارحمنا. يا من بلا خطية، يا رب أعنا، واقبل طلباتنا إليك. لأن لك المجد والعزة والتقديس المثلث. يا رب ارحم. يا رب ارحم يا رب بارك. أمين.
                 </div>
-<div class="prayer-text">
-                    Ô Sainte Trinité aie pitié de nous. Ô toute Sainte Trinité aie pitié de nous ! Ô Trinité Sainte aie pitié de nous !
-                </div>
-<div class="prayer-text">
-                    Seigneur pardonne-nous nos péchés. Seigneur pardonne-nous nos illégalités. Seigneur pardonne-nous nos transgressions. Visite, Seigneur, les malades de ton peuple, guéris-les à cause de ton saint Nom. À nos pères et à nos frères qui se sont endormis, accorde, Seigneur, le repos de leurs âmes.
-                </div>
-<div class="prayer-text">
-                    Ô Toi qui es sans péché, Seigneur aie pitié de nous ! Ô Toi qui es sans péché, Seigneur secours-nous et reçois nos supplications. Car à Toi sont dues la gloire, la magnificence et le triple Saint. Seigneur aie pitié de nous ! Seigneur aie pitié de nous ! Seigneur bénis ! Amen !
-                </div>
-<div class="prayer-text">
-                    <em>Rends-nous dignes de dire en action de grâce :</em> <strong>Notre Père</strong> ...
-                </div>
+
+
+
+
 </section>
 <section class="section">
-<h2 class="section-title">Tropaires de la Vierge</h2>
+<h2 class="section-title">السلام لك</h2>
 <div class="prayer-text">
-                    Salut à toi, nous te supplions, ô toi la Sainte, pleine de gloire, toujours vierge, Mère de Dieu, Mère du Christ :
+                    السلام لك. نسألك أيتها القديسة الممتلئة مجدا العذراء كل حين، والدة الإله أم المسيح، أصعدي صلواتنا إلى ابنك الحبيب ليغفر لنا خطايانا.
                 </div>
 <div class="prayer-text">
-                    Fais monter notre prière vers Ton Fils bien-aimé pour qu'Il nous pardonne nos péchés.
+                    السلام للتي ولدت لنا النور الحقيقي المسيح إلهنا، العذراء القديسة، اسألي الرب عنا، ليصنع رحمة مع نفوسنا، ويغفر لنا خطايانا.
                 </div>
 <div class="prayer-text">
-                    Salut à toi, qui as enfanté pour nous la Lumière véritable, le Christ, notre Dieu, ô Vierge sainte !
+                    أيتها العذراء مريم والدة الإله، القديسة الشفيعة الأمينة لجنس البشرية، اشفعي فينا أمام المسيح الذي ولدته لكي ينعم علينا بغفران خطايانا.
                 </div>
 <div class="prayer-text">
-                    Supplie le Seigneur pour nous afin qu'il nous fasse miséricorde à nos âmes et nous pardonne nos péchés.
+                    السلام لك أيتها العذراء الملكة الحقيقية، السلام لفخر جنسنا، ولدت لنا عمانوئيل. نسألك: اذكرينا، أيتها الشفيعة المؤتمنة، أمام ربنا يسوع المسيح، ليغفر لنا خطايانا.
                 </div>
-<div class="prayer-text">
-                    Ô Vierge Marie, sainte Theotokos, Protectrice, fidèle au genre humain,
-                </div>
-<div class="prayer-text">
-                    Intercède pour nous devant le Christ que tu as enfanté afin qu'Il nous gratifie de la rémission de nos péchés.
-                </div>
-<div class="prayer-text">
-                    Salut à toi, ô Vierge, Reine véritable. Salut à toi, fierté de notre race ! Tu as enfanté pour nous Emmanuel.
-                </div>
-<div class="prayer-text">
-                    Nous te supplions, souviens-toi de nous, ô Médiatrice fidèle, devant notre Seigneur Jésus Christ, afin qu'Il nous pardonne nos péchés.
-                </div>
+
+
+
+
 </section>
 <section class="section">
-<h2 class="section-title">Introduction de l'Acte de Foi</h2>
+<h2 class="section-title">بدء قانون الإيمان</h2>
 <div class="prayer-text">
-                    Nous t'exaltons ô Mère de la vraie Lumière, et nous te glorifions ô sainte Mère de Dieu, car tu as enfanté pour nous le Sauveur du monde entier. Il est venu et a sauvé nos âmes.
+                    نعظمك يا أم النور الحقيقي، ونمجدك أيتها العذراء القديسة، والدة الإله، لأنك ولدت لنا مخلص العالم، أتى وخلص نفوسنا.
                 </div>
 <div class="prayer-text">
-                    Gloire à Toi ô notre Maître et notre Roi, le Christ : fierté des apôtres, couronne des martyrs, allégresse des justes, affermissement des Églises et rémission des péchés.
+                    المجد لكَ يا سيدنا وملكنا المسيح، فخر الرسل، إكليل الشهداء تهليل الصديقين، ثبات الكنائس، غفران الخطايا.
                 </div>
 <div class="prayer-text">
-                    Nous proclamons la Trinité sainte qui est en une Divinité unique, nous l'adorons et nous la glorifions.
+                    نبشر بالثالوث القدوس، لاهوت واحد، نسجد له ونمجده. يا رب ارحم. يا رب ارحم. يا رب بارك. آمين.
+                </div>
+
+</section>
+<section class="section">
+<h2 class="section-title">قانون الإيمان المقدس الأرثوذكسي</h2>
+<div class="prayer-text">
+                    بالحقيقة نؤمن بإله واحد، الله الآب، ضابط الكل، خالق السماء والأرض، ما يُرَى وما لا يرى. نؤمن برب واحد يسوع المسيح، ابن الله الوحيد، المولود من الآب قبل كل الدهور، نور من نور، إله حق من إله حق، مولود غير مخلوق، مساو للآب في الجوهر، الذي به كان كل شيء. هذا الذي من أجلنا نحن البشر، ومن أجل خلاصنا، نزل من السماء، وتجسد من الروح القدس ومن مريم العذراء، وتأنس. وصلب عنا على عهد بيلاطس البنطي. وتألم وقبر وقام من بين الأموات في اليوم الثالث كما في الكتب، وصعد إلى السموات، وجلس عن يمين أبيه، وأيضا يأتي في مجده ليدين الأحياء والأموات، الذي ليس لملكه انقضاء.
                 </div>
 <div class="prayer-text">
-                    Seigneur fais miséricorde ! Seigneur fais miséricorde ! Seigneur bénis ! Amen !
+                    نعم نؤمن بالروح القدس، الرب المحيى المنبثق من الآب. نسجد له ونمجده مع الآب والابن، الناطق في الأنبياء.
+                </div>
+<div class="prayer-text">
+                    وبكنيسة واحدة مقدسة جامعة رسولية.
+                </div>
+<div class="prayer-text">
+                    ونعترف بمعمودية واحدة لمغفرة الخطايا.
+                </div>
+<div class="prayer-text">
+                    وننتظر قيامة الأموات وحياة الدهر الآتي. آمين.
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Acte de Foi</h2>
+<h2 class="section-title">كيرياليسون 41 مرة</h2>
+<div class="prayer-text"><em>يصلي المؤمن:</em></div>
 <div class="prayer-text">
-                    En vérité, nous croyons en un Dieu Unique : le Père Tout-Puissant qui a créé le ciel et la terre, les choses visibles et invisibles.
+                    يا رب استمع لنا وارحمنا واغفر لنا خطايانا. آمين.
+                </div>
+<div class="prayer-text"><em>(يا رب ارحم) 41 مرة</em></div>
+</section>
+<section class="section">
+<h2 class="section-title">قدوس قدوس قدوس</h2>
+<div class="prayer-text">
+                    قدوس، قدوس، قدوس، رب الصباؤوت. السماء والأرض مملوءتان من مجدك وكرامتك. ارحمنا يا الله الآب ضابط الكل. أيها الثالوث القدوس ارحمنا. أيها الرب إله القوات كن معنا، لأنه ليس لنا معين في شدائدنا وضيقاتنا سواك.
                 </div>
 <div class="prayer-text">
-                    Nous croyons en un Seigneur unique : Jésus-Christ le Fils de Dieu, Unique-engendré, né du Père avant tous les siècles. Lumière de Lumière, vrai Dieu né du Vrai Dieu, engendré, non pas créé, de même essence que le Père, et par qui tout est advenu.
+                    حل واغفر واصفح لنا يا الله عن سيئاتنا، التي صنعناها بإرادتنا والتي صنعناها بغير إرادتنا، التي فعلناها بمعرفة والتي فعلناها بغير معرفة، الخفية والظاهرة. يا رب اغفرها لنا، من أجل اسمك القدوس الذي دعي علينا. كرحمتك يا رب وليس كخطايانا.
+                </div>
+
+</section>
+<section class="section">
+<h2 class="section-title">الصلاة الربانية</h2>
+<div class="prayer-text"><em>اللهم اجعلنا مستحقين أن نقول بشكر:</em></div>
+<div class="prayer-text">
+                    أبانا الذي في السموات. ليتقدس اسمك. ليأت ملكوتك. لتكن مشيئتك. كما في السماء كذلك على الأرض. خبزنا الذي للغد أعطنا اليوم.
                 </div>
 <div class="prayer-text">
-                    Lui qui pour nous, les humains, et pour notre Salut est descendu du ciel. Il s'est incarné par l'Esprit Saint et par la Vierge Marie et s'est fait homme. Puis il a été crucifié pour nous sous Ponce Pilate, a souffert et a été enseveli. Et il est ressuscité des morts le troisième jour conformément aux Écritures. Il est monté aux cieux et s'est assis à la droite de son Père.
-                </div>
-<div class="prayer-text">
-                    Et Il reviendra dans Sa gloire pour juger les vivants et les morts, et son Règne n'aura pas de fin. Oui, nous croyons en l'Esprit Saint qui est Seigneur et qui donne la vie. Il procède du Père. Avec le Père et le Fils il est adoré et glorifié. Il a parlé par les prophètes.
-                </div>
-<div class="prayer-text">
-                    Et en l'Église, Une, Sainte, Catholique et Apostolique. Nous professons un seul baptême pour la rémission des péchés. Nous attendons la Résurrection des morts, et la vie du siècle à venir. Amen.
+                    وأغفر لنا ذنوبنا كما نغفر نحن أيضا للمذنبين إلينا. ولا تدخلنا في تجربة. لكن نجنا من الشرير. بالمسيح يسوع ربنا لأن لك الملك والقوة والمجد إلى الأبد. آمين.
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">41 Kyrie Eleison</h2>
-<div class="prayer-text"><em>Que le fidèle prie :</em></div>
+<h2 class="section-title">التحليل</h2>
 <div class="prayer-text">
-                    Seigneur, entends-nous et aie pitié de nous, et pardonne-nous nos péchés. Amen.
-                </div>
-<div class="prayer-text"><em>(Seigneur aie pitié) 41 fois</em></div>
-</section>
-<section class="section">
-<h2 class="section-title">Saint Saint Saint</h2>
-<div class="prayer-text">
-                    Tu es Saint, Saint, Saint, Seigneur Sabaoth, le ciel et la terre sont remplis de Ta gloire et de Ton honneur ! Aie pitié de nous ô Dieu le Père Tout-Puissant. Ô Trinité Sainte, aie pitié de nous ! Ô Seigneur Dieu des puissances, sois avec nous, car nous n'avons d'aide que de Toi dans nos tribulations et nos angoisses.
-                </div>
-<div class="prayer-text">
-                    Ô Dieu absous, pardonne et remets nos péchés, que nous les ayons commis volontairement ou involontairement, en connaissance ou par ignorance, secrètement ou ouvertement. Ô Seigneur tu nous les pardonneras à cause de Ton saint Nom qui a été invoqué sur nous.
-                </div>
-<div class="prayer-text">
-                    Selon Ta miséricorde Seigneur et non selon nos péchés !
+                    يا رب جميع ما أخطأنا به إليك في هذا اليوم، إن كان بالفعل أو بالقول أو بالفكر أو بجميع الحواس، فاصفح واغفر لنا من أجل اسمك القدوس، كصالح ومحب للبشر. وأنعم علينا اللهم بليلة سالمة، وبهذا النوم طاهرا من كل قلق. وأرسل لنا ملاك السلامة ليحرسنا من كل شر، ومن كل ضربة، ومن كل تجربة العدو. بالنعمة والرأفات ومحبة البشر اللواتي لابنك الوحيد ربنا وإلهنا ومخلصنا يسوع المسيح.هذا الذي من قبله يليق بك معه المجد والإكرام والعزة. مع الروح القدس المحيي المساوي لك، الآن وكل أوان وإلى دهر الدهور. آمين.
                 </div>
 </section>
 <section class="section">
-<h2 class="section-title">Le Notre Père</h2>
-<div class="prayer-text"><em>Rends-nous dignes de dire en action de grâce :</em></div>
+<h2 class="section-title">طلبة تصلى آخر كل ساعة</h2>
 <div class="prayer-text">
-                    Notre Père qui es aux cieux, que Ton Nom soit sanctifié, que Ton Règne vienne, que Ta Volonté soit faite, comme au ciel, aussi sur la terre. Notre pain de demain, donne-le-nous aujourd'hui,
+                    ارحمنا يا الله ثم ارحمنا. يا من في كل وقت وكل ساعة، في السماء وعلى الأرض، مسجود له وممجد. المسيح إلهنا الصالح، الطويل الروح، الكثير الرحمة، الجزيل التحنن، الذي يحب الصديقين ويرحم الخطاة الذين أولهم أنا. الذي لا يشاء موت الخاطئ مثل ما يرجع ويحيا. الداعي الكل إلى الخلاص لأجل الموعد بالخيرات المنتظرة.
                 </div>
 <div class="prayer-text">
-                    et remets-nous nos dettes comme nous les remettons à nos débiteurs, et ne nous induis pas en tentation, mais délivre-nous du Mal. Par le Christ Jésus, notre Seigneur, car à Toi sont le Règne, la Puissance et la Gloire, pour les siècles. Amen !
-                </div>
-</section>
-<section class="section">
-<h2 class="section-title">Absolution de la douzième heure</h2>
-<div class="prayer-text">
-                    Que tous les péchés que nous avons commis contre Toi en ce jour, Seigneur, en action, en parole, en pensée ou par tous nos sens, Pardonne, remets-les nous à cause Ton saint Nom, comme bon et Ami du genre humain. Et donne-nous par ta grâce, ô Dieu, une nuit paisible et un sommeil pur de tout trouble, Et envoie-nous l'ange de la paix, qu'il nous protège de tout mal, de tout fléau et de toute tentation de l'ennemi. Par la grâce, la miséricorde et l'amour du genre humain de Ton Fils Unique-Engendré (notre Seigneur, Dieu et Sauveur Jésus-Christ, par Qui la gloire, l'honneur, la souveraineté et l'adoration Te sont dus avec Lui) et le don du Saint-Esprit (vivifiant et de même essence que Toi), Maintenant et toujours et dans tous les siècles des siècles. Amen !
-                </div>
-</section>
-<section class="section">
-<h2 class="section-title">Conclusion de chaque heure</h2>
-<div class="prayer-text">
-                    Ô Dieu, aie pitié de nous, Toi qui es adoré et glorifié, en tout temps et à toute heure, dans le ciel et sur la terre. Ô Christ notre Dieu bon, longanime, plein de miséricorde et abondant en compassion, Toi qui aimes les justes et qui fais miséricorde aux pécheurs (dont je suis le premier), toi qui ne veux pas la mort du pécheur mais qu'il se repente et vive. Tu appelles tout un chacun au Salut à cause de la promesse des bienfaits attendus.
-                </div>
-<div class="prayer-text">
-                    Ô Seigneur, reçois nos supplications en cette heure, dirige nos vies pour que nous accomplissions Tes commandements. Sanctifie nos esprits, purifie nos corps, rectifie nos pensées, purifie nos consciences, et délivre-nous de toute douleur et de toute peine. Entoure-nous de Tes saints anges, afin qu'ils nous préservent et nous guident comme par une escorte armée. Ainsi nous atteindrons l'Unité de la Foi et la connaissance de Ta Gloire intouchable (et incommensurable), car Tu es béni éternellement. Amen !
+                    يا رب اقبل منا في هذه الساعة وكل ساعة طلباتنا. سهل حياتنا، وأرشدنا إلى العمل بوصاياك. قدس أرواحنا. طهر أجسامنا. قوم أفكارنا. نق نياتنا. اشف أمراضنا واغفر خطايانا. ونجنا من كل حزن رديء ووجع قلب. أحطنا بملائكتك القديسين، لكي نكون بمعسكرهم محفوظين ومرشدين، لنصل إلى اتحاد الإيمان وإلى معرفة مجدك غير المحسوس وغير المحدود، فإنك مبارك إلى الأبد. آمين.
                 </div>
 </section>
 <div class="ornament">
@@ -468,31 +408,31 @@
 <div>Prime</div>
 </a>
 <a class="nav-hour" href="terce.html">
-<div>Tierce</div>
+<div>Terce</div>
 </a>
 <a class="nav-hour" href="sext.html">
-<div>Sexte</div>
+<div>Sext</div>
 </a>
 <a class="nav-hour" href="none.html">
 <div>None</div>
 </a>
 <a class="nav-hour" href="vespers.html">
-<div>Vêpres</div>
+<div>Vespers</div>
 </a>
 <a class="nav-hour" href="compline.html">
-<div>Complies</div>
+<div>Compline</div>
 </a>
 <a class="nav-hour" href="midnight.html">
-<div>Minuit</div>
+<div>Midnight</div>
 </a>
 <a class="nav-hour" href="veil.html">
-<div>Voile</div>
+<div>Veil</div>
 </a>
 <a class="nav-hour" href="other.html">
-<div>Prières diverses</div>
+<div>Other Prayers</div>
 </a>
 <a class="nav-hour" href="about.html">
-<div>À propos</div>
+<div>About</div>
 </a>
 </nav>
 </main>
