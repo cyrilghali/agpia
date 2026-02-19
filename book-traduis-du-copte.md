@@ -184,7 +184,7 @@ Lave-moi encore de mon illégalité, et purifie-moi de mon péché !
 
 Car moi, je connais mon illégalité, et mon péché est toujours devant mes yeux.
 
-C'est contre Toi seul que j'ai péché, et devant tes Yeux que j'ai fait le mal, afin que tu sois justifiée dans tes Paroles, et que tu triomphes dans tes Jugements.
+C'est contre Toi seul que j'ai péché, et devant tes Yeux que j'ai fait le mal, afin que tu sois justifié dans tes Paroles, et que tu triomphes dans tes Jugements.
 
 Car voilà que j'ai été conçu dans les illégalités, et ma mère m'a enfanté dans les péchés.
 
