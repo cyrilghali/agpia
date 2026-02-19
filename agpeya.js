@@ -374,6 +374,8 @@ if (darkModeBtn) {
         if (path.includes('/' + f + '/')) { currentFolder = f; break; }
     }
 
+    localStorage.setItem('lang', currentFolder);
+
     const isFrench = currentFolder === 'fr' || currentFolder === 'fr-old';
     const activeLang = isFrench ? 'fr' : 'ar';
 

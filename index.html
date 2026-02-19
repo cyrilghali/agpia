@@ -24,6 +24,10 @@
     <meta name="twitter:image" content="https://agpia.fr/og-image.png">
 </head>
 <body>
-    <script>window.location.href = 'fr/index.html';</script>
+    <script>
+        var lang = 'fr';
+        try { lang = localStorage.getItem('lang') || 'fr'; } catch(e) {}
+        window.location.href = lang + '/index.html';
+    </script>
 </body>
 </html>
