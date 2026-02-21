@@ -794,6 +794,31 @@ body {
     pointer-events: none;
 }
 
+.lang-variant-selector {
+    display: none;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+.lang-variant-selector.visible {
+    display: flex;
+}
+.lang-variant-selector .settings-menu-btn {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.3rem;
+    text-decoration: none;
+    color: var(--text);
+    text-align: center;
+    opacity: 0.85;
+}
+.lang-variant-selector .settings-menu-btn.active {
+    background: var(--burgundy);
+    color: var(--bg);
+    border-color: var(--burgundy);
+    pointer-events: none;
+    opacity: 1;
+}
 
 /* ============================================================================
    SITE FOOTER

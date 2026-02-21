@@ -28,14 +28,14 @@
 <div class="dropdown-wrapper">
 <select class="hour-dropdown" id="hourDropdown">
 <option data-long="Accueil" data-short="Accueil" value="index.html">Accueil</option>
-<option data-long="Prière de l'aube" data-short="1ère Heure" value="prime.html">Prière de l'aube</option>
-<option data-long="Prière de la troisième heure" data-short="3ème Heure" value="terce.html">Prière de la troisième heure</option>
-<option data-long="Prière de la sixième heure" data-short="6ème Heure" value="sext.html">Prière de la sixième heure</option>
-<option data-long="Prière de la neuvième heure" data-short="9ème Heure" value="none.html">Prière de la neuvième heure</option>
-<option data-long="Prière de la onzième heure" data-short="11ème Heure" value="vespers.html">Prière de la onzième heure</option>
-<option data-long="Prière de la douzième heure" data-short="12ème Heure" value="compline.html">Prière de la douzième heure</option>
-<option data-long="Prière de minuit" data-short="Minuit" value="midnight.html">Prière de minuit</option>
-<option data-long="Prière de la fermeture du voile" data-short="Voile" value="veil.html">Prière de la fermeture du voile</option>
+<option data-long="1ère Heure - Prime" data-short="1ère Heure" value="prime.html">1ère Heure - Prime</option>
+<option data-long="3ème Heure - Tierce" data-short="3ème Heure" value="terce.html">3ème Heure - Tierce</option>
+<option data-long="6ème Heure - Sexte" data-short="6ème Heure" value="sext.html">6ème Heure - Sexte</option>
+<option data-long="9ème Heure - None" data-short="9ème Heure" value="none.html">9ème Heure - None</option>
+<option data-long="11ème Heure - Vêpres" data-short="11ème Heure" value="vespers.html">11ème Heure - Vêpres</option>
+<option data-long="12ème Heure - Complies" data-short="12ème Heure" value="compline.html">12ème Heure - Complies</option>
+<option data-long="Minuit" data-short="Minuit" value="midnight.html">Minuit</option>
+<option data-long="Prière du Voile" data-short="Voile" value="veil.html">Prière du Voile</option>
 <option data-long="Prières diverses" data-short="Autres" value="other.html">Prières diverses</option>
 <option data-long="À propos" data-short="À propos" value="about.html">À propos</option>
 </select>
@@ -81,6 +81,10 @@
 <div class="settings-row lang-selector">
 <a class="settings-menu-btn settings-toggle" data-lang="fr" href="../fr/about.html">Français</a>
 <a class="settings-menu-btn settings-toggle" data-lang="ar" href="../ar/about.html">عربي</a>
+</div>
+<div class="settings-row lang-variant-selector">
+<a class="settings-menu-btn settings-toggle" data-variant="fr" href="../fr/about.html">Traduit du copte</a>
+<a class="settings-menu-btn settings-toggle" data-variant="fr-old" href="../fr-old/about.html">Classique</a>
 </div>
 </div>
 </div>
@@ -173,16 +177,10 @@
 <!-- Credits -->
 <section class="section">
 <h2 class="section-title">Crédits</h2>
-<div class="prayer-text"><strong>Compilé et traduit par :</strong></div>
-<div class="prayer-text">Sous-diacre : Naguy WASFY</div>
-<div class="prayer-text" style="margin-top: 1.2em;"><strong>Revu et corrigé par :</strong></div>
-<div class="prayer-text">Higoumène, père Moussa ANBA BISHOY</div>
-<div class="prayer-text">Tél. / Fax : + 33 - 1 49 58 90 40</div>
-<div class="prayer-text">Mobile Tél. : + 33 - 6 62 14 13 41</div>
-<div class="prayer-text">E-Mail : <a href="mailto:abounamoussa_anbabishoy@yahoo.fr">abounamoussa_anbabishoy@yahoo.fr</a></div>
-<div class="prayer-text">et Mme Nadia SIMAIKA-KELADA ANTOUN</div>
-<div class="prayer-text" style="margin-top: 1.2em;"><strong>Correction et mise en page 2009 :</strong></div>
-<div class="prayer-text">Magdalena PROD'HOMME</div>
+<div class="prayer-text"><strong>Traduction et conception de ce document :</strong> Marian-Apollos Balastre</div>
+<div class="prayer-text">Sous-diacre, certifié de langue Copte (III) de l'Institut Catholique de Paris</div>
+<div class="prayer-text">Enseignant de grec à l'Institut des études coptes de la Cathédrale St Marc au Caire, Département de la langue copte dirigé par Abba Démétrios, Métropolite de Mallawi</div>
+<div class="prayer-text">À contacter pour toute suggestion : <a href="mailto:herbert.mendelsohn@gmail.com">herbert.mendelsohn@gmail.com</a> (06 86 42 76 35)</div>
 <div class="prayer-text" style="margin-top: 1.2em;"><strong>Numérisation et publication web :</strong> Cyril GHALI</div>
 <div class="prayer-text">Pour toute question relative à la version numérique et à sa publication en ligne : <a href="mailto:contact@cyrilghali.fr">contact@cyrilghali.fr</a></div>
 </section>
@@ -194,22 +192,22 @@
 </div>
 <nav class="nav-hours">
 <a class="nav-hour" href="prime.html">
-<div>Aube</div>
+<div>Prime</div>
 </a>
 <a class="nav-hour" href="terce.html">
-<div>3ème Heure</div>
+<div>Tierce</div>
 </a>
 <a class="nav-hour" href="sext.html">
-<div>6ème Heure</div>
+<div>Sexte</div>
 </a>
 <a class="nav-hour" href="none.html">
-<div>9ème Heure</div>
+<div>None</div>
 </a>
 <a class="nav-hour" href="vespers.html">
-<div>11ème Heure</div>
+<div>Vêpres</div>
 </a>
 <a class="nav-hour" href="compline.html">
-<div>12ème Heure</div>
+<div>Complies</div>
 </a>
 <a class="nav-hour" href="midnight.html">
 <div>Minuit</div>
