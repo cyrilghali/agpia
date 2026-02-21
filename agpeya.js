@@ -6,6 +6,18 @@ if ('serviceWorker' in navigator) {
 }
 
 // ============================================================================
+// UNOFFICIAL TRANSLATION NOTICE (fr-old only)
+// ============================================================================
+
+(function injectUnofficialNotice() {
+    if (!window.location.pathname.includes('/fr-old/')) return;
+    const notice = document.createElement('div');
+    notice.className = 'unofficial-notice';
+    notice.textContent = 'Cette traduction (« Traduit du copte ») est une initiative personnelle de ses auteurs. Elle n\'est pas approuvée par le diocèse copte orthodoxe et ne représente pas sa position officielle.';
+    document.body.insertBefore(notice, document.body.firstChild);
+})();
+
+// ============================================================================
 // SITE FOOTER
 // ============================================================================
 
