@@ -13,7 +13,7 @@ if ('serviceWorker' in navigator) {
     if (!window.location.pathname.includes('/fr-old/')) return;
     const notice = document.createElement('div');
     notice.className = 'unofficial-notice';
-    notice.textContent = 'Cette traduction (« Traduit du copte ») est une initiative personnelle de ses auteurs. Elle n\'est pas approuvée par le diocèse copte orthodoxe et ne représente pas sa position officielle.';
+    notice.textContent = 'Traduction en cours d\'élaboration — ces textes sont provisoires et n\'ont pas encore reçu de validation officielle.';
     document.body.insertBefore(notice, document.body.firstChild);
 })();
 
