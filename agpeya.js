@@ -468,7 +468,7 @@ if (darkModeBtn) {
     cross.addEventListener('click', function () {
         clicks++;
         clearTimeout(timer);
-        if (clicks >= 4) {
+        if (clicks >= 3) {
             clicks = 0;
             const modal = document.getElementById('variant-unlock-modal');
             if (modal) modal.classList.add('visible');
