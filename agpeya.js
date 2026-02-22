@@ -1,6 +1,26 @@
 // Agpeya JavaScript - Common functionality for all prayer hours
 // This file contains all shared JavaScript to reduce file sizes
 
+// ============================================================================
+// ACCESS GUARD — redirect fr-unofficial to fr-lsg if variant not unlocked
+// ============================================================================
+
+(function guardFrUnofficial() {
+    if (window.location.pathname.includes('/fr-unofficial/')) {
+        try {
+            if (localStorage.getItem('variantUnlocked') !== '1') {
+                window.location.replace(
+                    window.location.pathname.replace('/fr-unofficial/', '/fr-lsg/')
+                );
+            }
+        } catch(e) {
+            window.location.replace(
+                window.location.pathname.replace('/fr-unofficial/', '/fr-lsg/')
+            );
+        }
+    }
+})();
+
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js');
 }
