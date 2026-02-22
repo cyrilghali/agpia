@@ -28,7 +28,7 @@
         // Reset any old French variant to the new default fr-lsg
         try {
             var _l = localStorage.getItem('lang');
-            if (_l === 'fr' || _l === 'fr-unofficial') localStorage.setItem('lang', 'fr-lsg');
+            if ((_l === 'fr' || _l === 'fr-unofficial') && localStorage.getItem('variantUnlocked') !== '1') localStorage.setItem('lang', 'fr-lsg');
         } catch(e) {}
         var lang = 'fr-lsg';
         try { lang = localStorage.getItem('lang') || 'fr-lsg'; } catch(e) {}

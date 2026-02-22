@@ -12,7 +12,7 @@ if ('serviceWorker' in navigator) {
 (function migrateLang() {
     try {
         var _l = localStorage.getItem('lang');
-        if (_l === 'fr' || _l === 'fr-unofficial') localStorage.setItem('lang', 'fr-lsg');
+        if ((_l === 'fr' || _l === 'fr-unofficial') && localStorage.getItem('variantUnlocked') !== '1') localStorage.setItem('lang', 'fr-lsg');
     } catch(e) {}
 })();
 
@@ -418,8 +418,48 @@ if (darkModeBtn) {
 
 
 // ============================================================================
-// LOGO EASTER EGG — 4 clicks unlocks French variant selector
+// LOGO EASTER EGG — 4 clicks opens confirmation modal
 // ============================================================================
+
+(function injectVariantModal() {
+    const overlay = document.createElement('div');
+    overlay.id = 'variant-unlock-modal';
+    overlay.className = 'variant-modal-overlay';
+    overlay.innerHTML =
+        '<div class="variant-modal">' +
+            '<h2 class="variant-modal-title">Traduction non officielle</h2>' +
+            '<p class="variant-modal-body">' +
+                'Vous êtes sur le point de débloquer la version <em>Traduit du copte</em>.<br><br>' +
+                'Ces textes sont en cours d\'élaboration, provisoires, et n\'ont pas encore reçu de validation officielle. Ils peuvent contenir des erreurs.' +
+            '</p>' +
+            '<div class="variant-modal-actions">' +
+                '<button class="variant-modal-btn variant-modal-cancel">Annuler</button>' +
+                '<button class="variant-modal-btn variant-modal-confirm">Débloquer</button>' +
+            '</div>' +
+        '</div>';
+    document.body.appendChild(overlay);
+
+    overlay.querySelector('.variant-modal-cancel').addEventListener('click', function () {
+        overlay.classList.remove('visible');
+    });
+
+    overlay.querySelector('.variant-modal-confirm').addEventListener('click', function () {
+        try { localStorage.setItem('variantUnlocked', '1'); } catch(e) {}
+        document.querySelectorAll('.lang-variant-selector').forEach(el => {
+            el.style.display = 'flex';
+        });
+        overlay.classList.remove('visible');
+        const cross = document.querySelector('.header-crosses');
+        if (cross) {
+            cross.classList.add('easter-egg-unlock');
+            setTimeout(() => cross.classList.remove('easter-egg-unlock'), 600);
+        }
+    });
+
+    overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) overlay.classList.remove('visible');
+    });
+})();
 
 (function initLogoEasterEgg() {
     const cross = document.querySelector('.header-crosses');
@@ -430,12 +470,8 @@ if (darkModeBtn) {
         clearTimeout(timer);
         if (clicks >= 4) {
             clicks = 0;
-            try { localStorage.setItem('variantUnlocked', '1'); } catch(e) {}
-            document.querySelectorAll('.lang-variant-selector').forEach(el => {
-                el.style.display = 'flex';
-            });
-            cross.classList.add('easter-egg-unlock');
-            setTimeout(() => cross.classList.remove('easter-egg-unlock'), 600);
+            const modal = document.getElementById('variant-unlock-modal');
+            if (modal) modal.classList.add('visible');
         } else {
             timer = setTimeout(() => { clicks = 0; }, 1000);
         }

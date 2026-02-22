@@ -856,6 +856,78 @@ body {
 }
 
 /* ============================================================================
+   VARIANT UNLOCK MODAL
+   ============================================================================ */
+
+.variant-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.variant-modal-overlay.visible {
+    display: flex;
+}
+
+.variant-modal {
+    background: var(--bg);
+    border: 1px solid var(--ornament);
+    border-radius: 0.75rem;
+    padding: 2rem 1.5rem;
+    max-width: 22rem;
+    width: 100%;
+    text-align: center;
+}
+
+.variant-modal-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+    color: var(--text);
+}
+
+.variant-modal-body {
+    font-size: 0.875rem;
+    color: var(--text);
+    line-height: 1.65;
+    margin: 0 0 1.5rem;
+    opacity: 0.85;
+}
+
+.variant-modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.variant-modal-btn {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    border: 1px solid var(--ornament);
+    background: transparent;
+    color: var(--text);
+    transition: opacity 0.15s;
+}
+
+.variant-modal-btn:hover {
+    opacity: 0.8;
+}
+
+.variant-modal-confirm {
+    background: var(--burgundy);
+    color: var(--bg);
+    border-color: var(--burgundy);
+}
+
+/* ============================================================================
    SITE FOOTER
    ============================================================================ */
 
