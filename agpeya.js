@@ -449,7 +449,7 @@ if (darkModeBtn) {
             el.style.display = 'flex';
         });
         overlay.classList.remove('visible');
-        const cross = document.querySelector('.header-crosses');
+        const cross = document.querySelector('.header-crosses') || document.querySelector('.hero-cross');
         if (cross) {
             cross.classList.add('easter-egg-unlock');
             setTimeout(() => cross.classList.remove('easter-egg-unlock'), 600);
@@ -462,7 +462,7 @@ if (darkModeBtn) {
 })();
 
 (function initLogoEasterEgg() {
-    const cross = document.querySelector('.header-crosses');
+    const cross = document.querySelector('.header-crosses') || document.querySelector('.hero-cross');
     if (!cross) return;
     let clicks = 0, timer = null;
     cross.addEventListener('click', function () {

@@ -851,7 +851,8 @@ body {
     100% { transform: scale(1); }
 }
 
-.header-crosses.easter-egg-unlock img {
+.header-crosses.easter-egg-unlock img,
+img.hero-cross.easter-egg-unlock {
     animation: easterEggPulse 0.6s ease;
 }
 
