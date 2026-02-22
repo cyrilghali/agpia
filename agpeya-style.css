@@ -118,6 +118,20 @@ body {
     color: var(--burgundy);
     font-style: italic;
 }
+.prayer-rubric {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+    color: var(--burgundy);
+    font-style: italic;
+}
+.gospel-citation {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--burgundy);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
 .psalm-verse {
     font-size: 1.1rem;
     line-height: 1.9;
@@ -661,18 +675,21 @@ body {
 
 /* Line height settings */
 [data-line-height="comfy"] .prayer-text,
+[data-line-height="comfy"] .prayer-rubric,
 [data-line-height="comfy"] .psalm-verse,
 [data-line-height="comfy"] .litany-text {
     line-height: 1.8;
 }
 
 [data-line-height="default"] .prayer-text,
+[data-line-height="default"] .prayer-rubric,
 [data-line-height="default"] .psalm-verse,
 [data-line-height="default"] .litany-text {
     line-height: 1.5;
 }
 
 [data-line-height="condensed"] .prayer-text,
+[data-line-height="condensed"] .prayer-rubric,
 [data-line-height="condensed"] .psalm-verse,
 [data-line-height="condensed"] .litany-text {
     line-height: 1.3;
