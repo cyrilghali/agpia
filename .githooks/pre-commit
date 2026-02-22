@@ -21,5 +21,5 @@ if [ "$CURRENT" = "$NEW_CACHE" ]; then
 fi
 
 echo "pre-commit: cache bust $CURRENT → $NEW_CACHE"
-sed -i "s/agpeya-[a-f0-9]\{8\}/${NEW_CACHE}/" sw.js
+perl -pi -e 's/agpeya-[a-f0-9]{8}/'"$NEW_CACHE"'/g' sw.js
 git add sw.js
