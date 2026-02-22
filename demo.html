@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avva Shenouda Font — Coptic Unicode Demo</title>
+<style>
+  @font-face {
+    font-family: 'Avva Shenouda (original)';
+    src: url('Avva_Shenouda.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Avva Shenouda (fixed)';
+    src: url('Avva_Shenouda_fixed.ttf') format('truetype');
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, serif;
+    background: #f7f4ef;
+    color: #2c1a0e;
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    border-bottom: 1px solid #c5a97a;
+    padding-bottom: 0.75rem;
+    margin-bottom: 2rem;
+    color: #5a1e1e;
+  }
+
+  h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #7a5c3a;
+    margin-bottom: 1.25rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: #fff;
+    border: 1px solid #d9c9b0;
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .card-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #9a7a5a;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-font {
+    font-size: 0.72rem;
+    color: #bbb;
+    margin-bottom: 1rem;
+    font-family: monospace;
+  }
+
+  .coptic {
+    font-size: 1.25rem;
+    line-height: 2;
+    letter-spacing: 0.02em;
+  }
+
+  .original { font-family: 'Avva Shenouda (original)', serif; }
+  .fixed    { font-family: 'Avva Shenouda (fixed)', serif; }
+
+  .ok   { color: #2a6e2a; }
+  .fail { color: #b00; }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    padding: 0.15em 0.5em;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin-left: 0.5em;
+    font-family: sans-serif;
+  }
+  .badge-ok   { background: #d4edda; color: #155724; }
+  .badge-fail { background: #f8d7da; color: #721c24; }
+
+  .section { margin-bottom: 2.5rem; }
+
+  .source-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .source-label {
+    font-size: 0.7rem;
+    color: #9a7a5a;
+    font-family: monospace;
+    min-width: 120px;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #e0d4be;
+    margin: 2rem 0;
+  }
+
+  .note {
+    font-size: 0.82rem;
+    color: #7a6a5a;
+    background: #f0ead8;
+    border-left: 3px solid #c5a97a;
+    padding: 0.75rem 1rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 2rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>Avva Shenouda — Coptic Unicode rendering demo</h1>
+
+<p class="note">
+  The Avva Shenouda font uses "CS encoding": Coptic glyphs are stored at ASCII code points
+  (<code>a</code>&thinsp;→&thinsp;ⲁ, <code>D</code>&thinsp;→&thinsp;Ⲇ, <code>7</code>&thinsp;→&thinsp;ⲝ, …).
+  The fix adds 65 cmap entries so the same glyphs are also reachable via their proper Unicode code points,
+  while all legacy ASCII mappings are preserved.
+</p>
+
+<!-- ── SECTION 1: the doxology ───────────────────────────────────── -->
+<div class="section">
+  <h2>Doxology — Gloria Patri</h2>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-label">ASCII CS encoding <span class="badge badge-ok">fr/ pages</span></div>
+      <div class="card-font">font: original &amp; fixed — both work</div>
+      <div class="coptic original ok">
+        Do7a patri ke Viw<br>
+        ke ajiw 1`Pnevmati
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Unicode Coptic — original font <span class="badge badge-fail">broken</span></div>
+      <div class="card-font">font: Avva Shenouda (original)</div>
+      <div class="coptic original fail">
+        Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ<br>
+        ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Unicode Coptic — fixed font <span class="badge badge-ok">fr-old/ pages</span></div>
+      <div class="card-font">font: Avva Shenouda (fixed)</div>
+      <div class="coptic fixed ok">
+        Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ<br>
+        ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Both side-by-side — fixed font <span class="badge badge-ok">identical output</span></div>
+      <div class="card-font">font: Avva Shenouda (fixed)</div>
+      <div class="coptic fixed ok">
+        Do7a patri ke Viw<br>
+        Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ── SECTION 2: full Trisagion line ───────────────────────────── -->
+<div class="section">
+  <h2>Longer passage — Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ</h2>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-label">Original font <span class="badge badge-fail">Unicode broken</span></div>
+      <div class="coptic original fail" style="font-size:1.1rem;">
+        Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ<br>
+        ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ<br>
+        ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ<br>
+        ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Fixed font <span class="badge badge-ok">renders correctly</span></div>
+      <div class="coptic fixed ok" style="font-size:1.1rem;">
+        Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ<br>
+        ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ<br>
+        ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ<br>
+        ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ── SECTION 3: cmap summary ──────────────────────────────────── -->
+<div class="section">
+  <h2>65 new cmap entries added</h2>
+  <div class="grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+
+    <div class="card">
+      <div class="card-label">52 letter mappings</div>
+      <div style="font-size:0.8rem; color:#7a6a5a; margin-bottom:0.75rem;">26 pairs upper + lower</div>
+      <div class="coptic fixed" style="font-size:1rem; line-height:1.8;">
+        Ⲁⲁ Ⲃⲃ Ⲅⲅ Ⲇⲇ Ⲉⲉ<br>
+        Ⲓⲓ Ⲕⲕ Ⲗⲗ Ⲙⲙ Ⲛⲛ<br>
+        Ⲟⲟ Ⲡⲡ Ⲣⲣ Ⲥⲥ Ⲧⲧ<br>
+        Ⲩⲩ Ⲱⲱ …
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">12 special letters</div>
+      <div style="font-size:0.8rem; color:#7a6a5a; margin-bottom:0.75rem;">digit-mapped + U+03E2–U+03EF</div>
+      <div class="coptic fixed" style="font-size:1rem; line-height:1.8;">
+        Ϣϣ Ϥϥ Ϧϧ<br>
+        Ϩϩ Ϫϫ Ϭϭ Ϯϯ
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">1 combining mark</div>
+      <div style="font-size:0.8rem; color:#7a6a5a; margin-bottom:0.75rem;">U+0300 jinkim (grave accent)</div>
+      <div class="coptic fixed" style="font-size:2rem; line-height:2; text-align:center;">
+        Ⲩ̀
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
