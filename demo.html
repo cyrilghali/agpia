@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avva Shenouda Font — Coptic Unicode Demo</title>
+<style>
+  @font-face {
+    font-family: 'AvvaShenouda';
+    src: url('Avva_Shenouda.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'AvvaShenoudaFixed';
+    src: url('Avva_Shenouda_fixed.ttf') format('truetype');
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f7f4ef;
+    --card: #fff;
+    --border: #ddd0b8;
+    --ink: #2c1a0e;
+    --muted: #7a6a5a;
+    --accent: #5a1e1e;
+    --tag-bg: #f0ead8;
+  }
+
+  body {
+    font-family: Georgia, serif;
+    background: var(--bg);
+    color: var(--ink);
+    padding: 2.5rem 1.5rem;
+    max-width: 960px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .subtitle {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+  }
+
+  h2 {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .section { margin-bottom: 3rem; }
+
+  /* ── Alphabet grid ─────────────────────────────────────────── */
+  .alpha-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+  .alpha-cell {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 0.5rem 0.25rem 0.4rem;
+    text-align: center;
+  }
+  .alpha-cell .pair {
+    font-family: 'AvvaShenoudaFixed', serif;
+    font-size: 1.6rem;
+    line-height: 1.3;
+    display: block;
+  }
+  .alpha-cell .name {
+    font-size: 0.6rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-top: 0.2rem;
+    display: block;
+    font-family: sans-serif;
+  }
+  .alpha-cell .translit {
+    font-size: 0.58rem;
+    color: #bbb;
+    font-family: monospace;
+  }
+
+  /* ── Two-column compare ────────────────────────────────────── */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+  }
+  @media (max-width: 580px) { .compare { grid-template-columns: 1fr; } }
+
+  .panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.1rem 1.25rem 1.25rem;
+  }
+  .panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.9rem;
+  }
+  .panel-label {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    font-family: sans-serif;
+  }
+  .tag {
+    font-size: 0.6rem;
+    font-family: sans-serif;
+    padding: 0.15em 0.55em;
+    border-radius: 3px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .tag-ok   { background: #d8edd8; color: #1a5c1a; }
+  .tag-fail { background: #f5d5d5; color: #8b0000; }
+
+  .coptic-old   { font-family: 'AvvaShenouda', serif; }
+  .coptic-fixed { font-family: 'AvvaShenoudaFixed', serif; }
+
+  .coptic-text {
+    font-size: 1.2rem;
+    line-height: 2;
+    letter-spacing: 0.03em;
+  }
+  .coptic-text.lg { font-size: 1.4rem; }
+  .coptic-text.sm { font-size: 1rem; }
+
+  .fail-color { color: #a00; }
+  .ok-color   { color: #1a5c1a; }
+
+  /* ── Full-width text panel ─────────────────────────────────── */
+  .full-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── Pronunciation table ───────────────────────────────────── */
+  .pron-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    background: var(--card);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .pron-table th {
+    background: var(--tag-bg);
+    color: var(--muted);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    font-weight: normal;
+  }
+  .pron-table td {
+    padding: 0.45rem 0.75rem;
+    border-top: 1px solid #eee6d8;
+    vertical-align: middle;
+  }
+  .pron-table td:first-child {
+    font-family: 'AvvaShenoudaFixed', serif;
+    font-size: 1.5rem;
+    line-height: 1;
+    width: 80px;
+    text-align: center;
+  }
+  .pron-table td.name-col { color: var(--muted); font-style: italic; }
+  .pron-table td.ipa-col  { font-family: monospace; color: #555; }
+  .pron-table tr:hover td { background: #faf7f2; }
+
+  hr.div {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2.5rem 0;
+  }
+
+  .note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    background: var(--tag-bg);
+    border-left: 3px solid #c5a97a;
+    padding: 0.7rem 1rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 2.5rem;
+  }
+  code { font-size: 0.9em; background: #ede6d8; padding: 0.1em 0.3em; border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<h1>Avva Shenouda — Coptic Unicode</h1>
+<p class="subtitle">Font rendering test · fixed font adds 65 cmap entries mapping Unicode Coptic (U+2C80–U+2CB1, U+03E2–U+03EF, U+0300) to existing glyphs</p>
+
+<p class="note">
+  All text below is rendered with the <strong>fixed font</strong> (right column / colored panels) versus the
+  <strong>original font</strong> (left / grey panels). The original font only serves ASCII-encoded "CS" Coptic —
+  proper Unicode code points produced blank glyphs. The fix makes both encodings work simultaneously.
+</p>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- 1. FULL ALPHABET                                               -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <h2>Complete Bohairic alphabet — all 32 letters, upper + lower</h2>
+  <div class="alpha-grid">
+    <!-- Greek-derived letters -->
+    <div class="alpha-cell"><span class="pair">Ⲁ ⲁ</span><span class="name">Alpha</span><span class="translit">a</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲃ ⲃ</span><span class="name">Vita</span><span class="translit">b/v</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲅ ⲅ</span><span class="name">Gamma</span><span class="translit">g</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲇ ⲇ</span><span class="name">Dalda</span><span class="translit">d</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲉ ⲉ</span><span class="name">Ei</span><span class="translit">e</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲋ ⲋ</span><span class="name">So/Sima</span><span class="translit">—</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲍ ⲍ</span><span class="name">Zeta</span><span class="translit">z</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲏ ⲏ</span><span class="name">Eta</span><span class="translit">ē</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲑ ⲑ</span><span class="name">Thita</span><span class="translit">th</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲓ ⲓ</span><span class="name">Iota</span><span class="translit">i</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲕ ⲕ</span><span class="name">Kabba</span><span class="translit">k</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲗ ⲗ</span><span class="name">Laula</span><span class="translit">l</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲙ ⲙ</span><span class="name">Mi</span><span class="translit">m</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲛ ⲛ</span><span class="name">Ni</span><span class="translit">n</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲝ ⲝ</span><span class="name">Eksi</span><span class="translit">ks</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲟ ⲟ</span><span class="name">Ou</span><span class="translit">o</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲡ ⲡ</span><span class="name">Pi</span><span class="translit">p</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲣ ⲣ</span><span class="name">Ro</span><span class="translit">r</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲥ ⲥ</span><span class="name">Sima</span><span class="translit">s</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲧ ⲧ</span><span class="name">Taw</span><span class="translit">t</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲩ ⲩ</span><span class="name">Epsilon</span><span class="translit">u/v</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲫ ⲫ</span><span class="name">Efi</span><span class="translit">ph/f</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲭ ⲭ</span><span class="name">Exi</span><span class="translit">kh</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲯ ⲯ</span><span class="name">Epsi</span><span class="translit">ps</span></div>
+    <div class="alpha-cell"><span class="pair">Ⲱ ⲱ</span><span class="name">Ou</span><span class="translit">ō</span></div>
+    <!-- Demotic-derived letters -->
+    <div class="alpha-cell" style="border-color:#c5a97a;"><span class="pair">Ϣ ϣ</span><span class="name">Shei</span><span class="translit">sh</span></div>
+    <div class="alpha-cell" style="border-color:#c5a97a;"><span class="pair">Ϥ ϥ</span><span class="name">Fai</span><span class="translit">f</span></div>
+    <div class="alpha-cell" style="border-color:#c5a97a;"><span class="pair">Ϧ ϧ</span><span class="name">Khai</span><span class="translit">x</span></div>
+    <div class="alpha-cell" style="border-color:#c5a97a;"><span class="pair">Ϩ ϩ</span><span class="name">Hori</span><span class="translit">h</span></div>
+    <div class="alpha-cell" style="border-color:#c5a97a;"><span class="pair">Ϫ ϫ</span><span class="name">Janja</span><span class="translit">j</span></div>
+    <div class="alpha-cell" style="border-color:#c5a97a;"><span class="pair">Ϭ ϭ</span><span class="name">Shima</span><span class="translit">c</span></div>
+    <div class="alpha-cell" style="border-color:#c5a97a;"><span class="pair">Ϯ ϯ</span><span class="name">Ti</span><span class="translit">ti</span></div>
+  </div>
+  <p style="font-size:0.72rem; color:var(--muted); font-family:sans-serif;">
+    Gold border = Demotic-derived letters (U+03E2–U+03EF). All rendered with the fixed font.
+  </p>
+</div>
+
+<hr class="div">
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- 2. DOXOLOGY — side by side                                     -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <h2>Doxology (Gloria Patri) — original vs fixed font</h2>
+  <div class="compare">
+    <div class="panel">
+      <div class="panel-head">
+        <span class="panel-label">Unicode · original font</span>
+        <span class="tag tag-fail">broken</span>
+      </div>
+      <div class="coptic-text coptic-old fail-color lg">
+        Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ<br>
+        ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ<br>
+        ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ<br>
+        ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ<br>
+        ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-head">
+        <span class="panel-label">Unicode · fixed font</span>
+        <span class="tag tag-ok">fixed</span>
+      </div>
+      <div class="coptic-text coptic-fixed ok-color lg">
+        Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ<br>
+        ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ<br>
+        ⲕⲉ ⲛⲩⲛ ⲕⲉ ⲁ̀ⲓ̀ ⲕⲉ ⲓⲥ<br>
+        ⲧⲟⲩⲥ ⲉ̀ⲱ̀ⲛⲁⲥ ⲧⲱⲛ<br>
+        ⲉ̀ⲱ̀ⲛⲱⲛ: ⲁ̀ⲙⲏⲛ.
+      </div>
+    </div>
+  </div>
+
+  <!-- ASCII vs Unicode equivalence -->
+  <div class="full-panel">
+    <div class="panel-head" style="margin-bottom:0.75rem;">
+      <span class="panel-label">Fixed font — ASCII CS encoding and Unicode produce identical output</span>
+      <span class="tag tag-ok">both work</span>
+    </div>
+    <div class="coptic-text coptic-fixed ok-color" style="font-size:1.1rem; line-height:2.2;">
+      <span style="opacity:0.4; font-family:monospace; font-size:0.7rem; vertical-align:middle;">ASCII → </span>Do7a patri ke Viw ke ajiw 1`Pnevmati<br>
+      <span style="opacity:0.4; font-family:monospace; font-size:0.7rem; vertical-align:middle;">Unicode → </span>Ⲇⲟⲝⲁ Ⲡⲁⲧⲣⲓ ⲕⲉ Ⲩ̀ⲓⲱ ⲕⲉ Ⲁ̀ⲅⲓⲱ Ⲡ̀ⲛⲉⲩⲙⲁⲧⲓ
+    </div>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- 3. KYRIE ELEISON                                               -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <h2>Kyrie Eleison — Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ</h2>
+  <div class="compare">
+    <div class="panel">
+      <div class="panel-head">
+        <span class="panel-label">Original font</span>
+        <span class="tag tag-fail">broken</span>
+      </div>
+      <div class="coptic-text coptic-old fail-color">
+        Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ<br>
+        Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ<br>
+        Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-head">
+        <span class="panel-label">Fixed font</span>
+        <span class="tag tag-ok">fixed</span>
+      </div>
+      <div class="coptic-text coptic-fixed ok-color">
+        Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ<br>
+        Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ<br>
+        Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- 4. LONGER TEXT — Universal Declaration (Bohairic)              -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <h2>Longer text stress test — Universal Declaration of Human Rights (Bohairic Coptic, Wikipedia)</h2>
+  <div class="compare">
+    <div class="panel">
+      <div class="panel-head">
+        <span class="panel-label">Original font</span>
+        <span class="tag tag-fail">broken</span>
+      </div>
+      <div class="coptic-text coptic-old fail-color sm">
+        Ⲉ̀ⲫ̀ⲟⲩⲁⲓ ⲥⲉⲙⲓⲥⲓ ⲣⲉⲙϩⲉⲩ ⲛⲉⲙ ⲉⲧϣⲱϣ ⲉ̀ ⲁⲝⲓⲁ ⲛⲉⲙ ⲇⲓⲕⲁⲓⲟⲥⲩⲛⲏ. Ⲛ̀ⲑⲱⲟⲩ ⲥⲉⲉⲣϩ̀ⲙⲟⲧ ⲅⲛⲱⲙⲏ ⲛⲉⲙ ⲥⲩⲛⲏⲇⲏⲥⲓⲥ ⲟⲩⲟϩ ⲙ̀ⲡⲉⲛⲑⲣⲉⲩⲁⲣϣⲏⲧ ⲙ̀ⲙⲉⲧⲣⲱⲙⲓ ϩⲓⲛⲁ ⲛ̀ⲑⲱⲟⲩ ⲙ̀ⲫ̀ⲣⲏϯ ⲛ̀ⲥ̀ⲛⲏⲟⲩ.
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-head">
+        <span class="panel-label">Fixed font</span>
+        <span class="tag tag-ok">fixed</span>
+      </div>
+      <div class="coptic-text coptic-fixed ok-color sm">
+        Ⲉ̀ⲫ̀ⲟⲩⲁⲓ ⲥⲉⲙⲓⲥⲓ ⲣⲉⲙϩⲉⲩ ⲛⲉⲙ ⲉⲧϣⲱϣ ⲉ̀ ⲁⲝⲓⲁ ⲛⲉⲙ ⲇⲓⲕⲁⲓⲟⲥⲩⲛⲏ. Ⲛ̀ⲑⲱⲟⲩ ⲥⲉⲉⲣϩ̀ⲙⲟⲧ ⲅⲛⲱⲙⲏ ⲛⲉⲙ ⲥⲩⲛⲏⲇⲏⲥⲓⲥ ⲟⲩⲟϩ ⲙ̀ⲡⲉⲛⲑⲣⲉⲩⲁⲣϣⲏⲧ ⲙ̀ⲙⲉⲧⲣⲱⲙⲓ ϩⲓⲛⲁ ⲛ̀ⲑⲱⲟⲩ ⲙ̀ⲫ̀ⲣⲏϯ ⲛ̀ⲥ̀ⲛⲏⲟⲩ.
+      </div>
+    </div>
+  </div>
+  <p style="font-size:0.7rem; color:var(--muted); font-family:sans-serif; margin-top:0.5rem;">
+    Source: Wikipedia — Bohairic Coptic article. Covers ⲫ, ϩ, ϣ, ⲑ, ϯ, ⲝ and the jinkim (̀) across diverse contexts.
+  </p>
+</div>
+
+<hr class="div">
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- 5. PRONUNCIATION REFERENCE TABLE                               -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <h2>Letter reference — Bohairic pronunciation (Greco-Bohairic / Old Bohairic)</h2>
+  <table class="pron-table">
+    <thead>
+      <tr>
+        <th>Glyph (Ↄ ↄ)</th>
+        <th>Name</th>
+        <th>Latin</th>
+        <th>Greco-Bohairic</th>
+        <th>Old Bohairic</th>
+        <th>Unicode</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Ⲁ ⲁ</td><td class="name-col">Alpha</td><td>a</td><td class="ipa-col">/a/</td><td class="ipa-col">/a/</td><td>U+2C80/81</td></tr>
+      <tr><td>Ⲃ ⲃ</td><td class="name-col">Vita</td><td>b</td><td class="ipa-col">/v/ /b/</td><td class="ipa-col">/w/ /b/</td><td>U+2C82/83</td></tr>
+      <tr><td>Ⲅ ⲅ</td><td class="name-col">Gamma</td><td>g</td><td class="ipa-col">/g/ /ɣ/ /ŋ/</td><td class="ipa-col">/g/</td><td>U+2C84/85</td></tr>
+      <tr><td>Ⲇ ⲇ</td><td class="name-col">Dalda</td><td>d</td><td class="ipa-col">/ð/ /d/</td><td class="ipa-col">/d/</td><td>U+2C86/87</td></tr>
+      <tr><td>Ⲉ ⲉ</td><td class="name-col">Ei</td><td>e</td><td class="ipa-col">/e/</td><td class="ipa-col">/a/</td><td>U+2C88/89</td></tr>
+      <tr><td>Ⲋ ⲋ</td><td class="name-col">So / Sima</td><td>—</td><td class="ipa-col">—</td><td class="ipa-col">—</td><td>U+2C8A/8B</td></tr>
+      <tr><td>Ⲍ ⲍ</td><td class="name-col">Zeta</td><td>z</td><td class="ipa-col">/z/</td><td class="ipa-col">/z/</td><td>U+2C8C/8D</td></tr>
+      <tr><td>Ⲏ ⲏ</td><td class="name-col">Eta</td><td>ē</td><td class="ipa-col">/iː/</td><td class="ipa-col">/iː/ /aː/</td><td>U+2C8E/8F</td></tr>
+      <tr><td>Ⲑ ⲑ</td><td class="name-col">Thita</td><td>th</td><td class="ipa-col">/θ/</td><td class="ipa-col">/t/</td><td>U+2C90/91</td></tr>
+      <tr><td>Ⲓ ⲓ</td><td class="name-col">Iota</td><td>i</td><td class="ipa-col">/i/ /j/</td><td class="ipa-col">/i/</td><td>U+2C92/93</td></tr>
+      <tr><td>Ⲕ ⲕ</td><td class="name-col">Kabba</td><td>k</td><td class="ipa-col">/k/</td><td class="ipa-col">/k/</td><td>U+2C94/95</td></tr>
+      <tr><td>Ⲗ ⲗ</td><td class="name-col">Laula</td><td>l</td><td class="ipa-col">/l/</td><td class="ipa-col">/l/</td><td>U+2C96/97</td></tr>
+      <tr><td>Ⲙ ⲙ</td><td class="name-col">Mi</td><td>m</td><td class="ipa-col">/m/</td><td class="ipa-col">/m/</td><td>U+2C98/99</td></tr>
+      <tr><td>Ⲛ ⲛ</td><td class="name-col">Ni</td><td>n</td><td class="ipa-col">/n/</td><td class="ipa-col">/n/</td><td>U+2C9A/9B</td></tr>
+      <tr><td>Ⲝ ⲝ</td><td class="name-col">Eksi</td><td>ks</td><td class="ipa-col">/ks/</td><td class="ipa-col">/ks/</td><td>U+2C9C/9D</td></tr>
+      <tr><td>Ⲟ ⲟ</td><td class="name-col">Ou</td><td>o</td><td class="ipa-col">/o/</td><td class="ipa-col">/o/</td><td>U+2C9E/9F</td></tr>
+      <tr><td>Ⲡ ⲡ</td><td class="name-col">Pi</td><td>p</td><td class="ipa-col">/p/</td><td class="ipa-col">/b/</td><td>U+2CA0/A1</td></tr>
+      <tr><td>Ⲣ ⲣ</td><td class="name-col">Ro</td><td>r</td><td class="ipa-col">/r/</td><td class="ipa-col">/r/</td><td>U+2CA2/A3</td></tr>
+      <tr><td>Ⲥ ⲥ</td><td class="name-col">Sima</td><td>s</td><td class="ipa-col">/s/</td><td class="ipa-col">/s/</td><td>U+2CA4/A5</td></tr>
+      <tr><td>Ⲧ ⲧ</td><td class="name-col">Taw</td><td>t</td><td class="ipa-col">/t/</td><td class="ipa-col">/d/</td><td>U+2CA6/A7</td></tr>
+      <tr><td>Ⲩ ⲩ</td><td class="name-col">Epsilon</td><td>u</td><td class="ipa-col">/i/ /v/</td><td class="ipa-col">/i/ /w/</td><td>U+2CA8/A9</td></tr>
+      <tr><td>Ⲫ ⲫ</td><td class="name-col">Efi</td><td>ph</td><td class="ipa-col">/f/</td><td class="ipa-col">/b/ /f/</td><td>U+2CAA/AB</td></tr>
+      <tr><td>Ⲭ ⲭ</td><td class="name-col">Exi</td><td>kh</td><td class="ipa-col">/k/ /x/ /ʃ/</td><td class="ipa-col">/k/ /x/</td><td>U+2CAC/AD</td></tr>
+      <tr><td>Ⲯ ⲯ</td><td class="name-col">Epsi</td><td>ps</td><td class="ipa-col">/ps/</td><td class="ipa-col">/bs/</td><td>U+2CAE/AF</td></tr>
+      <tr><td>Ⲱ ⲱ</td><td class="name-col">Ou (omega)</td><td>ō</td><td class="ipa-col">/oː/</td><td class="ipa-col">/oː/</td><td>U+2CB0/B1</td></tr>
+      <tr style="background:#fdf8f0;"><td>Ϣ ϣ</td><td class="name-col">Shei</td><td>sh</td><td class="ipa-col">/ʃ/</td><td class="ipa-col">/ʃ/</td><td>U+03E2/E3</td></tr>
+      <tr style="background:#fdf8f0;"><td>Ϥ ϥ</td><td class="name-col">Fai</td><td>f</td><td class="ipa-col">/f/</td><td class="ipa-col">/f/</td><td>U+03E4/E5</td></tr>
+      <tr style="background:#fdf8f0;"><td>Ϧ ϧ</td><td class="name-col">Khai</td><td>x</td><td class="ipa-col">/x/</td><td class="ipa-col">/x/</td><td>U+03E6/E7</td></tr>
+      <tr style="background:#fdf8f0;"><td>Ϩ ϩ</td><td class="name-col">Hori</td><td>h</td><td class="ipa-col">/h/</td><td class="ipa-col">/h/</td><td>U+03E8/E9</td></tr>
+      <tr style="background:#fdf8f0;"><td>Ϫ ϫ</td><td class="name-col">Janja</td><td>j</td><td class="ipa-col">/ʤ/ /ʧ/</td><td class="ipa-col">/ʤ/</td><td>U+03EA/EB</td></tr>
+      <tr style="background:#fdf8f0;"><td>Ϭ ϭ</td><td class="name-col">Shima</td><td>c</td><td class="ipa-col">/ʧ/</td><td class="ipa-col">/ʃ/</td><td>U+03EC/ED</td></tr>
+      <tr style="background:#fdf8f0;"><td>Ϯ ϯ</td><td class="name-col">Ti</td><td>ti</td><td class="ipa-col">/ti/</td><td class="ipa-col">/di/</td><td>U+03EE/EF</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:0.7rem; color:var(--muted); font-family:sans-serif; margin-top:0.5rem;">
+    Shaded rows = Demotic-derived letters (U+03E2–U+03EF). Sources: Wikipedia Bohairic / Coptic alphabet articles.
+  </p>
+</div>
+
+</body>
+</html>
