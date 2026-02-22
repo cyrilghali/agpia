@@ -6,11 +6,11 @@ if ('serviceWorker' in navigator) {
 }
 
 // ============================================================================
-// UNOFFICIAL TRANSLATION NOTICE (fr-old only)
+// UNOFFICIAL TRANSLATION NOTICE (fr-lsg only)
 // ============================================================================
 
 (function injectUnofficialNotice() {
-    if (!window.location.pathname.includes('/fr-old/')) return;
+    if (!window.location.pathname.includes('/fr-lsg/')) return;
     const notice = document.createElement('div');
     notice.className = 'unofficial-notice';
     notice.textContent = 'Traduction en cours d\'élaboration — ces textes sont provisoires et n\'ont pas encore reçu de validation officielle.';
@@ -380,7 +380,7 @@ if (darkModeBtn) {
 
 (function initLangSelector() {
     const path = window.location.pathname;
-    const folders = ['fr-old', 'fr', 'ar'];
+    const folders = ['fr-lsg', 'fr', 'ar'];
     let currentFolder = 'fr';
     for (const f of folders) {
         if (path.includes('/' + f + '/')) { currentFolder = f; break; }
@@ -388,7 +388,7 @@ if (darkModeBtn) {
 
     localStorage.setItem('lang', currentFolder);
 
-    const isFrench = currentFolder === 'fr' || currentFolder === 'fr-old';
+    const isFrench = currentFolder === 'fr' || currentFolder === 'fr-lsg';
     const activeLang = isFrench ? 'fr' : 'ar';
 
     document.querySelectorAll('.lang-selector a').forEach(link => {

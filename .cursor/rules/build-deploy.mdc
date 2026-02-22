@@ -8,7 +8,7 @@ alwaysApply: false
 
 ## Build
 
-`build.sh` copies language folders (`en`, `fr`, `ar`, `fr-old`), shared assets, and config files into `dist/`. Run with `npm run build`.
+`build.sh` copies language folders (`en`, `fr`, `ar`, `fr-lsg`), shared assets, and config files into `dist/`. Run with `npm run build`.
 
 When adding a new root-level asset, add a corresponding `cp` line in `build.sh` so it ends up in `dist/`.
 

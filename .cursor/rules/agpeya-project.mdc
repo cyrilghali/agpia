@@ -14,7 +14,7 @@ Static multilanguage site. Shared assets at root, per-language HTML in folders:
 /en/                -- English (SOURCE OF TRUTH)
 /ar/                -- Arabic (RTL, <html lang="ar" dir="rtl">)
 /fr/                -- French new translation
-/fr-old/            -- French classic translation
+/fr-lsg/            -- French classic translation
 ```
 
 Each folder has 11 HTML files: `index.html`, `prime.html`, `terce.html`, `sext.html`, `none.html`, `vespers.html`, `compline.html`, `midnight.html`, `veil.html`, `other.html`, `about.html`.

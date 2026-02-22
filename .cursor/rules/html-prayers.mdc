@@ -1,6 +1,6 @@
 ---
 description: Conventions for prayer HTML pages across all languages
-globs: "**/en/*.html, **/fr/*.html, **/ar/*.html, **/fr-old/*.html"
+globs: "**/en/*.html, **/fr/*.html, **/ar/*.html, **/fr-lsg/*.html"
 alwaysApply: false
 ---
 
@@ -8,7 +8,7 @@ alwaysApply: false
 
 ## Source of Truth
 
-Edit `/en/` first, then propagate the same structural changes to `/fr/`, `/ar/`, and `/fr-old/`. Only text content and `lang`/`dir` attributes differ between languages.
+Edit `/en/` first, then propagate the same structural changes to `/fr/`, `/ar/`, and `/fr-lsg/`. Only text content and `lang`/`dir` attributes differ between languages.
 
 ## Page Structure
 
