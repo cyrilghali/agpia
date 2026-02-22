@@ -821,7 +821,7 @@ body {
 }
 
 /* ============================================================================
-   UNOFFICIAL TRANSLATION NOTICE (fr-old)
+   UNOFFICIAL TRANSLATION NOTICE (fr-lsg)
    ============================================================================ */
 
 .unofficial-notice {
@@ -838,6 +838,102 @@ body {
     background: #2a1f0a;
     border-bottom-color: #c9a961;
     color: #d4b87a;
+}
+
+/* ============================================================================
+   LOGO EASTER EGG
+   ============================================================================ */
+
+@keyframes easterEggPulse {
+    0%   { transform: scale(1); }
+    35%  { transform: scale(1.18); }
+    65%  { transform: scale(0.94); }
+    100% { transform: scale(1); }
+}
+
+.header-crosses.easter-egg-unlock img,
+img.hero-cross.easter-egg-unlock {
+    animation: easterEggPulse 0.6s ease;
+}
+
+/* ============================================================================
+   VARIANT UNLOCK MODAL
+   ============================================================================ */
+
+.variant-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.variant-modal-overlay.visible {
+    display: flex;
+}
+
+.variant-modal {
+    background: var(--bg);
+    border: 1px solid var(--ornament);
+    border-radius: 0.75rem;
+    padding: 2rem 1.5rem;
+    max-width: 22rem;
+    width: 100%;
+    text-align: center;
+}
+
+.variant-modal-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+    color: var(--text);
+}
+
+.variant-modal-body {
+    font-size: 0.875rem;
+    color: var(--text);
+    line-height: 1.65;
+    margin: 0 0 1.5rem;
+    opacity: 0.85;
+}
+
+.variant-modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.variant-modal-btn {
+    flex: 1;
+    padding: 0.625rem;
+    border-radius: 4px;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    transition: all 0.2s;
+}
+
+.variant-modal-btn:hover {
+    background: var(--bg-hover);
+    border-color: var(--primary);
+}
+
+.variant-modal-confirm {
+    background: var(--burgundy);
+    color: var(--bg);
+    border-color: var(--burgundy);
+}
+
+.variant-modal-confirm:hover {
+    background: var(--burgundy);
+    color: var(--bg);
+    opacity: 0.9;
 }
 
 /* ============================================================================
