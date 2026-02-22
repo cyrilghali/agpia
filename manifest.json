@@ -1,7 +1,7 @@
 {
   "name": "Agpia - La Prière des Heures Copte",
   "short_name": "Agpia",
-  "start_url": "/fr/index.html",
+  "start_url": "/fr-lsg/index.html",
   "display": "standalone",
   "theme_color": "#fdfdf9",
   "background_color": "#fdfdf9",

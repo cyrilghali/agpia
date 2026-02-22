@@ -10,10 +10,10 @@ alwaysApply: true
 Static multilanguage site. Shared assets at root, per-language HTML in folders:
 
 ```
-/                   -- root: redirect to /fr/, shared CSS/JS/assets
+/                   -- root: redirect to /fr-unofficial/, shared CSS/JS/assets
 /en/                -- English (SOURCE OF TRUTH)
 /ar/                -- Arabic (RTL, <html lang="ar" dir="rtl">)
-/fr/                -- French new translation
+/fr-unofficial/                -- French new translation
 /fr-old/            -- French classic translation
 ```
 
@@ -42,4 +42,4 @@ The language switcher lives inside the settings panel (cog wheel) on every page.
 
 ## Default Language
 
-French (`/fr/`) is the default. Root `index.html` redirects to `/fr/index.html`.
+French (`/fr-unofficial/`) is the default. Root `index.html` redirects to `/fr-unofficial/index.html`.

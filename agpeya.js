@@ -6,11 +6,22 @@ if ('serviceWorker' in navigator) {
 }
 
 // ============================================================================
-// UNOFFICIAL TRANSLATION NOTICE (fr-old only)
+// LANG MIGRATION — reset old French variants to fr-lsg
+// ============================================================================
+
+(function migrateLang() {
+    try {
+        var _l = localStorage.getItem('lang');
+        if (_l === 'fr' || _l === 'fr-unofficial') localStorage.setItem('lang', 'fr-lsg');
+    } catch(e) {}
+})();
+
+// ============================================================================
+// UNOFFICIAL TRANSLATION NOTICE (fr-unofficial only)
 // ============================================================================
 
 (function injectUnofficialNotice() {
-    if (!window.location.pathname.includes('/fr-old/')) return;
+    if (!window.location.pathname.includes('/fr-unofficial/')) return;
     const notice = document.createElement('div');
     notice.className = 'unofficial-notice';
     notice.textContent = 'Traduction en cours d\'élaboration — ces textes sont provisoires et n\'ont pas encore reçu de validation officielle.';
@@ -380,23 +391,24 @@ if (darkModeBtn) {
 
 (function initLangSelector() {
     const path = window.location.pathname;
-    const folders = ['fr-old', 'fr', 'ar'];
-    let currentFolder = 'fr';
+    const folders = ['fr-lsg', 'fr-unofficial', 'ar'];
+    let currentFolder = 'fr-lsg';
     for (const f of folders) {
         if (path.includes('/' + f + '/')) { currentFolder = f; break; }
     }
 
     localStorage.setItem('lang', currentFolder);
 
-    const isFrench = currentFolder === 'fr' || currentFolder === 'fr-old';
+    const isFrench = currentFolder === 'fr-unofficial' || currentFolder === 'fr-lsg';
     const activeLang = isFrench ? 'fr' : 'ar';
 
     document.querySelectorAll('.lang-selector a').forEach(link => {
         link.classList.toggle('active', link.getAttribute('data-lang') === activeLang);
     });
 
+    const variantUnlocked = localStorage.getItem('variantUnlocked') === '1';
     document.querySelectorAll('.lang-variant-selector').forEach(el => {
-        el.style.display = isFrench ? 'flex' : 'none';
+        el.style.display = (isFrench && variantUnlocked) ? 'flex' : 'none';
     });
 
     document.querySelectorAll('.lang-variant-selector a').forEach(link => {
@@ -404,6 +416,31 @@ if (darkModeBtn) {
     });
 })();
 
+
+// ============================================================================
+// LOGO EASTER EGG — 4 clicks unlocks French variant selector
+// ============================================================================
+
+(function initLogoEasterEgg() {
+    const cross = document.querySelector('.header-crosses');
+    if (!cross) return;
+    let clicks = 0, timer = null;
+    cross.addEventListener('click', function () {
+        clicks++;
+        clearTimeout(timer);
+        if (clicks >= 4) {
+            clicks = 0;
+            try { localStorage.setItem('variantUnlocked', '1'); } catch(e) {}
+            document.querySelectorAll('.lang-variant-selector').forEach(el => {
+                el.style.display = 'flex';
+            });
+            cross.classList.add('easter-egg-unlock');
+            setTimeout(() => cross.classList.remove('easter-egg-unlock'), 600);
+        } else {
+            timer = setTimeout(() => { clicks = 0; }, 1000);
+        }
+    });
+})();
 
 // ============================================================================
 // HOUR DROPDOWN - SHORT/LONG NAME SWITCHING
