@@ -1,0 +1,25 @@
+#!/bin/bash
+# Busts the service worker cache whenever cached assets are staged for commit.
+# Generates a new random hash, updates sw.js, and stages it automatically.
+
+set -e
+
+# Only act when staged files include assets covered by the service worker precache.
+# sw.js itself is excluded — changes to it don't need to trigger a bust.
+RELEVANT=$(git diff --cached --name-only | grep -vE '^sw\.js$' | grep -E '\.(html|css|js|png|webp|woff2|ttf|json)$' || true)
+
+if [ -z "$RELEVANT" ]; then
+    exit 0
+fi
+
+NEW_HASH=$(openssl rand -hex 4)
+NEW_CACHE="agpeya-${NEW_HASH}"
+CURRENT=$(grep -o 'agpeya-[a-f0-9]\{8\}' sw.js | head -1)
+
+if [ "$CURRENT" = "$NEW_CACHE" ]; then
+    exit 0
+fi
+
+echo "pre-commit: cache bust $CURRENT → $NEW_CACHE"
+sed -i "s/agpeya-[a-f0-9]\{8\}/${NEW_CACHE}/" sw.js
+git add sw.js

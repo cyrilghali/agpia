@@ -154,6 +154,26 @@ Copies all locale directories and shared assets into `dist/`. No compilation ste
 
 ---
 
+## Git hooks
+
+Hooks live in `.githooks/` (tracked). To activate on a fresh clone:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+### `pre-commit`
+
+Automatically busts the service worker cache whenever cached assets (HTML, CSS, JS, fonts, images) are staged. Updates `sw.js` with a new random 8-char hex and adds it to the commit:
+
+```
+CACHE_NAME = 'agpeya-<random-8-char-hex>'
+```
+
+Only fires when relevant assets change — committing only markdown or other non-cached files leaves `sw.js` untouched.
+
+---
+
 ## Source markdown files
 
 The `.md` files at the root are **reference/draft documents**, not auto-compiled:
