@@ -232,7 +232,7 @@ La nuit s'est écoulée. Nous Te rendons grâce, notre Seigneur, et nous T'implo
 ⟨1⟩ Moi qui suis en prison à cause du Seigneur, je vous encourage à suivre fidèlement l’appel que vous avez reçu de Dieu ; ⟨2⟩ ayez beaucoup d’humilité, de douceur et de patience, supportez-vous les uns les autres avec amour ; ⟨3⟩ ayez à cœur de garder l’unité dans l’Esprit par le lien de la paix. ⟨4⟩ Comme votre vocation vous a tous appelés à une seule espérance, de même il n’y a qu’un seul Corps et un seul Esprit. ⟨5⟩ Il n’y a qu’un seul Seigneur, une seule foi, un seul baptême.
 
 
-## La foi de l'Église
+## De la Foi de l'Église
 
 Un est Dieu le Père de chacun. Un est aussi Son Fils Jésus-Christ le Verbe qui s'est incarné, qui est mort et qui est ressuscité d'entre les morts le troisième jour. Il nous a ressuscités avec Lui. Un est le Saint Esprit consolateur, unique dans son hypostase. Il procède du Père. Il purifie toute la création et nous enseigne à nous prosterner devant la Sainte Trinité : Une seule Divinité et une seule nature. Nous Le louons et nous Le bénissons pour toujours. Amen !
 
