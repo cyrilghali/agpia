@@ -380,7 +380,7 @@ if (darkModeBtn) {
 
 (function initLangSelector() {
     const path = window.location.pathname;
-    const folders = ['fr', 'ar'];
+    const folders = ['fr-old', 'fr', 'ar'];
     let currentFolder = 'fr';
     for (const f of folders) {
         if (path.includes('/' + f + '/')) { currentFolder = f; break; }
@@ -388,8 +388,19 @@ if (darkModeBtn) {
 
     localStorage.setItem('lang', currentFolder);
 
+    const isFrench = currentFolder === 'fr' || currentFolder === 'fr-old';
+    const activeLang = isFrench ? 'fr' : 'ar';
+
     document.querySelectorAll('.lang-selector a').forEach(link => {
-        link.classList.toggle('active', link.getAttribute('data-lang') === currentFolder);
+        link.classList.toggle('active', link.getAttribute('data-lang') === activeLang);
+    });
+
+    document.querySelectorAll('.lang-variant-selector').forEach(el => {
+        el.style.display = isFrench ? 'flex' : 'none';
+    });
+
+    document.querySelectorAll('.lang-variant-selector a').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('data-variant') === currentFolder);
     });
 })();
 
