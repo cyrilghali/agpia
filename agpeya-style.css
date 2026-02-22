@@ -908,24 +908,32 @@ img.hero-cross.easter-egg-unlock {
 
 .variant-modal-btn {
     flex: 1;
-    padding: 0.5rem 1rem;
-    border-radius: 0.4rem;
-    font-size: 0.875rem;
+    padding: 0.625rem;
+    border-radius: 4px;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
     cursor: pointer;
-    border: 1px solid var(--ornament);
-    background: transparent;
+    border: 1px solid var(--border);
+    background: var(--bg);
     color: var(--text);
-    transition: opacity 0.15s;
+    transition: all 0.2s;
 }
 
 .variant-modal-btn:hover {
-    opacity: 0.8;
+    background: var(--bg-hover);
+    border-color: var(--primary);
 }
 
 .variant-modal-confirm {
     background: var(--burgundy);
     color: var(--bg);
     border-color: var(--burgundy);
+}
+
+.variant-modal-confirm:hover {
+    background: var(--burgundy);
+    color: var(--bg);
+    opacity: 0.9;
 }
 
 /* ============================================================================
