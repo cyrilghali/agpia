@@ -692,8 +692,6 @@ Je reconnais un seul baptême pour le pardon des péchés.
 
 J'attends la résurrection des morts et la vie du monde à venir. Amen.
 
-> *Puis on dit 41 fois Pitié Seigneur (Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ) puis cette prière :*
-
 **Saint, Saint, Saint, Seigneur sabaot,** le ciel et la terre sont remplis de Ta gloire et de ton honneur. Pitié pour nous ô Dieu le Père tout puissant. Pitié pour nous ô Trinité Sainte. Ô Seigneur Dieu des puissances sois avec nous, car nous n'attendons d'aide que de toi dans nos difficultés et nos angoisses.
 
 Ô Dieu délie, pardonne et remets nos péchés ; ceux que nous avons commis volontairement ou involontairement, consciemment ou inconsciemment, secrètement ou en public. Ô Seigneur pardonne les nous à cause de Ton saint Nom qui a été invoqué sur nous.
@@ -1010,10 +1008,6 @@ Comme Tu étais avec tes disciples, ô Sauveur, en leur accordant la paix ; vien
 
 Lorsque nous nous tenons debout dans Ton sanctuaire, nous sommes comptés parmi ceux qui se tiennent dans le ciel. Ô Mère de Dieu, tu es la Porte du ciel, ouvre-nous la porte de la miséricorde.
 
-> *Puis on dit :*
-
-Pitié Seigneur Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ (41 fois) Saint, saint, saint .... Notre Père ...
-
 
 ## 41 Kyrie Eleison
 
@@ -1320,10 +1314,6 @@ Nous nous prosternons devant Ta personne incorruptible demandant la rémission d
 
 Tu es pleine de grâce, ô Mère de Dieu, toujours vierge. Nous te louons car c'est par la Croix de Ton fils que l'enfer a été anéanti, la mort vaincue. Nous étions morts, nous avons été relevés et il nous a été accordé les mérites de la Vie éternelle et les délices du paradis. Pour cela nous glorifions le Christ notre Dieu car Il est puissant.
 
-> *Puis on dit :*
-
-Pitié Seigneur Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ (41 fois) Saint, saint, saint .... Notre Père ...
-
 
 ## 41 Kyrie Eleison
 
@@ -1612,10 +1602,6 @@ O Toi qui as reçu la confession du larron sur la Croix, reçois-nous ô Très B
 
 Quand la mère a vu l'Agneau, le Pasteur, le Sauveur du monde accroché sur la Croix, elle a dit en pleurant : « Le monde se réjouit en recevant le Salut, mais mon cœur s'enflamme en regardant Ta crucifixion que Tu endures avec patience pour tous, mon Fils, mon Dieu.»
 
-> *Puis on dit :*
-
-_Pitié Seigneur Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ_ (41 fois) Saint, saint, saint .... Notre Père ...
-
 
 ## 41 Kyrie Eleison
 
@@ -1857,10 +1843,6 @@ Hâte-Toi, ô Sauveur, d'ouvrir pour moi les bras paternels car j'ai gaspillé m
 **Maintenant et toujours et pour les siècles des siècles. Amen !**
 
 Avec soin et diligence j'ai commis toute transgression. Avec désir et énergie j'ai péché. J'ai mérité le châtiment et le jugement. Aménage pour moi les moyens du repentir ô notre Dame toujours vierge. Je te supplie, j'implore ton intercession et je t'appelle pour m'aider afin que je ne sois pas humilié. Sois avec moi à l'heure où mon âme quittera mon corps. Mets fin au complot des ennemis. Ferme les portes de l'enfer afin que mon âme ne soit pas avalée. Tu es l'épouse irréprochable du vrai époux.
-
-> *Puis on dit :*
-
-_Pitié Seigneur Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ_ (41 fois) Saint, saint, saint .... Notre Père ...
 
 
 ## 41 Kyrie Eleison
@@ -2521,10 +2503,6 @@ Comme Tu étais avec tes disciples, ô Sauveur, en leur accordant la paix ; vien
 
 Lorsque nous nous tenons debout dans Ton sanctuaire, nous sommes comptés parmi ceux qui se tiennent dans le ciel. Ô Mère de Dieu, tu es la Porte du ciel, ouvre-nous la porte de la miséricorde.
 
-> *Puis on dit :*
-
-_Pitié Seigneur Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ_ (41 fois) Saint, saint, saint .... Notre Père ...
-
 
 ## 41 Kyrie Eleison
 
@@ -2598,10 +2576,6 @@ Comme Tu étais avec tes disciples, ô Sauveur, en leur accordant la paix ; vien
 
 Lorsque nous nous tenons debout dans Ton sanctuaire, nous sommes comptés parmi ceux qui se tiennent dans le ciel. Ô Mère de Dieu, tu es la Porte du ciel, ouvre-nous la porte de la miséricorde.
 
-> *Puis on dit :*
-
-_Pitié Seigneur Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ_ (41 fois) Saint, saint, saint .... Notre Père ...
-
 
 ## 41 Kyrie Eleison
 
@@ -2674,10 +2648,6 @@ Comme Tu étais avec tes disciples, ô Sauveur, en leur accordant la paix ; vien
 > Maintenant et toujours et pour les siècles des siècles. Amen !
 
 Lorsque nous nous tenons debout dans Ton sanctuaire, nous sommes comptés parmi ceux qui se tiennent dans le ciel. Ô Mère de Dieu, tu es la Porte du ciel, ouvre-nous la porte de la miséricorde.
-
-> *Puis on dit :*
-
-Pitié Seigneur Ⲕⲩⲣⲓⲉ ⲉ̀ⲗⲉⲏ̀ⲥⲟⲛ (41 fois) Saint, saint, saint .... Notre Père ...
 
 
 ## Cantique de Siméon
