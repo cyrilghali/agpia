@@ -56,8 +56,6 @@ if ('serviceWorker' in navigator) {
 // ============================================================================
 
 (function injectFooter() {
-    // Don't inject if page already has a footer element
-    if (document.querySelector('footer')) return;
     const lang = document.documentElement.lang || 'en';
     const footerText = {
         fr: {
