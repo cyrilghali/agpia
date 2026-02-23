@@ -1,5 +1,6 @@
 // Données des notes de bas de page — Agpia.fr (édition française)
-const footnotes = {
+// Declared on window for reliable cross-script access
+window.footnotes = {
     'agpia': {
         title: 'L\'Agpia',
         content: `<p>Le mot <em>Agpia</em> (<span class="coptic-text">5agpia</span>) vient du copte <em>Ti agp</em> (<span class="coptic-text">5agp</span>), qui signifie « l'heure ». L'Agpia est donc le <em>Livre des Heures</em> de l'Église copte orthodoxe. Il contient sept prières quotidiennes héritées de la pratique apostolique, qui sanctifient chaque moment de la journée et de la nuit en les consacrant à Dieu.</p>`

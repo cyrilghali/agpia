@@ -914,12 +914,13 @@ function initFootnotes() {
         if (document.body.classList.contains('footnotes-off')) return;
 
         const footnoteId = link.getAttribute('data-footnote');
-        if (typeof footnotes === 'undefined' || !footnotes[footnoteId]) return;
+        if (!window.footnotes || !window.footnotes[footnoteId]) return;
 
         e.preventDefault();
 
         // Normalize to array
-        currentEntries = Array.isArray(footnotes[footnoteId]) ? footnotes[footnoteId] : [footnotes[footnoteId]];
+        const footnoteData = window.footnotes[footnoteId];
+        currentEntries = Array.isArray(footnoteData) ? footnoteData : [footnoteData];
         currentPage = 0;
 
         showFootnotePage(0);
@@ -964,11 +965,10 @@ if (footnotesToggleBtn) {
     };
 }
 
-// Initialize footnotes when DOM is ready (only if footnotes data is present)
-if (typeof footnotes !== 'undefined') {
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initFootnotes);
-    } else {
-        initFootnotes();
-    }
+// Initialize footnotes when DOM is ready
+// (click handler bails out silently if window.footnotes is not loaded)
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFootnotes);
+} else {
+    initFootnotes();
 }
