@@ -1,4 +1,4 @@
-const CACHE_NAME = 'agpeya-91fb9ba5';
+const CACHE_NAME = 'agpeya-notif-001';
 
 const PRECACHE_URLS = [
   '/',
@@ -82,4 +82,21 @@ self.addEventListener('fetch', (event) => {
     caches.match(event.request)
       .then((cached) => cached || fetch(event.request))
   );
+});
+
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  const url = event.notification.data && event.notification.data.url;
+  if (url) {
+    event.waitUntil(
+      clients.matchAll({ type: 'window' }).then((windowClients) => {
+        for (const client of windowClients) {
+          if (client.url.includes(url) && 'focus' in client) {
+            return client.focus();
+          }
+        }
+        return clients.openWindow(url);
+      })
+    );
+  }
 });

@@ -654,6 +654,128 @@ function initJumpToGospel() {
     });
 }
 
+// ============================================================================
+// HOURLY PRAYER NOTIFICATIONS
+// ============================================================================
+
+const PRAYER_HOURS = [
+    { hour: 0,  page: 'midnight.html', fr: 'Prière de minuit',               en: 'Midnight Prayer',  ar: 'صلاة نصف الليل' },
+    { hour: 6,  page: 'prime.html',    fr: "Prière de l'aube",               en: 'Prime – Morning Prayer', ar: 'صلاة باكر' },
+    { hour: 9,  page: 'terce.html',    fr: 'Prière de la troisième heure',   en: 'Terce – Third Hour',     ar: 'صلاة الساعة الثالثة' },
+    { hour: 12, page: 'sext.html',     fr: 'Prière de la sixième heure',     en: 'Sext – Sixth Hour',      ar: 'صلاة الساعة السادسة' },
+    { hour: 15, page: 'none.html',     fr: 'Prière de la neuvième heure',    en: 'None – Ninth Hour',      ar: 'صلاة الساعة التاسعة' },
+    { hour: 18, page: 'vespers.html',  fr: "Prière de la onzième heure",     en: 'Vespers – Eleventh Hour', ar: 'صلاة الغروب' },
+    { hour: 21, page: 'compline.html', fr: 'Prière de la douzième heure',    en: 'Compline – Twelfth Hour', ar: 'صلاة النوم' }
+];
+
+const NOTIF_BODIES = {
+    fr: "C'est l'heure de prier",
+    en: "It's time to pray",
+    ar: 'حان وقت الصلاة'
+};
+
+function detectNotifLang() {
+    var path = window.location.pathname;
+    if (path.includes('/ar/')) return 'ar';
+    if (path.includes('/en/')) return 'en';
+    return 'fr';
+}
+
+function getCurrentFolder() {
+    var parts = window.location.pathname.split('/').filter(Boolean);
+    return parts.length > 0 ? parts[0] : 'fr-lsg';
+}
+
+var _notifInterval = null;
+
+function startNotificationScheduler() {
+    if (_notifInterval) return;
+    checkAndNotify();
+    _notifInterval = setInterval(checkAndNotify, 30000);
+}
+
+function stopNotificationScheduler() {
+    if (_notifInterval) {
+        clearInterval(_notifInterval);
+        _notifInterval = null;
+    }
+}
+
+function checkAndNotify() {
+    if (localStorage.getItem('notifEnabled') !== '1') return;
+
+    var now = new Date();
+    var currentHour = now.getHours();
+    var currentMinute = now.getMinutes();
+
+    if (currentMinute !== 0) return;
+
+    var prayer = null;
+    for (var i = 0; i < PRAYER_HOURS.length; i++) {
+        if (PRAYER_HOURS[i].hour === currentHour) { prayer = PRAYER_HOURS[i]; break; }
+    }
+    if (!prayer) return;
+
+    var notifKey = now.toDateString() + '-' + currentHour;
+    if (localStorage.getItem('lastNotifKey') === notifKey) return;
+    localStorage.setItem('lastNotifKey', notifKey);
+
+    var langKey = detectNotifLang();
+    var prayerName = prayer[langKey];
+    var body = NOTIF_BODIES[langKey] || NOTIF_BODIES.en;
+    var folder = getCurrentFolder();
+    var url = '/' + folder + '/' + prayer.page;
+
+    if (navigator.serviceWorker && navigator.serviceWorker.controller) {
+        navigator.serviceWorker.ready.then(function (reg) {
+            reg.showNotification(prayerName, {
+                body: body,
+                icon: '/icons/icon-192.png',
+                tag: 'prayer-hour-' + currentHour,
+                data: { url: url }
+            });
+        });
+    } else if ('Notification' in window) {
+        new Notification(prayerName, {
+            body: body,
+            icon: '/icons/icon-192.png',
+            tag: 'prayer-hour-' + currentHour
+        });
+    }
+}
+
+// Notification toggle button
+(function initNotifToggle() {
+    var btn = document.getElementById('notifToggleBtn');
+    if (!btn) return;
+
+    // Restore saved state
+    if (localStorage.getItem('notifEnabled') === '1' && 'Notification' in window && Notification.permission === 'granted') {
+        btn.classList.add('active');
+        startNotificationScheduler();
+    }
+
+    btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var enabled = localStorage.getItem('notifEnabled') === '1';
+
+        if (!enabled) {
+            if (!('Notification' in window)) return;
+            Notification.requestPermission().then(function (perm) {
+                if (perm === 'granted') {
+                    localStorage.setItem('notifEnabled', '1');
+                    btn.classList.add('active');
+                    startNotificationScheduler();
+                }
+            });
+        } else {
+            localStorage.setItem('notifEnabled', '0');
+            btn.classList.remove('active');
+            stopNotificationScheduler();
+        }
+    });
+})();
+
 // Midnight hour special jump to gospel (watch-aware)
 function initMidnightJumpToGospel() {
     const jumpGospelBtns = document.querySelectorAll('.jump-gospel-btn');
