@@ -59,18 +59,21 @@ if ('serviceWorker' in navigator) {
     const lang = document.documentElement.lang || 'en';
     const footerText = {
         fr: {
-            derived: 'Ce site est dérivé de',
+            attribution: 'Ce site est basé sur le travail de <a href="https://agpeya.org" target="_blank" rel="noopener">agpeya.org</a>.',
+            credit: 'Tout le mérite du contenu des prières revient à son auteur — que ce travail lui soit rendu en hommage.',
             contact: 'Contact',
             source: 'Code source'
         },
         ar: {
-            derived: 'هذا الموقع مشتق من',
+            attribution: 'هذا الموقع مبني على عمل <a href="https://agpeya.org" target="_blank" rel="noopener">agpeya.org</a>.',
+            credit: 'كل الفضل في محتوى الصلوات يعود لصاحب العمل الأصلي — تقديراً لجهده.',
             contact: 'تواصل',
             source: 'الكود المصدري'
         }
     };
     const t = footerText[lang] || {
-        derived: 'This site is derived from',
+        attribution: 'This site is based on the work of <a href="https://agpeya.org" target="_blank" rel="noopener">agpeya.org</a>.',
+        credit: 'All credit for the prayer content belongs to its original author — this is offered in tribute to their work.',
         contact: 'Contact',
         source: 'Source code'
     };
@@ -78,7 +81,8 @@ if ('serviceWorker' in navigator) {
     const footer = document.createElement('footer');
     footer.className = 'site-footer';
     footer.innerHTML =
-        '<div>' + t.derived + ' <a href="https://agpeya.org" target="_blank" rel="noopener">agpeya.org</a></div>' +
+        '<div>' + t.attribution + '</div>' +
+        '<div class="footer-credit">' + t.credit + '</div>' +
         '<div class="footer-links">' +
             '<a href="https://github.com/cyrilghali/agpia/issues" target="_blank" rel="noopener">' + t.contact + '</a>' +
             '<a href="https://github.com/cyrilghali/agpia" target="_blank" rel="noopener">' + t.source + '</a>' +
