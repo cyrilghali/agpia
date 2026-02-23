@@ -10,7 +10,6 @@ Live at: [agpia.app](https://agpia.app) (or equivalent deployment)
 
 ```
 agpia/
-├── en/                   # English locale
 ├── ar/                   # Arabic locale
 ├── fr-lsg/               # French — Louis Segond (LSG) Bible (default French)
 ├── fr-unofficial/        # French — unofficial translation (locked behind flag)
@@ -19,19 +18,14 @@ agpia/
 ├── build.sh              # Build script — copies locales + assets into dist/
 ├── sw.js                 # Service worker (PWA offline support)
 ├── manifest.json         # Web app manifest
-├── index.html            # Root redirect / landing
-├── fr-lsg.md             # Source draft for fr-lsg prayer texts (~2900 lines)
-├── book-fr-classique.md  # Reference text — French classical translation
-├── book-traduis-du-copte.md  # Reference text — translated from Coptic
-├── fill_french.py        # Script for filling French HTML from markdown source
-└── ui_translations.py    # UI string translations across locales
+└── index.html            # Root redirect / landing
 ```
 
 ---
 
 ## Locale structure
 
-Each locale directory (`en/`, `ar/`, `fr-lsg/`, `fr-unofficial/`) contains the same set of HTML files:
+Each locale directory (`ar/`, `fr-lsg/`, `fr-unofficial/`) contains the same set of HTML files:
 
 | File           | Hour / content                          |
 |----------------|-----------------------------------------|
@@ -46,8 +40,6 @@ Each locale directory (`en/`, `ar/`, `fr-lsg/`, `fr-unofficial/`) contains the s
 | `index.html`   | Locale home — hour selection grid       |
 | `about.html`   | About / info page                       |
 | `other.html`   | Other prayers                           |
-
-`en/` is the source of truth for HTML structure. Other locales mirror it.
 
 ---
 
@@ -120,7 +112,7 @@ The gospel section itself is marked with:
 | THEME AND FONT MANAGEMENT | Dark/light mode, font size, line height |
 | SETTINGS MENU | Settings panel toggle, font/theme/line-height controls |
 | LANGUAGE SELECTOR | Folder-based locale switching (rewrites URL path) |
-| LOGO EASTER EGG | 4 clicks on logo → unlock `fr-unofficial/` |
+| LOGO EASTER EGG | 3 clicks on logo → unlock `fr-unofficial/` |
 | HOUR DROPDOWN | Short/long name toggling in hour navigation |
 | SECTION DROPDOWN & SCROLL | Sticky subheader section dropdown, scroll tracking |
 | `initJumpToGospel()` | Gospel button logic for standard hours |
@@ -171,20 +163,6 @@ CACHE_NAME = 'agpeya-<random-8-char-hex>'
 ```
 
 Only fires when relevant assets change — committing only markdown or other non-cached files leaves `sw.js` untouched.
-
----
-
-## Source markdown files
-
-The `.md` files at the root are **reference/draft documents**, not auto-compiled:
-
-| File | Content |
-|---|---|
-| `fr-lsg.md` | Draft of all fr-lsg prayer texts, organized by hour with `<!-- PAGE: xxx.html -->` markers (~2900 lines) |
-| `book-fr-classique.md` | French classical translation reference (~3300 lines) |
-| `book-traduis-du-copte.md` | Translation from Coptic reference (~3800 lines) |
-
-`fill_french.py` is a helper script for propagating text from these drafts into the HTML files.
 
 ---
 
