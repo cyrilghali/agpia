@@ -1,3 +1,6 @@
 {
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "redirects": [
+    { "source": "/fr-old/:path*", "destination": "/fr-lsg/:path*", "permanent": true }
+  ]
 }
