@@ -974,11 +974,16 @@ img.hero-cross.easter-egg-unlock {
 .site-footer a:hover {
     text-decoration: underline;
 }
+.site-footer .footer-credit {
+    font-style: italic;
+    margin-top: 0.2rem;
+    opacity: 0.8;
+}
 .site-footer .footer-links {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 0.4rem;
+    margin-top: 0.6rem;
     flex-wrap: wrap;
 }
 
