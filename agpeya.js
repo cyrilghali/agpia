@@ -767,3 +767,208 @@ function initMidnightJumpToGospel() {
         banner.classList.remove('visible');
     });
 })();
+
+// ============================================================================
+// FOOTNOTES
+// ============================================================================
+
+function initFootnotes() {
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'footnote-overlay';
+    overlay.id = 'footnoteOverlay';
+    document.body.appendChild(overlay);
+
+    // Create drawer
+    const drawer = document.createElement('div');
+    drawer.className = 'footnote-drawer';
+    drawer.id = 'footnoteDrawer';
+    drawer.innerHTML = `
+        <div class="footnote-drawer-handle"></div>
+        <div class="footnote-drawer-header">
+            <span class="footnote-drawer-title" id="footnoteTitle"></span>
+            <div class="footnote-pagination" id="footnotePagination" style="display:none;">
+                <button class="footnote-page-btn" id="footnotePrev" aria-label="Previous">&lsaquo;</button>
+                <span class="footnote-page-indicator" id="footnotePageIndicator"></span>
+                <button class="footnote-page-btn" id="footnoteNext" aria-label="Next">&rsaquo;</button>
+            </div>
+            <button class="footnote-drawer-close" id="footnoteClose" aria-label="Close footnote">&times;</button>
+        </div>
+        <div class="footnote-drawer-body" id="footnoteBody"></div>
+        <div class="footnote-drawer-source" id="footnoteSource" style="display:none;">
+            <span class="footnote-drawer-source-label">Source&nbsp;:</span>
+            <a id="footnoteSourceLink" target="_blank" rel="noopener"></a>
+        </div>
+    `;
+    document.body.appendChild(drawer);
+
+    // Close handlers
+    const closeDrawer = () => {
+        drawer.classList.remove('active');
+        overlay.classList.remove('active');
+    };
+
+    document.getElementById('footnoteClose').addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+
+    // Swipe down to close — only from header area (handle + title bar)
+    let touchStartY = 0;
+    let touchStartedInHeader = false;
+    const drawerHandle = drawer.querySelector('.footnote-drawer-handle');
+    const drawerHeader = drawer.querySelector('.footnote-drawer-header');
+
+    const headerTouchStart = (e) => {
+        touchStartY = e.touches[0].clientY;
+        touchStartedInHeader = true;
+    };
+    const headerTouchMove = (e) => {
+        if (!touchStartedInHeader) return;
+        e.preventDefault();
+        const deltaY = e.touches[0].clientY - touchStartY;
+        if (deltaY > 60) {
+            closeDrawer();
+            touchStartedInHeader = false;
+        }
+    };
+    const headerTouchEnd = () => {
+        touchStartedInHeader = false;
+    };
+
+    drawerHandle.addEventListener('touchstart', headerTouchStart, { passive: true });
+    drawerHandle.addEventListener('touchmove', headerTouchMove, { passive: false });
+    drawerHandle.addEventListener('touchend', headerTouchEnd, { passive: true });
+    drawerHeader.addEventListener('touchstart', headerTouchStart, { passive: true });
+    drawerHeader.addEventListener('touchmove', headerTouchMove, { passive: false });
+    drawerHeader.addEventListener('touchend', headerTouchEnd, { passive: true });
+
+    // Prevent body scroll from propagating when drawer is open
+    const drawerBody = drawer.querySelector('.footnote-drawer-body');
+    drawerBody.addEventListener('touchmove', (e) => {
+        e.stopPropagation();
+    }, { passive: true });
+
+    // Escape key to close
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && drawer.classList.contains('active')) {
+            closeDrawer();
+        }
+    });
+
+    // Pagination state
+    let currentEntries = [];
+    let currentPage = 0;
+
+    function showFootnotePage(page) {
+        const entry = currentEntries[page];
+        if (!entry) return;
+        currentPage = page;
+
+        const titleEl = document.getElementById('footnoteTitle');
+        const bodyEl = document.getElementById('footnoteBody');
+        const sourceEl = document.getElementById('footnoteSource');
+        const paginationEl = document.getElementById('footnotePagination');
+        const indicatorEl = document.getElementById('footnotePageIndicator');
+        const prevBtn = document.getElementById('footnotePrev');
+        const nextBtn = document.getElementById('footnoteNext');
+
+        titleEl.textContent = entry.title;
+        bodyEl.innerHTML = entry.content;
+
+        // Source
+        if (entry.source) {
+            const linkEl = document.getElementById('footnoteSourceLink');
+            linkEl.href = entry.source;
+            linkEl.textContent = entry.sourceText || entry.source;
+            sourceEl.style.display = '';
+        } else {
+            sourceEl.style.display = 'none';
+        }
+
+        // Pagination
+        if (currentEntries.length > 1) {
+            indicatorEl.textContent = (page + 1) + ' / ' + currentEntries.length;
+            prevBtn.disabled = page === 0;
+            nextBtn.disabled = page === currentEntries.length - 1;
+            paginationEl.style.display = '';
+        } else {
+            paginationEl.style.display = 'none';
+        }
+
+        bodyEl.scrollTop = 0;
+    }
+
+    // Pagination button handlers
+    document.getElementById('footnotePrev').addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (currentPage > 0) showFootnotePage(currentPage - 1);
+    });
+    document.getElementById('footnoteNext').addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (currentPage < currentEntries.length - 1) showFootnotePage(currentPage + 1);
+    });
+
+    // Click handler for footnote links
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('.footnote-link');
+        if (!link) return;
+        if (document.body.classList.contains('footnotes-off')) return;
+
+        const footnoteId = link.getAttribute('data-footnote');
+        if (typeof footnotes === 'undefined' || !footnotes[footnoteId]) return;
+
+        e.preventDefault();
+
+        // Normalize to array
+        currentEntries = Array.isArray(footnotes[footnoteId]) ? footnotes[footnoteId] : [footnotes[footnoteId]];
+        currentPage = 0;
+
+        showFootnotePage(0);
+
+        overlay.classList.add('active');
+        drawer.classList.add('active');
+    });
+}
+
+// Footnotes toggle
+const footnotesToggleBtn = document.getElementById('footnotesToggleBtn');
+const savedFootnotes = localStorage.getItem('footnotes') !== 'off'; // defaults to ON
+
+if (!savedFootnotes) {
+    document.body.classList.add('footnotes-off');
+}
+
+function updateFootnotesToggle() {
+    const isOn = !document.body.classList.contains('footnotes-off');
+    if (footnotesToggleBtn) {
+        footnotesToggleBtn.classList.toggle('active', isOn);
+    }
+}
+updateFootnotesToggle();
+
+if (footnotesToggleBtn) {
+    footnotesToggleBtn.onclick = (e) => {
+        e.stopPropagation();
+        const isCurrentlyOn = !document.body.classList.contains('footnotes-off');
+        if (isCurrentlyOn) {
+            document.body.classList.add('footnotes-off');
+            localStorage.setItem('footnotes', 'off');
+            const d = document.getElementById('footnoteDrawer');
+            const o = document.getElementById('footnoteOverlay');
+            if (d) d.classList.remove('active');
+            if (o) o.classList.remove('active');
+        } else {
+            document.body.classList.remove('footnotes-off');
+            localStorage.setItem('footnotes', 'on');
+        }
+        updateFootnotesToggle();
+    };
+}
+
+// Initialize footnotes when DOM is ready (only if footnotes data is present)
+if (typeof footnotes !== 'undefined') {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFootnotes);
+    } else {
+        initFootnotes();
+    }
+}

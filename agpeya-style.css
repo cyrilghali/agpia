@@ -1063,3 +1063,210 @@ img.hero-cross.easter-egg-unlock {
     padding: 0.25rem;
     line-height: 1;
 }
+
+/* ============================================================================
+   FOOTNOTES
+   ============================================================================ */
+
+.footnote-link {
+    text-decoration: underline dotted;
+    text-decoration-color: var(--burgundy);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.5px;
+    cursor: pointer;
+}
+.footnote-link:hover {
+    text-decoration-color: var(--burgundy);
+}
+body.footnotes-off .footnote-link {
+    text-decoration: none;
+    cursor: inherit;
+    pointer-events: none;
+}
+
+.footnote-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+.footnote-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.footnote-drawer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    max-height: 80vh;
+    background: var(--bg-card);
+    background: color-mix(in srgb, var(--bg-card) 85%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 16px 16px 0 0;
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+    display: flex;
+    flex-direction: column;
+}
+.footnote-drawer.active {
+    transform: translateY(0);
+}
+
+.footnote-drawer-handle {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 4px;
+    cursor: grab;
+    flex-shrink: 0;
+}
+.footnote-drawer-handle::after {
+    content: '';
+    width: 36px;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+}
+
+.footnote-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.25rem 0.5rem;
+    flex-shrink: 0;
+    gap: 0.5rem;
+}
+.footnote-drawer-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--burgundy);
+    flex-shrink: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.footnote-pagination {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+}
+.footnote-page-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--burgundy);
+    font-size: 1.1rem;
+    line-height: 1;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 0;
+}
+.footnote-page-btn:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 0.06);
+}
+[data-theme="dark"] .footnote-page-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.08);
+}
+.footnote-page-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+.footnote-page-indicator {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.footnote-drawer-close {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    line-height: 1;
+    transition: all 0.2s;
+}
+.footnote-drawer-close:hover {
+    background: rgba(0, 0, 0, 0.06);
+    color: var(--text);
+}
+[data-theme="dark"] .footnote-drawer-close:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.footnote-drawer-body {
+    overflow-y: auto;
+    padding: 0 1.25rem 1.5rem;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+.footnote-drawer-body p {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+}
+.footnote-drawer-body p:last-child {
+    margin-bottom: 0;
+}
+.footnote-drawer-body em {
+    color: var(--burgundy);
+    font-style: italic;
+}
+.footnote-drawer-body blockquote {
+    margin: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
+    border-left: 3px solid var(--burgundy);
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+[data-line-height="comfy"] .footnote-drawer-body p { line-height: 1.8; }
+[data-line-height="default"] .footnote-drawer-body p { line-height: 1.5; }
+[data-line-height="condensed"] .footnote-drawer-body p { line-height: 1.3; }
+
+.footnote-drawer-source {
+    flex-shrink: 0;
+    padding: 0.4rem 1.25rem;
+    border-top: 1px solid var(--border);
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-width: 0;
+}
+.footnote-drawer-source-label {
+    font-weight: 600;
+    color: var(--text-light);
+    flex-shrink: 0;
+}
+.footnote-drawer-source a {
+    color: var(--burgundy);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
