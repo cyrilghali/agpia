@@ -782,15 +782,15 @@ function initMidnightJumpToGospel() {
     jumpGospelBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            
+
             // Get the target from href (e.g., "gospel-watch1", "gospel-watch2", etc.)
             const targetId = btn.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
-            
+
             if (targetSection) {
                 isUserScrolling = false;
                 targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                
+
                 // Update section dropdown to match
                 const gospelTitle = targetSection.querySelector('.section-title');
                 if (gospelTitle && sectionDropdown) {
@@ -802,7 +802,7 @@ function initMidnightJumpToGospel() {
                         }
                     }
                 }
-                
+
                 setTimeout(() => {
                     isUserScrolling = true;
                 }, 1000);
@@ -810,3 +810,78 @@ function initMidnightJumpToGospel() {
         });
     });
 }
+
+// ============================================================================
+// PWA INSTALL PROMPT
+// ============================================================================
+
+(function initPwaInstallBanner() {
+    // Don't show if already installed (standalone mode)
+    if (window.matchMedia('(display-mode: standalone)').matches) return;
+    if (window.navigator.standalone === true) return;
+
+    // Don't show if user dismissed it before
+    try {
+        if (localStorage.getItem('pwaInstallDismissed') === '1') return;
+    } catch(e) {}
+
+    const lang = document.documentElement.lang || 'en';
+
+    const i18n = {
+        fr: { title: 'Installer Agpia', subtitle: 'Accédez rapidement depuis votre écran d\u2019accueil', install: 'Installer', iosSubtitle: 'Appuyez sur «\u00A0Partager\u00A0» puis «\u00A0Sur l\u2019écran d\u2019accueil\u00A0»' },
+        ar: { title: '\u062A\u062B\u0628\u064A\u062A \u0627\u0644\u0623\u062C\u0628\u064A\u0629', subtitle: '\u0627\u0641\u062A\u062D\u0647\u0627 \u0628\u0633\u0631\u0639\u0629 \u0645\u0646 \u0634\u0627\u0634\u062A\u0643 \u0627\u0644\u0631\u0626\u064A\u0633\u064A\u0629', install: '\u062A\u062B\u0628\u064A\u062A', iosSubtitle: '\u0627\u0636\u063A\u0637 \u0639\u0644\u0649 \u00AB\u0645\u0634\u0627\u0631\u0643\u0629\u00BB \u062B\u0645 \u00AB\u0625\u0636\u0627\u0641\u0629 \u0625\u0644\u0649 \u0627\u0644\u0634\u0627\u0634\u0629 \u0627\u0644\u0631\u0626\u064A\u0633\u064A\u0629\u00BB' }
+    };
+    const t = i18n[lang] || { title: 'Install Agpia', subtitle: 'Quick access from your home screen', install: 'Install', iosSubtitle: 'Tap "Share" then "Add to Home Screen"' };
+
+    // Create banner element
+    var banner = document.createElement('div');
+    banner.className = 'pwa-install-banner';
+    banner.innerHTML =
+        '<img class="pwa-install-banner-icon" src="/icons/icon-192.png" alt="Agpia">' +
+        '<div class="pwa-install-banner-text">' +
+            '<div class="pwa-install-banner-title">' + t.title + '</div>' +
+            '<div class="pwa-install-banner-subtitle">' + t.subtitle + '</div>' +
+        '</div>' +
+        '<button class="pwa-install-btn" id="pwaInstallBtn">' + t.install + '</button>' +
+        '<button class="pwa-install-close" id="pwaInstallClose">\u00D7</button>';
+    document.body.appendChild(banner);
+
+    var deferredPrompt = null;
+
+    // Close button handler
+    document.getElementById('pwaInstallClose').addEventListener('click', function() {
+        banner.classList.remove('visible');
+        try { localStorage.setItem('pwaInstallDismissed', '1'); } catch(e) {}
+    });
+
+    // Android/Chrome: listen for beforeinstallprompt
+    window.addEventListener('beforeinstallprompt', function(e) {
+        e.preventDefault();
+        deferredPrompt = e;
+        banner.classList.add('visible');
+    });
+
+    document.getElementById('pwaInstallBtn').addEventListener('click', function() {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then(function() {
+                deferredPrompt = null;
+                banner.classList.remove('visible');
+            });
+        }
+    });
+
+    // iOS Safari: show instructions banner
+    var isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    var isSafari = /Safari/.test(navigator.userAgent) && !/CriOS|FxiOS|OPiOS|EdgiOS/.test(navigator.userAgent);
+    if (isIos && isSafari) {
+        banner.querySelector('.pwa-install-banner-subtitle').textContent = t.iosSubtitle;
+        banner.querySelector('#pwaInstallBtn').style.display = 'none';
+        banner.classList.add('visible');
+    }
+
+    // Hide banner if app gets installed
+    window.addEventListener('appinstalled', function() {
+        banner.classList.remove('visible');
+    });
+})();
