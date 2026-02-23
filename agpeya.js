@@ -951,25 +951,43 @@ function initMidnightJumpToGospel() {
 
     annotateTextNodes();
 
-    // Inject modal overlay
+    // Inject modal overlay (bottom sheet)
     var overlay = document.createElement('div');
     overlay.id = 'word-tip-modal';
     overlay.className = 'word-tip-overlay';
     overlay.innerHTML =
         '<div class="word-tip-modal">' +
+            '<div class="word-tip-modal-handle"></div>' +
             '<h2 class="word-tip-modal-title"></h2>' +
             '<p class="word-tip-modal-body"></p>' +
         '</div>';
     document.body.appendChild(overlay);
 
-    // Close on overlay click
+    function showOverlay() {
+        overlay.style.display = 'flex';
+        // Force reflow so the transition triggers
+        overlay.offsetHeight; // eslint-disable-line no-unused-expressions
+        overlay.classList.add('visible');
+    }
+
+    function hideOverlay() {
+        overlay.classList.remove('visible');
+        overlay.addEventListener('transitionend', function handler() {
+            overlay.removeEventListener('transitionend', handler);
+            if (!overlay.classList.contains('visible')) {
+                overlay.style.display = 'none';
+            }
+        });
+    }
+
+    // Close on overlay click (outside the modal)
     overlay.addEventListener('click', function (e) {
-        if (e.target === overlay) overlay.classList.remove('visible');
+        if (e.target === overlay) hideOverlay();
     });
 
     // Close on Escape key
     document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') overlay.classList.remove('visible');
+        if (e.key === 'Escape') hideOverlay();
     });
 
     // Delegate click on .word-tip spans
@@ -982,6 +1000,6 @@ function initMidnightJumpToGospel() {
         if (!entry) return;
         overlay.querySelector('.word-tip-modal-title').textContent = entry.title;
         overlay.querySelector('.word-tip-modal-body').textContent = entry.body;
-        overlay.classList.add('visible');
+        showOverlay();
     });
 })();
