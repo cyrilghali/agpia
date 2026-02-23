@@ -1065,3 +1065,60 @@ img.hero-cross.easter-egg-unlock {
     padding: 0.25rem;
     line-height: 1;
 }
+
+/* ============================================================================
+   WORD TOOLTIP
+   ============================================================================ */
+
+.word-tip {
+    text-decoration: underline dotted var(--text-muted);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    transition: text-decoration-color 0.2s;
+}
+
+.word-tip:hover {
+    text-decoration-color: var(--burgundy);
+}
+
+.word-tip-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.word-tip-overlay.visible {
+    display: flex;
+}
+
+.word-tip-modal {
+    background: var(--bg);
+    border: 1px solid var(--ornament);
+    border-radius: 0.75rem;
+    padding: 2rem 1.5rem;
+    max-width: 22rem;
+    width: 100%;
+    text-align: center;
+}
+
+.word-tip-modal-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--burgundy);
+    margin: 0 0 1rem;
+}
+
+.word-tip-modal-body {
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.65;
+    margin: 0;
+    opacity: 0.85;
+}

@@ -767,3 +767,221 @@ function initMidnightJumpToGospel() {
         banner.classList.remove('visible');
     });
 })();
+
+// ============================================================================
+// WORD TOOLTIP — glossary definitions shown on click
+// ============================================================================
+
+(function initWordTips() {
+    var glossary = {
+        // French glossary
+        'pantocrator': {
+            title: 'Pantocrator',
+            body: 'Du grec \u00AB Pantokrat\u014Dr \u00BB, signifiant \u00AB Tout-Puissant \u00BB ou \u00AB Ma\u00EEtre de toutes choses \u00BB. Titre donn\u00E9 \u00E0 Dieu le P\u00E8re dans la liturgie copte.'
+        },
+        'consubstantiel': {
+            title: 'Consubstantiel',
+            body: 'Du latin \u00AB consubstantialis \u00BB. Terme th\u00E9ologique affirmant que le Fils et le Saint-Esprit partagent la m\u00EAme nature divine que le P\u00E8re. D\u00E9fini au Concile de Nic\u00E9e (325).'
+        },
+        'hypostase': {
+            title: 'Hypostase',
+            body: 'Du grec \u00AB hypostasis \u00BB, signifiant \u00AB personne \u00BB ou \u00AB subsistance \u00BB. D\u00E9signe chacune des trois Personnes de la Trinit\u00E9 : P\u00E8re, Fils et Saint-Esprit.'
+        },
+        'hysope': {
+            title: 'Hysope',
+            body: 'Plante aromatique utilis\u00E9e dans les rites de purification de l\u2019Ancien Testament (Ex 12,22 ; Lv 14,4). Symbole de purification dans les Psaumes.'
+        },
+        'holocauste': {
+            title: 'Holocauste',
+            body: 'Sacrifice dans lequel la victime \u00E9tait enti\u00E8rement br\u00FBl\u00E9e en offrande \u00E0 Dieu. Forme de sacrifice la plus compl\u00E8te dans l\u2019Ancien Testament.'
+        },
+        'sabaot': {
+            title: 'Sabaot',
+            body: 'De l\u2019h\u00E9breu \u00AB Tseba\u2019ot \u00BB signifiant \u00AB des arm\u00E9es \u00BB. \u00AB Seigneur Sabaot \u00BB d\u00E9signe le \u00AB Seigneur des arm\u00E9es c\u00E9lestes \u00BB.'
+        },
+        'sion': {
+            title: 'Sion',
+            body: 'Colline de J\u00E9rusalem sur laquelle \u00E9tait b\u00E2ti le Temple. Symbole de la cit\u00E9 de Dieu, du peuple \u00E9lu et de la pr\u00E9sence divine.'
+        },
+        'emmanuel': {
+            title: 'Emmanuel',
+            body: 'De l\u2019h\u00E9breu \u00AB Immanu-El \u00BB signifiant \u00AB Dieu est avec nous \u00BB. Nom proph\u00E9tique donn\u00E9 au Messie (Isa\u00EFe 7,14).'
+        },
+        'trisagion': {
+            title: 'Trisagion',
+            body: 'Du grec \u00AB tris \u00BB (trois fois) et \u00AB hagios \u00BB (saint). Hymne \u00AB Saint Dieu, Saint fort, Saint immortel \u00BB, pri\u00E8re tr\u00E8s ancienne de la liturgie chr\u00E9tienne.'
+        },
+        'oblation': {
+            title: 'Oblation',
+            body: 'Du latin \u00AB oblatio \u00BB, signifiant \u00AB offrande \u00BB. D\u00E9signe l\u2019acte d\u2019offrir quelque chose \u00E0 Dieu, en particulier le pain et le vin de l\u2019Eucharistie.'
+        },
+        // Arabic glossary
+        'الضابط الكل': {
+            title: '\u0627\u0644\u0636\u0627\u0628\u0637 \u0627\u0644\u0643\u0644',
+            body: '\u0644\u0642\u0628 \u064A\u0639\u0646\u064A \u00AB\u0627\u0644\u0642\u0627\u062F\u0631 \u0639\u0644\u0649 \u0643\u0644 \u0634\u064A\u0621\u00BB \u0623\u0648 \u00AB\u0633\u064A\u062F \u0627\u0644\u0643\u0644\u00BB. \u0645\u0646 \u0627\u0644\u064A\u0648\u0646\u0627\u0646\u064A\u0629 \u00ABPantokrat\u014Dr\u00BB. \u064A\u064F\u0637\u0644\u0642 \u0639\u0644\u0649 \u0627\u0644\u0644\u0647 \u0627\u0644\u0622\u0628 \u0641\u064A \u0627\u0644\u0644\u064A\u062A\u0648\u0631\u062C\u064A\u0627 \u0627\u0644\u0642\u0628\u0637\u064A\u0629.'
+        },
+        'المعزي': {
+            title: '\u0627\u0644\u0645\u0639\u0632\u0651\u064A',
+            body: '\u0644\u0642\u0628 \u064A\u064F\u0637\u0644\u064E\u0642 \u0639\u0644\u0649 \u0627\u0644\u0631\u0648\u062D \u0627\u0644\u0642\u062F\u0633. \u0645\u0646 \u0627\u0644\u064A\u0648\u0646\u0627\u0646\u064A\u0629 \u00ABParakletos\u00BB \u0623\u064A \u0627\u0644\u0645\u0639\u0632\u0651\u064A \u0623\u0648 \u0627\u0644\u0634\u0641\u064A\u0639 (\u064A\u0648\u062D\u0646\u0627 14:26).'
+        },
+        'أقنومه': {
+            title: '\u0623\u0642\u0646\u0648\u0645',
+            body: '\u0645\u0646 \u0627\u0644\u064A\u0648\u0646\u0627\u0646\u064A\u0629 \u00ABhypostasis\u00BB \u0623\u064A \u00AB\u0634\u062E\u0635\u00BB \u0623\u0648 \u00AB\u0643\u064A\u0627\u0646\u00BB. \u064A\u0634\u064A\u0631 \u0625\u0644\u0649 \u0643\u0644 \u0645\u0646 \u0627\u0644\u0623\u0642\u0627\u0646\u064A\u0645 \u0627\u0644\u062B\u0644\u0627\u062B\u0629 \u0644\u0644\u062B\u0627\u0644\u0648\u062B \u0627\u0644\u0623\u0642\u062F\u0633: \u0627\u0644\u0622\u0628 \u0648\u0627\u0644\u0627\u0628\u0646 \u0648\u0627\u0644\u0631\u0648\u062D \u0627\u0644\u0642\u062F\u0633.'
+        },
+        'صهيون': {
+            title: '\u0635\u0647\u064A\u0648\u0646',
+            body: '\u062A\u0644 \u0641\u064A \u0623\u0648\u0631\u0634\u0644\u064A\u0645 \u0628\u064F\u0646\u064A \u0639\u0644\u064A\u0647 \u0627\u0644\u0647\u064A\u0643\u0644. \u0631\u0645\u0632 \u0644\u0645\u062F\u064A\u0646\u0629 \u0627\u0644\u0644\u0647 \u0648\u0634\u0639\u0628\u0647 \u0627\u0644\u0645\u062E\u062A\u0627\u0631 \u0648\u0627\u0644\u062D\u0636\u0648\u0631 \u0627\u0644\u0625\u0644\u0647\u064A.'
+        },
+        'عمانوئيل': {
+            title: '\u0639\u0645\u0627\u0646\u0648\u0626\u064A\u0644',
+            body: '\u0645\u0646 \u0627\u0644\u0639\u0628\u0631\u064A\u0629 \u00AB\u0639\u0645\u0651\u0627\u0646\u0648 \u0625\u064A\u0644\u00BB \u0623\u064A \u00AB\u0627\u0644\u0644\u0647 \u0645\u0639\u0646\u0627\u00BB. \u0627\u0633\u0645 \u0646\u0628\u0648\u064A \u0644\u0644\u0645\u0633\u064A\u062D (\u0625\u0634\u0639\u064A\u0627\u0621 7:14).'
+        },
+        'زوفا': {
+            title: '\u0632\u0648\u0641\u0627',
+            body: '\u0646\u0628\u0627\u062A \u0639\u0637\u0631\u064A \u0627\u0633\u062A\u064F\u062E\u062F\u0645 \u0641\u064A \u0637\u0642\u0648\u0633 \u0627\u0644\u062A\u0637\u0647\u064A\u0631 \u0641\u064A \u0627\u0644\u0639\u0647\u062F \u0627\u0644\u0642\u062F\u064A\u0645 (\u062E\u0631 12:22\u060C \u0644\u0627 14:4). \u0631\u0645\u0632 \u0627\u0644\u062A\u0637\u0647\u064A\u0631 \u0641\u064A \u0627\u0644\u0645\u0632\u0627\u0645\u064A\u0631.'
+        },
+        'محرقات': {
+            title: '\u0645\u062D\u0631\u0642\u0627\u062A',
+            body: '\u0630\u0628\u0627\u0626\u062D \u0643\u0627\u0646\u062A \u062A\u064F\u062D\u0631\u064E\u0642 \u0628\u0627\u0644\u0643\u0627\u0645\u0644 \u062A\u0642\u062F\u0645\u0629\u064B \u0644\u0644\u0647. \u0623\u0643\u0645\u0644 \u0623\u0634\u0643\u0627\u0644 \u0627\u0644\u0630\u0628\u064A\u062D\u0629 \u0641\u064A \u0627\u0644\u0639\u0647\u062F \u0627\u0644\u0642\u062F\u064A\u0645.'
+        }
+    };
+
+    // Build lookup: surface form → glossary key
+    // For French we match whole words; for Arabic we match exact substrings
+    var lang = document.documentElement.lang || 'en';
+    var surfaceForms = {}; // maps lowercased surface → { key, pattern (regex) }
+
+    if (lang === 'ar') {
+        // Arabic entries: match exact substring
+        Object.keys(glossary).forEach(function (key) {
+            var entry = glossary[key];
+            // Only include Arabic entries (title contains Arabic characters)
+            if (/[\u0600-\u06FF]/.test(entry.title)) {
+                surfaceForms[key] = { key: key, regex: new RegExp('(' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'g') };
+            }
+        });
+    } else {
+        // French / other: match whole-word (case-insensitive)
+        var frenchWords = {
+            'Pantocrator': 'pantocrator',
+            'consubstantiel': 'consubstantiel',
+            'hypostase': 'hypostase',
+            'hysope': 'hysope',
+            'holocauste': 'holocauste',
+            'holocaustes': 'holocauste',
+            'sabaot': 'sabaot',
+            'Sion': 'sion',
+            'Emmanuel': 'emmanuel',
+            'Trisagion': 'trisagion',
+            'oblations': 'oblation',
+            'oblation': 'oblation'
+        };
+        Object.keys(frenchWords).forEach(function (surface) {
+            var key = frenchWords[surface];
+            surfaceForms[surface] = { key: key, regex: new RegExp('\\b(' + surface.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')\\b', 'g') };
+        });
+    }
+
+    // Walk text nodes inside prayer content and wrap first occurrence per section
+    function annotateTextNodes() {
+        var containers = document.querySelectorAll('.prayer-text, .psalm-verse, .section-title');
+        // Track which glossary keys we've already annotated (first occurrence only)
+        var annotated = {};
+
+        containers.forEach(function (container) {
+            // Skip Coptic text spans
+            if (container.closest('.doxology-coptic')) return;
+
+            var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+            var textNode;
+            var nodesToProcess = [];
+
+            while ((textNode = walker.nextNode())) {
+                nodesToProcess.push(textNode);
+            }
+
+            nodesToProcess.forEach(function (node) {
+                if (!node.parentNode) return;
+                // Don't re-annotate already wrapped nodes
+                if (node.parentNode.classList && node.parentNode.classList.contains('word-tip')) return;
+
+                var text = node.nodeValue;
+                var replaced = false;
+
+                Object.keys(surfaceForms).forEach(function (surface) {
+                    var info = surfaceForms[surface];
+                    if (annotated[info.key]) return; // already annotated this term
+
+                    info.regex.lastIndex = 0;
+                    if (info.regex.test(text)) {
+                        annotated[info.key] = true;
+                        info.regex.lastIndex = 0;
+                        // Replace only the first match
+                        var done = false;
+                        text = text.replace(info.regex, function (match) {
+                            if (done) return match;
+                            done = true;
+                            replaced = true;
+                            return '\x00TIP_START\x00' + info.key + '\x00TIP_MID\x00' + match + '\x00TIP_END\x00';
+                        });
+                    }
+                });
+
+                if (replaced) {
+                    // Split the text by our markers and build DOM nodes
+                    var frag = document.createDocumentFragment();
+                    var parts = text.split(/\x00TIP_START\x00|\x00TIP_END\x00/);
+                    parts.forEach(function (part) {
+                        var mid = part.split('\x00TIP_MID\x00');
+                        if (mid.length === 2) {
+                            var span = document.createElement('span');
+                            span.className = 'word-tip';
+                            span.setAttribute('data-tip', mid[0]);
+                            span.textContent = mid[1];
+                            frag.appendChild(span);
+                        } else {
+                            frag.appendChild(document.createTextNode(part));
+                        }
+                    });
+                    node.parentNode.replaceChild(frag, node);
+                }
+            });
+        });
+    }
+
+    annotateTextNodes();
+
+    // Inject modal overlay
+    var overlay = document.createElement('div');
+    overlay.id = 'word-tip-modal';
+    overlay.className = 'word-tip-overlay';
+    overlay.innerHTML =
+        '<div class="word-tip-modal">' +
+            '<h2 class="word-tip-modal-title"></h2>' +
+            '<p class="word-tip-modal-body"></p>' +
+        '</div>';
+    document.body.appendChild(overlay);
+
+    // Close on overlay click
+    overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) overlay.classList.remove('visible');
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') overlay.classList.remove('visible');
+    });
+
+    // Delegate click on .word-tip spans
+    document.addEventListener('click', function (e) {
+        var tip = e.target.closest('.word-tip');
+        if (!tip) return;
+        var key = tip.getAttribute('data-tip');
+        if (!key) return;
+        var entry = glossary[key];
+        if (!entry) return;
+        overlay.querySelector('.word-tip-modal-title').textContent = entry.title;
+        overlay.querySelector('.word-tip-modal-body').textContent = entry.body;
+        overlay.classList.add('visible');
+    });
+})();
