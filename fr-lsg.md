@@ -232,7 +232,7 @@ La nuit s'est écoulée. Nous Te rendons grâce, notre Seigneur, et nous T'implo
 ⟨1⟩ Moi qui suis en prison à cause du Seigneur, je vous encourage à suivre fidèlement l’appel que vous avez reçu de Dieu ; ⟨2⟩ ayez beaucoup d’humilité, de douceur et de patience, supportez-vous les uns les autres avec amour ; ⟨3⟩ ayez à cœur de garder l’unité dans l’Esprit par le lien de la paix. ⟨4⟩ Comme votre vocation vous a tous appelés à une seule espérance, de même il n’y a qu’un seul Corps et un seul Esprit. ⟨5⟩ Il n’y a qu’un seul Seigneur, une seule foi, un seul baptême.
 
 
-## La foi de l'Église
+## De la Foi de l'Église
 
 Un est Dieu le Père de chacun. Un est aussi Son Fils Jésus-Christ le Verbe qui s'est incarné, qui est mort et qui est ressuscité d'entre les morts le troisième jour. Il nous a ressuscités avec Lui. Un est le Saint Esprit consolateur, unique dans son hypostase. Il procède du Père. Il purifie toute la création et nous enseigne à nous prosterner devant la Sainte Trinité : Une seule Divinité et une seule nature. Nous Le louons et nous Le bénissons pour toujours. Amen !
 
@@ -591,7 +591,7 @@ _Alléluia !_
 _Gloire à Dieu à jamais !_
 
 
-## Tropaires de l'aube
+## Oraisons
 
 > *Puis on dit les oraisons suivantes :*
 
@@ -661,7 +661,7 @@ Par le Christ Jésus Notre Seigneur.
 
 Car c'est à Toi qu'appartiennent le règne, la puissance et la gloire éternellement. Amen !
 
-## Tropaires de la Vierge
+## Oraisons
 
 Nous te saluons et nous te supplions, toi la sainte, pleine de gloire, toujours vierge, Mère de Dieu et Mère du Christ : Fais monter notre prière vers Ton Fils bien-aimé pour qu'Il nous pardonne nos péchés.
 
@@ -979,7 +979,7 @@ _Alléluia !_
 _Gloire à Dieu à jamais !_
 
 
-## Tropaires de la troisième heure
+## Oraisons
 
 > *Puis on dit les oraisons suivantes :*
 
@@ -1288,7 +1288,7 @@ _Alléluia !_
 _Gloire à Dieu à jamais !_
 
 
-## Tropaires de la sixième heure
+## Oraisons
 
 > *Puis on dit les oraisons suivantes :*
 
@@ -1581,7 +1581,7 @@ _Alléluia !_
 _Gloire à Dieu à jamais !_
 
 
-## Tropaires de la neuvième heure
+## Oraisons
 
 > *Puis on dit les oraisons suivantes :*
 
@@ -1842,7 +1842,7 @@ Au nom du Seigneur, nous vous bénissons. _Alléluia !_
 _Gloire à Dieu à jamais !_
 
 
-## Tropaires de la onzième heure
+## Oraisons
 
 > *Puis on dit les oraisons suivantes :*
 
@@ -2203,7 +2203,7 @@ Puis on récite les psaumes suivants :
 _Gloire à Dieu à jamais !_
 
 
-## Tropaires du voile
+## Oraisons
 
 Tu sais, Seigneur, la vigilance de mes ennemis. Tu connais, Toi mon Créateur, la faiblesse de ma nature. Voici que je remets mon esprit entre Tes mains ; protège-moi avec les ailes de Ta bonté pour ne pas que je dorme jusqu'à la mort.
 
@@ -2479,7 +2479,7 @@ l'huile en réserve. ⟨5⟩ Comme l'époux tardait, elles s'assoupirent toutes 
 _Gloire à Dieu à jamais !_
 
 
-## Tropaires du premier service
+## Oraisons
 
 > *Puis on dit les oraisons suivantes :*
 
@@ -2560,7 +2560,7 @@ On lit les psaumes de la prière de la onzième heure à partir du psaume 119 ju
 _Gloire à Dieu à jamais !_
 
 
-## Tropaires du second service
+## Oraisons
 
 > *Puis on dit les oraisons suivantes :*
 
@@ -2637,7 +2637,7 @@ On lit tous les psaumes de la prière de la douzième heure à partir du psaume 
 _Gloire à Dieu à jamais !_
 
 
-## Tropaires du troisième service
+## Oraisons
 
 > *Puis on dit les oraisons suivantes :*
 

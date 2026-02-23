@@ -1,4 +1,4 @@
-const CACHE_NAME = 'agpeya-12887eb8';
+const CACHE_NAME = 'agpeya-2002ae8c';
 
 const PRECACHE_URLS = [
   '/',
