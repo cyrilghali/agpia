@@ -659,19 +659,25 @@ function initJumpToGospel() {
 // ============================================================================
 
 const PRAYER_HOURS = [
-    { hour: 0,  page: 'midnight.html', fr: 'Prière de minuit',               en: 'Midnight Prayer',  ar: 'صلاة نصف الليل' },
-    { hour: 6,  page: 'prime.html',    fr: "Prière de l'aube",               en: 'Prime – Morning Prayer', ar: 'صلاة باكر' },
-    { hour: 9,  page: 'terce.html',    fr: 'Prière de la troisième heure',   en: 'Terce – Third Hour',     ar: 'صلاة الساعة الثالثة' },
-    { hour: 12, page: 'sext.html',     fr: 'Prière de la sixième heure',     en: 'Sext – Sixth Hour',      ar: 'صلاة الساعة السادسة' },
-    { hour: 15, page: 'none.html',     fr: 'Prière de la neuvième heure',    en: 'None – Ninth Hour',      ar: 'صلاة الساعة التاسعة' },
-    { hour: 18, page: 'vespers.html',  fr: "Prière de la onzième heure",     en: 'Vespers – Eleventh Hour', ar: 'صلاة الغروب' },
-    { hour: 21, page: 'compline.html', fr: 'Prière de la douzième heure',    en: 'Compline – Twelfth Hour', ar: 'صلاة النوم' }
+    { hour: 6,  page: 'prime.html',    fr: "Prière de l'aube (6h)",             en: 'Prime (6 AM)',             ar: 'صلاة باكر (٦ ص)' },
+    { hour: 9,  page: 'terce.html',    fr: 'Troisième heure (9h)',              en: 'Terce (9 AM)',             ar: 'الساعة الثالثة (٩ ص)' },
+    { hour: 12, page: 'sext.html',     fr: 'Sixième heure (12h)',               en: 'Sext (12 PM)',             ar: 'الساعة السادسة (١٢ م)' },
+    { hour: 15, page: 'none.html',     fr: 'Neuvième heure (15h)',              en: 'None (3 PM)',              ar: 'الساعة التاسعة (٣ م)' },
+    { hour: 18, page: 'vespers.html',  fr: 'Onzième heure (18h)',               en: 'Vespers (6 PM)',           ar: 'صلاة الغروب (٦ م)' },
+    { hour: 21, page: 'compline.html', fr: 'Douzième heure (21h)',              en: 'Compline (9 PM)',          ar: 'صلاة النوم (٩ م)' },
+    { hour: 0,  page: 'midnight.html', fr: 'Minuit (0h)',                       en: 'Midnight (12 AM)',         ar: 'نصف الليل (١٢ ص)' }
 ];
 
 const NOTIF_BODIES = {
     fr: "C'est l'heure de prier",
     en: "It's time to pray",
     ar: 'حان وقت الصلاة'
+};
+
+const NOTIF_UI = {
+    fr: { title: 'Notifications', enableAll: 'Tout activer', disableAll: 'Tout désactiver', close: 'Fermer' },
+    en: { title: 'Notifications', enableAll: 'Enable all', disableAll: 'Disable all', close: 'Close' },
+    ar: { title: 'الإشعارات', enableAll: 'تفعيل الكل', disableAll: 'تعطيل الكل', close: 'إغلاق' }
 };
 
 function detectNotifLang() {
@@ -684,6 +690,26 @@ function detectNotifLang() {
 function getCurrentFolder() {
     var parts = window.location.pathname.split('/').filter(Boolean);
     return parts.length > 0 ? parts[0] : 'fr-lsg';
+}
+
+function getNotifHourPref() {
+    try {
+        var saved = localStorage.getItem('notifHours');
+        if (saved) return JSON.parse(saved);
+    } catch (e) {}
+    return {};
+}
+
+function setNotifHourPref(prefs) {
+    localStorage.setItem('notifHours', JSON.stringify(prefs));
+}
+
+function isAnyHourEnabled() {
+    var prefs = getNotifHourPref();
+    for (var i = 0; i < PRAYER_HOURS.length; i++) {
+        if (prefs[PRAYER_HOURS[i].hour] === true) return true;
+    }
+    return false;
 }
 
 var _notifInterval = null;
@@ -702,7 +728,7 @@ function stopNotificationScheduler() {
 }
 
 function checkAndNotify() {
-    if (localStorage.getItem('notifEnabled') !== '1') return;
+    if (!isAnyHourEnabled()) return;
 
     var now = new Date();
     var currentHour = now.getHours();
@@ -710,11 +736,13 @@ function checkAndNotify() {
 
     if (currentMinute !== 0) return;
 
+    var prefs = getNotifHourPref();
     var prayer = null;
     for (var i = 0; i < PRAYER_HOURS.length; i++) {
         if (PRAYER_HOURS[i].hour === currentHour) { prayer = PRAYER_HOURS[i]; break; }
     }
     if (!prayer) return;
+    if (!prefs[prayer.hour]) return;
 
     var notifKey = now.toDateString() + '-' + currentHour;
     if (localStorage.getItem('lastNotifKey') === notifKey) return;
@@ -744,36 +772,132 @@ function checkAndNotify() {
     }
 }
 
-// Notification toggle button
-(function initNotifToggle() {
+function updateNotifToggleBtnState() {
     var btn = document.getElementById('notifToggleBtn');
     if (!btn) return;
+    btn.classList.toggle('active', isAnyHourEnabled());
+}
 
-    // Restore saved state
-    if (localStorage.getItem('notifEnabled') === '1' && 'Notification' in window && Notification.permission === 'granted') {
-        btn.classList.add('active');
-        startNotificationScheduler();
+// Build and inject the notifications modal
+(function initNotifModal() {
+    var langKey = detectNotifLang();
+    var ui = NOTIF_UI[langKey] || NOTIF_UI.en;
+
+    var overlay = document.createElement('div');
+    overlay.id = 'notif-modal';
+    overlay.className = 'notif-modal-overlay';
+
+    var hoursHtml = '';
+    for (var i = 0; i < PRAYER_HOURS.length; i++) {
+        var p = PRAYER_HOURS[i];
+        hoursHtml +=
+            '<label class="notif-hour-row">' +
+                '<span class="notif-hour-name">' + p[langKey] + '</span>' +
+                '<span class="notif-switch">' +
+                    '<input type="checkbox" data-hour="' + p.hour + '">' +
+                    '<span class="notif-switch-slider"></span>' +
+                '</span>' +
+            '</label>';
     }
 
-    btn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        var enabled = localStorage.getItem('notifEnabled') === '1';
+    overlay.innerHTML =
+        '<div class="notif-modal">' +
+            '<h2 class="notif-modal-title">' + ui.title + '</h2>' +
+            '<div class="notif-modal-hours">' + hoursHtml + '</div>' +
+            '<div class="notif-modal-actions">' +
+                '<button class="variant-modal-btn notif-toggle-all" data-action="enable">' + ui.enableAll + '</button>' +
+                '<button class="variant-modal-btn notif-toggle-all" data-action="disable">' + ui.disableAll + '</button>' +
+            '</div>' +
+            '<div class="notif-modal-actions">' +
+                '<button class="variant-modal-btn variant-modal-confirm notif-close-btn">' + ui.close + '</button>' +
+            '</div>' +
+        '</div>';
 
-        if (!enabled) {
-            if (!('Notification' in window)) return;
-            Notification.requestPermission().then(function (perm) {
-                if (perm === 'granted') {
-                    localStorage.setItem('notifEnabled', '1');
-                    btn.classList.add('active');
-                    startNotificationScheduler();
-                }
-            });
+    document.body.appendChild(overlay);
+
+    // Restore saved prefs into checkboxes
+    function syncCheckboxes() {
+        var prefs = getNotifHourPref();
+        overlay.querySelectorAll('input[data-hour]').forEach(function (cb) {
+            cb.checked = prefs[cb.getAttribute('data-hour')] === true;
+        });
+    }
+
+    function saveFromCheckboxes() {
+        var prefs = {};
+        overlay.querySelectorAll('input[data-hour]').forEach(function (cb) {
+            prefs[cb.getAttribute('data-hour')] = cb.checked;
+        });
+        setNotifHourPref(prefs);
+        updateNotifToggleBtnState();
+        if (isAnyHourEnabled()) {
+            startNotificationScheduler();
         } else {
-            localStorage.setItem('notifEnabled', '0');
-            btn.classList.remove('active');
             stopNotificationScheduler();
         }
+    }
+
+    // Individual checkbox changes
+    overlay.querySelectorAll('input[data-hour]').forEach(function (cb) {
+        cb.addEventListener('change', function () {
+            // Request permission on first enable
+            if (cb.checked && 'Notification' in window && Notification.permission === 'default') {
+                Notification.requestPermission().then(function (perm) {
+                    if (perm !== 'granted') {
+                        cb.checked = false;
+                    }
+                    saveFromCheckboxes();
+                });
+            } else {
+                saveFromCheckboxes();
+            }
+        });
     });
+
+    // Enable/disable all buttons
+    overlay.querySelectorAll('.notif-toggle-all').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var enable = btn.getAttribute('data-action') === 'enable';
+            if (enable && 'Notification' in window && Notification.permission === 'default') {
+                Notification.requestPermission().then(function (perm) {
+                    if (perm === 'granted') {
+                        overlay.querySelectorAll('input[data-hour]').forEach(function (cb) { cb.checked = true; });
+                    }
+                    saveFromCheckboxes();
+                });
+            } else {
+                overlay.querySelectorAll('input[data-hour]').forEach(function (cb) { cb.checked = enable; });
+                saveFromCheckboxes();
+            }
+        });
+    });
+
+    // Close button
+    overlay.querySelector('.notif-close-btn').addEventListener('click', function () {
+        overlay.classList.remove('visible');
+    });
+
+    // Close on overlay click
+    overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) overlay.classList.remove('visible');
+    });
+
+    // Open modal from settings button
+    var btn = document.getElementById('notifToggleBtn');
+    if (btn) {
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            syncCheckboxes();
+            overlay.classList.add('visible');
+        });
+    }
+
+    // Restore scheduler on load
+    syncCheckboxes();
+    updateNotifToggleBtnState();
+    if (isAnyHourEnabled() && 'Notification' in window && Notification.permission === 'granted') {
+        startNotificationScheduler();
+    }
 })();
 
 // Midnight hour special jump to gospel (watch-aware)
