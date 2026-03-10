@@ -204,23 +204,29 @@ loadCommonSections();
 // THEME AND FONT MANAGEMENT
 // ============================================================================
 
-// Load and apply saved theme
-const theme = localStorage.getItem('theme') || 'light';
-document.documentElement.setAttribute('data-theme', theme);
+// Load and apply saved theme (supports 'light', 'dark', or 'auto')
+const savedTheme = localStorage.getItem('theme') || 'auto';
+const systemDarkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+function getEffectiveTheme(pref) {
+    if (pref === 'auto') return systemDarkQuery.matches ? 'dark' : 'light';
+    return pref;
+}
+
+document.documentElement.setAttribute('data-theme', getEffectiveTheme(savedTheme));
+
+// Listen for system theme changes so auto mode reacts in real time
+systemDarkQuery.addEventListener('change', () => {
+    if ((localStorage.getItem('theme') || 'auto') === 'auto') {
+        document.documentElement.setAttribute('data-theme', getEffectiveTheme('auto'));
+        updateThemeButtons();
+    }
+});
 
 // Load and apply saved font size
 const fontSize = localStorage.getItem('fontSize') || '1.3';
 document.documentElement.style.setProperty('--font-scale', fontSize);
 
-// Update theme icon based on current theme
-const updateThemeIcon = () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const themeBtn = document.getElementById('themeToggleBtn');
-    if (themeBtn) {
-        themeBtn.textContent = currentTheme === 'dark' ? 'â˜€ï¸' : 'ðŸŒ™';
-    }
-};
-updateThemeIcon();
 
 // ============================================================================
 // SETTINGS MENU
@@ -381,24 +387,35 @@ if (lineCondensedBtn) {
     };
 }
 
-// Theme controls - separate light/dark buttons
+// Theme controls - auto/light/dark buttons
+const autoModeBtn = document.getElementById('autoModeBtn');
 const lightModeBtn = document.getElementById('lightModeBtn');
 const darkModeBtn = document.getElementById('darkModeBtn');
 
 function updateThemeButtons() {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-    if (lightModeBtn && darkModeBtn) {
-        lightModeBtn.classList.toggle('active', currentTheme === 'light');
-        darkModeBtn.classList.toggle('active', currentTheme === 'dark');
+    const themePref = localStorage.getItem('theme') || 'auto';
+    if (autoModeBtn && lightModeBtn && darkModeBtn) {
+        autoModeBtn.classList.toggle('active', themePref === 'auto');
+        lightModeBtn.classList.toggle('active', themePref === 'light');
+        darkModeBtn.classList.toggle('active', themePref === 'dark');
     }
 }
 updateThemeButtons();
 
+if (autoModeBtn) {
+    autoModeBtn.onclick = (e) => {
+        e.stopPropagation();
+        localStorage.setItem('theme', 'auto');
+        document.documentElement.setAttribute('data-theme', getEffectiveTheme('auto'));
+        updateThemeButtons();
+    };
+}
+
 if (lightModeBtn) {
     lightModeBtn.onclick = (e) => {
         e.stopPropagation();
-        document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
+        document.documentElement.setAttribute('data-theme', 'light');
         updateThemeButtons();
     };
 }
@@ -406,8 +423,8 @@ if (lightModeBtn) {
 if (darkModeBtn) {
     darkModeBtn.onclick = (e) => {
         e.stopPropagation();
-        document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
         updateThemeButtons();
     };
 }
