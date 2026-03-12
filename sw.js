@@ -1,5 +1,5 @@
 const CACHE_NAME = 'agpeya-1c5e648c';
-const CACHE_MAX_AGE_MS = 24 * 60 * 60 * 1000; // 24 hours (use 7 * 24 * 60 * 60 * 1000 for weekly)
+const CACHE_MAX_AGE_MS = 60 * 60 * 1000; // 1 hour
 const CACHE_TIMESTAMP_KEY = '__cache_created_at__';
 
 const PRECACHE_URLS = [
