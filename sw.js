@@ -1,4 +1,4 @@
-const CACHE_NAME = 'agpeya-fded951e';
+const CACHE_NAME = 'agpeya-1c5e648c';
 
 const PRECACHE_URLS = [
   '/',
@@ -78,6 +78,10 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  const url = new URL(event.request.url);
+  if (url.origin !== self.location.origin) {
+    return;
+  }
   event.respondWith(
     fetch(event.request)
       .then((response) => {
