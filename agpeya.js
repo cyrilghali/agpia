@@ -26,6 +26,11 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.addEventListener('controllerchange', () => {
         window.location.reload();
     });
+    navigator.serviceWorker.addEventListener('message', (event) => {
+        if (event.data && event.data.type === 'CACHE_REFRESHED') {
+            window.location.reload();
+        }
+    });
 }
 
 // ============================================================================

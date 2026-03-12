@@ -1,4 +1,6 @@
 const CACHE_NAME = 'agpeya-1c5e648c';
+const CACHE_MAX_AGE_MS = 60 * 60 * 1000; // 1 hour
+const CACHE_TIMESTAMP_KEY = '__cache_created_at__';
 
 const PRECACHE_URLS = [
   '/',
@@ -62,7 +64,10 @@ const PRECACHE_URLS = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(PRECACHE_URLS))
+      .then((cache) => cache.addAll(PRECACHE_URLS).then(() => {
+        const timestamp = new Response(JSON.stringify({ createdAt: Date.now() }));
+        return cache.put(CACHE_TIMESTAMP_KEY, timestamp);
+      }))
       .then(() => self.skipWaiting())
   );
 });
@@ -77,6 +82,22 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+// Check cache age and refresh if expired
+async function checkCacheAge() {
+  const cache = await caches.open(CACHE_NAME);
+  const response = await cache.match(CACHE_TIMESTAMP_KEY);
+  if (!response) return;
+  const { createdAt } = await response.json();
+  if (Date.now() - createdAt > CACHE_MAX_AGE_MS) {
+    await caches.delete(CACHE_NAME);
+    const fresh = await caches.open(CACHE_NAME);
+    await fresh.addAll(PRECACHE_URLS);
+    await fresh.put(CACHE_TIMESTAMP_KEY, new Response(JSON.stringify({ createdAt: Date.now() })));
+    const clients = await self.clients.matchAll();
+    clients.forEach((client) => client.postMessage({ type: 'CACHE_REFRESHED' }));
+  }
+}
+
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   if (url.origin !== self.location.origin) {
@@ -87,6 +108,7 @@ self.addEventListener('fetch', (event) => {
       .then((response) => {
         const clone = response.clone();
         caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+        checkCacheAge();
         return response;
       })
       .catch(() => caches.match(event.request))
