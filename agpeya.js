@@ -40,6 +40,192 @@ if ('serviceWorker' in navigator) {
 })();
 
 // ============================================================================
+// STICKY SUBHEADER (injected via JS, like the footer)
+// ============================================================================
+
+(function injectSubheader() {
+    var lang = document.documentElement.lang || 'en';
+    var path = window.location.pathname;
+
+    // Determine current folder
+    var folders = ['fr-lsg', 'fr-unofficial', 'ar', 'cop'];
+    var currentFolder = '';
+    for (var i = 0; i < folders.length; i++) {
+        if (path.indexOf('/' + folders[i] + '/') !== -1) { currentFolder = folders[i]; break; }
+    }
+    if (!currentFolder) return; // Not inside a language folder — skip injection (e.g. root index.html)
+
+    var currentPage = path.split('/').pop() || 'index.html';
+
+    // ---- Localized data ----
+    var subheaderI18n = {
+        'fr-lsg': {
+            hours: [
+                { value: 'index.html', long: 'Accueil', short: 'Accueil' },
+                { value: 'prime.html', long: "Pri\u00e8re de l'aube", short: '1\u00e8re Heure' },
+                { value: 'terce.html', long: 'Pri\u00e8re de la troisi\u00e8me heure', short: '3\u00e8me Heure' },
+                { value: 'sext.html', long: 'Pri\u00e8re de la sixi\u00e8me heure', short: '6\u00e8me Heure' },
+                { value: 'none.html', long: 'Pri\u00e8re de la neuvi\u00e8me heure', short: '9\u00e8me Heure' },
+                { value: 'vespers.html', long: 'Pri\u00e8re de la onzi\u00e8me heure', short: '11\u00e8me Heure' },
+                { value: 'compline.html', long: 'Pri\u00e8re de la douzi\u00e8me heure', short: '12\u00e8me Heure' },
+                { value: 'midnight.html', long: 'Pri\u00e8re de minuit', short: 'Minuit' },
+                { value: 'veil.html', long: 'Pri\u00e8re de la fermeture du voile', short: 'Voile' },
+                { value: 'other.html', long: 'Pri\u00e8res diverses', short: 'Autres' },
+                { value: 'about.html', long: '\u00c0 propos', short: '\u00c0 propos' }
+            ],
+            topLabel: 'Haut',
+            themeLight: 'Clair',
+            themeDark: 'Sombre',
+            lineComfyTitle: 'Interligne confortable',
+            lineDefaultTitle: 'Interligne standard',
+            lineCondensedTitle: 'Interligne condens\u00e9'
+        },
+        'fr-unofficial': {
+            hours: [
+                { value: 'index.html', long: 'Accueil', short: 'Accueil' },
+                { value: 'prime.html', long: '1\u00e8re Heure - Prime', short: '1\u00e8re Heure' },
+                { value: 'terce.html', long: '3\u00e8me Heure - Tierce', short: '3\u00e8me Heure' },
+                { value: 'sext.html', long: '6\u00e8me Heure - Sexte', short: '6\u00e8me Heure' },
+                { value: 'none.html', long: '9\u00e8me Heure - None', short: '9\u00e8me Heure' },
+                { value: 'vespers.html', long: '11\u00e8me Heure - V\u00eapres', short: '11\u00e8me Heure' },
+                { value: 'compline.html', long: '12\u00e8me Heure - Complies', short: '12\u00e8me Heure' },
+                { value: 'midnight.html', long: 'Minuit', short: 'Minuit' },
+                { value: 'veil.html', long: 'Pri\u00e8re du Voile', short: 'Voile' },
+                { value: 'other.html', long: 'Pri\u00e8res diverses', short: 'Autres' },
+                { value: 'about.html', long: '\u00c0 propos', short: '\u00c0 propos' }
+            ],
+            topLabel: 'Haut',
+            themeLight: 'Clair',
+            themeDark: 'Sombre',
+            lineComfyTitle: 'Interligne confortable',
+            lineDefaultTitle: 'Interligne standard',
+            lineCondensedTitle: 'Interligne condens\u00e9'
+        },
+        ar: {
+            hours: [
+                { value: 'index.html', long: '\u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629', short: '\u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629' },
+                { value: 'prime.html', long: '\u0627\u0644\u0633\u0627\u0639\u0629 \u0627\u0644\u0623\u0648\u0644\u0649 - \u0628\u0627\u0643\u0631', short: '\u0627\u0644\u0633\u0627\u0639\u0629 \u0661' },
+                { value: 'terce.html', long: '\u0627\u0644\u0633\u0627\u0639\u0629 \u0627\u0644\u062b\u0627\u0644\u062b\u0629', short: '\u0627\u0644\u0633\u0627\u0639\u0629 \u0663' },
+                { value: 'sext.html', long: '\u0627\u0644\u0633\u0627\u0639\u0629 \u0627\u0644\u0633\u0627\u062f\u0633\u0629', short: '\u0627\u0644\u0633\u0627\u0639\u0629 \u0666' },
+                { value: 'none.html', long: '\u0627\u0644\u0633\u0627\u0639\u0629 \u0627\u0644\u062a\u0627\u0633\u0639\u0629', short: '\u0627\u0644\u0633\u0627\u0639\u0629 \u0669' },
+                { value: 'vespers.html', long: '\u0627\u0644\u0633\u0627\u0639\u0629 \u0627\u0644\u062d\u0627\u062f\u064a\u0629 \u0639\u0634\u0631 - \u0627\u0644\u063a\u0631\u0648\u0628', short: '\u0627\u0644\u0633\u0627\u0639\u0629 \u0661\u0661' },
+                { value: 'compline.html', long: '\u0627\u0644\u0633\u0627\u0639\u0629 \u0627\u0644\u062b\u0627\u0646\u064a\u0629 \u0639\u0634\u0631 - \u0627\u0644\u0646\u0648\u0645', short: '\u0627\u0644\u0633\u0627\u0639\u0629 \u0661\u0662' },
+                { value: 'midnight.html', long: '\u0646\u0635\u0641 \u0627\u0644\u0644\u064a\u0644', short: '\u0646\u0635\u0641 \u0627\u0644\u0644\u064a\u0644' },
+                { value: 'veil.html', long: '\u0635\u0644\u0627\u0629 \u0627\u0644\u0633\u062a\u0627\u0631', short: '\u0627\u0644\u0633\u062a\u0627\u0631' },
+                { value: 'other.html', long: '\u0635\u0644\u0648\u0627\u062a \u0623\u062e\u0631\u0649', short: '\u0623\u062e\u0631\u0649' },
+                { value: 'about.html', long: '\u0639\u0646 \u0627\u0644\u0623\u062c\u0628\u064a\u0629', short: '\u0639\u0646' }
+            ],
+            topLabel: '\u0623\u0639\u0644\u0649',
+            themeLight: '\u0641\u0627\u062a\u062d',
+            themeDark: '\u062f\u0627\u0643\u0646',
+            lineComfyTitle: 'Comfy line spacing',
+            lineDefaultTitle: 'Default line spacing',
+            lineCondensedTitle: 'Condensed line spacing'
+        },
+        cop: {
+            hours: [
+                { value: 'index.html', long: 'Home', short: 'Home' },
+                { value: 'prime.html', long: '\u2C90\u2C91\u2C80\u2CA5\u2C89\u2CA9\u2CAD\u2C8F \u2C9B\u2CA7\u2C89 \u2CAF\u2C93\u2C81\u2CA9 \u2C9B\u2CB3\u2C99\u2CA1\u2C90', short: 'Prime' },
+                { value: 'terce.html', long: '\u2C90\u2C91\u2C80\u2CA5\u2C89\u2CA9\u2CAD\u2C8F \u2C9B\u2CA7\u2C89 \u2CAF\u2C93\u2C81\u2CA9 \u2C9C\u2C9C\u2C81\u2CB1\u2CB3\u2C99\u2CA7', short: 'Terce' },
+                { value: 'sext.html', long: '\u2C90\u2C91\u2C80\u2CA5\u2C89\u2CA9\u2CAD\u2C8F \u2C9B\u2CA7\u2C89 \u2CAF\u2C93\u2C81\u2CA9 \u2C9C\u2C9C\u2C81\u2CB1\u2CA5\u2C9F\u2C9F\u2CA9', short: 'Sext' },
+                { value: 'none.html', long: '\u2C90\u2C91\u2C80\u2CA5\u2C89\u2CA9\u2CAD\u2C8F \u2C9B\u2CA7\u2C89 \u2CAF\u2C93\u2C81\u2CA9 \u2C9C\u2C9C\u2C81\u2CB1\u2CB0\u2C93\u2CA5', short: 'None' },
+                { value: 'vespers.html', long: '\u2C90\u2C91\u2C80\u2CA5\u2C89\u2CA9\u2CAD\u2C8F \u2C9B\u2CA7\u2C89 \u2CAF\u2C93\u2C81\u2CA9 \u2C9B\u2CA1\u2C9F\u2CA9\u2CB1\u2C93', short: 'Vespers' },
+                { value: 'compline.html', long: '\u2C90\u2C91\u2C80\u2CA5\u2C89\u2CA9\u2CAD\u2C8F \u2C9B\u2CA7\u2C89 \u2CAF\u2C93\u2C81\u2CA9 \u2C9B\u2C89\u2C9B\u2C95\u2C9F\u2CA7', short: 'Compline' },
+                { value: 'midnight.html', long: '\u2C90\u2C91\u2C80\u2CA5\u2C89\u2CA9\u2CAD\u2C8F \u2C9B\u2CA7\u2C89 \u2CAF\u2C93\u2C81\u2CA9 \u2C9B\u2C89\u2CB4\u2CA3\u2CA1\u2CB1', short: 'Midnight' },
+                { value: 'veil.html', long: '\u2C90\u2C91\u2C80\u2CA5\u2C89\u2CA9\u2CAD\u2C8F \u2C9B\u2CA7\u2C89 \u2C90\u2C93\u2C95\u2C81\u2CA7\u2C81\u2C90\u2C89\u2CA7\u2C81\u2CA5\u2C9C\u2C81', short: 'Veil' },
+                { value: 'other.html', long: 'Other prayers', short: 'Other' },
+                { value: 'about.html', long: 'About', short: 'About' }
+            ],
+            topLabel: 'Top',
+            themeLight: 'Light',
+            themeDark: 'Dark',
+            lineComfyTitle: 'Comfy line spacing',
+            lineDefaultTitle: 'Default line spacing',
+            lineCondensedTitle: 'Condensed line spacing'
+        }
+    };
+
+    var t = subheaderI18n[currentFolder] || subheaderI18n[lang] || subheaderI18n['fr-lsg'];
+
+    // ---- Build hour options ----
+    var hourOptionsHtml = '';
+    for (var h = 0; h < t.hours.length; h++) {
+        var hr = t.hours[h];
+        var sel = (hr.value === currentPage) ? ' selected' : '';
+        hourOptionsHtml += '<option data-long="' + hr.long + '" data-short="' + hr.short + '" value="' + hr.value + '"' + sel + '>' + hr.long + '</option>';
+    }
+
+    // ---- Build language selector links (relative paths) ----
+    var relFrUnofficial = '../fr-unofficial/' + currentPage;
+    var relFrLsg = '../fr-lsg/' + currentPage;
+    var relAr = '../ar/' + currentPage;
+    var relCop = '../cop/' + currentPage;
+
+    // ---- Assemble full subheader HTML ----
+    var html =
+        '<div class="sticky-subheader">' +
+        '<div class="dropdown-wrapper">' +
+        '<select class="hour-dropdown" id="hourDropdown">' +
+        hourOptionsHtml +
+        '</select>' +
+        '<select class="section-dropdown" id="sectionDropdown">' +
+        '<option value="">' + t.topLabel + '</option>' +
+        '</select>' +
+        '</div>' +
+        '<button class="settings-btn" id="settingsBtn"><img alt="Settings" src="../cog_wheel.png"/></button>' +
+        '<div class="settings-menu" id="settingsMenu">' +
+        '<!-- Font Size Row -->' +
+        '<div class="settings-row">' +
+        '<button class="settings-menu-btn settings-menu-btn-small" id="fontDownBtn">A-</button>' +
+        '<button class="settings-menu-btn settings-menu-btn-small" id="fontResetBtn">100%</button>' +
+        '<button class="settings-menu-btn settings-menu-btn-small" id="fontUpBtn">A+</button>' +
+        '</div>' +
+        '<!-- Line Height Row -->' +
+        '<div class="settings-row">' +
+        '<button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="' + t.lineComfyTitle + '">' +
+        '<span class="line-height-icon comfy-icon">' +
+        '<span class="line"></span>' +
+        '<span class="line"></span>' +
+        '</span>' +
+        '</button>' +
+        '<button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="' + t.lineDefaultTitle + '">' +
+        '<span class="line-height-icon default-icon">' +
+        '<span class="line"></span>' +
+        '<span class="line"></span>' +
+        '</span>' +
+        '</button>' +
+        '<button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="' + t.lineCondensedTitle + '">' +
+        '<span class="line-height-icon condensed-icon">' +
+        '<span class="line"></span>' +
+        '<span class="line"></span>' +
+        '</span>' +
+        '</button>' +
+        '</div>' +
+        '<!-- Theme Row -->' +
+        '<div class="settings-row">' +
+        '<button class="settings-menu-btn settings-toggle" id="lightModeBtn">' + t.themeLight + '</button>' +
+        '<button class="settings-menu-btn settings-toggle active" id="darkModeBtn">' + t.themeDark + '</button>' +
+        '</div>' +
+        '<!-- Language Selector -->' +
+        '<div class="settings-row lang-selector">' +
+        '<a class="settings-menu-btn settings-toggle" data-lang="fr" href="' + relFrUnofficial + '">Fran\u00e7ais</a>' +
+        '<a class="settings-menu-btn settings-toggle" data-lang="ar" href="' + relAr + '">\u0639\u0631\u0628\u064a</a>' +
+        '<a class="settings-menu-btn settings-toggle" data-lang="cop" href="' + relCop + '">\u2C98\u2C89\u2C99\u2CA7</a>' +
+        '</div>' +
+        '<div class="settings-row lang-variant-selector">' +
+        '<a class="settings-menu-btn settings-toggle" data-variant="fr-unofficial" href="' + relFrUnofficial + '">Traduit du copte</a>' +
+        '<a class="settings-menu-btn settings-toggle" data-variant="fr-lsg" href="' + relFrLsg + '">Classique</a>' +
+        '</div>' +
+        '</div>' +
+        '</div>';
+
+    var wrapper = document.createElement('div');
+    wrapper.innerHTML = html;
+    var subheader = wrapper.firstElementChild;
+    document.body.insertBefore(subheader, document.body.firstChild);
+})();
+
+// ============================================================================
 // UNOFFICIAL TRANSLATION NOTICE (fr-unofficial only)
 // ============================================================================
 
@@ -69,6 +255,12 @@ if ('serviceWorker' in navigator) {
             credit: 'كل الفضل في محتوى الصلوات يعود لصاحب العمل الأصلي — تقديراً لجهده.',
             contact: 'تواصل',
             source: 'الكود المصدري'
+        },
+        cop: {
+            attribution: 'This site is based on the work of <a href="https://agpeya.org" target="_blank" rel="noopener">agpeya.org</a>.',
+            credit: 'All credit for the prayer content belongs to its original author, Marian-Apollos Balastre.',
+            contact: 'Contact',
+            source: 'Source code'
         }
     };
     const t = footerText[lang] || {
@@ -418,7 +610,7 @@ if (darkModeBtn) {
 
 (function initLangSelector() {
     const path = window.location.pathname;
-    const folders = ['fr-lsg', 'fr-unofficial', 'ar'];
+    const folders = ['fr-lsg', 'fr-unofficial', 'ar', 'cop'];
     let currentFolder = 'fr-lsg';
     for (const f of folders) {
         if (path.includes('/' + f + '/')) { currentFolder = f; break; }
@@ -427,7 +619,7 @@ if (darkModeBtn) {
     localStorage.setItem('lang', currentFolder);
 
     const isFrench = currentFolder === 'fr-unofficial' || currentFolder === 'fr-lsg';
-    const activeLang = isFrench ? 'fr' : 'ar';
+    const activeLang = isFrench ? 'fr' : currentFolder === 'cop' ? 'cop' : 'ar';
 
     document.querySelectorAll('.lang-selector a').forEach(link => {
         link.classList.toggle('active', link.getAttribute('data-lang') === activeLang);
@@ -573,8 +765,7 @@ sections.forEach((section, index) => {
 // Section dropdown change handler
 sectionDropdown.addEventListener('change', (e) => {
     // Check if "Top" is selected FIRST (value is empty string)
-    const selectedText = e.target.options[e.target.selectedIndex].textContent;
-    if (selectedText === 'Top') {
+    if (e.target.value === '') {
         isUserScrolling = false;
         window.scrollTo({ top: 0, behavior: 'smooth' });
         setTimeout(() => {
@@ -711,7 +902,8 @@ function initMidnightJumpToGospel() {
 
     const i18n = {
         fr: { title: 'Installer Agpia', subtitle: 'Accédez rapidement depuis votre écran d\u2019accueil', install: 'Installer', iosSubtitle: 'Appuyez sur «\u00A0Partager\u00A0» puis «\u00A0Sur l\u2019écran d\u2019accueil\u00A0»' },
-        ar: { title: '\u062A\u062B\u0628\u064A\u062A \u0627\u0644\u0623\u062C\u0628\u064A\u0629', subtitle: '\u0627\u0641\u062A\u062D\u0647\u0627 \u0628\u0633\u0631\u0639\u0629 \u0645\u0646 \u0634\u0627\u0634\u062A\u0643 \u0627\u0644\u0631\u0626\u064A\u0633\u064A\u0629', install: '\u062A\u062B\u0628\u064A\u062A', iosSubtitle: '\u0627\u0636\u063A\u0637 \u0639\u0644\u0649 \u00AB\u0645\u0634\u0627\u0631\u0643\u0629\u00BB \u062B\u0645 \u00AB\u0625\u0636\u0627\u0641\u0629 \u0625\u0644\u0649 \u0627\u0644\u0634\u0627\u0634\u0629 \u0627\u0644\u0631\u0626\u064A\u0633\u064A\u0629\u00BB' }
+        ar: { title: '\u062A\u062B\u0628\u064A\u062A \u0627\u0644\u0623\u062C\u0628\u064A\u0629', subtitle: '\u0627\u0641\u062A\u062D\u0647\u0627 \u0628\u0633\u0631\u0639\u0629 \u0645\u0646 \u0634\u0627\u0634\u062A\u0643 \u0627\u0644\u0631\u0626\u064A\u0633\u064A\u0629', install: '\u062A\u062B\u0628\u064A\u062A', iosSubtitle: '\u0627\u0636\u063A\u0637 \u0639\u0644\u0649 \u00AB\u0645\u0634\u0627\u0631\u0643\u0629\u00BB \u062B\u0645 \u00AB\u0625\u0636\u0627\u0641\u0629 \u0625\u0644\u0649 \u0627\u0644\u0634\u0627\u0634\u0629 \u0627\u0644\u0631\u0626\u064A\u0633\u064A\u0629\u00BB' },
+        cop: { title: 'Install Agpia', subtitle: 'Quick access from your home screen', install: 'Install', iosSubtitle: 'Tap "Share" then "Add to Home Screen"' }
     };
     const t = i18n[lang] || { title: 'Install Agpia', subtitle: 'Quick access from your home screen', install: 'Install', iosSubtitle: 'Tap "Share" then "Add to Home Screen"' };
 

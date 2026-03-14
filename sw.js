@@ -1,4 +1,4 @@
-const CACHE_NAME = 'agpeya-fded951e';
+const CACHE_NAME = 'agpeya-c0584170';
 
 const PRECACHE_URLS = [
   '/',
@@ -7,23 +7,12 @@ const PRECACHE_URLS = [
   '/agpeya.js',
   '/coptic-cross.png',
   '/cog_wheel.png',
-  '/Avva_Shenouda.ttf',
+  '/fonts/avva-shenouda.woff2',
   '/icons/icon-192.png',
   '/icons/icon-512.png',
   '/fonts/crimson-pro.woff2',
   '/fonts/eb-garamond.woff2',
   '/manifest.json',
-  '/en/index.html',
-  '/en/prime.html',
-  '/en/terce.html',
-  '/en/sext.html',
-  '/en/none.html',
-  '/en/vespers.html',
-  '/en/compline.html',
-  '/en/midnight.html',
-  '/en/veil.html',
-  '/en/other.html',
-  '/en/about.html',
   '/fr-unofficial/index.html',
   '/fr-unofficial/prime.html',
   '/fr-unofficial/terce.html',
@@ -57,6 +46,17 @@ const PRECACHE_URLS = [
   '/fr-lsg/veil.html',
   '/fr-lsg/other.html',
   '/fr-lsg/about.html',
+  '/cop/index.html',
+  '/cop/prime.html',
+  '/cop/terce.html',
+  '/cop/sext.html',
+  '/cop/none.html',
+  '/cop/vespers.html',
+  '/cop/compline.html',
+  '/cop/midnight.html',
+  '/cop/veil.html',
+  '/cop/other.html',
+  '/cop/about.html',
 ];
 
 self.addEventListener('install', (event) => {

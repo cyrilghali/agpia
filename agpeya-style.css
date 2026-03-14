@@ -1,8 +1,10 @@
 @font-face {
     font-family: 'Avva Shenouda';
-    src: url('Avva_Shenouda.ttf') format('truetype');
+    src: url('fonts/avva-shenouda.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
+    unicode-range: U+2C80-2CFF, U+03E2-03EF, U+0300-036F;
 }
 
 @font-face {
@@ -1064,4 +1066,19 @@ img.hero-cross.easter-egg-unlock {
     cursor: pointer;
     padding: 0.25rem;
     line-height: 1;
+}
+
+/* ============================================================================
+   COPTIC BODY TEXT STYLING
+   ============================================================================ */
+
+[lang="cop"] .prayer-text,
+[lang="cop"] .psalm-verse {
+    font-family: 'Avva Shenouda', serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+[lang="cop"] .section-title {
+    font-family: 'Avva Shenouda', serif;
 }
