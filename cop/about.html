@@ -28,6 +28,72 @@
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
+<div class="sticky-subheader">
+<div class="dropdown-wrapper">
+<select class="hour-dropdown" id="hourDropdown">
+<option data-long="Home" data-short="Home" value="index.html">Home</option>
+<option data-long="Prime" data-short="Prime" value="prime.html">Prime</option>
+<option data-long="Terce" data-short="Terce" value="terce.html">Terce</option>
+<option data-long="Sext" data-short="Sext" value="sext.html">Sext</option>
+<option data-long="None" data-short="None" value="none.html">None</option>
+<option data-long="Vespers" data-short="Vespers" value="vespers.html">Vespers</option>
+<option data-long="Compline" data-short="Compline" value="compline.html">Compline</option>
+<option data-long="Midnight" data-short="Midnight" value="midnight.html">Midnight</option>
+<option data-long="Veil" data-short="Veil" value="veil.html">Veil</option>
+<option data-long="Other prayers" data-short="Other" value="other.html">Other prayers</option>
+<option data-long="About" data-short="About" value="about.html">About</option>
+</select>
+<select class="section-dropdown" id="sectionDropdown">
+<option value="">Top</option>
+</select>
+</div>
+<button class="settings-btn" id="settingsBtn"><img alt="Settings" src="../cog_wheel.png"/></button>
+<div class="settings-menu" id="settingsMenu">
+<!-- Font Size Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-menu-btn-small" id="fontDownBtn">A-</button>
+<button class="settings-menu-btn settings-menu-btn-small" id="fontResetBtn">100%</button>
+<button class="settings-menu-btn settings-menu-btn-small" id="fontUpBtn">A+</button>
+</div>
+<!-- Line Height Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Comfy line spacing">
+<span class="line-height-icon comfy-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+<button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Default line spacing">
+<span class="line-height-icon default-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+<button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Condensed line spacing">
+<span class="line-height-icon condensed-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+</div>
+<!-- Theme Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-toggle" id="autoModeBtn">Auto</button>
+<button class="settings-menu-btn settings-toggle" id="lightModeBtn">Light</button>
+<button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Dark</button>
+</div>
+<!-- Language Selector -->
+<div class="settings-row lang-selector">
+<a class="settings-menu-btn settings-toggle" data-lang="fr" href="../fr-unofficial/about.html">Français</a>
+<a class="settings-menu-btn settings-toggle" data-lang="ar" href="../ar/about.html">عربي</a>
+<a class="settings-menu-btn settings-toggle" data-lang="cop" href="../cop/about.html">Ⲙⲉⲙⲧ</a>
+</div>
+<div class="settings-row lang-variant-selector">
+<a class="settings-menu-btn settings-toggle" data-variant="fr-unofficial" href="../fr-unofficial/about.html">Traduit du copte</a>
+<a class="settings-menu-btn settings-toggle" data-variant="fr-lsg" href="../fr-lsg/about.html">Classique</a>
+</div>
+</div>
+</div>
 <main class="container">
 <div class="hour-header">
 <div class="header-crosses">
@@ -45,9 +111,6 @@
 <h2 class="section-title">Agpia</h2>
 <div class="prayer-text coptic-text">
                     Ⳡⲅⲁⲅⲣⲉⲥⲉⲫⲇⲏ ⲙⲙⲁⲩ ⲙⲣⲏⲙⲣⲏ
-                </div>
-<div class="prayer-text">
-                    The Agpeya (Book of Hours) is the Coptic Orthodox prayer book containing the seven canonical hours of prayer, plus additional prayers. This edition presents the prayers in their original Coptic language.
                 </div>
 </section>
 <div class="ornament">

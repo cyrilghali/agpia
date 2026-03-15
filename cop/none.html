@@ -28,6 +28,72 @@
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
+<div class="sticky-subheader">
+<div class="dropdown-wrapper">
+<select class="hour-dropdown" id="hourDropdown">
+<option data-long="Home" data-short="Home" value="index.html">Home</option>
+<option data-long="Prime" data-short="Prime" value="prime.html">Prime</option>
+<option data-long="Terce" data-short="Terce" value="terce.html">Terce</option>
+<option data-long="Sext" data-short="Sext" value="sext.html">Sext</option>
+<option data-long="None" data-short="None" value="none.html">None</option>
+<option data-long="Vespers" data-short="Vespers" value="vespers.html">Vespers</option>
+<option data-long="Compline" data-short="Compline" value="compline.html">Compline</option>
+<option data-long="Midnight" data-short="Midnight" value="midnight.html">Midnight</option>
+<option data-long="Veil" data-short="Veil" value="veil.html">Veil</option>
+<option data-long="Other prayers" data-short="Other" value="other.html">Other prayers</option>
+<option data-long="About" data-short="About" value="about.html">About</option>
+</select>
+<select class="section-dropdown" id="sectionDropdown">
+<option value="">Top</option>
+</select>
+</div>
+<button class="settings-btn" id="settingsBtn"><img alt="Settings" src="../cog_wheel.png"/></button>
+<div class="settings-menu" id="settingsMenu">
+<!-- Font Size Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-menu-btn-small" id="fontDownBtn">A-</button>
+<button class="settings-menu-btn settings-menu-btn-small" id="fontResetBtn">100%</button>
+<button class="settings-menu-btn settings-menu-btn-small" id="fontUpBtn">A+</button>
+</div>
+<!-- Line Height Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Comfy line spacing">
+<span class="line-height-icon comfy-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+<button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Default line spacing">
+<span class="line-height-icon default-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+<button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Condensed line spacing">
+<span class="line-height-icon condensed-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+</div>
+<!-- Theme Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-toggle" id="autoModeBtn">Auto</button>
+<button class="settings-menu-btn settings-toggle" id="lightModeBtn">Light</button>
+<button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Dark</button>
+</div>
+<!-- Language Selector -->
+<div class="settings-row lang-selector">
+<a class="settings-menu-btn settings-toggle" data-lang="fr" href="../fr-unofficial/none.html">Français</a>
+<a class="settings-menu-btn settings-toggle" data-lang="ar" href="../ar/none.html">عربي</a>
+<a class="settings-menu-btn settings-toggle" data-lang="cop" href="../cop/none.html">Ⲙⲉⲙⲧ</a>
+</div>
+<div class="settings-row lang-variant-selector">
+<a class="settings-menu-btn settings-toggle" data-variant="fr-unofficial" href="../fr-unofficial/none.html">Traduit du copte</a>
+<a class="settings-menu-btn settings-toggle" data-variant="fr-lsg" href="../fr-lsg/none.html">Classique</a>
+</div>
+</div>
+</div>
 <main class="container">
 <div class="hour-header">
 <div class="header-crosses">
@@ -48,15 +114,9 @@
 Pihumnoc `nte ]ajp =;] ('i]) `mpai`ehoou et`cmarwout ]<br>
 natyif `mPi`<rictoc paouro ouoh panou] ]naerhelpic
 </div>
-<div class="prayer-text">
-péchés..
-</div>
 <div class="prayer-text coptic-text">
 `erof `ntef,a nanobi nyi `ebol.<br>
 "almoc tw Dauid pip` rovytyc@ `erepef`cmou e;ouab
-</div>
-<div class="prayer-text">
-swpi neman Amyn.
 </div>
 </section>
 <section class="section">
@@ -68,9 +128,7 @@ swpi neman Amyn.
 ⲛⲓⲗⲁⲟⲥ ⲧⲏⲣⲟⲩ<br>
 5 ϫⲉ ⲛⲓⲛⲟⲩϯ ⲧⲏⲣⲟⲩ ⲛⲁⲧⲉ ⲛⲓⲉⲑⲛⲟⲥ ϩⲁⲛⲇⲉⲙⲱⲛ ⲛⲉ *
 </div>
-<div class="prayer-text coptic-text">
-cieux.
-</div>
+
 <div class="prayer-text coptic-text">
 Ⲡϭⲟⲓⲥ ⲇⲉ ⲛⲁⲑⲟϥ ⲁϥⲑⲁⲙⲓⲟ ⲛⲛⲓⲫⲏⲟⲩⲓ * 6 ⲟⲩⲟⲩⲱⲛϩ<br>
 ⲉⲁⲃⲟⲗ ⲛⲉⲙ ⲟⲩⲥⲁⲓⲉ ⲥⲉⲭⲏ ⲙⲡⲉϥⲙⲑⲟ * ⲟⲩⲧⲟⲩⲃⲟ ⲛⲉⲙ<br>
@@ -78,9 +136,7 @@ cieux.
 ⲙⲁⲠϭⲟⲓⲥ ⲛⲓⲙⲉⲧⲓⲱⲧ ⲧⲏⲣⲟⲩ ⲛⲁⲧⲉ ⲛⲓⲉⲑⲛⲟⲥ * ⲁⲛⲓⲟⲩⲓ<br>
 ⲙⲁⲠϭⲟⲓⲥ ⲛⲟⲩⲱⲟⲩ ⲛⲉⲙ ⲟⲩⲧⲁⲓⲟ * ⲁⲛⲓⲟⲩⲓ ⲙⲁⲠϭⲟⲓⲥ
 </div>
-<div class="prayer-text coptic-text">
-Parvis !
-</div>
+
 <div class="prayer-text coptic-text">
 ⲙⲁϣⲉⲛⲱⲧⲉⲛ ⲉⲁϧⲟⲩⲛ ⲉⲛⲉϥⲁⲩⲗⲏⲟⲩ * ⲟⲩⲱϣⲧ ⲙⲁⲠϭⲟⲓⲥ<br>
 ⲛⲁϫⲉ ⲡⲁⲕⲁϩⲓ ⲧⲏⲣϥ * 10 ⲁϫⲟⲥ ϧⲉⲛ ⲛⲓⲉⲑⲛⲟⲥ ϫⲉ ⲁ Ⲡϭⲟⲓⲥ<br>
@@ -89,9 +145,6 @@ Parvis !
 ⲙⲁⲣⲉⲛⲑⲉⲗⲏⲗ ⲛⲁϫⲉ ⲡⲁⲕⲁϩⲓ * ⲙⲁⲣⲉϥⲕⲓⲙ ⲛⲁϫⲉ ⲫⲁⲓⲟⲙ ⲛⲉⲙ<br>
 ⲡⲉϥⲙⲟϩ ⲧⲏⲣϥ<br>
 12 ⲉⲩⲉⲣⲁϣⲓ ⲛⲁϫⲉ ⲛⲓⲙⲉϣϣⲟϯ ⲛⲉⲙ ϩⲱⲃ ⲛⲓⲃⲉⲛ ⲉⲧⲉ
-</div>
-<div class="prayer-text">
-ébranlés !
 </div>
 <div class="prayer-text coptic-text">
 ⲛⲁϧⲏⲧⲟⲩ * ⲧⲟⲧⲉ ⲉⲩⲉⲑⲉⲗⲏⲗ ⲛⲁϫⲉ ⲛⲛⲓϣϣⲏⲛ ⲧⲏⲣⲟⲩ ⲛⲁⲧⲉ<br>
@@ -105,9 +158,6 @@ Parvis !
 ⲙⲁⲣⲟⲩⲟⲩⲛⲟϥ ⲙⲁⲙⲱⲟⲩ ⲛⲁϫⲉ ⲛⲓⲛⲏⲥⲟⲥ ⲉⲧⲟϣ<br>
 2 ⲟⲩϭⲏⲡⲓ ⲛⲉⲙ ⲟⲩⲅⲛⲟⲫⲟⲥ ⲉⲧⲕⲱϯ ⲉⲁⲣⲟϥ *<br>
 ⲟⲩⲙⲉⲑⲙⲏⲓ ⲛⲉⲙ ⲡϩⲁⲡ ⲡⲉ ⲡⲥⲱⲟⲩⲧⲉⲛ
-</div>
-<div class="prayer-text">
-ennemis tout autour.
 </div>
 <div class="prayer-text coptic-text">
 ⲙⲡⲉϥⲑⲣⲟⲛⲟⲥ<br>
@@ -147,15 +197,10 @@ ennemis tout autour.
 ϯⲟⲓⲕⲟⲩⲙⲉⲛⲏ ⲛⲉⲙ ⲟⲩⲟⲛ ⲛⲓⲃⲉⲛ ⲉⲧϣⲟⲡ ⲛⲁϧⲏⲧⲥ *<br>
 ϩⲁⲛⲓⲁⲣⲱⲟⲩ ⲉⲩⲉⲕⲱⲗϩ ⲛⲛⲟⲩϫⲓϫ ⲉⲩⲥⲟⲡ * ⲟⲩⲟϩ
 </div>
-<div class="prayer-text">
-montagnes exulteront !
-</div>
 <div class="prayer-text coptic-text">
 ⲛⲓⲧⲱⲟⲩ ⲉⲩⲉⲑⲉⲗⲏⲗ ⲙⲁⲡⲉⲙⲁⲑⲟ ⲙⲁⲠϭⲟⲓⲥ
 </div>
-<div class="prayer-text coptic-text">
-Droiture.
-</div>
+
 <div class="prayer-text coptic-text">
 ⲉϯⲟⲓⲕⲟⲩⲙⲉⲛⲏ ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ * ⲛⲉⲙ ϩⲁⲛⲗⲁⲟⲥ<br>
 ϧⲉⲛ ⲟⲩⲥⲱⲟⲩⲧⲉⲛ
@@ -175,9 +220,7 @@ Droiture.
 6 ⲙⲱⲩⲥⲏⲥ ⲛⲉⲙ ⲁⲁⲣⲱⲛ ϧⲉⲛ ⲛⲉϥⲟⲩⲏⲃ * ⲛⲉⲙ<br>
 7 ⲛⲁⲩⲧⲱⲃϩ ⲙⲁⲠϭⲟⲓⲥ ⲟⲩⲟϩ ⲛⲁⲑⲟϥ ⲛⲁϥⲥⲱⲧⲉⲙ
 </div>
-<div class="prayer-text coptic-text">
-donnait.
-</div>
+
 <div class="prayer-text coptic-text">
 ⲛⲉⲙⲱⲟⲩ * ⲁⲩⲁⲣⲉϩ ⲅⲁⲣ ⲉⲛⲉϥⲙⲉⲧⲙⲉⲑⲣⲉⲩ * ⲛⲉⲙ<br>
 8 Ⲡϭⲟⲓⲥ ⲡⲉⲛⲛⲟⲩϯ ⲛⲁⲑⲟⲕ ⲛⲁⲕⲥⲱⲧⲉⲙ ⲉⲁⲣⲱⲟⲩ *<br>
@@ -202,28 +245,16 @@ donnait.
 </section>
 <section class="section">
 <h2 class="section-title">Psaume 100</h2>
-<div class="prayer-text">
-ton Jugement.
-</div>
 <div class="prayer-text coptic-text">
 ⲁⲓⲛⲁϩⲱⲥ ⲛⲁⲕ Ⲡϭⲟⲓⲥ ⲛⲟⲩⲛⲁⲓ ⲛⲉⲙ ⲟⲩϩⲁⲡ *<br>
 2 ϯⲛⲁⲉⲣⲯⲁⲗⲓⲛ ⲟⲩⲟϩ ⲛⲧⲁⲕⲁϯ ϧⲉⲛ ⲟⲩⲙⲱⲓⲧ
 </div>
-<div class="prayer-text">
-n’ai mis aucune pratique illégale devant
-</div>
 <div class="prayer-text coptic-text">
 ⲙⲡⲓⲭⲱ ⲛⲟⲩϩⲱⲃ ⲙⲡⲁⲣⲁⲛⲟⲙⲟⲥ ⲙⲁⲡⲉⲙⲁⲑⲟ ⲛⲛⲁⲃⲁⲗ
-</div>
-<div class="prayer-text">
-mes yeux,
 </div>
 <div class="prayer-text coptic-text">
 ⲉⲁⲃⲟⲗ *<br>
 3 ⲁⲓⲙⲉⲥⲧⲉ ⲛⲏ ⲉⲧⲓⲣⲓ ⲛϯⲡⲁⲣⲁⲃⲁⲥⲓⲥ * ⲟⲩϩⲏⲧ
-</div>
-<div class="prayer-text">
-moi, je ne l’ai point connu.
 </div>
 <div class="prayer-text coptic-text">
 ⲛⲁϫⲉ ⲡⲓⲡⲉⲧϩⲱⲟⲩ ⲛⲁⲓⲉⲙⲓ ⲁⲛ ⲡⲉ *<br>
@@ -235,16 +266,11 @@ moi, je ne l’ai point connu.
 <div class="prayer-text coptic-text">
 ⲟⲩⲙⲱⲓⲧ ⲛⲁⲧⲁϭⲛⲓ ⲫⲁⲓ ⲛⲁϥϣⲉⲙϣⲓ ⲙⲁⲙⲟⲓ *
 </div>
-<div class="prayer-text">
-mon service.
-</div>
 <div class="prayer-text coptic-text">
 ⲙⲡⲁϥϣⲱⲡⲓ ϧⲉⲛ ⲑⲙⲏϯ ⲙⲡⲁⲏⲓ ⲛⲁϫⲉ ⲫⲏ ⲉⲧⲓⲣⲓ<br>
 ⲛⲟⲩⲙⲉⲧⲣⲉϥϩⲓⲡϩⲟ *
 </div>
-<div class="prayer-text coptic-text">
-yeux.
-</div>
+
 <div class="prayer-text coptic-text">
 ⲛⲛⲁⲃⲁⲗ ⲉⲁⲃⲟⲗ *<br>
 ⲧⲏⲣⲟⲩ ⲛⲁⲧⲉ ⲡⲁⲕⲁϩⲓ * ⲉⲡϫⲓⲛϥⲱϯ ⲉⲁⲃⲟⲗ ϧⲉⲛ ⲑⲃⲁⲕⲓ
@@ -252,9 +278,6 @@ yeux.
 </section>
 <section class="section">
 <h2 class="section-title">Psaume 109</h2>
-<div class="prayer-text">
-j’aie placé tes ennemis dessous tes pieds. »
-</div>
 <div class="prayer-text coptic-text">
 ϣⲁ ϯⲭⲱ ⲛⲛⲉⲕϫⲁϫⲓ ⲥⲁⲡⲉⲥⲏⲧ ⲛⲛⲉⲕϭⲁⲗⲁⲩϫ<br>
 2 ⲟⲩϣⲃⲱⲧ ⲛϫⲟⲙ ⲛⲧⲁⲕ ⲉϥⲉⲟⲩⲟⲣⲡϥ ⲛⲁϫⲉ Ⲡϭⲟⲓⲥ<br>
@@ -264,9 +287,6 @@ j’aie placé tes ennemis dessous tes pieds. »
 ϧⲉⲛ ⲑⲛⲉϫⲓ ϧⲁϫⲱϥ ⲙⲡⲓⲥⲓⲟⲩ ⲛⲁⲧⲉ ϩⲁⲛⲁⲧⲟⲟⲩⲓ ⲁⲁⲛⲟⲕ<br>
 ⲁⲓϫⲫⲟⲕ * ⲁϥⲱⲣⲕ ⲛⲁϫⲉ Ⲡϭⲟⲓⲥ ⲟⲩⲟϩ ⲛⲛⲉϥⲟⲩⲱⲙ<br>
 ⲉϥⲉϯϩⲁⲡ ϧⲉⲛ ⲛⲓⲉⲑⲛⲟⲥ ⲉϥⲉⲙⲁϩⲟⲩ ⲛϩⲁⲛϩⲧⲟⲡ *
-</div>
-<div class="prayer-text">
-tête d’une grande multitude.
 </div>
 <div class="prayer-text coptic-text">
 ⲟⲩⲟϩ ⲉϥⲉϧⲟⲙϧⲉⲙ ⲛⲧⲫⲉ ⲛⲟⲩⲙⲏϣ ϩⲓϫⲉⲛ ⲡⲁⲕⲁϩⲓ*<br>
@@ -281,24 +301,16 @@ tête d’une grande multitude.
 ϧⲉⲛ ⲡⲁϩⲏⲧ ⲧⲏⲣϥ * ϧⲉⲛ ⲡⲁⲥⲟϭⲛⲓ ⲛⲁⲧⲉ ⲛⲏ<br>
 ⲉⲧⲥⲟⲩⲧⲱⲛ ⲛⲉⲙ ⲧⲟⲩⲥⲩⲛⲁⲅⲱⲅⲏ *
 </div>
-<div class="prayer-text">
-siècles.
-</div>
 <div class="prayer-text coptic-text">
 ⲡⲉϥϩⲱⲃ * ⲟⲩⲟϩ ⲧⲉϥⲙⲉⲑⲙⲏⲓ ϣⲟⲡ ϣⲁ ⲉⲁⲛⲉϩ ⲛⲁⲧⲉ<br>
 ⲡⲓⲉⲛⲉϩ<br>
 4 ⲁϥⲉⲣⲫⲙⲉⲩⲓ ⲛⲛⲉϥϣⲫⲏⲣⲓ ⲧⲏⲣⲟⲩ * ⲟⲩⲛⲁⲏⲧ ⲟⲩⲟϩ
 </div>
-<div class="prayer-text coptic-text">
-nations.
-</div>
+
 <div class="prayer-text coptic-text">
 6 ⲧϫⲟⲙ ⲛⲁⲧⲉ ⲛⲉϥϩⲁⲃⲏⲟⲩⲓⲁ ⲁϥⲧⲁⲙⲉ ⲡⲉϥⲗⲁⲟⲥ ⲉⲣⲟⲥ<br>
 * ⲉⲡϫⲓⲛϯ ⲛⲱⲟⲩ ⲛⲟⲩⲕⲗⲏⲣⲟⲛⲟⲙⲓⲁ ⲛⲁⲧⲉ ϩⲁⲛⲉⲑⲛⲟⲥ<br>
 7 ⲛⲓϩⲁⲃⲏⲟⲩⲓ ⲁ ⲛⲁⲧⲉ ⲛⲉϥϫⲓϫ ⲟⲩⲙⲉⲑⲙⲏⲓ ⲧⲉ ⲛⲉⲙ
-</div>
-<div class="prayer-text">
-fidèles,
 </div>
 <div class="prayer-text coptic-text">
 ⲟⲩϩⲁⲡ * ⲥⲉⲛϩⲟⲧ ⲛⲁϫⲉ ⲛⲉϥⲉⲛⲧⲟⲗⲏ ⲧⲏⲣⲟⲩ<br>
@@ -315,34 +327,23 @@ fidèles,
 ⲁⲗⲗⲏⲗⲟⲩⲓⲁ * ⲱⲟⲩⲛⲓⲁⲧϥ ⲙⲡⲓⲣⲱⲙⲓ ⲉⲧⲉⲣϩⲟϯ<br>
 ϧⲁⲧϩⲏ ⲙⲁⲠϭⲟⲓⲥ * ⲛⲁϩⲁⲣⲏⲓ ϧⲉⲛ ⲛⲉϥⲉⲛⲧⲟⲗⲏ
 </div>
-<div class="prayer-text coptic-text">
-voudra rester.
-</div>
+
 <div class="prayer-text coptic-text">
 ⲉϥⲉⲟⲩⲱϣⲥ ⲉⲁⲙⲁϣⲱ *
-</div>
-<div class="prayer-text">
-bénie.
 </div>
 <div class="prayer-text coptic-text">
 ⲉⲩⲉⲥⲁⲙⲟⲩ ⲉϯⲅⲉⲛⲉⲁ ⲛⲁⲧⲉ ⲛⲏ ⲉⲧⲥⲟⲩⲧⲱⲛ<br>
 * ⲟⲩⲟϩ ⲧⲉϥⲙⲉⲑⲙⲏⲓ ⲥⲟⲡ ϣⲁ ⲉⲁⲛⲉϩ ⲛⲁⲧⲉ ⲡⲓⲉⲛⲉϩ
 </div>
-<div class="prayer-text">
-siècles.
-</div>
 <div class="prayer-text coptic-text">
 ⲟⲩⲟⲩⲱⲓⲛⲓ ⲁϥϣⲁⲓ ⲉⲁⲃⲟⲗ ϧⲉⲛ ⲡⲭⲁⲕⲓ ⲛⲁⲛⲏ<br>
 ⲉⲧⲥⲟⲩⲧⲱⲛ * ⲟⲩⲛⲁⲏⲧ ⲛⲣⲉϥϣⲉⲛϩⲏⲧ ⲟⲩⲟϩ ⲟⲩⲑⲙⲏⲓ
-</div>
-<div class="prayer-text">
-compatissant, disposé à prêter, il ménagera
 </div>
 <div class="prayer-text coptic-text">
 ⲉⲡⲟⲩϣⲁⲡ * ⲉϥⲉⲉⲣⲟⲓⲕⲟⲛⲟⲙⲓⲛ ⲛⲛⲉϥⲥⲁϫⲓ ϧⲉⲛ<br>
 ⲟⲩϩⲁⲡ *<br>
 6 ϫⲉ ⲛⲛⲉϥⲕⲓⲙ ϣⲁ ⲉⲁⲛⲉϩ * ⲉϥⲉⲁϣⲱⲡⲓ ⲛⲁϫⲉ ⲡⲓⲑⲙⲏⲓ<br>
-ⲉⲩⲙⲉⲩⲓ ⲛⲉⲛⲉϩ * ⲟⲩⲟϩ ⲛⲛⲉϥⲉⲣϩⲟϯ ϧⲁⲧϩⲏ siècles.<br>
+ⲉⲩⲙⲉⲩⲓ ⲛⲉⲛⲉϩ * ⲟⲩⲟϩ ⲛⲛⲉϥⲉⲣϩⲟϯ ϧⲁⲧϩⲏ<br>
 ⲉⲉⲣϩⲉⲗⲡⲓⲥ ⲉⲠϭⲟⲓⲥ *
 </div>
 <div class="prayer-text coptic-text">
@@ -377,9 +378,7 @@ compatissant, disposé à prêter, il ménagera
 ⲁⲗⲗⲏⲗⲟⲩⲓⲁ * ⲁⲓⲉⲣⲁⲅⲁⲡⲁⲛ ϫⲉ ϥⲛⲁⲥⲱⲧⲉⲙ ⲛⲁϫⲉ<br>
 Ⲡϭⲟⲓⲥ * ⲉⲧⲥⲙⲏ ⲛⲁⲧⲉ ⲡⲁϯϩⲟ
 </div>
-<div class="prayer-text coptic-text">
-supplication,
-</div>
+
 <div class="prayer-text coptic-text">
 2 ϫⲉ ⲁϥⲣⲓⲕⲓ ⲙⲡⲉϥⲙⲁϣϫ ⲉⲁⲣⲟⲓ * ⲟⲩⲟϩ ⲛⲁϩⲁⲣⲏⲓ ϧⲉⲛ<br>
 ⲛⲉⲙ ⲟⲩⲙⲕⲁϩ ⲛϩⲏⲧ ⲡⲉⲧⲁⲓϫⲉⲙⲟⲩ * ⲟⲩⲟϩ ⲁⲓⲧⲱⲃϩ
@@ -393,9 +392,6 @@ supplication,
 ⲕⲟⲧϯ ⲧⲁⲯⲩⲭⲏ ⲉⲡⲉⲙⲁ ⲛⲉⲙⲧⲟⲛ * ϫⲉ ⲁ Ⲡϭⲟⲓⲥ<br>
 ⲛⲁⲃⲁⲗ ⲉⲁⲃⲟⲗ ϩⲁ ϩⲁⲛⲉⲣⲙⲱⲟⲩⲓ * ⲛⲉⲙ ⲛⲁϭⲁⲗⲁⲩϫ
 </div>
-<div class="prayer-text">
-trébuchement.
-</div>
 <div class="prayer-text coptic-text">
 ⲉⲁⲃⲟⲗ ϧⲉⲛ ⲡⲓⲥⲗⲁϯ<br>
 9 ⲉⲓⲉⲣⲁⲛⲁϥ ⲙⲁⲠϭⲟⲓⲥ ⲙⲡⲉϥⲙⲑⲟ ϧⲉⲛ ⲧⲭⲱⲣⲁ ⲛⲁⲧⲉ<br>
@@ -407,14 +403,8 @@ trébuchement.
 <div class="prayer-text coptic-text">
 ⲁⲗⲗⲏⲗⲟⲩⲓⲁ
 </div>
-<div class="prayer-text">
-parlé, mais moi, j'avais été fort humilié !
-</div>
 <div class="prayer-text coptic-text">
 ⲁⲓⲛⲁϩϯ ⲉⲑⲃⲉ ⲫⲁⲓ ⲁⲓⲥⲁϫⲓ * ⲁⲁⲛⲟⲕ ⲇⲉ ⲁⲓⲑⲉⲃⲓⲟⲓ
-</div>
-<div class="prayer-text">
-2. Moi, j'ai dit en mon extase : « Tout
 </div>
 <div class="prayer-text coptic-text">
 ⲉⲁⲙⲁϣⲱ<br>
@@ -428,22 +418,11 @@ parlé, mais moi, j'avais été fort humilié !
 9 ϯⲛⲁϯ ⲛⲛⲁⲉⲩⲭⲏ ⲙⲁⲠϭⲟⲓⲥ * ϧⲉⲛ ⲛⲓⲁⲩⲗⲏⲟⲩ ⲛⲁⲧⲉ<br>
 ⲡⲏⲓ ⲙⲁⲠϭⲟⲓⲥ * ⲙⲁⲡⲉⲙⲁⲑⲟ ⲙⲡⲓⲗⲁⲟⲥ ⲧⲏⲣϥ * ϧⲉⲛ
 </div>
-<div class="prayer-text">
-Jérusalem !
-</div>
 <div class="prayer-text coptic-text">
 ⲑⲙⲏϯ ⲛⲓⲉⲣⲟⲩⲥⲁⲗⲏⲙ
 </div>
-<div class="prayer-text">
-Doxa ci o :eoc ymwn. Kurie eulogycon ek tou kata<br>
-Loukan agiou euaggeliou anagnwcma<br>
-Les apôtres, à leur retour,
-</div>
 <div class="prayer-text coptic-text">
 Ouoh etautac;o `nje niapoctoloc aucaji qatotf
-</div>
-<div class="prayer-text">
-racontèrent à Jésus tout ce qu’ils
 </div>
 <div class="prayer-text coptic-text">
 `nnyetauaitou ouoh afolou nemaf afsenaf eqoun ca`pca<br>
@@ -451,15 +430,9 @@ etauemi naumosi `ncwf ouoh etafsopou erof nafcaji<br>
 nemwou pe e;be ]metouro `nte V]. Ouoh nyeter,ria<br>
 ,a nimys ebol hina n` tousenwou eni]mi ete `m`pkw] nem
 </div>
-<div class="prayer-text">
-désert. Mais il leur dit : Donnez-leur
-</div>
 <div class="prayer-text coptic-text">
-ten,y `mpaimai qen ouma `nsafe. vous-mêmes à manger. Ils dirent :<br>
-anon `ntensenan `ntenswp `nhanqryou`i `mpailaoc tyrf il y avait environ cinq mille hommes.
-</div>
-<div class="prayer-text">
-rangées d’une cinquantaine. Ils firent
+ten,y `mpaimai qen ouma `<br>
+anon `ntensenan `ntenswp `nhanqryou`i `
 </div>
 <div class="prayer-text coptic-text">
 marourwteb kata ma `nhan =n `e`vma ouoh au`iri `mpairy]<br>
@@ -467,12 +440,9 @@ etafcomc `e`hryi `e`tve ef`cmou erwou ouoh afvasou ouoh<br>
 naf] e;rou,w qarwou `nnimys ouoh auouwm ouoh auci<br>
 eumeh.
 </div>
-<div class="prayer-text">
-Doxa ci kurie
-</div>
 <div class="prayer-text coptic-text">
 Piwou va pennou] pe. Tenouwst `mmok w P=,c nem<br>
-pekiwt `naga;oc nem pi=p=na =e;= u je ak`i/... akcw] `mmon nai<br>
+pekiwt `naga;oc nem pi=p=na =e;= u<br>
 nan.
 </div>
 <div class="prayer-text coptic-text">
@@ -481,63 +451,42 @@ e;byten@ qwteb `nnenlogicmoc `ncwmatikon@ `wPi`<rictoc<br>
 Pennou] ouoh nahmen. Mare pa]ho qwnt `mpek`m;o<br>
 P[oic. maka] nyi kata pekcaji. ef`e`i `eqoun `mpek`m;o `nje
 </div>
-<div class="prayer-text">
-selon Ta Parole. Que ma requête entre
-</div>
 <div class="prayer-text coptic-text">
-Parole.<br>
+<br>
 `epi`ctauroc `m`vnau `n`ajp 'i] ak[imwit `mpiconi et`asi
-</div>
-<div class="prayer-text">
-ne m'abomine pas, mais purifie mon âme,
 </div>
 <div class="prayer-text coptic-text">
 `mper[ibo] `mmoi alla matoubo `nta`'u,y `ariouwini<br>
-immortels.<br>
 `n`a;mou. Hina aisanjem]pi `ntekmeterpe;nanef `nta`ini<br>
 nak `eqoun `n`ouhwc qen oumet`at,arwf ei[issw`ou e` pekcai<br>
 qa pic`tauroc `w pi`aga;oc akqwteb `m`vmou hiten pekmou<br>
 `nny`etak;amiw`ou qen nekjij. ou`wnh e` bol<br>
-faveur.<br>
 tekmau e;byten. nohem Pencwtyr `n`oulaoc ef;ebiyout.<br>
-Mper,w `ncwk sa qa`e oude `mpertyiten sa `ebol `mperjwr<br>
+Mper,w `ncwk<br>
 `ebol `ntekdia;yky `mper`wli `mpeknai e` bolharon e;be<br>
 Abraam pekmenrit nem Icaak pekbwk nem piIcra`yl
 </div>
 <div class="prayer-text coptic-text">
 Etafnau `nje piconi e` `par,ygoc `nte `p`wnq e` pic`tauroc.<br>
-Pejaf je e` ne vye` t`asi neman ounou] an pe `ea` f[icarx<br>
+Pejaf je e`<br>
 nare `vry nahwp an `nnef`aktin oude nare p` kahi<br>
 `mmof qen hwb niben ouoh etfai qa hwb niben `aripameu`i
-</div>
-<div class="prayer-text">
-ta Royauté ! »
 </div>
 <div class="prayer-text coptic-text">
 P[oic aksan`i qen tekmetouro.<br>
 pic`tauroc sopten `erok `w pi`aga;oc `anon qa ny`ethiw`out<br>
-`e`phap `m`vmou e;be nennobi. Tenouwnh `nnennobi `ebol clamant vers Toi en chœur avec lui :<br>
+`e`phap `m`vmou e;be nennobi. Tenouwnh `nnennobi `<br>
 nemaf en`ermologin `ntekme;nou] enws oubyk nemaf<br>
 eucop je `aripenmeu`i P[oic aksan`i qen tekmetouro.<br>
 Ke nun ke `a`i ke ic touc e` w`nac twn `e`wnwn `amyn.
 </div>
-<div class="prayer-text">
-Croix, elle a dit en pleurant : « Le monde
-</div>
 <div class="prayer-text coptic-text">
 Etacnau `nje ]mau e` pihyib ouoh pimane` cw`ou `pcwtyr<br>
-`mpikocmoc efa` si `epic`tauroc pejac ecrimi je pikocmoc men mes entrailles brûlent en voyant Ta<br>
+`mpikocmoc efa`<br>
 epekjin`isi etake` rhupomonin e` rof e;be `ptyrf Pasyri<br>
-ouoh Panou].<br>
-• Trisagion
+ouoh Panou].
 </div>
-<div class="prayer-text">
-→ p. 27 à p. 30
-</div>
-<div class="prayer-text coptic-text">
-• Credo<br>
-• Kyrie eleison x41
-</div>
+
 <div class="prayer-text coptic-text">
 Burmester traduit « have hidden », soit ϩⲱⲡ.
 </div>
@@ -552,17 +501,14 @@ e`tak;ahmen e`rof@ hina ansancini e`bol qen paicwma<br>
 `nSyri Iycouc Pi,`rictoc Pen[oic. Ouoh n`tensasni `eounai<br>
 nye;ouab e`tauranak qen oume;mi icjen p`e`neh nem sa<br>
 e`neh.<br>
-Vnou] a` kwrf `pcatanac nem jom niben ethwou `ntaf@ siècles.<br>
+Vnou] a` kwrf `pcatanac nem jom niben ethwou `ntaf@<br>
 `m`vry] e`fe` qwmqem nje Pekmonogenyc `nSyri qen ]jom<br>
 Pi`<rictoc `w vy`etafswp `erof `n]omologia `nte piconi
-</div>
-<div class="prayer-text">
-Sa Croix vivifiante.
 </div>
 <div class="prayer-text coptic-text">
 Mareferouwini `eron e`er`ou`wini `nnye` themci qen `p,aki n`te<br>
 Je `n;ok gar pe `kc` marwout Pa[oic@ e` re pi`wou nem pitai`o<br>
-`n`aga;oc nem Pip` neuma e;ouab@ sa `eneh `nte ni`eneh tyrou@<br>
+`n`aga;oc nem Pip` neuma e;ouab@<br>
 `amyn.
 </div>
 </section>
