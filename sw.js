@@ -1,4 +1,4 @@
-const CACHE_NAME = 'agpeya-017f2747';
+const CACHE_NAME = 'agpeya-c1c340de';
 const CACHE_MAX_AGE_MS = 60 * 60 * 1000; // 1 hour
 const CACHE_TIMESTAMP_KEY = '__cache_created_at__';
 
