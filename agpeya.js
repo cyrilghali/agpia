@@ -26,11 +26,6 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.addEventListener('controllerchange', () => {
         window.location.reload();
     });
-    navigator.serviceWorker.addEventListener('message', (event) => {
-        if (event.data && event.data.type === 'CACHE_REFRESHED') {
-            window.location.reload();
-        }
-    });
 }
 
 // ============================================================================
@@ -74,6 +69,12 @@ if ('serviceWorker' in navigator) {
             credit: 'كل الفضل في محتوى الصلوات يعود لصاحب العمل الأصلي — تقديراً لجهده.',
             contact: 'تواصل',
             source: 'الكود المصدري'
+        },
+        cop: {
+            attribution: 'This site is based on the work of <a href="https://agpeya.org" target="_blank" rel="noopener">agpeya.org</a>.',
+            credit: 'All credit for the prayer content belongs to its original author, Marian-Apollos Balastre.',
+            contact: 'Contact',
+            source: 'Source code'
         }
     };
     const t = footerText[lang] || {
@@ -209,29 +210,23 @@ loadCommonSections();
 // THEME AND FONT MANAGEMENT
 // ============================================================================
 
-// Load and apply saved theme (supports 'light', 'dark', or 'auto')
-const savedTheme = localStorage.getItem('theme') || 'auto';
-const systemDarkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-function getEffectiveTheme(pref) {
-    if (pref === 'auto') return systemDarkQuery.matches ? 'dark' : 'light';
-    return pref;
-}
-
-document.documentElement.setAttribute('data-theme', getEffectiveTheme(savedTheme));
-
-// Listen for system theme changes so auto mode reacts in real time
-systemDarkQuery.addEventListener('change', () => {
-    if ((localStorage.getItem('theme') || 'auto') === 'auto') {
-        document.documentElement.setAttribute('data-theme', getEffectiveTheme('auto'));
-        updateThemeButtons();
-    }
-});
+// Load and apply saved theme
+const theme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', theme);
 
 // Load and apply saved font size
 const fontSize = localStorage.getItem('fontSize') || '1.3';
 document.documentElement.style.setProperty('--font-scale', fontSize);
 
+// Update theme icon based on current theme
+const updateThemeIcon = () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const themeBtn = document.getElementById('themeToggleBtn');
+    if (themeBtn) {
+        themeBtn.textContent = currentTheme === 'dark' ? 'â˜€ï¸' : 'ðŸŒ™';
+    }
+};
+updateThemeIcon();
 
 // ============================================================================
 // SETTINGS MENU
@@ -392,35 +387,24 @@ if (lineCondensedBtn) {
     };
 }
 
-// Theme controls - auto/light/dark buttons
-const autoModeBtn = document.getElementById('autoModeBtn');
+// Theme controls - separate light/dark buttons
 const lightModeBtn = document.getElementById('lightModeBtn');
 const darkModeBtn = document.getElementById('darkModeBtn');
 
 function updateThemeButtons() {
-    const themePref = localStorage.getItem('theme') || 'auto';
-    if (autoModeBtn && lightModeBtn && darkModeBtn) {
-        autoModeBtn.classList.toggle('active', themePref === 'auto');
-        lightModeBtn.classList.toggle('active', themePref === 'light');
-        darkModeBtn.classList.toggle('active', themePref === 'dark');
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    if (lightModeBtn && darkModeBtn) {
+        lightModeBtn.classList.toggle('active', currentTheme === 'light');
+        darkModeBtn.classList.toggle('active', currentTheme === 'dark');
     }
 }
 updateThemeButtons();
 
-if (autoModeBtn) {
-    autoModeBtn.onclick = (e) => {
-        e.stopPropagation();
-        localStorage.setItem('theme', 'auto');
-        document.documentElement.setAttribute('data-theme', getEffectiveTheme('auto'));
-        updateThemeButtons();
-    };
-}
-
 if (lightModeBtn) {
     lightModeBtn.onclick = (e) => {
         e.stopPropagation();
-        localStorage.setItem('theme', 'light');
         document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
         updateThemeButtons();
     };
 }
@@ -428,8 +412,8 @@ if (lightModeBtn) {
 if (darkModeBtn) {
     darkModeBtn.onclick = (e) => {
         e.stopPropagation();
-        localStorage.setItem('theme', 'dark');
         document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
         updateThemeButtons();
     };
 }
@@ -440,7 +424,7 @@ if (darkModeBtn) {
 
 (function initLangSelector() {
     const path = window.location.pathname;
-    const folders = ['fr-lsg', 'fr-unofficial', 'ar'];
+    const folders = ['fr-lsg', 'fr-unofficial', 'ar', 'cop'];
     let currentFolder = 'fr-lsg';
     for (const f of folders) {
         if (path.includes('/' + f + '/')) { currentFolder = f; break; }
@@ -449,7 +433,7 @@ if (darkModeBtn) {
     localStorage.setItem('lang', currentFolder);
 
     const isFrench = currentFolder === 'fr-unofficial' || currentFolder === 'fr-lsg';
-    const activeLang = isFrench ? 'fr' : 'ar';
+    const activeLang = isFrench ? 'fr' : currentFolder === 'cop' ? 'cop' : 'ar';
 
     document.querySelectorAll('.lang-selector a').forEach(link => {
         link.classList.toggle('active', link.getAttribute('data-lang') === activeLang);
@@ -595,8 +579,7 @@ sections.forEach((section, index) => {
 // Section dropdown change handler
 sectionDropdown.addEventListener('change', (e) => {
     // Check if "Top" is selected FIRST (value is empty string)
-    const selectedText = e.target.options[e.target.selectedIndex].textContent;
-    if (selectedText === 'Top') {
+    if (e.target.value === '') {
         isUserScrolling = false;
         window.scrollTo({ top: 0, behavior: 'smooth' });
         setTimeout(() => {
@@ -733,7 +716,8 @@ function initMidnightJumpToGospel() {
 
     const i18n = {
         fr: { title: 'Installer Agpia', subtitle: 'Accédez rapidement depuis votre écran d\u2019accueil', install: 'Installer', iosSubtitle: 'Appuyez sur «\u00A0Partager\u00A0» puis «\u00A0Sur l\u2019écran d\u2019accueil\u00A0»' },
-        ar: { title: '\u062A\u062B\u0628\u064A\u062A \u0627\u0644\u0623\u062C\u0628\u064A\u0629', subtitle: '\u0627\u0641\u062A\u062D\u0647\u0627 \u0628\u0633\u0631\u0639\u0629 \u0645\u0646 \u0634\u0627\u0634\u062A\u0643 \u0627\u0644\u0631\u0626\u064A\u0633\u064A\u0629', install: '\u062A\u062B\u0628\u064A\u062A', iosSubtitle: '\u0627\u0636\u063A\u0637 \u0639\u0644\u0649 \u00AB\u0645\u0634\u0627\u0631\u0643\u0629\u00BB \u062B\u0645 \u00AB\u0625\u0636\u0627\u0641\u0629 \u0625\u0644\u0649 \u0627\u0644\u0634\u0627\u0634\u0629 \u0627\u0644\u0631\u0626\u064A\u0633\u064A\u0629\u00BB' }
+        ar: { title: '\u062A\u062B\u0628\u064A\u062A \u0627\u0644\u0623\u062C\u0628\u064A\u0629', subtitle: '\u0627\u0641\u062A\u062D\u0647\u0627 \u0628\u0633\u0631\u0639\u0629 \u0645\u0646 \u0634\u0627\u0634\u062A\u0643 \u0627\u0644\u0631\u0626\u064A\u0633\u064A\u0629', install: '\u062A\u062B\u0628\u064A\u062A', iosSubtitle: '\u0627\u0636\u063A\u0637 \u0639\u0644\u0649 \u00AB\u0645\u0634\u0627\u0631\u0643\u0629\u00BB \u062B\u0645 \u00AB\u0625\u0636\u0627\u0641\u0629 \u0625\u0644\u0649 \u0627\u0644\u0634\u0627\u0634\u0629 \u0627\u0644\u0631\u0626\u064A\u0633\u064A\u0629\u00BB' },
+        cop: { title: 'Install Agpia', subtitle: 'Quick access from your home screen', install: 'Install', iosSubtitle: 'Tap "Share" then "Add to Home Screen"' }
     };
     const t = i18n[lang] || { title: 'Install Agpia', subtitle: 'Quick access from your home screen', install: 'Install', iosSubtitle: 'Tap "Share" then "Add to Home Screen"' };
 

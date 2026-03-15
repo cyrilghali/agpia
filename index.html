@@ -37,7 +37,7 @@
         } catch(e) {}
         var lang = 'fr-lsg';
         try { lang = localStorage.getItem('lang') || 'fr-lsg'; } catch(e) {}
-        var validLangs = ['fr-lsg', 'fr-unofficial', 'ar', 'en'];
+        var validLangs = ['fr-lsg', 'fr-unofficial', 'ar', 'en', 'cop'];
         if (validLangs.indexOf(lang) === -1) lang = 'fr-lsg';
         window.location.href = lang + '/index.html';
     </script>

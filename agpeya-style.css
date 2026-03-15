@@ -1,8 +1,10 @@
 @font-face {
     font-family: 'Avva Shenouda';
-    src: url('Avva_Shenouda.ttf') format('truetype');
+    src: url('fonts/avva-shenouda.woff2') format('woff2'),
+         url('Avva_Shenouda.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -615,15 +617,22 @@ body {
     }
 }
 
-/* Coptic text styling */
+/* Coptic text styling - Avva Shenouda is a legacy font mapping ASCII to Coptic glyphs */
 .coptic-text {
     font-family: 'Avva Shenouda', serif;
     font-size: 1.05em;
     letter-spacing: 0.02em;
 }
 
+/* Coptic page body text */
+[lang="cop"] .prayer-text,
+[lang="cop"] .psalm-verse {
+    line-height: 1.8;
+}
 
-
+[lang="cop"] .section-title {
+    font-family: 'Crimson Pro', serif;
+}
 
 
 /* Two-column Coptic and English layout */

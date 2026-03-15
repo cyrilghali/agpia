@@ -1,4 +1,4 @@
-const CACHE_NAME = 'agpeya-1c5e648c';
+const CACHE_NAME = 'agpeya-c1c340de';
 const CACHE_MAX_AGE_MS = 60 * 60 * 1000; // 1 hour
 const CACHE_TIMESTAMP_KEY = '__cache_created_at__';
 
@@ -15,17 +15,18 @@ const PRECACHE_URLS = [
   '/fonts/crimson-pro.woff2',
   '/fonts/eb-garamond.woff2',
   '/manifest.json',
-  '/en/index.html',
-  '/en/prime.html',
-  '/en/terce.html',
-  '/en/sext.html',
-  '/en/none.html',
-  '/en/vespers.html',
-  '/en/compline.html',
-  '/en/midnight.html',
-  '/en/veil.html',
-  '/en/other.html',
-  '/en/about.html',
+  '/fonts/avva-shenouda.woff2',
+  '/cop/index.html',
+  '/cop/prime.html',
+  '/cop/terce.html',
+  '/cop/sext.html',
+  '/cop/none.html',
+  '/cop/vespers.html',
+  '/cop/compline.html',
+  '/cop/midnight.html',
+  '/cop/veil.html',
+  '/cop/other.html',
+  '/cop/about.html',
   '/fr-unofficial/index.html',
   '/fr-unofficial/prime.html',
   '/fr-unofficial/terce.html',

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html lang="cop">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Vespers | Agpia</title>
+<link href="../agpeya-style.css" rel="stylesheet"/>
+<meta name="description" content="Pray the Agpia (Coptic Book of Hours) in Coptic.">
+<meta property="og:title" content="Vespers | Agpia">
+<meta property="og:description" content="Pray the Agpia (Coptic Book of Hours) in Coptic.">
+<meta property="og:image" content="https://agpia.fr/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://agpia.fr/cop/vespers.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Agpia">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://agpia.fr/og-image.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#fdfdf9">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+<div class="sticky-subheader">
+<div class="dropdown-wrapper">
+<select class="hour-dropdown" id="hourDropdown">
+<option data-long="Home" data-short="Home" value="index.html">Home</option>
+<option data-long="Prime" data-short="Prime" value="prime.html">Prime</option>
+<option data-long="Terce" data-short="Terce" value="terce.html">Terce</option>
+<option data-long="Sext" data-short="Sext" value="sext.html">Sext</option>
+<option data-long="None" data-short="None" value="none.html">None</option>
+<option data-long="Vespers" data-short="Vespers" value="vespers.html">Vespers</option>
+<option data-long="Compline" data-short="Compline" value="compline.html">Compline</option>
+<option data-long="Midnight" data-short="Midnight" value="midnight.html">Midnight</option>
+<option data-long="Veil" data-short="Veil" value="veil.html">Veil</option>
+<option data-long="Other prayers" data-short="Other" value="other.html">Other prayers</option>
+<option data-long="About" data-short="About" value="about.html">About</option>
+</select>
+<select class="section-dropdown" id="sectionDropdown">
+<option value="">Top</option>
+</select>
+</div>
+<button class="settings-btn" id="settingsBtn"><img alt="Settings" src="../cog_wheel.png"/></button>
+<div class="settings-menu" id="settingsMenu">
+<!-- Font Size Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-menu-btn-small" id="fontDownBtn">A-</button>
+<button class="settings-menu-btn settings-menu-btn-small" id="fontResetBtn">100%</button>
+<button class="settings-menu-btn settings-menu-btn-small" id="fontUpBtn">A+</button>
+</div>
+<!-- Line Height Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-toggle" id="lineComfyBtn" title="Comfy line spacing">
+<span class="line-height-icon comfy-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+<button class="settings-menu-btn settings-toggle active" id="lineDefaultBtn" title="Default line spacing">
+<span class="line-height-icon default-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+<button class="settings-menu-btn settings-toggle" id="lineCondensedBtn" title="Condensed line spacing">
+<span class="line-height-icon condensed-icon">
+<span class="line"></span>
+<span class="line"></span>
+</span>
+</button>
+</div>
+<!-- Theme Row -->
+<div class="settings-row">
+<button class="settings-menu-btn settings-toggle" id="autoModeBtn">Auto</button>
+<button class="settings-menu-btn settings-toggle" id="lightModeBtn">Light</button>
+<button class="settings-menu-btn settings-toggle active" id="darkModeBtn">Dark</button>
+</div>
+<!-- Language Selector -->
+<div class="settings-row lang-selector">
+<a class="settings-menu-btn settings-toggle" data-lang="fr" href="../fr-unofficial/vespers.html">Français</a>
+<a class="settings-menu-btn settings-toggle" data-lang="ar" href="../ar/vespers.html">عربي</a>
+<a class="settings-menu-btn settings-toggle" data-lang="cop" href="../cop/vespers.html">Ⲙⲉⲙⲧ</a>
+</div>
+<div class="settings-row lang-variant-selector">
+<a class="settings-menu-btn settings-toggle" data-variant="fr-unofficial" href="../fr-unofficial/vespers.html">Traduit du copte</a>
+<a class="settings-menu-btn settings-toggle" data-variant="fr-lsg" href="../fr-lsg/vespers.html">Classique</a>
+</div>
+</div>
+</div>
+<main class="container">
+<div class="hour-header">
+<div class="header-crosses">
+<img alt="Coptic Cross" src="../coptic-cross.png"/>
+</div>
+<h1 class="hour-title">Vespers</h1>
+<p class="hour-time">Eleventh Hour · 5:00 PM</p>
+</div>
+<div class="prayer-content">
+<div class="ornament">
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+</div>
+<section class="section">
+<h2 class="section-title">Vêpres (onzième heure)</h2>
+<div class="prayer-text coptic-text">
+Pihumnoc `nte han`arouhi `mpai`ehoou et`cmarwout ]<br>
+natyif `mPi`<rictoc paouro ouoh panou] ]naerhelpic
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 116</h2>
+<div class="prayer-text coptic-text">
+ⲁⲗⲗⲏⲗⲟⲩⲓⲁ. ⲛⲓⲉⲑⲛⲟⲥ ⲧⲏⲣⲟⲩ ⲥⲁⲙⲟⲩ Ⲡϭⲟⲓⲥ *
+</div>
+<div class="prayer-text coptic-text">
+ⲙⲁⲣⲟⲩⲥⲁⲙⲟⲩ ⲉⲁⲣⲟϥ ⲛⲁϫⲉ ⲛⲓⲗⲁⲟⲥ ⲧⲏⲣⲟⲩ<br>
+2 ϫⲉ ⲁ ⲡⲉϥⲛⲁⲓ ⲧⲁϫⲣⲟ ⲉⲁϩⲁⲣⲏⲓ ⲉⲁϫⲱⲛ *<br>
+ⲟⲩⲟϩ ϯⲙⲉⲑⲙⲏⲓ ⲛⲁⲧⲉ Ⲡϭⲟⲓⲥ ϣⲟⲡ ϣⲁ ⲉⲁⲛⲉϩ
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 117</h2>
+<div class="prayer-text coptic-text">
+ⲁⲗⲗⲏⲗⲟⲩⲓⲁ * ⲟⲩⲱⲛϩ ⲉⲁⲃⲟⲗ ⲙⲁⲠϭⲟⲓⲥ ϫⲉ<br>
+ⲟⲩⲁⲅⲁⲑⲟⲥ ⲡⲉ * ϫⲉ ⲡⲉϥⲛⲁⲓ ϣⲟⲡ ϣⲁ ⲉⲁⲛⲉϩ<br>
+2 ⲙⲁⲣⲉ ⲡⲏⲓ ⲙⲡⲓⲒⲥⲣⲁⲏⲗ ϫⲟⲥ ϫⲉ ⲟⲩⲁⲅⲁⲑⲟⲥ ⲡⲉ *
+</div>
+<div class="prayer-text coptic-text">
+ⲙⲁⲣⲉ ⲡⲏⲓ ⲛⲁⲁⲣⲱⲛ ϫⲟⲥ ϫⲉ ⲟⲩⲁⲅⲁⲑⲟⲥ ⲡⲉ * ϫⲉ<br>
+ⲙⲁⲣⲉ ⲛⲏ ⲉⲧⲉⲣϩⲟϯ ϧⲁⲧϩⲏ ⲙⲁⲠϭⲟⲓⲥ ϫⲟⲥ ϫⲉ
+</div>
+<div class="prayer-text coptic-text">
+ⲟⲩⲁⲅⲁⲑⲟⲥ ⲡⲉ * ϫⲉ ⲡⲉϥⲛⲁⲓ ϣⲟⲡ ϣⲁ ⲉⲁⲛⲉϩ<br>
+ϧⲉⲛ ⲡⲁϩⲟϫϩⲉϫ ⲁⲓⲱϣ ⲉⲁϩⲁⲣⲏⲓ ϩⲁ Ⲡϭⲟⲓⲥ * ⲟⲩⲟϩ<br>
+ⲣⲱⲙⲓ ⲛⲁⲁⲓϥ ⲛⲏⲓ<br>
+Ⲡϭⲟⲓⲥ ⲡⲉ ⲡⲁⲃⲟⲏⲑⲟⲥ * ⲟⲩⲟϩ ⲁⲁⲛⲟⲕ ⲉⲓⲉⲛⲁⲩ<br>
+ⲉⲛⲁϫⲁϫⲓ
+</div>
+
+<div class="prayer-text coptic-text">
+8 ⲛⲁⲛⲉⲥ ⲉⲭⲁϩⲑⲏⲕ ⲉⲠϭⲟⲓⲥ * ⲉϩⲟⲧⲉ ⲉⲭⲁϩⲑⲏⲕ<br>
+ⲉⲛⲓⲣⲱⲙⲓ<br>
+ⲉⲛⲓⲁⲣⲭⲱⲛ
+</div>
+<div class="prayer-text coptic-text">
+10 ⲁⲩⲕⲱϯ ⲉⲁⲣⲟⲓ ⲛⲁϫⲉ ⲛⲓⲉⲑⲛⲟⲥ ⲧⲏⲣⲟⲩ * ⲟⲩⲟϩ ϧⲉⲛ<br>
+ⲫⲣⲁⲛ ⲙⲁⲠϭⲟⲓⲥ ⲁⲓϭⲓ ⲙⲡⲁϭⲓⲙⲡϣⲓϣ ⲛⲉⲙⲱⲟⲩ<br>
+11 ⲁⲩⲕⲱϯ ⲉⲁⲣⲟⲓ ⲟⲩⲟϩ ⲁⲩⲧⲁⲕⲧⲟ ⲉⲁⲣⲟⲓ * ⲟⲩⲟϩ ϧⲉⲛ
+</div>
+
+<div class="prayer-text coptic-text">
+ϩⲁⲛⲥⲟⲩⲣⲓ * ⲟⲩⲟϩ ϧⲉⲛ ⲫⲣⲁⲛ ⲙⲁⲠϭⲟⲓⲥ ⲁⲓϭⲓ ⲙⲡⲁϭⲓ<br>
+ⲙⲡϣⲓϣ ⲛⲉⲙⲱⲟⲩ<br>
+13 ⲁⲩϯ ⲧⲟⲧⲟⲩ ⲙⲁⲙⲟⲓ ϫⲉ ⲛⲧⲁϩⲉⲓ * ⲟⲩⲟϩ Ⲡϭⲟⲓⲥ<br>
+14 ⲧⲁϫⲟⲙ ⲛⲉⲙ ⲡⲁⲥⲁⲙⲟⲩ ⲡⲉ Ⲡϭⲟⲓⲥ * ⲁϥϣⲱⲡⲓ<br>
+ⲛⲏⲓ ⲉⲩⲥⲱⲧⲏⲣⲓⲁ<br>
+15 ⲧⲥⲙⲏ ⲙⲡⲑⲉⲗⲏⲗ ⲛⲉⲙ ⲡⲟⲩϫⲁⲓ ϧⲉⲛ ⲫⲙⲁ<br>
+ⲛϣⲱⲡⲓ ⲛⲁⲧⲉ ⲛⲓⲑⲙⲏⲓ * 16 ⲑⲟⲩⲓⲛⲁⲙ ⲙⲁⲠϭⲟⲓⲥ ⲁⲥⲓⲣⲓ<br>
+ⲛⲟⲩϫⲟⲙ<br>
+ⲙⲁⲠϭⲟⲓⲥ ⲁⲥⲓⲣⲓ ⲛⲟⲩϫⲟⲙ<br>
+ⲛⲧⲁⲥⲁϫⲓ ⲛⲛⲓϩⲁⲃⲏⲟⲩⲓⲁ ⲛⲁⲧⲉ Ⲡϭⲟⲓⲥ<br>
+19 ϧⲉⲛ ⲟⲩⲥⲃⲱ ⲅⲁⲣ ⲁϥϯⲥⲃⲱ ⲛⲏⲓ ⲛⲁϫⲉ Ⲡϭⲟⲓⲥ *<br>
+ⲟⲩⲟϩ ⲙⲡⲉϥⲧⲏⲓⲧ ⲉⲧⲟⲧϥ ⲙⲫⲁⲙⲟⲩ<br>
+20 ⲁⲟⲩⲱⲛ ⲛⲏⲓ ⲛⲓⲡⲩⲗⲏ ⲛⲁⲧⲉ ϯⲙⲉⲑⲙⲏⲓ * ϩⲓⲛⲁ<br>
+ⲛⲧⲁϣⲉ ⲉⲁϧⲟⲩⲛ ⲛⲁϧⲏⲧⲟⲩ ⲛⲧⲁⲟⲩⲱⲛϩ ⲉⲁⲃⲟⲗ<br>
+22 ϯⲛⲁⲟⲩⲱⲛϩ ⲛⲁⲕ ⲉⲁⲃⲟⲗ Ⲡϭⲟⲓⲥ ϫⲉ ⲁⲕⲥⲱⲧⲉⲙ<br>
+ⲉⲁⲣⲟⲓ * ⲟⲩⲟϩ ⲁⲕϣⲱⲡⲓ ⲛⲏⲓ ⲉⲩⲟⲩϫⲁⲓ<br>
+23 ⲡⲓⲱⲛⲓ ⲉⲧⲁⲩϣⲟϣϥ ⲛⲁϫⲉ ⲛⲓⲉⲕⲟϯ * ⲫⲁⲓ ⲁϥϣⲱⲡⲓ
+</div>
+
+<div class="prayer-text coptic-text">
+ⲉⲩϫⲱϫ ⲛⲗⲁⲕϩ<br>
+ⲙⲁⲣⲉⲛⲑⲉⲗⲏⲗ ⲟⲩⲟϩ ⲛⲧⲉⲛⲟⲩⲛⲟϥ ⲙⲁⲙⲟⲛ ⲛⲁϧⲏⲧϥ<br>
+25 ⲱ Ⲡϭⲟⲓⲥ ⲉⲕⲉⲛⲁϩⲙⲉⲛ * ⲱ Ⲡϭⲟⲓⲥ ⲉⲕⲉⲥⲟⲩⲧⲉⲛ<br>
+ⲡⲉⲛⲙⲱⲓⲧ<br>
+26 ϥⲥⲙⲁⲣⲱⲟⲩⲧ ⲛⲁϫⲉ ⲫⲏ ⲉⲑⲛⲏⲟⲩ ϧⲉⲛ ⲫⲣⲁⲛ
+</div>
+<div class="prayer-text coptic-text">
+ⲙⲁⲠϭⲟⲓⲥ * ⲁⲛⲥⲁⲙⲟⲩ ⲉⲣⲱⲧⲉⲛ ⲉⲁⲃⲟⲗ ϧⲉⲛ ⲡⲏⲓ<br>
+Ⲫⲛⲟⲩϯ ⲟⲩⲟϩ Ⲡϭⲟⲓⲥ ⲁϥⲉⲣⲟⲩⲱⲓⲛⲓ ⲉⲣⲟⲛ * 27<br>
+ⲥⲉⲙⲛⲉ ⲟⲩϣⲁⲓ ϧⲉⲛ ⲛⲉⲧⲫⲉϩ * ϣⲁ ⲛⲉⲛⲧⲁⲡ ⲛⲁⲧⲉ<br>
+ⲡⲓⲙⲁⲛⲉⲣϣⲱⲟⲩϣⲓ<br>
+ⲉⲁⲃⲟⲗ Ⲡϭⲟⲓⲥ ϫⲉ ⲁⲕⲥⲱⲧⲉⲙ ⲉⲁⲣⲟⲓ * ⲟⲩⲟϩ ⲁⲕϣⲱⲡⲓ<br>
+ⲛⲏⲓ ⲉⲩⲥⲱⲧⲏⲣⲓⲁ *<br>
+29 ⲟⲩⲱⲛϩ ⲉⲁⲃⲟⲗ ⲙⲁⲠϭⲟⲓⲥ ϫⲉ ⲟⲩⲁⲅⲁⲑⲟⲥ ⲡⲉ * ϫⲉ
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 119</h2>
+<div class="prayer-text coptic-text">
+ϧⲉⲛ ⲡϫⲓⲛⲑⲣⲓϩⲟϫϩⲉϫ * ⲁⲓⲱϣ ⲟⲩⲃⲏⲕ Ⲡϭⲟⲓⲥ ⲟⲩⲟϩ<br>
+ⲁⲕⲥⲱⲧⲉⲙ ⲉⲁⲣⲟⲓ<br>
+2 Ⲡϭⲟⲓⲥ ⲉⲕⲉⲛⲟϩⲉⲙ ⲛⲧⲁⲯⲩⲭⲏ ⲉⲁⲃⲟⲗ ϧⲉⲛ ϩⲁⲛⲥⲫⲟⲧⲟⲩ trompeuses !<br>
+ⲛⲟϫⲓ * ⲛⲉⲙ ⲉⲁⲃⲟⲗ ϩⲁ ⲟⲩⲗⲁⲥ ⲛⲭⲣⲟϥ * ⲟⲩ<br>
+ⲛⲓⲥⲟⲑⲛⲉϥ ⲛⲁⲧⲉ ⲛⲓϫⲱⲣⲓ ⲥⲉϣⲉⲃϣⲱⲃ * ⲛⲉⲙ ⲛⲓϫⲉⲃⲥ ⲛⲁⲧⲉ<br>
+ⲡϣⲁϥⲉ * ⲟⲩⲟⲓ ⲛⲏⲓ ϫⲉ ⲁⲥⲟⲩⲉⲓ ⲙⲁⲙⲟⲓ ⲛⲁϫⲉ<br>
+ⲧⲁⲙⲉⲧⲣⲉⲙⲛϫⲱⲓⲗⲓ * ⲁⲓϣⲱⲡⲓ ϧⲉⲛ ⲛⲓⲙⲁⲛϣⲱⲡⲓ ⲛⲁⲧⲉ<br>
+ⲕⲏⲇⲁⲣ
+</div>
+
+<div class="prayer-text coptic-text">
+ⲁ ⲧⲁⲯⲩⲭⲏ ⲉⲣⲣⲉⲙⲛϫⲱⲓⲗⲓ ϧⲉⲛ ⲟⲩⲙⲏϣ ⲙⲙⲁ<br>
+7 ⲛⲁⲓⲟⲓ ⲛϩⲓⲣⲏⲛⲏⲕⲟⲥ ⲡⲉ ⲛⲉⲙ ⲛⲏ ⲉⲑⲙⲟⲥϯ ⲛϯϩⲓⲣⲏⲛⲏ *
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 120</h2>
+<div class="prayer-text coptic-text">
+ⲁⲓϥⲁⲓ ⲛⲛⲁⲃⲁⲗ ⲉⲁϫⲉⲛ ⲛⲓⲧⲱⲟⲩ * ϫⲉ ⲁⲥⲛⲏⲟⲩ ⲛⲏⲓ ⲉⲁⲃⲟⲗ<br>
+ⲑⲱⲛ ⲛⲁϫⲉ ⲧⲁⲃⲟⲏⲑⲓⲁ<br>
+2 ⲧⲁⲃⲟⲏⲑⲓⲁ ⲁⲁⲛⲟⲕ ⲟⲩ ⲉⲁⲃⲟⲗ ϩⲓⲧⲉⲛ Ⲡϭⲟⲓⲥ ⲧⲉ * ⲫⲏ
+</div>
+<div class="prayer-text coptic-text">
+ⲉⲧⲁϥⲑⲁⲙⲓⲟ ⲛⲧⲫⲉ ⲛⲉⲙ ⲡⲁⲕⲁϩⲓ<br>
+ⲙⲡⲉⲣϯ ⲛⲧⲉⲕϭⲁⲗⲟϫ ⲉⲩⲕⲓⲙ * ⲟⲩⲇⲉ ⲙⲡⲉⲛⲑⲣⲉϥϩⲩⲛⲓⲙ
+</div>
+<div class="prayer-text coptic-text">
+ⲛⲁϫⲉ ⲫⲏ ⲉⲧⲁⲣⲉϩ ⲉⲁⲣⲟⲕ<br>
+ϩⲏⲡⲡⲉ ⲛⲛⲉϥϩⲩⲛⲓⲙ ⲟⲩⲇⲉ ⲛⲛⲉϥⲉⲛⲕⲟⲧ * ⲛⲁϫⲉ ⲫⲏ
+</div>
+<div class="prayer-text coptic-text">
+ⲉⲧⲣⲱⲓⲥ ⲉⲡⲓⲒⲥⲣⲁⲏⲗ<br>
+ⲧⲉⲕϫⲓϫ ⲛⲟⲩⲓⲛⲁⲙ 6.<br>
+Ⲡϭⲟⲓⲥ ⲉϥⲉⲁⲣⲉϩ ⲉⲁⲣⲟⲕ ⲉⲁⲃⲟⲗ ϩⲁ ⲡⲉⲧϩⲱⲟⲩ ⲛⲓⲃⲉⲛ *<br>
+ⲉϥⲉⲁⲣⲉϩ ⲉⲧⲉⲕⲯⲩⲭⲏ ⲛⲁϫⲉ Ⲡϭⲟⲓⲥ<br>
+8 Ⲡϭⲟⲓⲥ ⲉϥⲉⲁⲣⲉϩ ⲉⲡⲉⲕⲙⲱⲓⲧ ⲉⲁϧⲟⲩⲛ ⲛⲉⲙ ⲡⲉⲕⲙⲱⲓⲧ<br>
+ⲉⲁⲃⲟⲗ * ⲓⲥϫⲉⲛ ϯⲛⲟⲩ ⲛⲉⲙ ϣⲁ ⲉⲁⲛⲉϩ
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 121</h2>
+<div class="prayer-text coptic-text">
+ϯϩⲱⲇⲏ ⲛⲁⲧⲉ ⲛⲓⲁⲛⲁⲃⲁⲑⲙⲟⲥ – 1.<br>
+ⲁⲓⲟⲩⲛⲟϥ ⲉⲁϫⲉⲛ ⲛⲏ ⲉⲧⲁⲩϫⲟⲥ ⲛⲏⲓ * ϫⲉ ⲧⲉⲛⲛⲁϣⲉⲛⲁⲛ<br>
+ⲉⲡⲏⲓ ⲙⲁⲠϭⲟⲓⲥ<br>
+2 ⲛⲉⲛϭⲁⲗⲁⲩϫ ⲁⲩⲟϩⲓ ⲉⲁⲣⲁⲧⲟⲩ * ϧⲉⲛ ⲛⲓⲁⲩⲗⲏⲟⲩ ⲛⲁⲧⲉ<br>
+ⲓⲉⲣⲟⲩⲥⲁⲗⲏⲙ<br>
+ⲓⲉⲣⲟⲩⲥⲁⲗⲏⲙ ⲑⲏ ⲉⲧⲟⲩⲕⲱⲧ ⲙⲁⲙⲟⲥ ⲙⲁⲫⲁⲣⲏϯ ⲛⲟⲩⲃⲁⲕⲓ<br>
+ⲉⲧⲁⲩϣⲉⲛⲱⲟⲩ ⲅⲁⲣ ⲉⲁⲡⲁϣⲱⲓ ⲉⲙⲁⲩ ⲛⲁϫⲉ ⲛⲓⲫⲩⲗⲏ *<br>
+ⲛⲓⲫⲩⲗⲏ ⲛⲁⲧⲉ Ⲡϭⲟⲓⲥ ⲉⲩⲙⲉⲧⲙⲉⲑⲣⲉ ⲙⲡⲓⲒⲥⲣⲁⲏⲗ *<br>
+ⲉⲩⲟⲩⲱⲛϩ ⲉⲁⲃⲟⲗ ⲙⲫⲣⲁⲛ ⲙⲁⲠϭⲟⲓⲥ<br>
+ϫⲉ ⲁⲩϩⲉⲙⲥⲓ ⲙⲙⲁⲩ ⲛⲁϫⲉ ϩⲁⲛⲑⲣⲟⲛⲟⲥ ⲉⲩϩⲁⲡ * David.<br>
+ϩⲁⲛⲑⲣⲟⲛⲟⲥ ⲉⲁϫⲉⲛ ⲡⲏⲓ ⲛⲁⲆⲁⲩⲓⲇ
+</div>
+
+<div class="prayer-text coptic-text">
+ⲟⲩⲉⲩⲑⲏⲛⲓⲁ ⲛⲁⲛⲏ ⲉⲑⲙⲉⲓ ⲙⲙⲟ<br>
+ⲟⲩϩⲓⲣⲏⲛⲏ ⲙⲁⲣⲉⲥϣⲱⲡⲓ ϧⲉⲛ ⲧⲉⲕϫⲟⲙ * ⲛⲉⲙ<br>
+ⲟⲩⲉⲩⲑⲏⲛⲓⲁ ϧⲉⲛ ⲛⲉⲡⲩⲣⲅⲟⲥ ⲉⲧϩⲟⲣϣ<br>
+ⲉⲑⲃⲉ ⲛⲁⲥⲛⲏⲟⲩ ⲛⲉⲙ ⲛⲏ ⲉⲧϧⲉⲛⲧ ⲉⲁⲣⲟⲓ * ⲁⲓⲥⲁϫⲓ<br>
+ⲛⲟⲩϩⲓⲣⲏⲛⲏ ⲉⲑⲃⲏϯ
+</div>
+<div class="prayer-text coptic-text">
+ϩⲁⲛⲁⲅⲁⲑⲟⲛ ⲛⲉ
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 122</h2>
+<div class="prayer-text coptic-text">
+1 ⲁⲓϥⲁⲓ ⲛⲛⲁⲃⲁⲗ ⲉⲁⲡⲁϣⲱⲓ ϩⲁⲣⲟⲕ * ⲫⲏ ⲉⲧϣⲟⲡ ϧⲉⲛ<br>
+ⲧⲁⲫⲉ<br>
+ϧⲉⲛ ⲛⲉⲛϫⲓϫ ⲛⲁⲧⲉ ⲧⲉⲥϭⲟⲓⲥ * ⲡⲁⲓⲣⲏϯ ⲛⲉⲛⲃⲁⲗ ⲟⲩⲃⲉ<br>
+Ⲡϭⲟⲓⲥ ⲡⲉⲛⲛⲟⲩϯ * ϣⲁⲧⲉϥϣⲉⲛϩⲏⲧ ϧⲁⲣⲟⲛ * 3 ⲛⲁⲓ<br>
+ⲛⲁⲛ Ⲡϭⲟⲓⲥ ⲛⲁⲓ ⲛⲁⲛ * ϫⲉ ϧⲉⲛ ⲟⲩⲁϣⲁⲓ ⲁⲛⲙⲟϩ<br>
+ⲡϣⲱϣ ⲙⲏⲓϥ ⲛⲁⲛⲏ ⲉⲧⲉⲣⲉⲩⲑⲏⲛⲓⲛ * ⲟⲩⲟϩ ⲡϣⲱϣϥ<br>
+ⲛⲛⲓϭⲁⲥⲓϩⲏⲧ
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 123</h2>
+<div class="prayer-text coptic-text">
+ⲉⲃⲏⲗ ϫⲉ Ⲡϭⲟⲓⲥ ϣⲟⲡ ⲛϧⲏⲧⲉⲛ * ⲙⲁⲣⲉ ⲡⲓⲒⲥⲣⲁⲏⲗ<br>
+ϫⲟⲥ *<br>
+2 ϫⲉ ⲉⲃⲏⲗ ϫⲉ Ⲡϭⲟⲓⲥ ϣⲟⲡ ⲛϧⲏⲧⲉⲛ * ϧⲉⲛ<br>
+ⲡϫⲓⲛⲧⲟⲩⲧⲱⲟⲩⲛⲟⲩ ⲉⲁϫⲱⲛ ⲛⲁϫⲉ ϩⲁⲛⲣⲱⲙⲓ * ϩⲁⲣⲁ<br>
+ⲁⲩⲛⲁⲟⲙⲕⲧⲉⲛ ⲉⲛⲟⲛϧ
+</div>
+<div class="prayer-text coptic-text">
+ϧⲉⲛ ⲡϫⲓⲛⲑⲣⲉϥϫⲱⲛⲧ ⲛⲁϫⲉ ⲡⲟⲩⲙⲃⲟⲛ ⲉⲁϩⲁⲣⲏⲓ ⲉⲁϫⲱⲛ *<br>
+ϩⲁⲣⲁ ⲁϥⲛⲁⲟⲙⲥⲧⲉⲛ ⲛⲁϫⲉ ⲡⲓⲙⲱⲟⲩ<br>
+ⲧⲉⲛⲯⲩⲭⲏ ⲁⲥⲥⲓⲛⲓ ⲛⲟⲩⲙⲟⲩⲛⲥⲱⲣⲉⲙ *
+</div>
+
+<div class="prayer-text coptic-text">
+ϩⲁⲣⲁ ⲁⲥⲥⲓⲛⲓ ⲛⲁϫⲉ ⲧⲉⲛⲯⲩⲭⲏ * ⲙⲡⲓⲙⲱⲟⲩ ⲛⲁⲧϣⲉⲛ<br>
+ⲁⲩⲣⲏϫϥ<br>
+ⲉⲧϫⲟⲣϫⲥ ⲛⲁⲧⲉ ⲛⲟⲩⲛⲁϫϩⲓ<br>
+ⲡⲓⲫⲁϣ ⲛⲁⲧⲉ ⲛⲓⲣⲉϥϫⲱⲣϫ * ⲡⲓⲫⲁϣ ⲁϥϧⲟⲙϧⲉⲙ<br>
+ⲟⲩⲟϩ ⲁⲛⲟⲛ ⲁⲛⲛⲟϩⲉⲙ<br>
+8 ⲧⲉⲛⲃⲟⲏⲑⲓⲁ ϧⲉⲛ ⲫⲣⲁⲛ ⲙⲁⲠϭⲟⲓⲥ * ⲫⲏ ⲉⲧⲁϥⲑⲁⲙⲓⲟ<br>
+ⲛⲧⲫⲉ ⲛⲉⲙ ⲡⲓⲕⲁϩⲓ
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 124</h2>
+<div class="prayer-text coptic-text">
+1 ⲛⲏ ⲉⲧⲉ ϩⲑⲏⲟⲩ ⲭⲏ ⲉⲠϭⲟⲓⲥ ⲙⲁⲫⲁⲣⲏϯ ⲙⲡⲓⲧⲱⲟⲩ<br>
+ⲛⲁⲧⲉ Ⲥⲓⲱⲛ * ⲛⲛⲉϥⲕⲓⲙ ϣⲁ ⲉⲁⲛⲉϩ ⲛⲁϫⲉ ⲫⲏ ⲉⲧϣⲟⲡ<br>
+ⲙⲡⲉϥⲗⲁⲟⲥ * ⲓⲥϫⲉⲛ ϯⲛⲟⲩ ⲛⲉⲙ ϣⲁ ⲉⲁⲛⲉϩ *<br>
+3 ⲛⲛⲉϥⲭⲱ ⲙⲡⲓϣⲃⲱⲧ ⲛⲁⲧⲉ ⲛⲓⲣⲉϥⲉⲣⲛⲟⲃⲓ * ⲉⲁϫⲉⲛ<br>
+ⲡⲕⲗⲏⲣⲟⲥ ⲛⲁⲧⲉ ⲛⲓⲑⲙⲏⲓ * ϩⲓⲛⲁ ⲛⲧⲟⲩϣⲧⲉⲙⲥⲟⲩⲧⲉⲛ<br>
+ⲛⲟⲩϫⲓϫ ⲉⲁⲃⲟⲗ ⲛⲁϫⲉ ⲛⲓⲑⲙⲏⲓ ⲉⲟⲩⲁⲛⲟⲙⲓⲁ<br>
+ⲉⲧⲥⲟⲩⲧⲱⲛ ϧⲉⲛ ⲡⲟⲩϩⲏⲧ
+</div>
+
+<div class="prayer-text coptic-text">
+5 ⲛⲏ ⲇⲉ ⲉⲧⲣⲓⲕⲓ ⲙⲁⲙⲱⲟⲩ ⲉⲛⲓϭⲣⲟⲡ * ϥⲛⲁⲟⲗⲟⲩ<br>
+ⲛⲁϫⲉ Ⲡϭⲟⲓⲥ ⲛⲉⲙ ⲛⲏ ⲉⲧⲉⲣϩⲱⲃ ⲉϯⲁⲛⲟⲙⲓⲁ *
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 125</h2>
+<div class="prayer-text coptic-text">
+ϧⲉⲛ ⲡϫⲓⲛⲑⲣⲉ Ⲡϭⲟⲓⲥ ⲧⲁⲥⲑⲟ ⲛϯⲉⲭⲙⲁⲗⲱⲥⲓⲁ ⲛⲁⲧⲉ
+</div>
+<div class="prayer-text coptic-text">
+Ⲥⲓⲱⲛ * ⲁⲛϣⲱⲡⲓ ⲙⲁⲫⲁⲣⲏϯ ⲛϩⲁⲛⲟⲩⲟⲛ ⲉⲁⲩϯⲛⲟⲙϯ<br>
+ⲟⲩⲑⲉⲗⲏⲗ * ⲧⲟⲧⲉ ⲉⲩⲉϫⲟⲥ ϧⲉⲛ ⲛⲓⲉⲑⲛⲟⲥ * ϫⲉ ⲁ Ⲡϭⲟⲓⲥ
+</div>
+<div class="prayer-text coptic-text">
+ⲧⲁϣⲉⲓⲣⲓ ⲛⲉⲙⲱⲟⲩ<br>
+ⲁ Ⲡϭⲟⲓⲥ ⲧⲁϣⲉⲓⲣⲓ ⲛⲉⲙⲁⲛ * ⲁⲛϣⲱⲡⲓ ⲉⲛⲟⲩⲛⲟϥ ⲙⲁⲙⲟⲛ
+</div>
+
+<div class="prayer-text coptic-text">
+ⲛⲏ ⲉⲧⲥⲓϯ ϧⲉⲛ ϩⲁⲛⲉⲣⲙⲱⲟⲩⲓ * ⲉⲩⲉⲱⲥϧ ϧⲉⲛ ⲟⲩⲑⲉⲗⲏⲗ
+</div>
+<div class="prayer-text coptic-text">
+6 ⲉⲩⲙⲟϣⲓ ⲉⲛⲁⲩⲙⲟϣⲓ ⲡⲉ ⲟⲩⲟϩ ⲛⲁⲩⲣⲓⲙⲓ ⲡⲉ * ⲉⲩϥⲁⲓ<br>
+ⲛⲛⲟⲩϫⲣⲟϫ * ⲉⲩⲛⲏⲟⲩ ⲇⲉ ⲉⲩⲉⲓ ϧⲉⲛ ⲟⲩⲑⲉⲗⲏⲗ * ⲉⲩϥⲁⲓ gerbes.<br>
+ⲛⲛⲟⲩⲭⲛⲁⲩ
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 126</h2>
+<div class="prayer-text coptic-text">
+1 ⲁⲣⲉϣⲧⲉⲙ Ⲡϭⲟⲓⲥ ⲕⲱϯ ⲛⲟⲩⲏⲓ * ⲁⲩϭⲓϧⲓⲥⲓ ⲉⲫⲗⲏⲟⲩ<br>
+ⲙⲉⲛⲉⲥⲁ ⲑⲣⲉⲧⲉⲧⲉⲛϩⲉⲙⲥⲓ * ⲛⲏ ⲉⲑⲟⲩⲱⲙ ⲛⲟⲩⲱⲓⲕ<br>
+ⲛⲉⲙⲕⲁϩ ⲛϩⲏⲧ * 3 ⲉⲁϣⲱⲡ ⲁϥϣⲁⲛϯ ⲛⲟⲩⲉⲛⲕⲟⲧ<br>
+ⲛⲛⲉϥⲙⲉⲛⲣⲁϯ<br>
+ϩⲏⲡⲡⲉ ⲓⲥ ϯⲕⲗⲏⲣⲟⲛⲟⲙⲓⲁ ⲛⲁⲧⲉ Ⲡϭⲟⲓⲥ ϩⲁⲛϣⲏⲣⲓ ⲛⲉ *
+</div>
+<div class="prayer-text coptic-text">
+4 ⲙⲁⲫⲁⲣⲏϯ ⲛϩⲁⲛⲥⲟⲑⲛⲉϥ ϧⲉⲛ ⲧϫⲓϫ ⲛⲁⲧⲉ ⲟⲩϫⲱⲣⲓ * ⲫⲁⲓ<br>
+ⲡⲉ ⲙⲁⲫⲁⲣⲏϯ ⲛⲛⲓϣⲏⲣⲓ ⲛⲁⲧⲉ ⲛⲏ ⲉⲧⲁⲩⲛⲟϣⲡⲟⲩ ⲉⲁⲃⲟⲗ *<br>
+5 ⲱⲟⲩⲛⲓⲁⲧϥ ⲙⲡⲓⲣⲱⲙⲓ ⲉⲑⲛⲁϫⲱⲕ ⲛⲧⲉϥⲉⲡⲓⲑⲩⲙⲓⲁ
+</div>
+<div class="prayer-text coptic-text">
+ⲛⲉⲙ ⲛⲟⲩϫⲁϫⲓ ϧⲉⲛ ⲛⲓⲡⲩⲗⲏ
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 127</h2>
+<div class="prayer-text coptic-text">
+1 ⲱⲟⲩⲛⲓⲁⲧⲟⲩ ⲛⲟⲩⲟⲛ ⲛⲓⲃⲉⲛ ⲉⲧⲉⲣϩⲟϯ ϧⲁⲧϩⲏ ⲙⲁⲠϭⲟⲓⲥ *<br>
+ⲛⲏ ⲉⲑⲙⲟϣⲓ ϩⲓ ⲛⲉϥⲙⲱⲓⲧ<br>
+2 ⲉⲕⲉⲟⲩⲱⲙ ⲉⲁⲃⲟⲗ ϧⲉⲛ ⲡⲟⲩⲧⲁϩ ⲛⲁⲧⲉ ⲛⲉⲕϧⲓⲥⲓ * ⲉⲕⲉⲉⲣ
+</div>
+<div class="prayer-text coptic-text">
+ⲟⲩⲙⲁⲕⲁⲣⲓⲟⲥ ⲟⲩⲟϩ ⲉⲁⲣⲉ ⲡⲓⲡⲉⲑⲛⲁⲛⲉϥ ϣⲱⲡⲓ ⲛⲁⲕ * 3 ⲉⲁⲣⲉ<br>
+ⲧⲉⲕⲥϩⲓⲙⲓ ⲉⲣ ⲙⲁⲫⲁⲣⲏϯ ⲛⲟⲩⲃⲱ ⲛⲁⲗⲟⲗⲓ * ⲉⲥⲫⲟⲣⲓ ⲉⲁⲃⲟⲗ ⲥⲁ<br>
+ⲉⲕⲉⲛⲁⲩ ⲉⲛⲓⲁⲅⲁⲑⲟⲛ ⲛⲁⲧⲉ ⲓⲉⲣⲟⲩⲥⲁⲗⲏⲙ * ⲛⲛⲓⲉϩⲟⲟⲩ<br>
+ⲧⲏⲣⲟⲩ ⲛⲁⲧⲉ ⲡⲉⲕⲱⲛϧ *<br>
+6 ⲉⲕⲉⲛⲁⲩ ⲉⲛⲓϣⲏⲣⲓ ⲛⲁⲧⲉ ⲛⲉⲕϣⲏⲣⲓ * ϯϩⲓⲣⲏⲛⲏ ⲉⲁϫⲉⲛ<br>
+ⲡⲓⲒⲥⲣⲁⲏⲗ
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Psaume 128</h2>
+<div class="prayer-text coptic-text">
+1 ⲟⲩⲙⲏϣ ⲛⲥⲟⲡ ⲁⲩⲃⲱⲧⲥ ⲉⲁⲣⲟⲓ ⲓⲥϫⲉⲛ ⲧⲁⲙⲉⲧⲁⲗⲟⲩ * 2<br>
+ⲙⲁⲣⲉϥϫⲟⲥ ⲛⲁϫⲉ ⲡⲓⲒⲥⲣⲁⲏⲗ * ϫⲉ ⲟⲩⲙⲏϣ ⲛⲥⲟⲡ ⲁⲩⲃⲱⲧⲥ
+</div>
+<div class="prayer-text coptic-text">
+ⲉⲁⲣⲟⲓ ⲓⲥϫⲉⲛ ⲧⲁⲙⲉⲧⲁⲗⲟⲩ * ⲕⲉ ⲅⲁⲣ ⲙⲡⲟⲩϣϫⲉⲙϫⲟⲙ ⲉⲁⲣⲟⲓ<br>
+3 ⲛⲁⲩⲙⲓϣⲓ ⲉⲁϫⲉⲛ ⲧⲁϭⲓⲥⲓ ⲛⲁϫⲉ ⲛⲓⲣⲉϥⲉⲣⲛⲟⲃⲓ * ⲁⲩⲑⲣⲉⲥⲟⲩⲉⲓ<br>
+ⲛⲁϫⲉ ⲧⲟⲩⲁⲛⲟⲙⲓⲁ<br>
+4 ⲟⲩⲑⲙⲏⲓ ⲡⲉ Ⲡϭⲟⲓⲥ ϥⲛⲁⲥⲱⲗⲡ ⲛⲛⲓⲙⲟϯ ⲛⲁⲧⲉ<br>
+5 ⲙⲁⲣⲟⲩϭⲓϣⲓⲡⲓ ⲟⲩⲟϩ ⲙⲁⲣⲟⲩⲕⲟⲧⲟⲩ ⲉⲫⲁϩⲟⲩ * ⲛⲁϫⲉ ⲟⲩⲟⲛ<br>
+6 ⲙⲁⲣⲟⲩϣⲱⲡⲓ ⲙⲁⲫⲁⲣⲏϯ ⲛⲟⲩⲥⲱⲟⲩⲃⲉⲛ ⲛⲁⲧⲉ ⲟⲩϫⲉⲛⲉⲫⲱⲣ *<br>
+ⲫⲏ ⲉϣⲁϥϣⲱⲟⲩⲓ ⲙⲡⲁⲧⲟⲩϥⲟϫϥ<br>
+7 ⲫⲏ ⲉⲧⲉ ⲙⲡⲉϥⲙⲁϩ ⲧⲟⲧϥ ⲛⲁϧⲏⲧϥ ⲛⲁϫⲉ ⲫⲏ ⲉⲧⲱⲥϧ *<br>
+ⲟⲩⲇⲉ ⲙⲡⲉϥⲙⲁϩ ⲕⲉⲛϥ ⲛⲁϫⲉ ⲫⲏ ⲉⲧⲥⲱⲕⲓ ⲛⲛⲓⲭⲛⲁⲩ *<br>
+ⲉⲁϫⲉⲛ ⲑⲏⲛⲟⲩ * ⲁⲛⲥⲁⲙⲟⲩ ⲉⲣⲱⲧⲉⲛ ϧⲉⲛ ⲫⲣⲁⲛ ⲙⲁⲠϭⲟⲓⲥ
+</div>
+<div class="prayer-text coptic-text">
+ouoh nau]ho erof e`hryi ejwc@ ouoh af`ohi eratf cap` swi `mmoc<br>
+euws ebol eujw `mmoc<br>
+naferepitiman nwou pe `n`f,w `mmwou an ecaji<br>
+`mmof je `n;of pe P=,c.
+</div>
+<div class="prayer-text coptic-text">
+Piwou va pennou] pe. Tenouwst `mmok w P=,c nem pekiwt
+</div>
+<div class="prayer-text coptic-text">
+`naga;oc nem pip= =na =e=;u<br>
+Icje pi`;myi `njonc afnanohem `nas `nry] ]naouwnh e`bol<br>
+`anok pe pirefernobi@ p`hros `nte pie`hoou nem pef`qmom
+</div>
+<div class="prayer-text coptic-text">
+Vnou] pirefnai opt nem na ]ajp =ia@
+</div>
+<div class="prayer-text coptic-text">
+[isswou `mmoi@ e;be vai ]`sjoust an e``pswi e``tve@ alla ]<br>
+na,a`h;yi e`jen `pa` sai `nte tekme;nayt nem tekmetmairwmi@
+</div>
+<div class="prayer-text coptic-text">
+Doxa Patri ke U`iw ke `agi`w Pneumati.<br>
+aimounk `mpawnq qen nimet`sna nem niepi;umia` ouoh afcini<br>
+e`bol haroi `nje pie`hoou ouoh afhwl@ ic ]nou ]na,a`h;yi
+</div>
+<div class="prayer-text coptic-text">
+`nouhyt `n,areb efsat `ntekme;nayt@<br>
+]oi `nat`m`psa `ntoumou] e`roi nak<br>
+ouvriers. »<br>
+marekait `m`vry] `nouai e`bolqen nekrembe,e.<br>
+Ke nun ke `a`i ke ic touc e` w`nac twn `e`wnwn `amyn.<br>
+Je a`iernobi qen ou]`h;yf nem ourwoutf `nhyt ouoh airaouw<br>
+`enobi niben qen ou[isswou nem oumetasiri ouoh aier`mp`<br>
+`;nyb `mpar;enoc
+</div>
+<div class="prayer-text coptic-text">
+`nta`stem[isipi@ ouoh `mpate pap` neuma hwl e`bol `mmoi swpi<br>
+nemyi ouoh `pco[ni `nte nijaji [otpf ouoh nirwou `nte a`men]<br>
+ma`s;am `mmwou `ntou`stemwmk `mmoi ]selet `nata[ni circoncision.<br>
+`mpicebi `mmyi .
+</div>
+
+<div class="prayer-text coptic-text">
+Tenseph`mot `ntotk pennyb pirefsenhyt<br>
+e;rencini `mpaie`hoou qen ouhiryny ouoh akenten ehanarouhi<br>
+qen ouseph`mot@ ouoh akaiten `nhucoc e`nau e`pio`<br>
+hana`rouhi.<br>
+e`bolha nikotc `nte piantikimenoc@ ouoh kwrf `nnefvas<br>
+Ouoh a`rih`mot nan `ntekhiryny qen paikee`jwrh e;nyou
+</div>
+<div class="prayer-text coptic-text">
+vantaci`a@ e;rencenf
+</div>
+<div class="prayer-text coptic-text">
+`ncyou niben nem qen mai niben en]`wou `mpekran e;ouab qen<br>
+Pi`pneuma e;ouab `nreftanqo ouoh `nomooucioc nemak<br>
+]nou nem `ncyou niben nem
+</div>
+<div class="prayer-text coptic-text">
+Amyn.
+</div>
+</section>
+<div class="ornament">
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+<img alt="Coptic Cross" class="ornament-cross" src="../coptic-cross.png"/>
+</div>
+</div>
+<nav class="nav-hours">
+<a class="nav-hour" href="prime.html">
+<div>Prime</div>
+</a>
+<a class="nav-hour" href="terce.html">
+<div>Terce</div>
+</a>
+<a class="nav-hour" href="sext.html">
+<div>Sext</div>
+</a>
+<a class="nav-hour" href="none.html">
+<div>None</div>
+</a>
+<a class="nav-hour" href="vespers.html">
+<div>Vespers</div>
+</a>
+<a class="nav-hour" href="compline.html">
+<div>Compline</div>
+</a>
+<a class="nav-hour" href="midnight.html">
+<div>Midnight</div>
+</a>
+<a class="nav-hour" href="veil.html">
+<div>Veil</div>
+</a>
+<a class="nav-hour" href="other.html">
+<div>Other</div>
+</a>
+<a class="nav-hour" href="about.html">
+<div>About</div>
+</a>
+</nav>
+</main>
+<script src="../agpeya.js"></script>
+<script>
+        // Initialize jump to gospel functionality
+        initJumpToGospel();
+    </script>
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>
