@@ -624,13 +624,6 @@ body {
     letter-spacing: 0.02em;
 }
 
-/* Unicode Coptic text (Psalms in U+2C80-2CFF) - needs a Unicode Coptic font */
-.unicode-coptic {
-    font-family: 'Noto Sans Coptic', 'Antinoou', serif;
-    font-size: 1.05em;
-    line-height: 1.8;
-}
-
 /* Coptic page body text */
 [lang="cop"] .prayer-text,
 [lang="cop"] .psalm-verse {
