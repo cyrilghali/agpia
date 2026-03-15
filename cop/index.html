@@ -119,7 +119,8 @@
         }
         @font-face {
             font-family: 'Avva Shenouda';
-            src: url('../fonts/avva-shenouda.woff2') format('woff2');
+            src: url('../fonts/avva-shenouda.woff2') format('woff2'),
+                 url('../Avva_Shenouda.ttf') format('truetype');
         }
         .hero-title-en {
             font-family: 'EB Garamond', serif;
@@ -280,9 +281,9 @@
 <div class="hero-title-en">Agpia</div>
 <div class="hero-title-coptic">%agpia</div>
 <img alt="Coptic Cross" class="hero-cross" src="../coptic-cross.png"/>
-<h1>Ⳡⲅⲁⲅⲣⲉⲥⲉⲫⲇⲏ ⲙⲙⲁⲩ ⲙⲣⲏⲙⲣⲏ</h1>
+<h1>The Coptic Book of Hours</h1>
 <p class="current-time" id="currentTime"></p>
-<a class="cta" href="prime.html" id="beginPrayerBtn">ⲣⲉⲥⲅⲉⲫⲇⲏ →</a>
+<a class="cta" href="prime.html" id="beginPrayerBtn">Begin Prayer →</a>
 </section>
 <section class="hours">
 <a class="hour-card" href="prime.html"> <div class="hour-info">
@@ -340,7 +341,7 @@
 <div class="hour-arrow">→</div>
 </a>
 <a class="hour-card" href="about.html"> <div class="hour-info">
-<h3 class="hour-name">ⲉⲑⲃⲉ</h3>
+<h3 class="hour-name">About</h3>
 <div class="hour-time"></div>
 </div>
 <div class="hour-arrow">→</div>
@@ -355,13 +356,13 @@
             const currentMinute = now.getMinutes();
             const currentTimeInMinutes = currentHour * 60 + currentMinute;
             const hours = [
-                { name: 'Prime', file: 'prime.html', time: 6 * 60, label: 'ⲛⲁⲩ ⲛϣⲱⲣⲡ' },
-                { name: 'Terce', file: 'terce.html', time: 9 * 60, label: 'ⲛⲁⲩ ⲙⲙⲁϩϣⲟⲙⲧ' },
-                { name: 'Sext', file: 'sext.html', time: 12 * 60, label: 'ⲛⲁⲩ ⲙⲙⲁϩⲥⲟⲟⲩ' },
-                { name: 'None', file: 'none.html', time: 15 * 60, label: 'ⲛⲁⲩ ⲙⲙⲁϩⲯⲓⲥ' },
-                { name: 'Vespers', file: 'vespers.html', time: 18 * 60, label: 'ⲛⲁⲩ ⲛⲣⲟⲩϩⲓ' },
-                { name: 'Compline', file: 'compline.html', time: 21 * 60, label: 'ⲛⲁⲩ ⲛⲉⲛⲕⲟⲧ' },
-                { name: 'Midnight', file: 'midnight.html', time: 0, label: 'ⲛⲁⲩ ⲛⲉϫⲱⲣϩ' }
+                { name: 'Prime', file: 'prime.html', time: 6 * 60, label: 'Prime' },
+                { name: 'Terce', file: 'terce.html', time: 9 * 60, label: 'Terce' },
+                { name: 'Sext', file: 'sext.html', time: 12 * 60, label: 'Sext' },
+                { name: 'None', file: 'none.html', time: 15 * 60, label: 'None' },
+                { name: 'Vespers', file: 'vespers.html', time: 18 * 60, label: 'Vespers' },
+                { name: 'Compline', file: 'compline.html', time: 21 * 60, label: 'Compline' },
+                { name: 'Midnight', file: 'midnight.html', time: 0, label: 'Midnight' }
             ];
             let closestHour = hours[0];
             let minDifference = Math.abs(currentTimeInMinutes - hours[0].time);
