@@ -624,6 +624,12 @@ body {
     letter-spacing: 0.02em;
 }
 
+/* Greek liturgical text inside Coptic pages (Kyrie eleison, Doxa Patri, etc.) */
+.greek-text {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+}
+
 
 
 
